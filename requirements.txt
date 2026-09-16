@@ -1,0 +1,8 @@
+# MediaPipe currently requires the NumPy 1.x ABI.  Without this upper bound,
+# pip can install NumPy 2.x and leave the environment in a conflicted state.
+# This project uses the legacy ``mp.solutions.hands`` API.  Newer MediaPipe
+# releases removed it, so keep the last compatible release.
+mediapipe==0.10.21
+opencv-contrib-python>=4.8.0
+numpy>=1.24.0,<2.0.0
+pytest>=8.0.0
