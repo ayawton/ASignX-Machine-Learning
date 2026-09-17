@@ -1,20 +1,20 @@
 """
 ASignX Hand Recognition Module - Detector.
 
-Wraps Google MediaPipe Hands solution to detect hand presence and extract
-21 3D landmarks in real time with duplicate-hand suppression and handedness
-stabilization to prevent ghost double-detections and flickering.
+Uses MediaPipe Tasks to detect hand presence and extract 21 3D landmarks in
+real time with duplicate-hand suppression and handedness stabilization.
 """
 
 from __future__ import annotations
 
 from collections import deque
+from pathlib import Path
 import time
 from typing import Any, Deque, List, Optional, Tuple
-import cv2
-import numpy as np
 
+import cv2
 import mediapipe as mp
+import numpy as np
 
 from asignx.models import (
     HAND_LANDMARK_NAMES,
@@ -25,13 +25,15 @@ from asignx.models import (
 
 
 class HandDetector:
-    """MediaPipe Hands-based real-time hand detection and landmark extraction engine.
+    """MediaPipe Tasks-based real-time hand detection engine."""
 
-    Pipeline:
-        Video Frame (BGR) -> RGB Conversion -> MediaPipe Hands ->
-        Spatial Duplicate Suppression -> Handedness Stabilization ->
-        21 Hand Landmarks -> Structured Coordinates
-    """
+    _HAND_CONNECTIONS: Tuple[Tuple[int, int], ...] = (
+        (0, 1), (1, 2), (2, 3), (3, 4),
+        (0, 5), (5, 6), (6, 7), (7, 8),
+        (5, 9), (9, 10), (10, 11), (11, 12),
+        (9, 13), (13, 14), (14, 15), (15, 16),
+        (13, 17), (0, 17), (17, 18), (18, 19), (19, 20),
+    )
 
     def __init__(
         self,
@@ -44,23 +46,10 @@ class HandDetector:
         duplicate_iou_threshold: float = 0.30,
         left_hand_motion_distance_threshold: float = 0.45,
     ) -> None:
-        """Initialize MediaPipe Hands detector.
+        """Initialize the MediaPipe Tasks hand detector.
 
-        Args:
-            static_image_mode: Whether to treat the input images as a batch of
-                static images or a continuous video stream (default False).
-            max_num_hands: Maximum number of hands to track (default 2).
-            min_detection_confidence: Confidence threshold for hand detection (default 0.6).
-            min_tracking_confidence: Confidence threshold for tracking (default 0.5).
-            model_complexity: Complexity of landmark model: 0 or 1 (default 1).
-            duplicate_distance_threshold: Normalized distance threshold below which
-                two hand proposals are considered duplicates of the same hand (default 0.12).
-            duplicate_iou_threshold: Bounding box IoU threshold for duplicate
-            suppression (default 0.30).
-            left_hand_motion_distance_threshold: Largest normalized image-space
-                jump accepted when reacquiring the left hand between consecutive
-                frames (default 0.45). This keeps fast left-hand sweeps from
-                being relabelled as Right after the tracker reacquires them.
+        ``model_complexity`` is accepted for compatibility with the old CLI,
+        but the Tasks API uses the bundled ``hand_landmarker.task`` model.
         """
         self.static_image_mode = static_image_mode
         self.max_num_hands = max_num_hands
@@ -71,41 +60,46 @@ class HandDetector:
         self.duplicate_iou_threshold = duplicate_iou_threshold
         self.left_hand_motion_distance_threshold = left_hand_motion_distance_threshold
 
-        self.mp_hands = mp.solutions.hands
-        self.mp_drawing = mp.solutions.drawing_utils
-        self.mp_drawing_styles = mp.solutions.drawing_styles
+        model_path = Path(__file__).with_name("assets") / "hand_landmarker.task"
+        if not model_path.exists():
+            raise FileNotFoundError(
+                "Missing MediaPipe hand landmark model: "
+                f"{model_path}. Download hand_landmarker.task into asignx/assets/."
+            )
 
-        self._hands = self.mp_hands.Hands(
-            static_image_mode=self.static_image_mode,
-            max_num_hands=self.max_num_hands,
-            model_complexity=self.model_complexity,
-            min_detection_confidence=self.min_detection_confidence,
+        self._last_timestamp_ms = -1
+        base_options = mp.tasks.BaseOptions(model_asset_path=str(model_path))
+        vision = mp.tasks.vision
+        running_mode = (
+            vision.RunningMode.IMAGE
+            if self.static_image_mode
+            else vision.RunningMode.VIDEO
+        )
+        options = vision.HandLandmarkerOptions(
+            base_options=base_options,
+            running_mode=running_mode,
+            num_hands=self.max_num_hands,
+            min_hand_detection_confidence=self.min_detection_confidence,
+            min_hand_presence_confidence=self.min_tracking_confidence,
             min_tracking_confidence=self.min_tracking_confidence,
         )
+        self._hands = vision.HandLandmarker.create_from_options(options)
 
-        # Temporal history for handedness stabilization
-        # Stores recent (centroid, handedness) records across frames
         self._history: Deque[List[Tuple[np.ndarray, str]]] = deque(maxlen=5)
-        # Recent left-hand positions are kept separately so a rapid sweep can
-        # be associated by its predicted direction rather than a tiny static
-        # proximity window.
         self._left_track: Deque[np.ndarray] = deque(maxlen=2)
 
     def _is_duplicate(self, hand_a: HandLandmarks, hand_b: HandLandmarks) -> bool:
         """Determine if two hand detections represent the same physical hand."""
-        # 1. Wrist distance (Landmark 0)
         w_a = hand_a[0]
         w_b = hand_b[0]
         d_wrist = np.sqrt((w_a.x - w_b.x) ** 2 + (w_a.y - w_b.y) ** 2)
 
-        # 2. Centroid distance
         pts_a = np.array([(lm.x, lm.y) for lm in hand_a.landmarks], dtype=np.float32)
         pts_b = np.array([(lm.x, lm.y) for lm in hand_b.landmarks], dtype=np.float32)
         c_a = np.mean(pts_a, axis=0)
         c_b = np.mean(pts_b, axis=0)
         d_centroid = float(np.linalg.norm(c_a - c_b))
 
-        # 3. Bounding box IoU
         min_a = np.min(pts_a, axis=0)
         max_a = np.max(pts_a, axis=0)
         min_b = np.min(pts_b, axis=0)
@@ -134,18 +128,11 @@ class HandDetector:
         if len(candidates) <= 1:
             return candidates
 
-        # Sort by confidence score descending
         sorted_candidates = sorted(candidates, key=lambda pair: pair[0].score, reverse=True)
         survivors: List[Tuple[HandLandmarks, Any]] = []
 
         for cand in sorted_candidates:
-            hand_obj = cand[0]
-            is_dup = False
-            for kept in survivors:
-                if self._is_duplicate(hand_obj, kept[0]):
-                    is_dup = True
-                    break
-            if not is_dup:
+            if not any(self._is_duplicate(cand[0], kept[0]) for kept in survivors):
                 survivors.append(cand)
 
         return survivors
@@ -153,26 +140,19 @@ class HandDetector:
     def _stabilize_handedness(
         self, candidates: List[Tuple[HandLandmarks, Any]]
     ) -> List[Tuple[HandLandmarks, Any]]:
-        """Stabilize handedness predictions and resolve conflicting duplicate labels."""
+        """Stabilize handedness predictions and resolve conflicting labels."""
         if not candidates:
-            # Do not carry a left-hand identity through a detection gap. A
-            # later hand must be observed again instead of inheriting a stale
-            # label from several frames ago.
             self._history.append([])
             self._left_track.clear()
             return candidates
 
         self._reacquire_fast_left_hand(candidates)
 
-        # If 2 hands are detected and MediaPipe gave both the same label, disambiguate by X coordinate
         if len(candidates) == 2:
             h0, h1 = candidates[0][0], candidates[1][0]
             if h0.handedness is not None and h0.handedness == h1.handedness:
-                # Compare average X coordinates
                 c0_x = float(np.mean([lm.x for lm in h0.landmarks]))
                 c1_x = float(np.mean([lm.x for lm in h1.landmarks]))
-                # The hand further to the left of the image (smaller X)
-                # In standard webcam view: smaller X is user's physical Right hand (mirrored view) or Left
                 if c0_x < c1_x:
                     candidates[0][0].handedness = "Right"
                     candidates[1][0].handedness = "Left"
@@ -180,16 +160,13 @@ class HandDetector:
                     candidates[0][0].handedness = "Left"
                     candidates[1][0].handedness = "Right"
 
-        # Apply temporal smoothing against recent frame history
         current_records: List[Tuple[np.ndarray, str]] = []
         for hand_obj, _ in candidates:
             centroid = np.mean([(lm.x, lm.y) for lm in hand_obj.landmarks], axis=0)
             if hand_obj.handedness and self._history:
-                # Find closest hand in previous frame
                 prev_frame = self._history[-1]
                 for prev_centroid, prev_label in prev_frame:
                     if float(np.linalg.norm(centroid - prev_centroid)) < 0.15:
-                        # If the hand stayed at the same location, keep stable handedness unless score is low
                         if hand_obj.score < 0.85:
                             hand_obj.handedness = prev_label
                         break
@@ -208,14 +185,7 @@ class HandDetector:
     def _reacquire_fast_left_hand(
         self, candidates: List[Tuple[HandLandmarks, Any]]
     ) -> None:
-        """Recover the left label when a fast movement defeats normal matching.
-
-        MediaPipe normally tracks from the preceding frame. During a fast sweep
-        it may redetect the same hand and briefly classify it as Right. Match
-        the closest current proposal to the extrapolated left-hand position,
-        using a bounded movement gate. This changes only the handedness label;
-        it never returns cached landmarks as a fake detection.
-        """
+        """Recover the left label when a fast movement defeats normal matching."""
         if not self._left_track:
             return
 
@@ -244,26 +214,38 @@ class HandDetector:
                 return
         self._left_track.clear()
 
+    @staticmethod
+    def _category_value(category: Any, attr: str, default: Any) -> Any:
+        """Read both Tasks category objects and simple test doubles."""
+        return getattr(category, attr, default)
+
+    def _detect(self, rgb_frame: np.ndarray, timestamp_ms: int) -> Any:
+        mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
+        if self.static_image_mode:
+            return self._hands.detect(mp_image)
+
+        if timestamp_ms <= self._last_timestamp_ms:
+            timestamp_ms = self._last_timestamp_ms + 1
+        self._last_timestamp_ms = timestamp_ms
+        return self._hands.detect_for_video(mp_image, timestamp_ms)
+
+    def _draw_hand(self, frame: np.ndarray, hand: HandLandmarks) -> None:
+        height, width = frame.shape[:2]
+        points = [(int(lm.x * width), int(lm.y * height)) for lm in hand.landmarks]
+
+        for start, end in self._HAND_CONNECTIONS:
+            cv2.line(frame, points[start], points[end], (0, 255, 0), 2)
+
+        for point in points:
+            cv2.circle(frame, point, 3, (0, 0, 255), -1)
+
     def process(
         self,
         frame: np.ndarray,
         draw: bool = True,
         timestamp_ms: Optional[int] = None,
     ) -> Tuple[HandDetectionResult, np.ndarray]:
-        """Process a single BGR video frame and extract hand landmarks.
-
-        Args:
-            frame: Input video frame in OpenCV BGR format (H, W, 3).
-            draw: Whether to render landmark points and skeleton connections
-                on the returned annotated frame.
-            timestamp_ms: Optional frame timestamp in milliseconds.
-
-        Returns:
-            Tuple of:
-                - HandDetectionResult: Structured detection result with landmarks
-                  or None when no hand is present.
-                - np.ndarray: Output frame with landmark visualizations.
-        """
+        """Process a single BGR video frame and extract hand landmarks."""
         if frame is None or frame.size == 0:
             return (
                 HandDetectionResult(
@@ -278,94 +260,64 @@ class HandDetector:
         if timestamp_ms is None:
             timestamp_ms = int(time.time() * 1000)
 
-        # Output frame for drawing overlays
         annotated_frame = frame.copy() if draw else frame
-
-        # Convert BGR to RGB for MediaPipe inference
         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-
-        # Performance optimization: pass by reference
         rgb_frame.flags.writeable = False
-        results = self._hands.process(rgb_frame)
+        results = self._detect(rgb_frame, timestamp_ms)
         rgb_frame.flags.writeable = True
 
         raw_candidates: List[Tuple[HandLandmarks, Any]] = []
+        hand_landmarks = getattr(results, "hand_landmarks", []) or []
+        handedness = getattr(results, "handedness", []) or []
 
-        if results.multi_hand_landmarks:
-            # Extract handedness if available
-            handedness_labels = []
-            if results.multi_handedness:
-                for classification in results.multi_handedness:
-                    label = classification.classification[0].label
-                    score = classification.classification[0].score
-                    handedness_labels.append((label, score))
-
-            for idx, raw_landmarks in enumerate(results.multi_hand_landmarks):
-                landmarks_list: List[Landmark] = []
-                for lm_id, lm in enumerate(raw_landmarks.landmark):
-                    lm_name = (
-                        HAND_LANDMARK_NAMES[lm_id]
-                        if lm_id < len(HAND_LANDMARK_NAMES)
-                        else f"LANDMARK_{lm_id}"
-                    )
-                    landmarks_list.append(
-                        Landmark(
-                            id=lm_id,
-                            name=lm_name,
-                            x=float(lm.x),
-                            y=float(lm.y),
-                            z=float(lm.z),
-                        )
-                    )
-
-                hand_label = None
-                hand_score = 0.0
-                if idx < len(handedness_labels):
-                    hand_label, hand_score = handedness_labels[idx]
-
-                hand_obj = HandLandmarks(
-                    landmarks=landmarks_list,
-                    handedness=hand_label,
-                    score=hand_score,
+        for idx, raw_landmarks in enumerate(hand_landmarks):
+            landmarks_list: List[Landmark] = []
+            for lm_id, lm in enumerate(raw_landmarks):
+                lm_name = (
+                    HAND_LANDMARK_NAMES[lm_id]
+                    if lm_id < len(HAND_LANDMARK_NAMES)
+                    else f"LANDMARK_{lm_id}"
                 )
-                raw_candidates.append((hand_obj, raw_landmarks))
+                landmarks_list.append(
+                    Landmark(
+                        id=lm_id,
+                        name=lm_name,
+                        x=float(lm.x),
+                        y=float(lm.y),
+                        z=float(lm.z),
+                    )
+                )
 
-        # 1. Spatial Non-Maximum Suppression (Eliminates ghost duplicate hands on same physical hand)
+            hand_label = None
+            hand_score = 0.0
+            if idx < len(handedness) and handedness[idx]:
+                category = handedness[idx][0]
+                hand_label = self._category_value(category, "category_name", None)
+                hand_score = float(self._category_value(category, "score", 0.0))
+
+            hand_obj = HandLandmarks(
+                landmarks=landmarks_list,
+                handedness=hand_label,
+                score=hand_score,
+            )
+            raw_candidates.append((hand_obj, raw_landmarks))
+
         valid_candidates = self._suppress_duplicates(raw_candidates)
-
-        # 2. Handedness Stabilization (Eliminates handedness jitter & duplicate-label conflicts)
         if not self.static_image_mode:
             valid_candidates = self._stabilize_handedness(valid_candidates)
 
         detected_hands: List[HandLandmarks] = [pair[0] for pair in valid_candidates]
 
-        # 3. Draw ONLY the surviving, valid hands (Prevents duplicate visual skeleton flickering)
         if draw:
-            for _, raw_landmarks in valid_candidates:
-                self.mp_drawing.draw_landmarks(
-                    annotated_frame,
-                    raw_landmarks,
-                    self.mp_hands.HAND_CONNECTIONS,
-                    self.mp_drawing_styles.get_default_hand_landmarks_style(),
-                    self.mp_drawing_styles.get_default_hand_connections_style(),
-                )
+            for hand, _ in valid_candidates:
+                self._draw_hand(annotated_frame, hand)
 
-        if detected_hands:
-            primary_hand = detected_hands[0]
-            detection_result = HandDetectionResult(
-                hand_detected=True,
-                hand=primary_hand,
-                all_hands=detected_hands,
-                frame_timestamp_ms=timestamp_ms,
-            )
-        else:
-            detection_result = HandDetectionResult(
-                hand_detected=False,
-                hand=None,
-                all_hands=[],
-                frame_timestamp_ms=timestamp_ms,
-            )
-
+        detection_result = HandDetectionResult(
+            hand_detected=bool(detected_hands),
+            hand=detected_hands[0] if detected_hands else None,
+            all_hands=detected_hands,
+            frame_timestamp_ms=timestamp_ms,
+        )
         return detection_result, annotated_frame
 
     def close(self) -> None:
