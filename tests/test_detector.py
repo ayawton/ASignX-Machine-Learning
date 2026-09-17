@@ -2,6 +2,8 @@
 Unit tests for ASignX HandDetector.
 """
 
+from types import SimpleNamespace
+
 import numpy as np
 import pytest
 
@@ -48,6 +50,38 @@ def test_detector_blank_image_returns_null() -> None:
         assert result.to_tree_string() == "Hand → null"
         assert result.to_dict()["hand"] is None
         assert annotated.shape == black_frame.shape
+    finally:
+        detector.close()
+
+
+def test_detector_accepts_tasks_api_landmark_lists() -> None:
+    """MediaPipe Tasks returns each hand as a plain list of landmarks."""
+    detector = HandDetector(static_image_mode=True)
+
+    class FakeHandLandmarker:
+        def detect(self, _image):
+            landmarks = [
+                SimpleNamespace(x=0.1 + index * 0.01, y=0.2, z=-0.01)
+                for index in range(21)
+            ]
+            category = SimpleNamespace(category_name="Right", score=0.99)
+            return SimpleNamespace(
+                hand_landmarks=[landmarks],
+                handedness=[[category]],
+            )
+
+        def close(self) -> None:
+            pass
+
+    try:
+        detector._hands.close()
+        detector._hands = FakeHandLandmarker()
+        result, _ = detector.process(np.zeros((64, 64, 3), dtype=np.uint8), draw=False)
+
+        assert result.hand_detected is True
+        assert result.hand is not None
+        assert result.hand.handedness == "Right"
+        assert len(result.hand.landmarks) == 21
     finally:
         detector.close()
 
