@@ -3,4 +3,5 @@
 mediapipe==1.0.1
 opencv-contrib-python>=5.0.0
 numpy>=2.0.0
+torch>=2.2.0
 pytest>=8.0.0

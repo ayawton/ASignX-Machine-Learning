@@ -21,7 +21,7 @@ import cv2
 from asignx import CameraError, HandDetector, VisualDebugger, WebcamStream
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="ASignX Hand Recognition Module - Real-time Hand & Landmark Tracker"
     )
@@ -84,7 +84,19 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Continuously print structured landmark tree to console",
     )
-    return parser.parse_args()
+    parser.add_argument(
+        "--sign-model",
+        help="Optional static-sign .pth checkpoint for live classification",
+    )
+    parser.add_argument(
+        "--sign-confidence",
+        type=float,
+        default=0.8,
+        help="Minimum static-sign confidence (default: 0.8)",
+    )
+    parser.add_argument("--sign-stable-frames", type=int, default=5)
+    parser.add_argument("--sign-release-frames", type=int, default=10)
+    return parser.parse_args(argv)
 
 
 def run_pipeline(args: argparse.Namespace) -> None:
@@ -92,6 +104,16 @@ def run_pipeline(args: argparse.Namespace) -> None:
     print(" ASignX - Hand Recognition Module")
     print(f" Real-Time Hand Landmark Tracking (up to {args.max_hands} hands)")
     print("=" * 60)
+
+    sign_recognizer = None
+    if args.sign_model:
+        from ml.predict import SignPredictor, SignRecognizer
+
+        sign_recognizer = SignRecognizer(
+            SignPredictor(args.sign_model, args.sign_confidence),
+            stable_frames=args.sign_stable_frames,
+            release_frames=args.sign_release_frames,
+        )
 
     try:
         exposure_val = None if args.exposure.lower() == "auto" else float(args.exposure)
@@ -107,13 +129,17 @@ def run_pipeline(args: argparse.Namespace) -> None:
         print(f"\n[ERROR] Camera initialization failed:\n{e}", file=sys.stderr)
         sys.exit(1)
 
-    detector = HandDetector(
-        static_image_mode=False,
-        max_num_hands=args.max_hands,
-        model_complexity=args.model_complexity,
-        min_detection_confidence=args.min_detection_confidence,
-        min_tracking_confidence=args.min_tracking_confidence,
-    )
+    try:
+        detector = HandDetector(
+            static_image_mode=False,
+            max_num_hands=args.max_hands,
+            model_complexity=args.model_complexity,
+            min_detection_confidence=args.min_detection_confidence,
+            min_tracking_confidence=args.min_tracking_confidence,
+        )
+    except Exception:
+        camera.stop()
+        raise
     visualizer = VisualDebugger()
 
     window_name = "ASignX - Hand Recognition Module"
@@ -146,6 +172,11 @@ def run_pipeline(args: argparse.Namespace) -> None:
                 frame,
                 draw=draw_landmarks,
             )
+
+            if sign_recognizer is not None:
+                for recognition in sign_recognizer.update(result.all_hands):
+                    if recognition.emitted_label:
+                        print(f"[SIGN] {recognition.hand}: {recognition.emitted_label}")
 
             # Compute smoothed FPS
             now = time.time()

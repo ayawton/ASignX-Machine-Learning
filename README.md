@@ -1,188 +1,185 @@
-# ASignX - Hand Recognition Module
+# ASignX - Hand and Moving-Sign Recognition
 
-The **Hand Recognition Module** is the foundational computer-vision component of the **ASignX** Sign Language Recognition System. Its sole responsibility is to detect and track a user's hand (supporting single-hand and dual-hand tracking) through a webcam and extract its 21 3D hand landmarks in real time at fluid **>=30 FPS**.
+ASignX detects and tracks up to two hands with MediaPipe, exports each hand's
+21 three-dimensional landmarks, and includes a video-to-LSTM pipeline for
+training and recognizing moving signs and gestures.
 
-> **Scope Note:** This module strictly handles detection, tracking, and coordinate extraction. Sign classification (e.g. `HELLO`, `YES`, `NO`) is intentionally decoupled and performed by downstream modules.
+The detector and classifier are deliberately separate: the detector can still
+be used by itself, while sequence models are trained only for the labels in
+your video dataset.
 
----
+## Supported recognition workflows
 
-## Pipeline
+- Landmark tracking: one or two hands at real-time webcam speed.
+- Static pose classification: a single normalized landmark frame.
+- Moving signs and gestures: a time-ordered landmark clip, including whole-hand
+  travel and finger articulation. Typical moving classes include `J`, `Z`,
+  `HELLO`, `THANK_YOU`, `PLEASE`, and `HELP`.
+- Two-hand gestures: use the default `both` mode. Features are stored in stable
+  `Left` then `Right` slots, with missed detections represented explicitly.
 
-```text
-Webcam (Threaded Asynchronous Frame Grabber)
-   ↓
-Video Frame (OpenCV BGR, Buffer Size 1, Exposure-Optimized)
-   ↓
-MediaPipe Hands (static_image_mode=False, max_num_hands=2)
-   ↓
-Hand Detection (Confidence check for up to 2 hands)
-   ↓
-21 Hand Landmarks per hand (Preserved indices 0..20)
-   ↓
-Structured Landmark Coordinates (Left & Right hands)
-```
+Recognition is data-driven. A label is supported after you provide and train
+on representative videos for that label; the names above are examples, not a
+built-in pretrained vocabulary.
 
----
+## Installation
 
-## 21 Hand Landmarks Map
-
-| Index | Landmark Name | Region |
-|:-----:|:--------------|:-------|
-| 0 | `WRIST` | Wrist |
-| 1 | `THUMB_CMC` | Thumb carpometacarpal |
-| 2 | `THUMB_MCP` | Thumb metacarpophalangeal |
-| 3 | `THUMB_IP` | Thumb interphalangeal |
-| 4 | `THUMB_TIP` | Thumb tip |
-| 5 | `INDEX_FINGER_MCP` | Index metacarpophalangeal |
-| 6 | `INDEX_FINGER_PIP` | Index proximal interphalangeal |
-| 7 | `INDEX_FINGER_DIP` | Index distal interphalangeal |
-| 8 | `INDEX_FINGER_TIP` | Index tip |
-| 9 | `MIDDLE_FINGER_MCP` | Middle metacarpophalangeal |
-| 10 | `MIDDLE_FINGER_PIP` | Middle proximal interphalangeal |
-| 11 | `MIDDLE_FINGER_DIP` | Middle distal interphalangeal |
-| 12 | `MIDDLE_FINGER_TIP` | Middle tip |
-| 13 | `RING_FINGER_MCP` | Ring metacarpophalangeal |
-| 14 | `RING_FINGER_PIP` | Ring proximal interphalangeal |
-| 15 | `RING_FINGER_DIP` | Ring distal interphalangeal |
-| 16 | `RING_FINGER_TIP` | Ring tip |
-| 17 | `PINKY_MCP` | Pinky metacarpophalangeal |
-| 18 | `PINKY_PIP` | Pinky proximal interphalangeal |
-| 19 | `PINKY_DIP` | Pinky distal interphalangeal |
-| 20 | `PINKY_TIP` | Pinky tip |
-
----
-
-## Structured Output
-
-### Dual-Hand Output (When 2 hands are detected):
-
-```text
-Hands (2 detected)
-├── Hand (Left)
-│   ├── Landmark  0 (WRIST            ) → (+0.4512, +0.6210, -0.0120)
-│   ├── Landmark  1 (THUMB_CMC        ) → (+0.4105, +0.5821, -0.0185)
-│   ├── ...
-│   └── Landmark 20 (PINKY_TIP        ) → (+0.3182, +0.3411, -0.0380)
-└── Hand (Right)
-    ├── Landmark  0 (WRIST            ) → (+0.7523, +0.6514, -0.0152)
-    ├── Landmark  1 (THUMB_CMC        ) → (+0.7931, +0.5902, -0.0211)
-    ├── ...
-    └── Landmark 20 (PINKY_TIP        ) → (+0.8845, +0.3620, -0.0410)
-```
-
-### Single-Hand Output (When 1 hand is detected):
-
-```text
-Hand (Right)
-├── Landmark  0 (WRIST            ) → (+0.5213, +0.7429, -0.0124)
-├── Landmark  1 (THUMB_CMC        ) → (+0.4612, +0.6811, -0.0210)
-├── ...
-└── Landmark 20 (PINKY_TIP        ) → (+0.3245, +0.3418, -0.0452)
-```
-
-### No-Hand Output:
-
-```text
-Hand → null
-```
-*(No artificial landmark values are generated).*
-
----
-
-## Performance Optimizations (Reaching 30+ FPS)
-
-1. **Threaded Frame Acquisition (`WebcamStream(threaded=True)`)**:
-   Decouples OpenCV hardware frame capture into a dedicated background daemon thread. The inference loop immediately reads the newest frame in `<0.05ms` without blocking for sensor exposure.
-2. **Camera Exposure Lock (`--exposure -5.0`)**:
-   Standard Windows laptop webcams automatically drop framerate to 15 FPS (or 7.5 FPS at 720p) in indoor lighting due to auto-exposure priority. Setting DirectShow exposure to `-5.0` ($2^{-5} = 1/32\text{s}$) locks in **30 FPS**.
-3. **Optimized Resolution & Complexity Defaults**:
-   - Default resolution: `640x480` for smooth >=30-60 FPS performance.
-   - Model complexity: `1` (full accuracy) or `0` (ultra-fast lite model).
-4. **Motion-Aware Left-Hand Reacquisition**:
-   - The most recent left-hand motion is extrapolated across the next frame.
-   - A bounded 0.45 normalized-frame association gate preserves the `Left`
-     label after a rapid sweep, without emitting stale landmarks during an
-     actual detection loss.
-
----
-
-## Quickstart
-
-### 1. Installation
-
-Dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Run Real-Time Visual Debugging App
+The main dependencies are MediaPipe Tasks, OpenCV, NumPy, PyTorch, and pytest.
+The MediaPipe model is bundled at `asignx/assets/hand_landmarker.task`.
+
+## Real-time landmark tracker
 
 ```bash
 python main.py
 ```
 
-Options:
-```bash
-python main.py --help
-  --camera CAMERA           Webcam device index (default: 0)
-  --width WIDTH             Webcam width (default: 640 for >=30 FPS)
-  --height HEIGHT           Webcam height (default: 480 for >=30 FPS)
-  --max-hands MAX_HANDS     Maximum hands to track (default: 2)
-  --model-complexity {0,1}  0=Lite (fastest), 1=Full (default: 1)
-  --min-detection-confidence FLOAT  Detection threshold (default: 0.6 for rapid reacquisition)
-  --exposure EXPOSURE       Exposure: '-5.0' (locks 30 FPS), '-6.0' (60 FPS), or 'auto' (default: -5.0)
-  --no-threads              Disable background threaded reader
-  --print-stream            Continuously stream landmark tree to terminal
+Useful options:
+
+```text
+--camera CAMERA
+--width WIDTH
+--height HEIGHT
+--max-hands {1,2}
+--model-complexity {0,1}
+--min-detection-confidence FLOAT
+--exposure -5.0|-6.0|auto
+--no-threads
+--print-stream
 ```
 
-#### Keyboard Controls (Visual Window)
+Keyboard controls are `q`/Escape to exit, `d` to toggle landmark drawing, `h`
+to toggle the HUD, `e` to cycle exposure, `p` to print landmarks, and `s` to
+save a frame plus JSON.
 
-* **`q`** or **`Esc`**: Exit application cleanly.
-* **`d`**: Toggle hand landmark points and skeleton overlay on/off.
-* **`h`**: Toggle HUD status banner and key coordinate panels on/off.
-* **`e`**: Cycle exposure mode between **30 FPS locked (-5.0)**, **60 FPS locked (-6.0)**, and **Auto-Exposure**.
-* **`p`**: Print the current frame's complete structured landmark tree to terminal.
-* **`s`**: Save current visual snapshot (`.jpg`) and structured landmark coordinates (`.json`) into `snapshots/`.
+## Train moving signs from videos
 
----
+### 1. Arrange recordings by label
 
-## Programmatic API Usage
+Each video is one independent recording session:
+
+```text
+videos/
+|-- J/
+|   |-- signer1_take1.mp4
+|   |-- signer1_take2.mp4
+|   `-- signer2_take1.mp4
+|-- Z/
+|   |-- signer1_take1.mp4
+|   |-- signer1_take2.mp4
+|   `-- signer2_take1.mp4
+`-- HELLO/
+    `-- ...
+```
+
+At least three videos per label are required so train, validation, and test
+sets can use different sessions. Ten or more varied recordings per label is a
+more realistic starting point. Do not cut one recording into copies across
+these sets: that leaks nearly identical frames and produces misleading scores.
+
+For each recording:
+
+- Include the complete gesture, with a short neutral lead-in and lead-out.
+- Keep camera orientation and mirroring consistent with live inference.
+- Keep both hands visible for two-hand signs.
+- Vary signer, distance, lighting, background, and speed across recordings.
+- Use the same handedness policy for every class.
+
+### 2. Convert videos into landmark sequences
+
+The default preserves both hands, samples at 15 FPS, and maps each complete
+gesture to 30 timesteps:
+
+```bash
+python -m ml.prepare_videos --input videos --output ml/data/sequences
+```
+
+For a strictly one-hand dataset, select a hand consistently:
+
+```bash
+python -m ml.prepare_videos --input videos --output ml/data/sequences_right --hand Right
+```
+
+Important options:
+
+```text
+--sequence-length 30
+--target-fps 15
+--hand {single,Left,Right,both}
+--min-detection-ratio 0.5
+--overwrite
+--skip-invalid
+```
+
+Preparation fails on malformed or low-detection videos by default. Each output
+`.npz` stores the label, session ID, preprocessing contract, source metadata,
+and a fixed-length feature sequence. Duplicate source videos are rejected.
+
+Unlike static-pose preprocessing, sequence preprocessing uses one spatial
+reference for the whole clip. It therefore retains wrist movement across time
+instead of accidentally erasing the motion signal.
+
+### 3. Train and evaluate
+
+```bash
+python -m ml.train_sequence --data-dir ml/data/sequences --output ml/models/sequence_classifier.pth --epochs 50
+```
+
+Training creates:
+
+- `sequence_classifier.pth`: model, labels, feature width, preprocessing
+  version, sequence length, and training metadata.
+- `sequence_classifier.splits.json`: deterministic, session-disjoint splits.
+- `sequence_classifier.metrics.json`: validation/test metrics, per-class
+  scores, and confusion matrix.
+
+The held-out test set is evaluated only after selecting the best epoch by
+validation loss. If dataset contents change, the saved split manifest is
+rejected so an old split cannot silently be reused.
+
+### 4. Run live moving-sign recognition
+
+```bash
+python -m ml.predict_sequence --model ml/models/sequence_classifier.pth
+```
+
+For a one-hand checkpoint, pass the same selection used during preparation:
+
+```bash
+python -m ml.predict_sequence --model ml/models/sequence_classifier.pth --hand Right
+```
+
+Press `r` to clear the temporal window and `q`/Escape to exit. Predictions are
+confidence-thresholded and stabilized across consecutive windows to reduce
+duplicate output.
+
+## Programmatic detector API
 
 ```python
-from asignx import WebcamStream, HandDetector
+from asignx import HandDetector, WebcamStream
 
-# 1. Initialize threaded camera (locked at 30 FPS) and 2-hand detector
-with WebcamStream(camera_index=0, width=640, height=480, threaded=True, exposure=-5.0) as camera:
+with WebcamStream(camera_index=0, width=640, height=480) as camera:
     with HandDetector(max_num_hands=2) as detector:
         for frame in camera.stream():
-            # 2. Process frame
-            result, annotated_frame = detector.process(frame, draw=True)
-
-            # 3. Access hands
-            if result.hand_detected:
-                print(f"Detected {result.hands_count} hand(s)")
-                
-                # Direct access to specific hands
-                if result.left_hand is not None:
-                    print(f"Left hand wrist: {result.left_hand[0].as_tuple()}")
-                if result.right_hand is not None:
-                    print(f"Right hand wrist: {result.right_hand[0].as_tuple()}")
-
-                # Export to NumPy array (shape: 21, 3 per hand)
-                coords_np = result.hand.to_numpy()
-
-                # Export to JSON
-                json_output = result.to_json()
-            else:
-                print("Hand -> null")
+            result, annotated = detector.process(frame, draw=True)
+            if result.left_hand is not None:
+                left_coordinates = result.left_hand.to_numpy()  # (21, 3)
 ```
 
----
+## Landmark indices
 
-## Running Tests
+MediaPipe's index order is preserved: wrist `0`; thumb `1-4`; index finger
+`5-8`; middle finger `9-12`; ring finger `13-16`; and pinky `17-20`.
 
-Execute the automated test suite with pytest:
+## Tests
 
 ```bash
 pytest -v
 ```
+
+The tests cover the detector, landmark models, motion-preserving sequence
+normalization, missed-frame interpolation, two-hand ordering, sequence storage,
+checkpoint loading, and inference shapes.
