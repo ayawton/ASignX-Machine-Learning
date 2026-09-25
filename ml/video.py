@@ -9,10 +9,98 @@ from typing import Any, Sequence
 import cv2
 import numpy as np
 
-from ml.preprocessing import fill_landmark_gaps, NUM_FEATURES, normalize_landmark_sequence
+from ml.preprocessing import fill_landmark_gaps, normalize_landmark_sequence
 
 VIDEO_EXTENSIONS = {".avi", ".m4v", ".mkv", ".mov", ".mp4", ".webm"}
 HAND_SELECTIONS = ("single", "Left", "Right", "both")
+
+
+class LandmarkSequenceCapture:
+    """Accumulate detected hands in frame order for one complete gesture."""
+
+    def __init__(self, hand_selection: str = "both") -> None:
+        if hand_selection not in HAND_SELECTIONS:
+            raise ValueError(f"hand_selection must be one of {HAND_SELECTIONS}")
+        self.hand_selection = hand_selection
+        self.hand_count = 2 if hand_selection == "both" else 1
+        self._frames: list[np.ndarray] = []
+        self._valid: list[np.ndarray] = []
+        self._handedness: Counter[str] = Counter()
+
+    @property
+    def frame_count(self) -> int:
+        return len(self._frames)
+
+    @property
+    def frames_with_hand(self) -> int:
+        return sum(bool(mask.any()) for mask in self._valid)
+
+    @property
+    def detection_ratio(self) -> float:
+        return self.frames_with_hand / self.frame_count if self.frame_count else 0.0
+
+    def add_hands(self, hands: Sequence[Any]) -> None:
+        """Store one sampled frame, including an empty one on detection loss."""
+        frame = np.full((self.hand_count, 21, 3), np.nan, dtype=np.float32)
+        valid = np.zeros(self.hand_count, dtype=bool)
+        if self.hand_selection == "both":
+            selected = [
+                next((hand for hand in hands if hand.handedness == label), None)
+                for label in ("Left", "Right")
+            ]
+        else:
+            selected = [_select_one(hands, self.hand_selection)]
+        for slot, hand in enumerate(selected):
+            if hand is None:
+                continue
+            landmarks = np.asarray(hand.to_numpy(), dtype=np.float32)
+            if landmarks.shape != (21, 3) or not np.isfinite(landmarks).all():
+                raise ValueError("Detected hand must contain 21 finite 3D landmarks")
+            frame[slot] = landmarks
+            valid[slot] = True
+            self._handedness[hand.handedness or "Unknown"] += 1
+        self._frames.append(frame)
+        self._valid.append(valid)
+
+    def finish(
+        self,
+        target_length: int = 30,
+        *,
+        min_frames: int = 2,
+        min_detection_ratio: float = 0.5,
+        target_fps: float | None = 15.0,
+        source: str = "<frames>",
+    ) -> tuple[np.ndarray, str, dict[str, Any]]:
+        """Validate and convert the complete take using the video feature contract."""
+        if min_frames < 1 or target_length < 1:
+            raise ValueError("min_frames and target_length must be positive")
+        if not 0 < min_detection_ratio <= 1:
+            raise ValueError("min_detection_ratio must be in (0, 1]")
+        if self.frame_count < min_frames:
+            raise ValueError(
+                f"Too few sampled frames: {self.frame_count}; need at least {min_frames}"
+            )
+        if self.detection_ratio < min_detection_ratio:
+            raise ValueError(
+                f"Hand detected in only {self.detection_ratio:.1%} of sampled frames; "
+                f"need at least {min_detection_ratio:.1%}"
+            )
+        raw = np.stack(self._frames)
+        valid = np.stack(self._valid)
+        raw, valid = fill_landmark_gaps(raw, valid)
+        normalized = normalize_landmark_sequence(raw, valid=valid)
+        normalized = resample_sequence(normalized, target_length, interpolate=True)
+        dominant = self._handedness.most_common(1)[0][0] if self._handedness else ""
+        metadata = {
+            "source": source,
+            "decoded_frames": self.frame_count,
+            "frames_with_hand": self.frames_with_hand,
+            "detection_ratio": self.detection_ratio,
+            "hand_selection": self.hand_selection,
+            "feature_width": int(normalized.shape[1]),
+            "target_fps": target_fps,
+        }
+        return normalized.astype(np.float32), dominant, metadata
 
 
 def extract_frames(
@@ -113,7 +201,7 @@ def extract_video_landmarks(
     """Extract a normalized landmark trajectory from a video or frame list.
 
     ``hand_selection='both'`` produces 126 features in stable Left/Right slots;
-    the other modes produce 63. Missed detections remain zero feature rows, so
+    the other modes produce 63. Brief missed detections are interpolated, so
     timing is never compressed by silently dropping frames.
     """
     if hand_selection not in HAND_SELECTIONS:
@@ -133,54 +221,39 @@ def extract_video_landmarks(
 
         detector = HandDetector(max_num_hands=2)
 
-    hand_count = 2 if hand_selection == "both" else 1
-    raw = np.full((len(frames), hand_count, 21, 3), np.nan, dtype=np.float32)
-    valid = np.zeros((len(frames), hand_count), dtype=bool)
-    handedness: Counter[str] = Counter()
+    capture = LandmarkSequenceCapture(hand_selection)
     fps = float(target_fps or 30.0)
     try:
         for frame_index, frame in enumerate(frames):
             timestamp_ms = int(round(frame_index * 1000.0 / fps))
             result, _ = detector.process(frame, draw=False, timestamp_ms=timestamp_ms)
-            hands = result.all_hands
-            if hand_selection == "both":
-                for slot, label in enumerate(("Left", "Right")):
-                    hand = next((item for item in hands if item.handedness == label), None)
-                    if hand is not None:
-                        raw[frame_index, slot] = hand.to_numpy()
-                        valid[frame_index, slot] = True
-                        handedness[label] += 1
-            else:
-                hand = _select_one(hands, hand_selection)
-                if hand is not None:
-                    raw[frame_index, 0] = hand.to_numpy()
-                    valid[frame_index, 0] = True
-                    handedness[hand.handedness or "Unknown"] += 1
+            capture.add_hands(result.all_hands)
     finally:
         if owns_detector:
             detector.close()
 
-    if not valid.any():
+    if capture.frames_with_hand == 0:
         raise ValueError(f"No usable hand landmarks detected in {source}")
-    original_valid = valid.copy()
-    raw, filled_valid = fill_landmark_gaps(raw, valid)
-    normalized = normalize_landmark_sequence(raw, valid=filled_valid)
-    if hand_count == 1:
-        normalized = normalized[:, :NUM_FEATURES]
-    if target_length is not None:
-        normalized = resample_sequence(
-            normalized, target_length=target_length, interpolate=interpolate
+    if target_length is None:
+        target_length = capture.frame_count
+    if interpolate:
+        normalized, dominant, metadata = capture.finish(
+            target_length,
+            min_frames=1,
+            min_detection_ratio=1 / capture.frame_count,
+            target_fps=target_fps,
+            source=source,
         )
-    dominant = handedness.most_common(1)[0][0] if handedness else ""
-    metadata = {
-        "source": source,
-        "decoded_frames": len(frames),
-        "frames_with_hand": int(original_valid.any(axis=1).sum()),
-        "detection_ratio": float(original_valid.any(axis=1).mean()),
-        "hand_selection": hand_selection,
-        "feature_width": int(normalized.shape[1]),
-        "target_fps": target_fps,
-    }
+    else:
+        # Preserve the original padding/downsampling option for existing callers.
+        normalized, dominant, metadata = capture.finish(
+            capture.frame_count,
+            min_frames=1,
+            min_detection_ratio=1 / capture.frame_count,
+            target_fps=target_fps,
+            source=source,
+        )
+        normalized = resample_sequence(normalized, target_length, interpolate=False)
     if return_metadata:
         return normalized.astype(np.float32), dominant, metadata
     return normalized.astype(np.float32), dominant

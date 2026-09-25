@@ -57,7 +57,45 @@ save a frame plus JSON.
 
 ## Train moving signs from videos
 
-### 1. Arrange recordings by label
+You can collect moving signs directly from the webcam, or import recordings.
+Both methods save sequences for the same `ml.train_sequence` command.
+
+### Option A: capture complete gestures from the webcam
+
+Open a terminal in the project folder and run this once for each sign label:
+
+```bash
+python -m ml.collect_sequence --label J --takes 3
+python -m ml.collect_sequence --label Z --takes 3
+```
+
+In the camera window, press `Space` to start a take, perform the entire moving
+sign, then press `Space` again to save it. Repeat for the next take. `R`
+discards the current take; `Q` or Escape exits. With `--takes 3`, the program
+exits after three accepted takes. You can restart the same command later to
+add more takes. Each saved take gets a unique session ID automatically.
+
+The label comes from `--label`; there is no need to edit a Python file or CSV.
+For a one-hand dataset, use `--hand Right`, `--hand Left`, or `--hand single`
+consistently for every label. The default `--hand both` supports one- and
+two-hand signs in stable Left/Right slots. Keep the same hand mode and
+`--sequence-length` for every take in one output directory.
+
+The collector samples at 15 FPS and saves each accepted gesture as a 30-step
+`.npz` file under `ml/data/sequences/<label>/`. It rejects takes that are too
+short, have too few hand detections, or lack usable landmarks. The default
+maximum take length is 10 seconds. Change these settings with `--target-fps`,
+`--sequence-length`, `--min-frames`, `--min-detection-ratio`, and
+`--max-seconds` if needed.
+
+Record at least three independent takes for each of at least two labels; more
+varied takes will usually generalize better. Then follow "Train and evaluate"
+below. Static capture with `ml.collect_data` writes `landmarks.csv` and is
+trained separately with `ml.train`; it does not change these sequence files.
+
+### Option B: import existing videos
+
+#### 1. Arrange recordings by label
 
 Each video is one independent recording session:
 
@@ -88,19 +126,19 @@ For each recording:
 - Vary signer, distance, lighting, background, and speed across recordings.
 - Use the same handedness policy for every class.
 
-### 2. Convert videos into landmark sequences
+#### 2. Convert videos into landmark sequences
 
 The default preserves both hands, samples at 15 FPS, and maps each complete
 gesture to 30 timesteps:
 
 ```bash
-python -m ml.prepare_videos --input videos --output ml/data/sequences
+python -m ml.prepare_videos --input videos --output ml/data/video_sequences
 ```
 
 For a strictly one-hand dataset, select a hand consistently:
 
 ```bash
-python -m ml.prepare_videos --input videos --output ml/data/sequences_right --hand Right
+python -m ml.prepare_videos --input videos --output ml/data/video_sequences_right --hand Right
 ```
 
 Important options:
@@ -117,16 +155,22 @@ Important options:
 Preparation fails on malformed or low-detection videos by default. Each output
 `.npz` stores the label, session ID, preprocessing contract, source metadata,
 and a fixed-length feature sequence. Duplicate source videos are rejected.
+Keep imported videos in a separate output directory from manually captured
+takes, because rerunning the importer checks that its output matches its input.
 
 Unlike static-pose preprocessing, sequence preprocessing uses one spatial
 reference for the whole clip. It therefore retains wrist movement across time
 instead of accidentally erasing the motion signal.
 
-### 3. Train and evaluate
+### Train and evaluate
 
 ```bash
 python -m ml.train_sequence --data-dir ml/data/sequences --output ml/models/sequence_classifier.pth --epochs 50
 ```
+
+Use `--data-dir ml/data/video_sequences` instead if you imported videos with
+the command above. The sequence dataset must use one consistent hand mode and
+sequence length.
 
 Training creates:
 
@@ -140,7 +184,7 @@ The held-out test set is evaluated only after selecting the best epoch by
 validation loss. If dataset contents change, the saved split manifest is
 rejected so an old split cannot silently be reused.
 
-### 4. Run live moving-sign recognition
+### Run live moving-sign recognition
 
 ```bash
 python -m ml.predict_sequence --model ml/models/sequence_classifier.pth
@@ -181,5 +225,5 @@ pytest -v
 ```
 
 The tests cover the detector, landmark models, motion-preserving sequence
-normalization, missed-frame interpolation, two-hand ordering, sequence storage,
-checkpoint loading, and inference shapes.
+normalization, missed-frame interpolation, webcam take controls, two-hand
+ordering, sequence storage, checkpoint loading, and inference shapes.
