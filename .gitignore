@@ -3,3 +3,8 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 
+
+# Datasets and models
+ml/data/
+ml/models/
+**/__pycache__/

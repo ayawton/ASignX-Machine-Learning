@@ -8,6 +8,9 @@ The detector and classifier are deliberately separate: the detector can still
 be used by itself, while sequence models are trained only for the labels in
 your video dataset.
 
+# Run Command
+python main.py --sign-model ml/models/sign_classifier.pth
+
 ## Supported recognition workflows
 
 - Landmark tracking: one or two hands at real-time webcam speed.
