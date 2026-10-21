@@ -1,0 +1,17 @@
+Loading and validating original static data...
+retained validation accuracy 0.976433906170691 macro F1 0.9733340966989431 threshold F1 0.9737910249650897
+retained test accuracy 0.5318746112027696 macro F1 0.5949074572196463 threshold F1 0.6305891520853796
+candidate validation accuracy 0.9796969037778261 macro F1 0.9784634900161974 threshold F1 0.9783552932084736
+candidate test accuracy 0.48005301165715525 macro F1 0.5649442121058497 threshold F1 0.6097706502722965
+Reevaluating the dynamic checkpoint on its matching recovered dataset...
+{"samples": 11, "test_macro_f1": 1.0, "identity_known": false}
+| Metric | Retained | Candidate |
+|---|---:|---:|
+| Validation macro F1 | 97.33% | 97.85% |
+| Test accuracy | 53.19% | 48.01% |
+| Test macro F1 | 59.49% | 56.49% |
+| Test macro F1 at threshold 0.8 | 63.06% | 60.98% |
+| Accepted test coverage at threshold 0.8 | 85.79% | 85.13% |
+| Accepted-only test accuracy at threshold 0.8 | 56.81% | 53.60% |
+| M test F1 | 36.73% | 46.72% |
+| N test F1 | 22.81% | 24.85% |

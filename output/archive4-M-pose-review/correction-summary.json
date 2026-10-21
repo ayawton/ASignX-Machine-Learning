@@ -1,0 +1,35 @@
+{
+  "status": "committed",
+  "reason": "Owner requested exclusion of the downward three-extended-fingers pose exemplified by M (100).jpg. Image classification was visually reviewed, separately from model predictions.",
+  "images_scanned": 7900,
+  "excluded_pose_image_files": 6893,
+  "excluded_pose_unique_image_contents": 3869,
+  "matching_rule": "All 63 canonical float32 landmark coordinates within absolute 1e-6; M label and verified archive-4 source session; no approximate nearest-pose deletion.",
+  "source_sha256": "24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+  "original_dataset_sha256": "b72cde2aa886f665d9b89248c9fd98cc759ea6fbc4cfdc8993435a336ee8d58d",
+  "reviewed_dataset_sha256": "4a160bec73556408c12f9457577c765c89e9f8cf09eae3d658fe39d3064f58cd",
+  "removed_count": 2252,
+  "original_rows": 159986,
+  "reviewed_rows": 157734,
+  "remaining_M_rows": 3388,
+  "remaining_archive4_M_rows": 1062,
+  "unmatched_archive4_M_rows_preserved": 207,
+  "historical_retry_check": "208 unique no-stored-match images retried without padding-coordinate restoration; no additional exact matches.",
+  "parent_correction_record": "archive\\data-corrections\\remove-wrong-M-20261021T150522127835Z\\correction.json",
+  "backup_csv": "archive\\data-corrections\\remove-downward-three-M-20261021T152303819569Z\\landmarks.before.csv",
+  "reviewed_split_counts": {
+    "train": 109223,
+    "validation": 13791,
+    "test": 34720
+  },
+  "split_policy": "Retain existing sample partitions; remap indices only.",
+  "models_and_experiment_inputs_sha256_before": {
+    "ml\\models\\sequence_classifier.pth": "1e2228a5970d18b19a25f62cb76fc560aa4c5e33962a8bc2a362a87309db2ec9",
+    "ml\\models\\sign_classifier_canonical.pth": "98559a10c553c23d2c6aad227f52416b59ad92483bf4f079cfca5eb512bf5b66",
+    "output\\weak-class-training\\model.pth": "0294399a7d3bab77e096acba189739a5c7bb9b581290670e077870257da47864",
+    "output\\weak-class-training\\combined.csv": "d7af7db49fc194d1a2494477519765c9c7d45599da00fce2ab9ab7148897e39b"
+  },
+  "checkpoint_not_retrained": true,
+  "historical_metrics": "Old reports describe their historical dataset; no score improvement claimed from filtering test data.",
+  "protected_models_and_experiments_unchanged": true
+}

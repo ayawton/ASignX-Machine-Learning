@@ -1,0 +1,25 @@
+{
+  "review_date": "2026-10-20",
+  "tests": {
+    "full_suite_passed": 108,
+    "warnings": 13,
+    "focused_followup_passed": 13
+  },
+  "production_inputs_unchanged": {
+    "ml\\data\\landmarks.csv": true,
+    "ml\\models\\sequence_classifier.pth": true,
+    "ml\\models\\sign_classifier.pth": true,
+    "ml\\models\\sign_classifier_canonical.pth": true
+  },
+  "studio_smoke": {
+    "ok": true,
+    "tk": 8.6,
+    "opencv": "5.0.0",
+    "blank_frame_hands": 0,
+    "shape": [
+      30,
+      126
+    ]
+  },
+  "no_new_human_recordings": true
+}

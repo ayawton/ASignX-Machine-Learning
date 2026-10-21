@@ -1,0 +1,17 @@
+{
+  "csv_row": 113222,
+  "dataset_sha256": "17249bc657b7ed52f1d6a39f5d3bbbf6b8d2445efdab97f64094df68855647db",
+  "label": "N",
+  "session_id": "ext_8ddcbfef9faa2c584a897540",
+  "archive": "C:\\Users\\jibbi\\Downloads\\archive (4).zip",
+  "archive_sha256": "24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+  "archive_member": "ASL_Alphabet_Dataset/asl_alphabet_train/N/1.jpg",
+  "image_sha256": "db4418edd739fff1bcc2a05a85ae300e0b1622476d27fac291bfb72f942b089f",
+  "original_image": "row-113222-original.jpg",
+  "max_coordinate_difference": 7.450580596923828e-09,
+  "csv_handedness": "Right",
+  "detected_handedness": "Right",
+  "exact_geometry_match": true,
+  "label_verified": false,
+  "warning": "Found a geometrically matching source image, not proof of a unique image or a linguistically correct label."
+}

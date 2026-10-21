@@ -1,0 +1,17 @@
+{
+  "output_directory": "output\\cleaned-M-training\\20261021T152633Z",
+  "data_sha256": "4a160bec73556408c12f9457577c765c89e9f8cf09eae3d658fe39d3064f58cd",
+  "split_counts": {
+    "train": 109223,
+    "validation": 13791,
+    "test": 34720
+  },
+  "removed_rows_were_test_only": true,
+  "selection": "Validation macro F1, then loss; test evaluated after training only.",
+  "production_model_replaced": false,
+  "protected_inputs": {
+    "ml\\data\\landmarks.csv": "4a160bec73556408c12f9457577c765c89e9f8cf09eae3d658fe39d3064f58cd",
+    "ml\\models\\sequence_classifier.pth": "1e2228a5970d18b19a25f62cb76fc560aa4c5e33962a8bc2a362a87309db2ec9",
+    "ml\\models\\sign_classifier_canonical.pth": "98559a10c553c23d2c6aad227f52416b59ad92483bf4f079cfca5eb512bf5b66"
+  }
+}

@@ -1,0 +1,3903 @@
+{
+  "split": "test",
+  "dataset_sha256": "17249bc657b7ed52f1d6a39f5d3bbbf6b8d2445efdab97f64094df68855647db",
+  "model": "ml/models/sign_classifier_canonical.pth",
+  "metrics": {
+    "accuracy": 0.5318746112027696,
+    "macro_precision": 0.6368307599842152,
+    "macro_recall": 0.8204105684847818,
+    "macro_f1": 0.5949074572196463,
+    "weighted_f1": 0.5616068292503996,
+    "per_class": {
+      "A": {
+        "precision": 0.6,
+        "recall": 0.9829787234042553,
+        "f1": 0.7451612903225806,
+        "support": 235
+      },
+      "B": {
+        "precision": 0.915057915057915,
+        "recall": 1.0,
+        "f1": 0.9556451612903225,
+        "support": 237
+      },
+      "C": {
+        "precision": 0.2755235602094241,
+        "recall": 0.9767981438515081,
+        "f1": 0.4298111281265952,
+        "support": 431
+      },
+      "D": {
+        "precision": 0.19689987431922915,
+        "recall": 0.9957627118644068,
+        "f1": 0.32878628891220707,
+        "support": 472
+      },
+      "E": {
+        "precision": 0.6139130434782609,
+        "recall": 0.9943661971830986,
+        "f1": 0.7591397849462367,
+        "support": 355
+      },
+      "F": {
+        "precision": 0.8561946902654868,
+        "recall": 1.0,
+        "f1": 0.9225268176400476,
+        "support": 387
+      },
+      "G": {
+        "precision": 0.8932496075353218,
+        "recall": 0.1235881841876629,
+        "f1": 0.21713413470711695,
+        "support": 4604
+      },
+      "H": {
+        "precision": 0.22169608265174343,
+        "recall": 1.0,
+        "f1": 0.3629316420014095,
+        "support": 515
+      },
+      "I": {
+        "precision": 0.996832358674464,
+        "recall": 0.9355133775440201,
+        "f1": 0.9651999528134952,
+        "support": 4373
+      },
+      "K": {
+        "precision": 0.9802501645819618,
+        "recall": 0.2978595719143829,
+        "f1": 0.4568886161399202,
+        "support": 4999
+      },
+      "L": {
+        "precision": 0.2261758691206544,
+        "recall": 0.9910394265232975,
+        "f1": 0.3682983682983683,
+        "support": 558
+      },
+      "M": {
+        "precision": 0.948394495412844,
+        "recall": 0.22776094739741118,
+        "f1": 0.3673106817677104,
+        "support": 3631
+      },
+      "N": {
+        "precision": 0.12917369308600338,
+        "recall": 0.9745547073791349,
+        "f1": 0.22811197141155448,
+        "support": 393
+      },
+      "O": {
+        "precision": 0.9870027569909413,
+        "recall": 0.5670966281964245,
+        "f1": 0.7203219315895371,
+        "support": 4419
+      },
+      "P": {
+        "precision": 0.10337401292175162,
+        "recall": 0.9085173501577287,
+        "f1": 0.1856268127618434,
+        "support": 317
+      },
+      "Q": {
+        "precision": 0.9728739002932552,
+        "recall": 0.34008200922603793,
+        "f1": 0.5039878465628561,
+        "support": 3902
+      },
+      "R": {
+        "precision": 0.40065412919051513,
+        "recall": 0.9423076923076923,
+        "f1": 0.5622489959839357,
+        "support": 520
+      },
+      "S": {
+        "precision": 0.6205673758865248,
+        "recall": 0.9887005649717514,
+        "f1": 0.7625272331154684,
+        "support": 354
+      },
+      "T": {
+        "precision": 0.5648021828103683,
+        "recall": 0.9430523917995444,
+        "f1": 0.7064846416382253,
+        "support": 439
+      },
+      "U": {
+        "precision": 0.7926829268292683,
+        "recall": 0.982367758186398,
+        "f1": 0.877390326209224,
+        "support": 397
+      },
+      "V": {
+        "precision": 0.13279834325653636,
+        "recall": 0.996116504854369,
+        "f1": 0.2343535861123801,
+        "support": 515
+      },
+      "W": {
+        "precision": 0.9855595667870036,
+        "recall": 0.9963503649635036,
+        "f1": 0.9909255898366605,
+        "support": 274
+      },
+      "X": {
+        "precision": 0.975975975975976,
+        "recall": 0.5250403877221325,
+        "f1": 0.6827731092436974,
+        "support": 4333
+      },
+      "Y": {
+        "precision": 0.8942857142857142,
+        "recall": 1.0,
+        "f1": 0.9441930618401206,
+        "support": 313
+      }
+    },
+    "labels": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V",
+      "W",
+      "X",
+      "Y"
+    ],
+    "confusion_matrix": [
+      [
+        231,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        237,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        421,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        470,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        353,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        387,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        30,
+        1,
+        7,
+        4,
+        0,
+        2,
+        569,
+        1711,
+        0,
+        10,
+        1870,
+        0,
+        6,
+        0,
+        88,
+        1,
+        202,
+        1,
+        56,
+        0,
+        10,
+        0,
+        36,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        515,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        13,
+        4,
+        4,
+        73,
+        28,
+        5,
+        2,
+        3,
+        4091,
+        1,
+        10,
+        29,
+        5,
+        8,
+        2,
+        1,
+        7,
+        58,
+        4,
+        0,
+        2,
+        0,
+        4,
+        19
+      ],
+      [
+        3,
+        5,
+        1,
+        10,
+        0,
+        2,
+        6,
+        53,
+        0,
+        1489,
+        12,
+        2,
+        6,
+        0,
+        19,
+        0,
+        44,
+        0,
+        19,
+        19,
+        3304,
+        2,
+        2,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        553,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        2
+      ],
+      [
+        64,
+        7,
+        45,
+        14,
+        108,
+        29,
+        1,
+        4,
+        4,
+        1,
+        0,
+        827,
+        2437,
+        15,
+        35,
+        4,
+        0,
+        7,
+        23,
+        0,
+        1,
+        1,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        383,
+        0,
+        0,
+        0,
+        0,
+        1,
+        5,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        19,
+        3,
+        908,
+        826,
+        53,
+        25,
+        5,
+        9,
+        0,
+        0,
+        0,
+        1,
+        20,
+        2506,
+        1,
+        20,
+        2,
+        8,
+        4,
+        0,
+        0,
+        0,
+        0,
+        9
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        17,
+        0,
+        288,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        139,
+        0,
+        0,
+        0,
+        53,
+        11,
+        1,
+        0,
+        0,
+        0,
+        78,
+        0,
+        2280,
+        1327,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0,
+        1,
+        6
+      ],
+      [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        490,
+        0,
+        0,
+        11,
+        0,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        350,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        12,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        2,
+        2,
+        1,
+        2,
+        0,
+        1,
+        414,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        390,
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        513,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        273,
+        0,
+        0
+      ],
+      [
+        13,
+        0,
+        3,
+        974,
+        32,
+        0,
+        1,
+        13,
+        6,
+        16,
+        0,
+        2,
+        10,
+        2,
+        72,
+        1,
+        478,
+        131,
+        207,
+        69,
+        27,
+        1,
+        2275,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        313
+      ]
+    ]
+  },
+  "groups": [
+    {
+      "category": "session",
+      "group": "ext_archive5_A_s0002",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_hint",
+      "group": "legacy:archive5",
+      "support": 2838,
+      "accuracy": 0.9992952783650458,
+      "macro_f1_all_vocabulary": 0.9992068355119826
+    },
+    {
+      "category": "handedness",
+      "group": "Right",
+      "support": 24656,
+      "accuracy": 0.4530743024010383,
+      "macro_f1_all_vocabulary": 0.4155082947247017
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:A",
+      "support": 79,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_A_s0017",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_B_s0006",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:B",
+      "support": 198,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_B_s0007",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_B_s0011",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_B_s0018",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_B_s0019",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_C_s0008",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "handedness",
+      "group": "Left",
+      "support": 12317,
+      "accuracy": 0.6896159779167005,
+      "macro_f1_all_vocabulary": 0.7418427051132767
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:C",
+      "support": 119,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_C_s0020",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_C_s0022",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_D_s0007",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:D",
+      "support": 156,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_D_s0013",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_D_s0016",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_D_s0023",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_E_s0013",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:E",
+      "support": 120,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_E_s0014",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_E_s0022",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_F_s0000",
+      "support": 38,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:F",
+      "support": 189,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_F_s0001",
+      "support": 37,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_F_s0006",
+      "support": 38,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_F_s0008",
+      "support": 38,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_F_s0010",
+      "support": 38,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_G_s0015",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:G",
+      "support": 120,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_G_s0017",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_G_s0019",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_H_s0000",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:H",
+      "support": 79,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_H_s0001",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_I_s0002",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:I",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_K_s0007",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:K",
+      "support": 118,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_K_s0013",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_K_s0019",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_L_s0000",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:L",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_M_s0004",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:M",
+      "support": 79,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_M_s0016",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_N_s0013",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:N",
+      "support": 119,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_N_s0014",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_N_s0023",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_O_s0006",
+      "support": 38,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:O",
+      "support": 76,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_O_s0010",
+      "support": 38,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_P_s0014",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:P",
+      "support": 80,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_P_s0019",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_Q_s0008",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:Q",
+      "support": 158,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_Q_s0012",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_Q_s0013",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_Q_s0017",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_R_s0001",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:R",
+      "support": 240,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_R_s0012",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_R_s0013",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_R_s0014",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_R_s0021",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_R_s0022",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_S_s0010",
+      "support": 39,
+      "accuracy": 0.9487179487179487,
+      "macro_f1_all_vocabulary": 0.04057017543859649
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:S",
+      "support": 154,
+      "accuracy": 0.987012987012987,
+      "macro_f1_all_vocabulary": 0.04139433551198257
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_S_s0017",
+      "support": 38,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_S_s0018",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_S_s0020",
+      "support": 38,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_T_s0017",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:T",
+      "support": 80,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_T_s0023",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_U_s0007",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:U",
+      "support": 158,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_U_s0012",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_U_s0015",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_U_s0018",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_V_s0005",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:V",
+      "support": 79,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_V_s0009",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_W_s0007",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:W",
+      "support": 119,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_W_s0012",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_W_s0013",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_X_s0002",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:X",
+      "support": 200,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_X_s0003",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_X_s0011",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_X_s0020",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_X_s0024",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive5_Y_s0005",
+      "support": 38,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive5:Y",
+      "support": 38,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_A_s0004",
+      "support": 39,
+      "accuracy": 0.9743589743589743,
+      "macro_f1_all_vocabulary": 0.04112554112554112
+    },
+    {
+      "category": "source_hint",
+      "group": "legacy:archive3",
+      "support": 6564,
+      "accuracy": 0.9754722730042656,
+      "macro_f1_all_vocabulary": 0.9730604786493781
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:A",
+      "support": 156,
+      "accuracy": 0.9743589743589743,
+      "macro_f1_all_vocabulary": 0.04112554112554112
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_A_s0006",
+      "support": 39,
+      "accuracy": 0.9743589743589743,
+      "macro_f1_all_vocabulary": 0.04112554112554112
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_A_s0015",
+      "support": 39,
+      "accuracy": 0.9487179487179487,
+      "macro_f1_all_vocabulary": 0.04057017543859649
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_A_s0020",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_B_s0017",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:B",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_C_s0002",
+      "support": 39,
+      "accuracy": 0.9743589743589743,
+      "macro_f1_all_vocabulary": 0.04112554112554112
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:C",
+      "support": 312,
+      "accuracy": 0.967948717948718,
+      "macro_f1_all_vocabulary": 0.04098805646036916
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_C_s0023",
+      "support": 39,
+      "accuracy": 0.9743589743589743,
+      "macro_f1_all_vocabulary": 0.04112554112554112
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_C_s0024",
+      "support": 39,
+      "accuracy": 0.8974358974358975,
+      "macro_f1_all_vocabulary": 0.03941441441441442
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_C_s0029",
+      "support": 39,
+      "accuracy": 0.9230769230769231,
+      "macro_f1_all_vocabulary": 0.04
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_C_s0031",
+      "support": 39,
+      "accuracy": 0.9743589743589743,
+      "macro_f1_all_vocabulary": 0.04112554112554112
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_C_s0033",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_C_s0035",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_C_s0039",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_D_s0004",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:D",
+      "support": 316,
+      "accuracy": 0.9936708860759493,
+      "macro_f1_all_vocabulary": 0.041534391534391535
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_D_s0005",
+      "support": 40,
+      "accuracy": 0.975,
+      "macro_f1_all_vocabulary": 0.04113924050632911
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_D_s0039",
+      "support": 40,
+      "accuracy": 0.975,
+      "macro_f1_all_vocabulary": 0.04113924050632911
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_D_s0043",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_D_s0048",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_D_s0052",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_D_s0053",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_D_s0054",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_E_s0000",
+      "support": 40,
+      "accuracy": 0.975,
+      "macro_f1_all_vocabulary": 0.04113924050632911
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:E",
+      "support": 235,
+      "accuracy": 0.9914893617021276,
+      "macro_f1_all_vocabulary": 0.04148860398860399
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_E_s0007",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_E_s0013",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_E_s0015",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_E_s0025",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_E_s0034",
+      "support": 39,
+      "accuracy": 0.9743589743589743,
+      "macro_f1_all_vocabulary": 0.04112554112554112
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_F_s0001",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:F",
+      "support": 198,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_F_s0007",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_F_s0019",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_F_s0043",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_F_s0047",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_G_s0000",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:G",
+      "support": 358,
+      "accuracy": 0.9972067039106145,
+      "macro_f1_all_vocabulary": 0.04160839160839161
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_G_s0007",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_G_s0018",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_G_s0019",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_G_s0024",
+      "support": 40,
+      "accuracy": 0.975,
+      "macro_f1_all_vocabulary": 0.04113924050632911
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_G_s0034",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_G_s0051",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_G_s0052",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_G_s0053",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_H_s0006",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:H",
+      "support": 436,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_H_s0022",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_H_s0033",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_H_s0035",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_H_s0039",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_H_s0040",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_H_s0043",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_H_s0045",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_H_s0047",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_H_s0054",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_H_s0060",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_I_s0005",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:I",
+      "support": 393,
+      "accuracy": 0.989821882951654,
+      "macro_f1_all_vocabulary": 0.04145353793691389
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_I_s0007",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_I_s0010",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_I_s0013",
+      "support": 40,
+      "accuracy": 0.975,
+      "macro_f1_all_vocabulary": 0.04113924050632911
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_I_s0030",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_I_s0035",
+      "support": 39,
+      "accuracy": 0.9743589743589743,
+      "macro_f1_all_vocabulary": 0.04112554112554112
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_I_s0036",
+      "support": 40,
+      "accuracy": 0.975,
+      "macro_f1_all_vocabulary": 0.04113924050632911
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_I_s0038",
+      "support": 39,
+      "accuracy": 0.9743589743589743,
+      "macro_f1_all_vocabulary": 0.04112554112554112
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_I_s0047",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_I_s0048",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_K_s0006",
+      "support": 40,
+      "accuracy": 0.85,
+      "macro_f1_all_vocabulary": 0.038288288288288286
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:K",
+      "support": 358,
+      "accuracy": 0.9329608938547486,
+      "macro_f1_all_vocabulary": 0.04022157996146435
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_K_s0022",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_K_s0033",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_K_s0036",
+      "support": 40,
+      "accuracy": 0.725,
+      "macro_f1_all_vocabulary": 0.03502415458937198
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_K_s0037",
+      "support": 39,
+      "accuracy": 0.9743589743589743,
+      "macro_f1_all_vocabulary": 0.04112554112554112
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_K_s0038",
+      "support": 40,
+      "accuracy": 0.95,
+      "macro_f1_all_vocabulary": 0.0405982905982906
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_K_s0040",
+      "support": 40,
+      "accuracy": 0.9,
+      "macro_f1_all_vocabulary": 0.03947368421052632
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_K_s0051",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_K_s0057",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_L_s0002",
+      "support": 40,
+      "accuracy": 0.925,
+      "macro_f1_all_vocabulary": 0.04004329004329004
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:L",
+      "support": 518,
+      "accuracy": 0.9903474903474904,
+      "macro_f1_all_vocabulary": 0.041464597478176525
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_L_s0020",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_L_s0021",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_L_s0023",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_L_s0039",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_L_s0041",
+      "support": 39,
+      "accuracy": 0.9743589743589743,
+      "macro_f1_all_vocabulary": 0.04112554112554112
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_L_s0045",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_L_s0046",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_L_s0049",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_L_s0050",
+      "support": 40,
+      "accuracy": 0.975,
+      "macro_f1_all_vocabulary": 0.04113924050632911
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_L_s0061",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_L_s0063",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_L_s0064",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_M_s0003",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:M",
+      "support": 237,
+      "accuracy": 0.9957805907172996,
+      "macro_f1_all_vocabulary": 0.041578576462297394
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_M_s0008",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_M_s0013",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_M_s0016",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_M_s0019",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_M_s0031",
+      "support": 39,
+      "accuracy": 0.9743589743589743,
+      "macro_f1_all_vocabulary": 0.04112554112554112
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_N_s0001",
+      "support": 39,
+      "accuracy": 0.9743589743589743,
+      "macro_f1_all_vocabulary": 0.04112554112554112
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:N",
+      "support": 274,
+      "accuracy": 0.9635036496350365,
+      "macro_f1_all_vocabulary": 0.040892193308550186
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_N_s0003",
+      "support": 40,
+      "accuracy": 0.95,
+      "macro_f1_all_vocabulary": 0.0405982905982906
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_N_s0004",
+      "support": 39,
+      "accuracy": 0.9230769230769231,
+      "macro_f1_all_vocabulary": 0.04
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_N_s0008",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_N_s0024",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_N_s0025",
+      "support": 39,
+      "accuracy": 0.9487179487179487,
+      "macro_f1_all_vocabulary": 0.04057017543859649
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_N_s0033",
+      "support": 39,
+      "accuracy": 0.9487179487179487,
+      "macro_f1_all_vocabulary": 0.04057017543859649
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_O_s0009",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:O",
+      "support": 197,
+      "accuracy": 0.9898477157360406,
+      "macro_f1_all_vocabulary": 0.04145408163265306
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_O_s0010",
+      "support": 40,
+      "accuracy": 0.975,
+      "macro_f1_all_vocabulary": 0.04113924050632911
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_O_s0012",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_O_s0013",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_O_s0015",
+      "support": 39,
+      "accuracy": 0.9743589743589743,
+      "macro_f1_all_vocabulary": 0.04112554112554112
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_P_s0001",
+      "support": 40,
+      "accuracy": 0.925,
+      "macro_f1_all_vocabulary": 0.04004329004329004
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:P",
+      "support": 237,
+      "accuracy": 0.8776371308016878,
+      "macro_f1_all_vocabulary": 0.03895131086142322
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_P_s0004",
+      "support": 40,
+      "accuracy": 0.75,
+      "macro_f1_all_vocabulary": 0.03571428571428571
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_P_s0005",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_P_s0011",
+      "support": 39,
+      "accuracy": 0.8974358974358975,
+      "macro_f1_all_vocabulary": 0.03941441441441442
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_P_s0016",
+      "support": 40,
+      "accuracy": 0.7,
+      "macro_f1_all_vocabulary": 0.034313725490196074
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_P_s0028",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_Q_s0002",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:Q",
+      "support": 117,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_Q_s0003",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_Q_s0010",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_R_s0006",
+      "support": 40,
+      "accuracy": 0.9,
+      "macro_f1_all_vocabulary": 0.03947368421052632
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:R",
+      "support": 280,
+      "accuracy": 0.8928571428571429,
+      "macro_f1_all_vocabulary": 0.039308176100628936
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_R_s0009",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_R_s0015",
+      "support": 40,
+      "accuracy": 0.6,
+      "macro_f1_all_vocabulary": 0.031249999999999997
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_R_s0030",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_R_s0031",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_R_s0037",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_R_s0044",
+      "support": 40,
+      "accuracy": 0.75,
+      "macro_f1_all_vocabulary": 0.03571428571428571
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_S_s0011",
+      "support": 40,
+      "accuracy": 0.975,
+      "macro_f1_all_vocabulary": 0.04113924050632911
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:S",
+      "support": 200,
+      "accuracy": 0.99,
+      "macro_f1_all_vocabulary": 0.0414572864321608
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_S_s0012",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_S_s0015",
+      "support": 40,
+      "accuracy": 0.975,
+      "macro_f1_all_vocabulary": 0.04113924050632911
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_S_s0022",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_S_s0031",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_T_s0003",
+      "support": 40,
+      "accuracy": 0.925,
+      "macro_f1_all_vocabulary": 0.04004329004329004
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:T",
+      "support": 359,
+      "accuracy": 0.9303621169916435,
+      "macro_f1_all_vocabulary": 0.04016354016354016
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_T_s0005",
+      "support": 40,
+      "accuracy": 0.9,
+      "macro_f1_all_vocabulary": 0.03947368421052632
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_T_s0009",
+      "support": 40,
+      "accuracy": 0.825,
+      "macro_f1_all_vocabulary": 0.03767123287671233
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_T_s0011",
+      "support": 40,
+      "accuracy": 0.9,
+      "macro_f1_all_vocabulary": 0.03947368421052632
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_T_s0019",
+      "support": 40,
+      "accuracy": 0.975,
+      "macro_f1_all_vocabulary": 0.04113924050632911
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_T_s0021",
+      "support": 40,
+      "accuracy": 0.95,
+      "macro_f1_all_vocabulary": 0.0405982905982906
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_T_s0029",
+      "support": 40,
+      "accuracy": 0.975,
+      "macro_f1_all_vocabulary": 0.04113924050632911
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_T_s0036",
+      "support": 40,
+      "accuracy": 0.925,
+      "macro_f1_all_vocabulary": 0.04004329004329004
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_T_s0044",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_U_s0003",
+      "support": 39,
+      "accuracy": 0.8461538461538461,
+      "macro_f1_all_vocabulary": 0.03819444444444444
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:U",
+      "support": 239,
+      "accuracy": 0.9707112970711297,
+      "macro_f1_all_vocabulary": 0.04104741684359519
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_U_s0010",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_U_s0012",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_U_s0021",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_U_s0030",
+      "support": 40,
+      "accuracy": 0.975,
+      "macro_f1_all_vocabulary": 0.04113924050632911
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_U_s0040",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_V_s0003",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:V",
+      "support": 436,
+      "accuracy": 0.9954128440366973,
+      "macro_f1_all_vocabulary": 0.04157088122605364
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_V_s0004",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_V_s0005",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_V_s0013",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_V_s0018",
+      "support": 40,
+      "accuracy": 0.975,
+      "macro_f1_all_vocabulary": 0.04113924050632911
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_V_s0032",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_V_s0034",
+      "support": 40,
+      "accuracy": 0.975,
+      "macro_f1_all_vocabulary": 0.04113924050632911
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_V_s0038",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_V_s0039",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_V_s0042",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_V_s0055",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_W_s0000",
+      "support": 39,
+      "accuracy": 0.9743589743589743,
+      "macro_f1_all_vocabulary": 0.04112554112554112
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:W",
+      "support": 155,
+      "accuracy": 0.9935483870967742,
+      "macro_f1_all_vocabulary": 0.04153182308522114
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_W_s0001",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_W_s0024",
+      "support": 38,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_W_s0025",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_X_s0006",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:X",
+      "support": 239,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_X_s0008",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_X_s0014",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_X_s0019",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_X_s0026",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_X_s0027",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_Y_s0004",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "source_label",
+      "group": "legacy:archive3:Y",
+      "support": 275,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_Y_s0024",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_Y_s0027",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_Y_s0031",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_Y_s0033",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_Y_s0035",
+      "support": 40,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_archive3_Y_s0038",
+      "support": 39,
+      "accuracy": 1.0,
+      "macro_f1_all_vocabulary": 0.041666666666666664
+    },
+    {
+      "category": "session",
+      "group": "ext_f30e7d1c0c3a742fdf7c87c1",
+      "support": 4126,
+      "accuracy": 0.022297624818225885,
+      "macro_f1_all_vocabulary": 0.0018176070807649758
+    },
+    {
+      "category": "source_hint",
+      "group": "hashed_import:source_identity_unavailable",
+      "support": 27571,
+      "accuracy": 0.37815095571433754,
+      "macro_f1_all_vocabulary": 0.14257892434888506
+    },
+    {
+      "category": "source_label",
+      "group": "hashed_import:source_identity_unavailable:G",
+      "support": 4126,
+      "accuracy": 0.022297624818225885,
+      "macro_f1_all_vocabulary": 0.0018176070807649758
+    },
+    {
+      "category": "session",
+      "group": "ext_0bab7d8b9266b256363aeb3d",
+      "support": 3940,
+      "accuracy": 0.9294416243654823,
+      "macro_f1_all_vocabulary": 0.04014294483907744
+    },
+    {
+      "category": "source_label",
+      "group": "hashed_import:source_identity_unavailable:I",
+      "support": 3940,
+      "accuracy": 0.9294416243654823,
+      "macro_f1_all_vocabulary": 0.04014294483907744
+    },
+    {
+      "category": "session",
+      "group": "ext_8bc6bda66dd36a159daf1e66",
+      "support": 4523,
+      "accuracy": 0.2292726066769843,
+      "macro_f1_all_vocabulary": 0.015542565947242204
+    },
+    {
+      "category": "source_label",
+      "group": "hashed_import:source_identity_unavailable:K",
+      "support": 4523,
+      "accuracy": 0.2292726066769843,
+      "macro_f1_all_vocabulary": 0.015542565947242204
+    },
+    {
+      "category": "session",
+      "group": "ext_c72cf97fc7fa5995335a73a1",
+      "support": 3315,
+      "accuracy": 0.15444947209653093,
+      "macro_f1_all_vocabulary": 0.011148854629387686
+    },
+    {
+      "category": "source_label",
+      "group": "hashed_import:source_identity_unavailable:M",
+      "support": 3315,
+      "accuracy": 0.15444947209653093,
+      "macro_f1_all_vocabulary": 0.011148854629387686
+    },
+    {
+      "category": "session",
+      "group": "ext_876d38a3d71a1f55af04562d",
+      "support": 4146,
+      "accuracy": 0.5390738060781476,
+      "macro_f1_all_vocabulary": 0.029188215013320796
+    },
+    {
+      "category": "source_label",
+      "group": "hashed_import:source_identity_unavailable:O",
+      "support": 4146,
+      "accuracy": 0.5390738060781476,
+      "macro_f1_all_vocabulary": 0.029188215013320796
+    },
+    {
+      "category": "session",
+      "group": "ext_b905b9395516a06c9a81ae72",
+      "support": 3627,
+      "accuracy": 0.290046870692032,
+      "macro_f1_all_vocabulary": 0.018736197193132437
+    },
+    {
+      "category": "source_label",
+      "group": "hashed_import:source_identity_unavailable:Q",
+      "support": 3627,
+      "accuracy": 0.290046870692032,
+      "macro_f1_all_vocabulary": 0.018736197193132437
+    },
+    {
+      "category": "session",
+      "group": "ext_4602a3c0a49e5b644e1e0937",
+      "support": 3894,
+      "accuracy": 0.4714946070878274,
+      "macro_f1_all_vocabulary": 0.02670157068062827
+    },
+    {
+      "category": "source_label",
+      "group": "hashed_import:source_identity_unavailable:X",
+      "support": 3894,
+      "accuracy": 0.4714946070878274,
+      "macro_f1_all_vocabulary": 0.02670157068062827
+    }
+  ],
+  "top_confusions": [
+    {
+      "true": "K",
+      "predicted": "V",
+      "count": 3304
+    },
+    {
+      "true": "M",
+      "predicted": "N",
+      "count": 2437
+    },
+    {
+      "true": "Q",
+      "predicted": "P",
+      "count": 2280
+    },
+    {
+      "true": "G",
+      "predicted": "L",
+      "count": 1870
+    },
+    {
+      "true": "G",
+      "predicted": "H",
+      "count": 1711
+    },
+    {
+      "true": "X",
+      "predicted": "D",
+      "count": 974
+    },
+    {
+      "true": "O",
+      "predicted": "C",
+      "count": 908
+    },
+    {
+      "true": "O",
+      "predicted": "D",
+      "count": 826
+    },
+    {
+      "true": "X",
+      "predicted": "R",
+      "count": 478
+    },
+    {
+      "true": "X",
+      "predicted": "T",
+      "count": 207
+    },
+    {
+      "true": "G",
+      "predicted": "R",
+      "count": 202
+    },
+    {
+      "true": "Q",
+      "predicted": "C",
+      "count": 139
+    },
+    {
+      "true": "X",
+      "predicted": "S",
+      "count": 131
+    },
+    {
+      "true": "M",
+      "predicted": "E",
+      "count": 108
+    },
+    {
+      "true": "G",
+      "predicted": "P",
+      "count": 88
+    },
+    {
+      "true": "Q",
+      "predicted": "N",
+      "count": 78
+    },
+    {
+      "true": "I",
+      "predicted": "D",
+      "count": 73
+    },
+    {
+      "true": "X",
+      "predicted": "P",
+      "count": 72
+    },
+    {
+      "true": "X",
+      "predicted": "U",
+      "count": 69
+    },
+    {
+      "true": "M",
+      "predicted": "A",
+      "count": 64
+    },
+    {
+      "true": "I",
+      "predicted": "S",
+      "count": 58
+    },
+    {
+      "true": "G",
+      "predicted": "T",
+      "count": 56
+    },
+    {
+      "true": "K",
+      "predicted": "H",
+      "count": 53
+    },
+    {
+      "true": "O",
+      "predicted": "E",
+      "count": 53
+    },
+    {
+      "true": "Q",
+      "predicted": "G",
+      "count": 53
+    },
+    {
+      "true": "M",
+      "predicted": "C",
+      "count": 45
+    },
+    {
+      "true": "K",
+      "predicted": "R",
+      "count": 44
+    },
+    {
+      "true": "G",
+      "predicted": "X",
+      "count": 36
+    },
+    {
+      "true": "M",
+      "predicted": "P",
+      "count": 35
+    },
+    {
+      "true": "X",
+      "predicted": "E",
+      "count": 32
+    }
+  ],
+  "threshold_sweep": [
+    {
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.5318746112027696,
+      "macro_precision": 0.6368307599842152,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949074572196463
+    },
+    {
+      "threshold": 0.01,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.5318746112027696,
+      "macro_precision": 0.6368307599842152,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949074572196463
+    },
+    {
+      "threshold": 0.02,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.5318746112027696,
+      "macro_precision": 0.6368307599842152,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949074572196463
+    },
+    {
+      "threshold": 0.03,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.5318746112027696,
+      "macro_precision": 0.6368307599842152,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949074572196463
+    },
+    {
+      "threshold": 0.04,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.5318746112027696,
+      "macro_precision": 0.6368307599842152,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949074572196463
+    },
+    {
+      "threshold": 0.05,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.5318746112027696,
+      "macro_precision": 0.6368307599842152,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949074572196463
+    },
+    {
+      "threshold": 0.06,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.5318746112027696,
+      "macro_precision": 0.6368307599842152,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949074572196463
+    },
+    {
+      "threshold": 0.07,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.5318746112027696,
+      "macro_precision": 0.6368307599842152,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949074572196463
+    },
+    {
+      "threshold": 0.08,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.5318746112027696,
+      "macro_precision": 0.6368307599842152,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949074572196463
+    },
+    {
+      "threshold": 0.09,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.5318746112027696,
+      "macro_precision": 0.6368307599842152,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949074572196463
+    },
+    {
+      "threshold": 0.1,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.5318746112027696,
+      "macro_precision": 0.6368307599842152,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949074572196463
+    },
+    {
+      "threshold": 0.11,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.5318746112027696,
+      "macro_precision": 0.6368307599842152,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949074572196463
+    },
+    {
+      "threshold": 0.12,
+      "coverage": 0.9999729532361453,
+      "accepted_accuracy": 0.5318889970788705,
+      "macro_precision": 0.6368892800056732,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.594909183795145
+    },
+    {
+      "threshold": 0.13,
+      "coverage": 0.9999459064722905,
+      "accepted_accuracy": 0.5319033837331963,
+      "macro_precision": 0.6369352071353273,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949438315247486
+    },
+    {
+      "threshold": 0.14,
+      "coverage": 0.9999459064722905,
+      "accepted_accuracy": 0.5319033837331963,
+      "macro_precision": 0.6369352071353273,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949438315247486
+    },
+    {
+      "threshold": 0.15,
+      "coverage": 0.9999459064722905,
+      "accepted_accuracy": 0.5319033837331963,
+      "macro_precision": 0.6369352071353273,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949438315247486
+    },
+    {
+      "threshold": 0.16,
+      "coverage": 0.9999188597084359,
+      "accepted_accuracy": 0.5319177711658101,
+      "macro_precision": 0.636937023004832,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949466628221795
+    },
+    {
+      "threshold": 0.17,
+      "coverage": 0.999810672653017,
+      "accepted_accuracy": 0.531975328680409,
+      "macro_precision": 0.6369762463671681,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949822620663011
+    },
+    {
+      "threshold": 0.18,
+      "coverage": 0.9997295323614529,
+      "accepted_accuracy": 0.532018504991478,
+      "macro_precision": 0.6371386569110217,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5950792224616704
+    },
+    {
+      "threshold": 0.19,
+      "coverage": 0.9995942985421794,
+      "accepted_accuracy": 0.5320904810866389,
+      "macro_precision": 0.6372700168013743,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5951685490840849
+    },
+    {
+      "threshold": 0.2,
+      "coverage": 0.9993238309036324,
+      "accepted_accuracy": 0.5322344917180903,
+      "macro_precision": 0.6377222275017567,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5954738544599244
+    },
+    {
+      "threshold": 0.21,
+      "coverage": 0.9987828956265383,
+      "accepted_accuracy": 0.532522746967071,
+      "macro_precision": 0.638434594778878,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5959436061805233
+    },
+    {
+      "threshold": 0.22,
+      "coverage": 0.9981067265301706,
+      "accepted_accuracy": 0.5327751131344335,
+      "macro_precision": 0.6392036220483247,
+      "macro_recall": 0.8203721039875127,
+      "macro_f1": 0.5964204526811746
+    },
+    {
+      "threshold": 0.23,
+      "coverage": 0.9974035106699484,
+      "accepted_accuracy": 0.5330693928464897,
+      "macro_precision": 0.6400140423465729,
+      "macro_recall": 0.8203433435736217,
+      "macro_f1": 0.5969546097333566
+    },
+    {
+      "threshold": 0.24,
+      "coverage": 0.9963757336434695,
+      "accepted_accuracy": 0.5333749558891392,
+      "macro_precision": 0.6408148053433871,
+      "macro_recall": 0.8202567984547664,
+      "macro_f1": 0.5974745920228309
+    },
+    {
+      "threshold": 0.25,
+      "coverage": 0.9954831904362643,
+      "accepted_accuracy": 0.5336901592131718,
+      "macro_precision": 0.6415276549358339,
+      "macro_recall": 0.8201991017088629,
+      "macro_f1": 0.5979180484741727
+    },
+    {
+      "threshold": 0.26,
+      "coverage": 0.9946176939929138,
+      "accepted_accuracy": 0.5340457932234731,
+      "macro_precision": 0.6424104142765698,
+      "macro_recall": 0.8201606372115938,
+      "macro_f1": 0.5984932829234442
+    },
+    {
+      "threshold": 0.27,
+      "coverage": 0.9934817299110161,
+      "accepted_accuracy": 0.5343569639551344,
+      "macro_precision": 0.6433331122895996,
+      "macro_recall": 0.8200548598441041,
+      "macro_f1": 0.5990462930105115
+    },
+    {
+      "threshold": 0.28,
+      "coverage": 0.9923728125929733,
+      "accepted_accuracy": 0.534708784170505,
+      "macro_precision": 0.6442079328115099,
+      "macro_recall": 0.8199686890120518,
+      "macro_f1": 0.5995879683591196
+    },
+    {
+      "threshold": 0.29,
+      "coverage": 0.9914261758580586,
+      "accepted_accuracy": 0.5350283718900044,
+      "macro_precision": 0.6453353541036932,
+      "macro_recall": 0.8198997041502089,
+      "macro_f1": 0.600270359431557
+    },
+    {
+      "threshold": 0.3,
+      "coverage": 0.990290211776161,
+      "accepted_accuracy": 0.5353416725842574,
+      "macro_precision": 0.6464423230838737,
+      "macro_recall": 0.8197941139261206,
+      "macro_f1": 0.6009947346658957
+    },
+    {
+      "threshold": 0.31,
+      "coverage": 0.9887214994725881,
+      "accepted_accuracy": 0.5357533647007331,
+      "macro_precision": 0.6475242901667125,
+      "macro_recall": 0.8196402559370445,
+      "macro_f1": 0.6015783558619522
+    },
+    {
+      "threshold": 0.32,
+      "coverage": 0.987260974224434,
+      "accepted_accuracy": 0.5362993808558435,
+      "macro_precision": 0.6489679545118632,
+      "macro_recall": 0.8194687885489754,
+      "macro_f1": 0.6024966996761854
+    },
+    {
+      "threshold": 0.33,
+      "coverage": 0.9859356827955535,
+      "accepted_accuracy": 0.5366636490823801,
+      "macro_precision": 0.6497354906306957,
+      "macro_recall": 0.819344153219654,
+      "macro_f1": 0.6029574403421288
+    },
+    {
+      "threshold": 0.34,
+      "coverage": 0.9844210640196901,
+      "accepted_accuracy": 0.537242080391241,
+      "macro_precision": 0.6512282683218114,
+      "macro_recall": 0.8192569202272787,
+      "macro_f1": 0.6039443383180872
+    },
+    {
+      "threshold": 0.35000000000000003,
+      "coverage": 0.983149866118519,
+      "accepted_accuracy": 0.5376891334250344,
+      "macro_precision": 0.6522240725995991,
+      "macro_recall": 0.8190847649656896,
+      "macro_f1": 0.6045395582556602
+    },
+    {
+      "threshold": 0.36,
+      "coverage": 0.9818245746896384,
+      "accepted_accuracy": 0.5381669926448307,
+      "macro_precision": 0.6530744322014467,
+      "macro_recall": 0.8189984069902358,
+      "macro_f1": 0.6051543901875638
+    },
+    {
+      "threshold": 0.37,
+      "coverage": 0.9801206285667919,
+      "accepted_accuracy": 0.5385782879849881,
+      "macro_precision": 0.6539349674566055,
+      "macro_recall": 0.8188161356150969,
+      "macro_f1": 0.6056482249112539
+    },
+    {
+      "threshold": 0.38,
+      "coverage": 0.978660103318638,
+      "accepted_accuracy": 0.5388016803006854,
+      "macro_precision": 0.6548514152911521,
+      "macro_recall": 0.8186158858877999,
+      "macro_f1": 0.6061152045124326
+    },
+    {
+      "threshold": 0.39,
+      "coverage": 0.9768750169042274,
+      "accepted_accuracy": 0.5393986377983278,
+      "macro_precision": 0.6562697037837647,
+      "macro_recall": 0.8184820087209642,
+      "macro_f1": 0.6070151843329784
+    },
+    {
+      "threshold": 0.4,
+      "coverage": 0.9753874448922186,
+      "accepted_accuracy": 0.5398607991570308,
+      "macro_precision": 0.6572306944552953,
+      "macro_recall": 0.8183569825240046,
+      "macro_f1": 0.6076529792429106
+    },
+    {
+      "threshold": 0.41000000000000003,
+      "coverage": 0.9736834987693722,
+      "accepted_accuracy": 0.5403611111111111,
+      "macro_precision": 0.6582326301926337,
+      "macro_recall": 0.818113608978746,
+      "macro_f1": 0.608210903153206
+    },
+    {
+      "threshold": 0.42,
+      "coverage": 0.9720065994103806,
+      "accepted_accuracy": 0.5409594301296677,
+      "macro_precision": 0.6596421585598019,
+      "macro_recall": 0.8179944972168917,
+      "macro_f1": 0.6090303918980121
+    },
+    {
+      "threshold": 0.43,
+      "coverage": 0.9700592324128418,
+      "accepted_accuracy": 0.541487759995539,
+      "macro_precision": 0.6603932610673412,
+      "macro_recall": 0.817804391571538,
+      "macro_f1": 0.6094858601019207
+    },
+    {
+      "threshold": 0.44,
+      "coverage": 0.9679766315960295,
+      "accepted_accuracy": 0.5420101148397553,
+      "macro_precision": 0.6611501948310248,
+      "macro_recall": 0.8175856581692124,
+      "macro_f1": 0.6099394956081657
+    },
+    {
+      "threshold": 0.45,
+      "coverage": 0.9652178616828496,
+      "accepted_accuracy": 0.5427186370386976,
+      "macro_precision": 0.6625502019161161,
+      "macro_recall": 0.8170518702317523,
+      "macro_f1": 0.6106835193060031
+    },
+    {
+      "threshold": 0.46,
+      "coverage": 0.962432045005815,
+      "accepted_accuracy": 0.5432778776978417,
+      "macro_precision": 0.6640990775991396,
+      "macro_recall": 0.8165156141712258,
+      "macro_f1": 0.6114309148919478
+    },
+    {
+      "threshold": 0.47000000000000003,
+      "coverage": 0.9599437427311822,
+      "accepted_accuracy": 0.5439253916375522,
+      "macro_precision": 0.665223691620307,
+      "macro_recall": 0.8162555540240511,
+      "macro_f1": 0.6120542784279664
+    },
+    {
+      "threshold": 0.48,
+      "coverage": 0.9574013469288399,
+      "accepted_accuracy": 0.5441832871913668,
+      "macro_precision": 0.6659678119575415,
+      "macro_recall": 0.8157554279877003,
+      "macro_f1": 0.6122288868433846
+    },
+    {
+      "threshold": 0.49,
+      "coverage": 0.9552646525843183,
+      "accepted_accuracy": 0.5446926583425352,
+      "macro_precision": 0.6672907314986477,
+      "macro_recall": 0.8155138531678734,
+      "macro_f1": 0.612927862926835
+    },
+    {
+      "threshold": 0.5,
+      "coverage": 0.9522895085603008,
+      "accepted_accuracy": 0.5452299128063848,
+      "macro_precision": 0.668943683265752,
+      "macro_recall": 0.8146134308965424,
+      "macro_f1": 0.6136104032594295
+    },
+    {
+      "threshold": 0.51,
+      "coverage": 0.9500446271603603,
+      "accepted_accuracy": 0.5459488697830667,
+      "macro_precision": 0.6703296612695885,
+      "macro_recall": 0.814315673914184,
+      "macro_f1": 0.6143465531783981
+    },
+    {
+      "threshold": 0.52,
+      "coverage": 0.9476374651772915,
+      "accepted_accuracy": 0.5463938122556155,
+      "macro_precision": 0.671197483746013,
+      "macro_recall": 0.8139123212800747,
+      "macro_f1": 0.6146776473473206
+    },
+    {
+      "threshold": 0.53,
+      "coverage": 0.9450409758472399,
+      "accepted_accuracy": 0.5468933344781203,
+      "macro_precision": 0.6726449142339005,
+      "macro_recall": 0.8133846957093885,
+      "macro_f1": 0.6153674729713973
+    },
+    {
+      "threshold": 0.54,
+      "coverage": 0.9426338138641711,
+      "accepted_accuracy": 0.547343050614025,
+      "macro_precision": 0.6731069606802591,
+      "macro_recall": 0.812653790312266,
+      "macro_f1": 0.6154304984306425
+    },
+    {
+      "threshold": 0.55,
+      "coverage": 0.9398750439509913,
+      "accepted_accuracy": 0.548,
+      "macro_precision": 0.6742082961444781,
+      "macro_recall": 0.8118796005895458,
+      "macro_f1": 0.6158655028783293
+    },
+    {
+      "threshold": 0.56,
+      "coverage": 0.9372515078570849,
+      "accepted_accuracy": 0.5482930770784636,
+      "macro_precision": 0.6752093829442357,
+      "macro_recall": 0.8112551635985491,
+      "macro_f1": 0.6161191802760441
+    },
+    {
+      "threshold": 0.5700000000000001,
+      "coverage": 0.9346279717631786,
+      "accepted_accuracy": 0.5489061233939113,
+      "macro_precision": 0.6766623714762586,
+      "macro_recall": 0.8109482691930806,
+      "macro_f1": 0.6168072599144545
+    },
+    {
+      "threshold": 0.58,
+      "coverage": 0.9316798745030157,
+      "accepted_accuracy": 0.5493947223270531,
+      "macro_precision": 0.6776935976801038,
+      "macro_recall": 0.8103580836489526,
+      "macro_f1": 0.6171660404782228
+    },
+    {
+      "threshold": 0.59,
+      "coverage": 0.928812917534417,
+      "accepted_accuracy": 0.5502169418479369,
+      "macro_precision": 0.6790990409637251,
+      "macro_recall": 0.8100672441966523,
+      "macro_f1": 0.6179159958818256
+    },
+    {
+      "threshold": 0.6,
+      "coverage": 0.9260811943850918,
+      "accepted_accuracy": 0.5507593457943926,
+      "macro_precision": 0.679979246207778,
+      "macro_recall": 0.8096425570039195,
+      "macro_f1": 0.6182331555284136
+    },
+    {
+      "threshold": 0.61,
+      "coverage": 0.9231871906526384,
+      "accepted_accuracy": 0.5514604634810887,
+      "macro_precision": 0.6814630661760971,
+      "macro_recall": 0.8092201786370952,
+      "macro_f1": 0.6190151384082819
+    },
+    {
+      "threshold": 0.62,
+      "coverage": 0.9198874854623644,
+      "accepted_accuracy": 0.552350710064391,
+      "macro_precision": 0.6829703340460661,
+      "macro_recall": 0.8087891943455121,
+      "macro_f1": 0.619764941977349
+    },
+    {
+      "threshold": 0.63,
+      "coverage": 0.9170475752576204,
+      "accepted_accuracy": 0.553205922255648,
+      "macro_precision": 0.6843949506253951,
+      "macro_recall": 0.808326599140219,
+      "macro_f1": 0.6204827691318028
+    },
+    {
+      "threshold": 0.64,
+      "coverage": 0.91388310388662,
+      "accepted_accuracy": 0.5539968628843707,
+      "macro_precision": 0.6860286319435486,
+      "macro_recall": 0.8076958051170604,
+      "macro_f1": 0.6212129235059004
+    },
+    {
+      "threshold": 0.65,
+      "coverage": 0.9111784275011495,
+      "accepted_accuracy": 0.5545430259135029,
+      "macro_precision": 0.6870402620563416,
+      "macro_recall": 0.8071496835723542,
+      "macro_f1": 0.6216042490974542
+    },
+    {
+      "threshold": 0.66,
+      "coverage": 0.9076893949638926,
+      "accepted_accuracy": 0.5553635280095351,
+      "macro_precision": 0.6882754771053943,
+      "macro_recall": 0.8066117167266483,
+      "macro_f1": 0.6221527869142568
+    },
+    {
+      "threshold": 0.67,
+      "coverage": 0.9052010926892597,
+      "accepted_accuracy": 0.5560236643958408,
+      "macro_precision": 0.6892998442043742,
+      "macro_recall": 0.806211739307547,
+      "macro_f1": 0.6226101621174268
+    },
+    {
+      "threshold": 0.68,
+      "coverage": 0.9023070889568063,
+      "accepted_accuracy": 0.5567279158298613,
+      "macro_precision": 0.6905942957149193,
+      "macro_recall": 0.8056989151209999,
+      "macro_f1": 0.6231586626723697
+    },
+    {
+      "threshold": 0.6900000000000001,
+      "coverage": 0.8987369161279853,
+      "accepted_accuracy": 0.5572842998585573,
+      "macro_precision": 0.6921667902908317,
+      "macro_recall": 0.8049870355838783,
+      "macro_f1": 0.6236528091666719
+    },
+    {
+      "threshold": 0.7000000000000001,
+      "coverage": 0.8958970059232413,
+      "accepted_accuracy": 0.5581149619611158,
+      "macro_precision": 0.6935303864325141,
+      "macro_recall": 0.8046874169588527,
+      "macro_f1": 0.6243753413733163
+    },
+    {
+      "threshold": 0.71,
+      "coverage": 0.8922997863305655,
+      "accepted_accuracy": 0.5589706283531872,
+      "macro_precision": 0.6951746000467445,
+      "macro_recall": 0.8042403338859957,
+      "macro_f1": 0.6250598993792095
+    },
+    {
+      "threshold": 0.72,
+      "coverage": 0.889054174668001,
+      "accepted_accuracy": 0.5596118158863436,
+      "macro_precision": 0.6963046404460572,
+      "macro_recall": 0.8035505682517284,
+      "macro_f1": 0.6253957019651248
+    },
+    {
+      "threshold": 0.73,
+      "coverage": 0.8861060774078382,
+      "accepted_accuracy": 0.5602222086563702,
+      "macro_precision": 0.69759123320034,
+      "macro_recall": 0.8030846356610061,
+      "macro_f1": 0.6259056826796804
+    },
+    {
+      "threshold": 0.74,
+      "coverage": 0.8829686528006924,
+      "accepted_accuracy": 0.56098756356062,
+      "macro_precision": 0.6990323355433322,
+      "macro_recall": 0.8023596845319552,
+      "macro_f1": 0.6264801011935134
+    },
+    {
+      "threshold": 0.75,
+      "coverage": 0.8791821058610337,
+      "accepted_accuracy": 0.5621423737156217,
+      "macro_precision": 0.7007493537218851,
+      "macro_recall": 0.8016371275633588,
+      "macro_f1": 0.6272567414098434
+    },
+    {
+      "threshold": 0.76,
+      "coverage": 0.8752873718659563,
+      "accepted_accuracy": 0.5631604968790557,
+      "macro_precision": 0.7023202193981755,
+      "macro_recall": 0.8011787011109859,
+      "macro_f1": 0.6279615413456016
+    },
+    {
+      "threshold": 0.77,
+      "coverage": 0.8709598896492035,
+      "accepted_accuracy": 0.5644990994348177,
+      "macro_precision": 0.7040617725112662,
+      "macro_recall": 0.8000630028457358,
+      "macro_f1": 0.6287278974978018
+    },
+    {
+      "threshold": 0.78,
+      "coverage": 0.8667946880155789,
+      "accepted_accuracy": 0.5656515227159261,
+      "macro_precision": 0.705275628084555,
+      "macro_recall": 0.7992226724802437,
+      "macro_f1": 0.629206338583136
+    },
+    {
+      "threshold": 0.79,
+      "coverage": 0.8623049252156979,
+      "accepted_accuracy": 0.5669029546452544,
+      "macro_precision": 0.7070099291870126,
+      "macro_recall": 0.7979651007820675,
+      "macro_f1": 0.6298069436904935
+    },
+    {
+      "threshold": 0.8,
+      "coverage": 0.8579233494712357,
+      "accepted_accuracy": 0.5681273644388398,
+      "macro_precision": 0.7087875865535395,
+      "macro_recall": 0.7971825380901656,
+      "macro_f1": 0.6305891520853796
+    },
+    {
+      "threshold": 0.81,
+      "coverage": 0.8533524463797907,
+      "accepted_accuracy": 0.5690469398751228,
+      "macro_precision": 0.7103477681847862,
+      "macro_recall": 0.7958074060395726,
+      "macro_f1": 0.6309491521208251
+    },
+    {
+      "threshold": 0.8200000000000001,
+      "coverage": 0.8474292050956103,
+      "accepted_accuracy": 0.5699923400995787,
+      "macro_precision": 0.7120046683395694,
+      "macro_recall": 0.7938200497720245,
+      "macro_f1": 0.6309491913396531
+    },
+    {
+      "threshold": 0.8300000000000001,
+      "coverage": 0.8419387120331052,
+      "accepted_accuracy": 0.571589193356677,
+      "macro_precision": 0.7145061903920128,
+      "macro_recall": 0.7928099032631071,
+      "macro_f1": 0.6320945226097904
+    },
+    {
+      "threshold": 0.84,
+      "coverage": 0.8356638628188138,
+      "accepted_accuracy": 0.5735508301776872,
+      "macro_precision": 0.7168148711589885,
+      "macro_recall": 0.7918615108397214,
+      "macro_f1": 0.633071670213294
+    },
+    {
+      "threshold": 0.85,
+      "coverage": 0.8288210315635735,
+      "accepted_accuracy": 0.575773397728756,
+      "macro_precision": 0.7199107241747681,
+      "macro_recall": 0.7903146746912805,
+      "macro_f1": 0.6344820500100914
+    },
+    {
+      "threshold": 0.86,
+      "coverage": 0.8208422362264355,
+      "accepted_accuracy": 0.5778444100299845,
+      "macro_precision": 0.7228587654582476,
+      "macro_recall": 0.7885175164306105,
+      "macro_f1": 0.635385125520706
+    },
+    {
+      "threshold": 0.87,
+      "coverage": 0.8112947285857247,
+      "accepted_accuracy": 0.580344045872783,
+      "macro_precision": 0.725898030558691,
+      "macro_recall": 0.7860477685454151,
+      "macro_f1": 0.636280865807914
+    },
+    {
+      "threshold": 0.88,
+      "coverage": 0.8007735374462446,
+      "accepted_accuracy": 0.5842874995778026,
+      "macro_precision": 0.7302847279822284,
+      "macro_recall": 0.7838803383453267,
+      "macro_f1": 0.6381590167460346
+    },
+    {
+      "threshold": 0.89,
+      "coverage": 0.7885213534200632,
+      "accepted_accuracy": 0.5880496672840777,
+      "macro_precision": 0.7349425715194533,
+      "macro_recall": 0.7809483429086193,
+      "macro_f1": 0.639694944852074
+    },
+    {
+      "threshold": 0.9,
+      "coverage": 0.772239201579531,
+      "accepted_accuracy": 0.5940739702998039,
+      "macro_precision": 0.7429172864964513,
+      "macro_recall": 0.7764327760148242,
+      "macro_f1": 0.6428377436198147
+    },
+    {
+      "threshold": 0.91,
+      "coverage": 0.7522786898547589,
+      "accepted_accuracy": 0.60268210253829,
+      "macro_precision": 0.7521908439561207,
+      "macro_recall": 0.7708294529441861,
+      "macro_f1": 0.6465282591849553
+    },
+    {
+      "threshold": 0.92,
+      "coverage": 0.7196873394098396,
+      "accepted_accuracy": 0.6182118831974144,
+      "macro_precision": 0.766201641402333,
+      "macro_recall": 0.7560449610534169,
+      "macro_f1": 0.650924267675941
+    },
+    {
+      "threshold": 0.93,
+      "coverage": 0.524599031725854,
+      "accepted_accuracy": 0.7215405238193442,
+      "macro_precision": 0.7452523516014894,
+      "macro_recall": 0.5550429167717191,
+      "macro_f1": 0.5382784821458971
+    },
+    {
+      "threshold": 0.9400000000000001,
+      "coverage": 0.4291510020826008,
+      "accepted_accuracy": 0.7422953299300434,
+      "macro_precision": 0.561195010393725,
+      "macro_recall": 0.3524358939069601,
+      "macro_f1": 0.35184003064828956
+    },
+    {
+      "threshold": 0.9500000000000001,
+      "coverage": 0.35287912801233334,
+      "accepted_accuracy": 0.804092894918372,
+      "macro_precision": 0.38825332568416654,
+      "macro_recall": 0.22721846907152857,
+      "macro_f1": 0.23270766241959717
+    },
+    {
+      "threshold": 0.96,
+      "coverage": 0.25870229627025126,
+      "accepted_accuracy": 0.9877679038159958,
+      "macro_precision": 0.32830959478213534,
+      "macro_recall": 0.12945953199146276,
+      "macro_f1": 0.16208731854540392
+    },
+    {
+      "threshold": 0.97,
+      "coverage": 0.24607145755010412,
+      "accepted_accuracy": 0.9912068586502528,
+      "macro_precision": 0.3290211811412135,
+      "macro_recall": 0.1253517790938905,
+      "macro_f1": 0.15636303567643317
+    },
+    {
+      "threshold": 0.98,
+      "coverage": 0.08541368025315771,
+      "accepted_accuracy": 0.9898670044331855,
+      "macro_precision": 0.28956339194493635,
+      "macro_recall": 0.07056337954337909,
+      "macro_f1": 0.09139119748652248
+    },
+    {
+      "threshold": 0.99,
+      "coverage": 0.025856706245097776,
+      "accepted_accuracy": 0.9968619246861925,
+      "macro_precision": 0.10410539215686275,
+      "macro_recall": 0.04863603620310832,
+      "macro_f1": 0.053908939036812174
+    }
+  ],
+  "unknown_false_activations_measured": false,
+  "identity_warning": "Source hints are unverified diagnostics, not signer IDs or safe grouping claims"
+}

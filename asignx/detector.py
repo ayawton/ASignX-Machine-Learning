@@ -60,7 +60,13 @@ class HandDetector:
         self.duplicate_iou_threshold = duplicate_iou_threshold
         self.left_hand_motion_distance_threshold = left_hand_motion_distance_threshold
 
+        import sys
+
         model_path = Path(__file__).with_name("assets") / "hand_landmarker.task"
+        if not model_path.exists() and hasattr(sys, "_MEIPASS"):
+            alt_path = Path(getattr(sys, "_MEIPASS")) / "asignx" / "assets" / "hand_landmarker.task"
+            if alt_path.exists():
+                model_path = alt_path
         if not model_path.exists():
             raise FileNotFoundError(
                 "Missing MediaPipe hand landmark model: "
@@ -68,7 +74,10 @@ class HandDetector:
             )
 
         self._last_timestamp_ms = -1
-        base_options = mp.tasks.BaseOptions(model_asset_path=str(model_path))
+        if getattr(sys, "frozen", False):
+            base_options = mp.tasks.BaseOptions(model_asset_buffer=model_path.read_bytes())
+        else:
+            base_options = mp.tasks.BaseOptions(model_asset_path=str(model_path))
         vision = mp.tasks.vision
         running_mode = (
             vision.RunningMode.IMAGE

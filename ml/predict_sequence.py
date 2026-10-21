@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import time
 from collections import deque
 from pathlib import Path
 from typing import Any
@@ -42,19 +43,51 @@ class SequencePredictor:
             raise ValueError(f"Unsupported sequence feature width: {self.input_size}")
         self.threshold = confidence_threshold
         self.device = device
+        self.target_fps = float(self.metadata.get("training", {}).get("sampling_fps", 15.0))
+        if not np.isfinite(self.target_fps) or self.target_fps <= 0:
+            raise ValueError("Invalid checkpoint sampling FPS")
+        self._last_timestamp: float | None = None
+        self._next_sample: float | None = None
+        self.sampled = False
+        self.min_visibility = 0.5
+        self.max_gap_frames = 3
         self.buffer: deque[tuple[str, np.ndarray, np.ndarray | None]] = deque(
             maxlen=self.sequence_length
         )
 
     def reset(self) -> None:
         self.buffer.clear()
+        self._last_timestamp = self._next_sample = None
+        self.sampled = False
 
-    def add_frame(self, landmarks: np.ndarray | None) -> None:
+    def add_frame(self, landmarks: np.ndarray | None, timestamp: float | None = None) -> None:
         """Append raw landmarks, preprocessed features, or a missing frame.
 
         One-hand checkpoints accept ``(21, 3)`` or ``(63,)``. Two-hand
         checkpoints accept canonical Left/Right ``(2, 21, 3)`` or ``(126,)``.
         """
+        self.sampled = False
+        if timestamp is not None:
+            if not np.isfinite(timestamp) or (self._last_timestamp is not None and timestamp <= self._last_timestamp):
+                raise ValueError("Live sequence timestamps must increase and be finite")
+            self._last_timestamp = timestamp
+            interval = 1.0 / self.target_fps
+            if self._next_sample is None:
+                self._next_sample = timestamp
+            if timestamp + 1e-8 < self._next_sample:
+                return
+            # Camera stalls must not retain an old gesture or synthesize unlimited motion.
+            if timestamp - self._next_sample > interval * self.max_gap_frames:
+                self.buffer.clear()
+                self._next_sample = timestamp
+            while timestamp - self._next_sample >= interval - 1e-8:
+                self._append_frame(None)
+                self._next_sample += interval
+            self._next_sample += interval
+        self._append_frame(landmarks)
+        self.sampled = True
+
+    def _append_frame(self, landmarks):
         hands = self.input_size // NUM_FEATURES
         if landmarks is None:
             raw = np.full((hands, 21, 3), np.nan, dtype=np.float32)
@@ -81,11 +114,20 @@ class SequencePredictor:
         if all(kind == "raw" for kind, _, _ in self.buffer):
             raw = np.stack([value for _, value, _ in self.buffer])
             valid = np.stack([mask for _, _, mask in self.buffer])
-            try:
-                raw, valid = fill_landmark_gaps(raw, valid)
-                return normalize_landmark_sequence(raw, valid=valid)
-            except ValueError:
-                return np.zeros((len(self.buffer), self.input_size), dtype=np.float32)
+            frame_visible = valid.any(axis=1)
+            if frame_visible.mean() < self.min_visibility:
+                raise ValueError("Insufficient visible hands")
+            for hand in range(valid.shape[1]):
+                if not valid[:, hand].any():
+                    continue
+                longest = run = 0
+                for visible in valid[:, hand]:
+                    run = 0 if visible else run + 1
+                    longest = max(longest, run)
+                if longest > self.max_gap_frames:
+                    raise ValueError("Hand tracking gap is too long")
+            raw, valid = fill_landmark_gaps(raw, valid)
+            return normalize_landmark_sequence(raw, valid=valid)
         rows: list[np.ndarray] = []
         for kind, value, _ in self.buffer:
             if kind != "features":
@@ -100,7 +142,12 @@ class SequencePredictor:
         required = max(1, int(np.ceil(self.sequence_length * min_filled_ratio)))
         if len(self.buffer) < required:
             return None
-        sequence = self._buffer_features()
+        try:
+            sequence = self._buffer_features()
+        except ValueError:
+            return None
+        if not np.any(np.abs(sequence) > 1e-8):
+            return None
         if sequence.shape[0] < self.sequence_length:
             padding = np.zeros(
                 (self.sequence_length - sequence.shape[0], self.input_size), dtype=np.float32
@@ -134,7 +181,8 @@ class SequencePredictor:
         for row in array:
             self.add_frame(row)
         prediction = self.predict(min_filled_ratio=1.0)
-        assert prediction is not None
+        if prediction is None:
+            raise ValueError("Sequence has insufficient valid hand evidence")
         return prediction
 
 
@@ -159,23 +207,38 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", default="ml/models/sequence_classifier.pth")
     parser.add_argument("--camera", type=int, default=0)
+    parser.add_argument("--exposure", default="auto", help="Camera exposure: 'auto' (default) or a manual value such as -5.0")
     parser.add_argument("--confidence", type=float, default=0.8)
     parser.add_argument("--hand", choices=("single", "Left", "Right"), default="single")
     parser.add_argument("--stable-windows", type=int, default=3)
     parser.add_argument("--release-windows", type=int, default=8)
     parser.add_argument("--device", default="cpu")
     args = parser.parse_args()
+    try:
+        exposure = None if args.exposure.lower() == "auto" else float(args.exposure)
+        if exposure is not None and not np.isfinite(exposure):
+            raise ValueError
+    except ValueError:
+        parser.error("--exposure must be 'auto' or a finite number")
 
     from asignx import HandDetector, WebcamStream
 
     predictor = SequencePredictor(args.model, args.confidence, args.device)
     stabilizer = PredictionStabilizer(args.stable_windows, args.release_windows)
     both = predictor.input_size == DUAL_NUM_FEATURES
-    with WebcamStream(camera_index=args.camera, threaded=True, exposure=-5.0) as camera:
+    with WebcamStream(camera_index=args.camera, threaded=True, exposure=exposure) as camera:
+        if exposure is None:
+            # Explicitly restore auto mode: a previous run may have left the driver in manual mode.
+            camera.set_exposure(None)
         with HandDetector(max_num_hands=2) as detector:
             for frame in camera.stream():
                 result, annotated = detector.process(frame, draw=True)
-                predictor.add_frame(_canonical_hands(result.all_hands, both, args.hand))
+                predictor.add_frame(_canonical_hands(result.all_hands, both, args.hand), timestamp=time.monotonic())
+                if not predictor.sampled:
+                    cv2.imshow("ASignX - Moving Sign Recognition", annotated)
+                    if cv2.waitKey(1) & 0xFF in (27, ord("q"), ord("Q")):
+                        break
+                    continue
                 prediction = predictor.predict()
                 label = prediction.label if prediction else None
                 stable, emitted = stabilizer.update(label)

@@ -1,0 +1,55 @@
+Matching against 5640 current M rows...
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1792595570.512343   16728 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792595570.539433   16728 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792595570.647719   16600 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+Images 250/7900; unique image contents 250; stored M rows matched 248
+Images 500/7900; unique image contents 499; stored M rows matched 484
+Images 750/7900; unique image contents 749; stored M rows matched 642
+Images 1000/7900; unique image contents 997; stored M rows matched 740
+Images 1250/7900; unique image contents 1245; stored M rows matched 889
+Images 1500/7900; unique image contents 1493; stored M rows matched 1068
+Images 1750/7900; unique image contents 1743; stored M rows matched 1172
+Images 2000/7900; unique image contents 1992; stored M rows matched 1340
+Images 2250/7900; unique image contents 2239; stored M rows matched 1509
+Images 2500/7900; unique image contents 2489; stored M rows matched 1726
+Images 2750/7900; unique image contents 2738; stored M rows matched 1792
+Images 3000/7900; unique image contents 2988; stored M rows matched 1799
+Images 3250/7900; unique image contents 3238; stored M rows matched 1925
+Images 3500/7900; unique image contents 3488; stored M rows matched 2083
+Images 3750/7900; unique image contents 3728; stored M rows matched 2188
+Images 4000/7900; unique image contents 3978; stored M rows matched 2363
+Images 4250/7900; unique image contents 4176; stored M rows matched 2553
+Images 4500/7900; unique image contents 4176; stored M rows matched 2553
+Images 4750/7900; unique image contents 4176; stored M rows matched 2553
+Images 5000/7900; unique image contents 4176; stored M rows matched 2553
+Images 5250/7900; unique image contents 4176; stored M rows matched 2553
+Images 5500/7900; unique image contents 4176; stored M rows matched 2553
+Images 5750/7900; unique image contents 4176; stored M rows matched 2553
+Images 6000/7900; unique image contents 4176; stored M rows matched 2553
+Images 6250/7900; unique image contents 4176; stored M rows matched 2553
+Images 6500/7900; unique image contents 4176; stored M rows matched 2553
+Images 6750/7900; unique image contents 4176; stored M rows matched 2553
+Images 7000/7900; unique image contents 4176; stored M rows matched 2553
+Images 7250/7900; unique image contents 4226; stored M rows matched 2591
+Images 7500/7900; unique image contents 4476; stored M rows matched 2802
+Images 7750/7900; unique image contents 4726; stored M rows matched 3047
+Images 7900/7900; unique image contents 4876; stored M rows matched 3107
+{
+  "source_archive": "C:\\Users\\jibbi\\Downloads\\archive (4).zip",
+  "source_sha256": "24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+  "dataset_sha256": "b72cde2aa886f665d9b89248c9fd98cc759ea6fbc4cfdc8993435a336ee8d58d",
+  "images_scanned": 7900,
+  "unique_image_contents": 4876,
+  "stored_M_rows": 5640,
+  "matched_stored_M_rows": 3107,
+  "statuses": {
+    "matched": 4936,
+    "multiple_hands": 11,
+    "no_stored_match": 297,
+    "no_hand": 2656
+  },
+  "match_rule": "Canonical geometry, all 63 coordinates within absolute 1e-6, no relative tolerance. Image pose classification is separate from numerical matching.",
+  "main_dataset_unchanged": true
+}

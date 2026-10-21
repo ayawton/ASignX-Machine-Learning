@@ -1,0 +1,51 @@
+{
+  "source": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\tmp\\conflict-package-smoke\\input",
+  "preprocessing": "wrist_max_radius_v1",
+  "status": "committed",
+  "settings": {
+    "unusual_pose_threshold": 0.0,
+    "similarity_distance": 0.0
+  },
+  "report": {
+    "total_files_scanned": 3,
+    "exact_duplicates_skipped": 0,
+    "label_conflicts_skipped": 2,
+    "no_hand_detected": 1,
+    "anatomical_outliers_rejected": 0,
+    "statistical_outliers_rejected": 0,
+    "near_duplicates_pruned": 0,
+    "already_in_csv_skipped": 0,
+    "samples_appended": 0,
+    "per_label_counts": {},
+    "unreadable_images": 0,
+    "multiple_hands_skipped": 0,
+    "animated_images_skipped": 0,
+    "warnings": [
+      "Skipped 2 examples assigned to conflicting sign labels. Other examples were processed. Review the paths in the detailed results file; original images and existing rows were kept."
+    ],
+    "decisions": [
+      {
+        "path": "A\\other.png",
+        "label": "A",
+        "reason": "No hand found",
+        "sha256": "99fb2c6e947aed4d91b1d1ba942ca54ff4f8bdefe242c76e1e0cafb5cd6e4050",
+        "group": "default"
+      },
+      {
+        "path": "A\\repeated.png",
+        "label": "A",
+        "reason": "Identical image assigned to different signs; review labels",
+        "sha256": "1f68530ad54113ed7d18b0d1ca4b0449a293f3baad3044ba6ca43b2bb928320e",
+        "group": "default"
+      },
+      {
+        "path": "B\\repeated.png",
+        "label": "B",
+        "reason": "Identical image assigned to different signs; review labels",
+        "sha256": "1f68530ad54113ed7d18b0d1ca4b0449a293f3baad3044ba6ca43b2bb928320e",
+        "group": "default"
+      }
+    ],
+    "audit_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-cleanup\\smoke-landmarks.extraction-16edb4697d6b4350976f39fa703eda27.json"
+  }
+}

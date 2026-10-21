@@ -1,0 +1,26 @@
+{
+  "batch_size": 512,
+  "learning_rate": 0.002,
+  "weight_decay": 0.0001,
+  "label_smoothing": 0.05,
+  "epochs": 12,
+  "hidden_sizes": [
+    128,
+    64
+  ],
+  "dropout": 0.2,
+  "augment": true,
+  "use_kinematics": true,
+  "residual": true,
+  "cosine_head": true,
+  "validation_fraction": 0.15,
+  "test_fraction": 0.15,
+  "seed": 42,
+  "device": "cpu",
+  "static_hand_preprocessing": "left_x_reflection_v1",
+  "selection_metric": "macro_f1",
+  "class_weighting": "sqrt",
+  "augmentation_scale": 1.0,
+  "group_plan": null,
+  "evaluate_test": false
+}

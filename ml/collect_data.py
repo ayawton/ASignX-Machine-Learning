@@ -94,8 +94,8 @@ def main() -> None:
     parser.add_argument("--interval", type=float, default=0.15)
     parser.add_argument("--hand", choices=("single", "Left", "Right"), default="single")
     parser.add_argument("--camera", type=int, default=0)
-    parser.add_argument("--width", type=int, default=640)
-    parser.add_argument("--height", type=int, default=480)
+    parser.add_argument("--width", type=int, default=800)
+    parser.add_argument("--height", type=int, default=600)
     parser.add_argument("--exposure", default="-5.0")
     collect(parser.parse_args())
 

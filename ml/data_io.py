@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import csv
+import hashlib
+import json
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -16,6 +18,13 @@ from ml.preprocessing import (
 )
 
 CSV_COLUMNS = ["label", "session_id", "handedness", "preprocessing", *FEATURE_COLUMNS]
+
+
+def import_session_id(source_tag: str, label: str, group: str = "default") -> str:
+    """Stable origin-group key; it does not establish signer independence."""
+    return "ext_" + hashlib.sha256(
+        json.dumps([source_tag, label, group]).encode("utf-8")
+    ).hexdigest()[:24]
 
 
 @dataclass

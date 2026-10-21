@@ -1,0 +1,99 @@
+{
+  "count": 5,
+  "labels": {
+    "J": 5
+  },
+  "rows": [
+    {
+      "label": "J",
+      "session_id": "0055ca768cd14fb6bb8eb542a4006d98",
+      "predicted": "J",
+      "accepted": "J",
+      "confidence": 0.9968717694282532,
+      "metadata": {
+        "capture_method": "manual_webcam",
+        "decoded_frames": 14,
+        "detection_ratio": 1.0,
+        "duration_seconds": 1.344,
+        "feature_width": 126,
+        "frames_with_hand": 14,
+        "hand_selection": "both",
+        "source": "webcam",
+        "target_fps": 15.0
+      }
+    },
+    {
+      "label": "J",
+      "session_id": "408e21937183472aa81a1ee1ccd34872",
+      "predicted": "J",
+      "accepted": "J",
+      "confidence": 0.9816226959228516,
+      "metadata": {
+        "capture_method": "manual_webcam",
+        "decoded_frames": 16,
+        "detection_ratio": 1.0,
+        "duration_seconds": 1.373,
+        "feature_width": 126,
+        "frames_with_hand": 16,
+        "hand_selection": "both",
+        "source": "webcam",
+        "target_fps": 15.0
+      }
+    },
+    {
+      "label": "J",
+      "session_id": "4b033481ed6f45d5a0a3783095bf783a",
+      "predicted": "J",
+      "accepted": "J",
+      "confidence": 0.994176983833313,
+      "metadata": {
+        "capture_method": "manual_webcam",
+        "decoded_frames": 72,
+        "detection_ratio": 1.0,
+        "duration_seconds": 7.149,
+        "feature_width": 126,
+        "frames_with_hand": 72,
+        "hand_selection": "both",
+        "source": "webcam",
+        "target_fps": 15.0
+      }
+    },
+    {
+      "label": "J",
+      "session_id": "50186ac797fe4dc0af71afd70b9c0b07",
+      "predicted": "J",
+      "accepted": "J",
+      "confidence": 0.9805460572242737,
+      "metadata": {
+        "capture_method": "manual_webcam",
+        "decoded_frames": 14,
+        "detection_ratio": 1.0,
+        "duration_seconds": 1.36,
+        "feature_width": 126,
+        "frames_with_hand": 14,
+        "hand_selection": "both",
+        "source": "webcam",
+        "target_fps": 15.0
+      }
+    },
+    {
+      "label": "J",
+      "session_id": "f4b896de4533479f8dc5b9a4298d8579",
+      "predicted": "J",
+      "accepted": "J",
+      "confidence": 0.9940376281738281,
+      "metadata": {
+        "capture_method": "manual_webcam",
+        "decoded_frames": 26,
+        "detection_ratio": 1.0,
+        "duration_seconds": 2.091,
+        "feature_width": 126,
+        "frames_with_hand": 26,
+        "hand_selection": "both",
+        "source": "webcam",
+        "target_fps": 15.0
+      }
+    }
+  ],
+  "warning": "Not in the saved training dataset; signer identities unknown; J-only evidence is not balanced dynamic F1"
+}

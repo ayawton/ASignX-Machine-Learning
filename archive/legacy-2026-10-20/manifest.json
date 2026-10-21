@@ -1,0 +1,70 @@
+{
+    "archive_date":  "2026-10-20",
+    "timezone":  "Asia/Singapore",
+    "archive":  "legacy-files.zip",
+    "archive_sha256":  "528acd231dafc756a9df9a728c60014307dfc6ba5c49a99b05b79c0e62af1405",
+    "verification":  "Every ZIP entry verified against original SHA-256 before source removal",
+    "legacy_checkpoint_dataset_sha256":  "695186db74e928760d81f63872f7bf89ec62e05c322bc93c7e2907fff2132ec6",
+    "matching_legacy_dataset_entry":  "ml/data/landmarks.csv.backup-remove-J-Z-20261017T180240369474Z",
+    "protected_active_files":  {
+                                   "ml/models/sign_classifier_canonical.metrics.json":  "2e9f823db9d35440564c38bce6eeeda3807ab049679a0327f801c780cc89769b",
+                                   "ml/models/sign_classifier_canonical.splits.json":  "ad796a4a68232fd73588113513ed345b39905145b854c8863b2fd47f7a74d319",
+                                   "ml/models/sequence_classifier.pth":  "1e2228a5970d18b19a25f62cb76fc560aa4c5e33962a8bc2a362a87309db2ec9",
+                                   "ml/models/sign_classifier_canonical.pth":  "98559a10c553c23d2c6aad227f52416b59ad92483bf4f079cfca5eb512bf5b66",
+                                   "ml/data/landmarks.csv":  "17249bc657b7ed52f1d6a39f5d3bbbf6b8d2445efdab97f64094df68855647db",
+                                   "ml/models/sequence_classifier.metrics.json":  "a46d8b011f782bc4c44181a7f387218df087db15491e58b8d3f012e60054e488",
+                                   "ml/models/sequence_classifier.splits.json":  "6450419c2788f37d1932d16b4d314d55b1a22173148dff1322bb04c3f3e654b2"
+                               },
+    "files":  [
+                  {
+                      "original_path":  "ml/data/landmarks.csv.backup-20261017T150657942662Z-db772f24",
+                      "archive_entry":  "ml/data/landmarks.csv.backup-20261017T150657942662Z-db772f24",
+                      "bytes":  52251893,
+                      "sha256":  "cdc0619e097b27648cee74a1cd68150cc00e854c59856728645c2746b3b43b04",
+                      "action":  "archive_and_remove_original"
+                  },
+                  {
+                      "original_path":  "ml/data/landmarks.csv.backup-remove-J-Z-20261017T180240369474Z",
+                      "archive_entry":  "ml/data/landmarks.csv.backup-remove-J-Z-20261017T180240369474Z",
+                      "bytes":  134822805,
+                      "sha256":  "695186db74e928760d81f63872f7bf89ec62e05c322bc93c7e2907fff2132ec6",
+                      "action":  "archive_and_remove_original"
+                  },
+                  {
+                      "original_path":  "ml/data/landmarks.csv.backup-remove-out-of-scope-20261017T151409030992Z",
+                      "archive_entry":  "ml/data/landmarks.csv.backup-remove-out-of-scope-20261017T151409030992Z",
+                      "bytes":  138840724,
+                      "sha256":  "919c30b254a690cbca5bc55092994ecb7796986899b87998c97a7c2c22478547",
+                      "action":  "archive_and_remove_original"
+                  },
+                  {
+                      "original_path":  "ml/models/sign_classifier.pth",
+                      "archive_entry":  "ml/models/sign_classifier.pth",
+                      "bytes":  994625,
+                      "sha256":  "c2da9c4e3f80ce21c5b23f49f656a21ec7d8f683eabdb12f366c680681568e0d",
+                      "action":  "archive_and_remove_original"
+                  },
+                  {
+                      "original_path":  "ml/models/sign_classifier.metrics.json",
+                      "archive_entry":  "ml/models/sign_classifier.metrics.json",
+                      "bytes":  886393,
+                      "sha256":  "65700486861c3ccfb04cfbb6ed4ebd0e8ff63c15059aaf6757037c2e64d76fac",
+                      "action":  "archive_and_remove_original"
+                  },
+                  {
+                      "original_path":  "ml/models/sign_classifier.splits.json",
+                      "archive_entry":  "ml/models/sign_classifier.splits.json",
+                      "bytes":  2431820,
+                      "sha256":  "2f62402c0e49529ae14607be5e3b51f6c40f76b62d10054b7e1b7f1b318e1845",
+                      "action":  "archive_and_remove_original"
+                  },
+                  {
+                      "original_path":  "ml/data/landmarks.csv.merge-20261017T150657942662Z-db772f24.json",
+                      "archive_entry":  "ml/data/landmarks.csv.merge-20261017T150657942662Z-db772f24.json",
+                      "bytes":  15002651,
+                      "sha256":  "7b9cee9b802754d06abc4f76cb4dacda59fbde6b1d3163526ac63cd7ffb97ebe",
+                      "action":  "archive_copy_keep_original"
+                  }
+              ],
+    "status":  "complete_originals_archived_active_files_unchanged"
+}

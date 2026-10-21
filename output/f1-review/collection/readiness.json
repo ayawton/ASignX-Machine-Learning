@@ -1,0 +1,16 @@
+{
+  "data_dir": "dist/data/sequences",
+  "recorded_sequences": 16,
+  "labels": {
+    "J": 11,
+    "Z": 5
+  },
+  "benchmark_ready": false,
+  "problems": [
+    {
+      "identity_plan": "Unknown/duplicate session, missing identity or invalid split: 0055ca768cd14fb6bb8eb542a4006d98"
+    }
+  ],
+  "missing_data": false,
+  "planned_examples_are_not_training_data": true
+}

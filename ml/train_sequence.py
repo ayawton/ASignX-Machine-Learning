@@ -1,4 +1,4 @@
-"""Train and evaluate the dynamic-gesture LSTM."""
+"""Train and evaluate the dynamic-gesture classifier (LSTM or TCN-Attention) with 3D sequence augmentation."""
 
 from __future__ import annotations
 
@@ -25,22 +25,33 @@ from ml.sequence_dataset import (
     save_sequence_manifest,
 )
 from ml.sequence_model import SignLSTM, load_sequence_checkpoint, save_sequence_checkpoint
+from ml.benchmark import class_weights, load_group_plan, selection_score
 
 
 @dataclass
 class SequenceTrainConfig:
     batch_size: int = 16
-    learning_rate: float = 0.001
+    learning_rate: float = 0.0015
+    weight_decay: float = 1e-4
+    label_smoothing: float = 0.05
     epochs: int = 50
     hidden_size: int = 128
     num_layers: int = 2
     dropout: float = 0.2
     bidirectional: bool = False
     pooling: str = "mean"
+    backbone: str = "tcn_attention"
+    augment: bool = True
+    use_kinematics: bool = True
+    cosine_head: bool = True
     validation_fraction: float = 0.15
     test_fraction: float = 0.15
     seed: int = 42
     device: str = "cpu"
+    selection_metric: str = "macro_f1"
+    class_weighting: str = "inverse"
+    group_plan: str | None = None
+    evaluate_test: bool = True
 
 
 @torch.inference_mode()
@@ -69,6 +80,9 @@ def train_sequence(
     config: SequenceTrainConfig | None = None,
 ) -> dict[str, Any]:
     config = config or SequenceTrainConfig()
+    if config.selection_metric not in ("macro_f1", "loss") or not 0 <= config.label_smoothing < 1:
+        raise ValueError("Invalid selection metric or label smoothing")
+    class_weights(torch.ones(2), config.class_weighting)
     if (
         config.batch_size < 1
         or config.epochs < 1
@@ -93,13 +107,22 @@ def train_sequence(
     labels = sorted({sample.label for sample in samples})
     input_size = samples[0].features.shape[1]
     sequence_length = samples[0].features.shape[0]
+    rates = {float(s.metadata["target_fps"]) for s in samples if s.metadata.get("target_fps") is not None}
+    if len(rates) > 1 or any(not math.isfinite(rate) or rate <= 0 for rate in rates):
+        raise ValueError("Sequence training requires one positive sampling FPS contract")
+    sampling_fps = next(iter(rates), 15.0)
     manifest_path = output_path.with_suffix(".splits.json")
+    splits = None
     if manifest_path.exists():
-        manifest = load_sequence_manifest(manifest_path, samples)
-        splits = manifest["splits"]
-        print(f"Reusing fixed split manifest: {manifest_path}")
-    else:
-        splits = create_sequence_splits(
+        try:
+            manifest = load_sequence_manifest(manifest_path, samples)
+            splits = manifest["splits"]
+            print(f"Reusing fixed split manifest: {manifest_path}")
+        except ValueError as err:
+            raise ValueError("Existing benchmark changed; use a new output path and an explicitly reviewed split") from err
+
+    if splits is None:
+        splits = load_group_plan(config.group_plan, samples)[0] if config.group_plan else create_sequence_splits(
             samples,
             validation_fraction=config.validation_fraction,
             test_fraction=config.test_fraction,
@@ -108,10 +131,29 @@ def train_sequence(
         output_path.parent.mkdir(parents=True, exist_ok=True)
         save_sequence_manifest(manifest_path, samples, splits, config.seed)
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if config.group_plan:
+        splits, group_metadata = load_group_plan(config.group_plan, samples)
+        if manifest.get("group_plan_sha256") not in (None, group_metadata["group_plan_sha256"]):
+            raise ValueError("Identity plan changed; use a new benchmark output path")
+        from ml.sequence_dataset import validate_sequence_splits
+        validate_sequence_splits(samples, splits)
+        save_sequence_manifest(manifest_path, samples, splits, config.seed)
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        manifest.update(group_metadata)
+        manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+    elif manifest.get("global_identity_groups"):
+        raise ValueError("This benchmark requires its explicit --group-plan on every training run")
     print(f"Class counts by split: {manifest['counts']}")
 
     datasets = {
-        split: SequenceDataset(samples, indices, labels) for split, indices in splits.items()
+        split: SequenceDataset(
+            samples,
+            indices,
+            labels,
+            augment=(split == "train" and config.augment),
+            seed=config.seed,
+        )
+        for split, indices in splits.items()
     }
     generator = torch.Generator().manual_seed(config.seed)
     loaders = {
@@ -131,14 +173,31 @@ def train_sequence(
         dropout=config.dropout,
         bidirectional=config.bidirectional,
         pooling=config.pooling,
+        backbone=config.backbone,
+        use_kinematics=config.use_kinematics,
+        cosine_head=config.cosine_head,
     ).to(config.device)
+
     train_targets = datasets["train"].targets
     counts = torch.bincount(train_targets, minlength=len(labels)).float()
-    weights = counts.sum() / (len(labels) * counts.clamp_min(1.0))
-    criterion = nn.CrossEntropyLoss(weight=weights.to(config.device))
-    optimizer = torch.optim.Adam(model.parameters(), lr=config.learning_rate)
+    weights = class_weights(counts, config.class_weighting)
+    criterion = nn.CrossEntropyLoss(
+        weight=weights.to(config.device) if weights is not None else None,
+        label_smoothing=config.label_smoothing,
+    )
+    optimizer = torch.optim.AdamW(
+        model.parameters(),
+        lr=config.learning_rate,
+        weight_decay=config.weight_decay,
+    )
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+        optimizer,
+        T_max=max(1, config.epochs),
+        eta_min=min(1e-5, config.learning_rate * 0.1),
+    )
 
     best_loss = math.inf
+    best_score = -math.inf
     history: list[dict[str, Any]] = []
     dataset_hash = dataset_sequence_digest(samples)
     for epoch in range(1, config.epochs + 1):
@@ -155,11 +214,13 @@ def train_sequence(
             optimizer.step()
             train_loss += float(loss.item()) * len(targets)
             train_count += len(targets)
+        scheduler.step()
         validation = evaluate_sequence_model(model, loaders["validation"], labels, config.device)
         if not math.isfinite(validation["loss"]):
             raise ValueError("Non-finite validation loss; inspect data and learning rate")
         record = {
             "epoch": epoch,
+            "lr": float(optimizer.param_groups[0]["lr"]),
             "train_loss": train_loss / train_count,
             "validation": validation,
         }
@@ -169,25 +230,30 @@ def train_sequence(
             f"validation_loss={validation['loss']:.4f} "
             f"validation_accuracy={validation['accuracy']:.3f}"
         )
-        if validation["loss"] < best_loss:
+        score = selection_score(validation, config.selection_metric)
+        if score > best_score or (score == best_score and validation["loss"] < best_loss):
+            best_score = score
             best_loss = validation["loss"]
             save_sequence_checkpoint(
                 output_path,
                 model,
                 labels,
                 sequence_length=sequence_length,
-                training={"config": asdict(config), "best_epoch": epoch},
+                training={"config": asdict(config), "best_epoch": epoch, "sampling_fps": sampling_fps,
+                          "sampling_fps_assumed": not bool(rates)},
                 dataset_sha256=dataset_hash,
                 splits=splits,
             )
 
     best_model, _, checkpoint = load_sequence_checkpoint(output_path, config.device)
-    test_metrics = evaluate_sequence_model(best_model, loaders["test"], labels, config.device)
+    test_metrics = evaluate_sequence_model(best_model, loaders["test"], labels, config.device) if config.evaluate_test else None
     results = {
         "labels": labels,
         "best_epoch": checkpoint["training"]["best_epoch"],
         "validation": history[checkpoint["training"]["best_epoch"] - 1]["validation"],
         "test": test_metrics,
+        "selection_metric": config.selection_metric,
+        "benchmark": "global_identity_groups" if config.group_plan else "legacy_session_groups_not_signer_independent",
         "history": history,
     }
     output_path.with_suffix(".metrics.json").write_text(
@@ -202,17 +268,25 @@ def main() -> None:
     parser.add_argument("--data-dir", default="ml/data/sequences")
     parser.add_argument("--output", default="ml/models/sequence_classifier.pth")
     parser.add_argument("--batch-size", type=int, default=16)
-    parser.add_argument("--learning-rate", type=float, default=0.001)
+    parser.add_argument("--learning-rate", type=float, default=0.0015)
+    parser.add_argument("--weight-decay", type=float, default=1e-4)
+    parser.add_argument("--label-smoothing", type=float, default=0.05)
     parser.add_argument("--epochs", type=int, default=50)
     parser.add_argument("--hidden-size", type=int, default=128)
     parser.add_argument("--num-layers", type=int, default=2)
     parser.add_argument("--dropout", type=float, default=0.2)
     parser.add_argument("--bidirectional", action="store_true")
     parser.add_argument("--pooling", choices=("mean", "last"), default="mean")
+    parser.add_argument("--backbone", choices=("tcn_attention", "lstm"), default="tcn_attention")
+    parser.add_argument("--no-augment", action="store_false", dest="augment")
     parser.add_argument("--validation-fraction", type=float, default=0.15)
     parser.add_argument("--test-fraction", type=float, default=0.15)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--device", default="cpu")
+    parser.add_argument("--selection-metric", choices=("macro_f1", "loss"), default="macro_f1")
+    parser.add_argument("--class-weighting", choices=("none", "sqrt", "inverse"), default="inverse")
+    parser.add_argument("--group-plan")
+    parser.add_argument("--no-test", dest="evaluate_test", action="store_false")
     args = parser.parse_args()
     values = vars(args).copy()
     data_dir = values.pop("data_dir")

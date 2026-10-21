@@ -1,5 +1,14 @@
 .venv/
+/.venv-py314/
+/build/
+/dist/ASignX_DataExtractor/
 __pycache__/
 *.py[cod]
 .pytest_cache/
+/tmp/
+/output/extractor/
+/output/extractor-large-datasets/
+/output/extractor-reviewed/
+/ml/data/manual_recordings/
+/ml/models/manual_runs/
 

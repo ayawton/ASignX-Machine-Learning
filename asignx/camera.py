@@ -32,8 +32,8 @@ class WebcamStream:
     def __init__(
         self,
         camera_index: int = 0,
-        width: Optional[int] = 640,
-        height: Optional[int] = 480,
+        width: Optional[int] = 800,
+        height: Optional[int] = 600,
         target_fps: Optional[int] = 30,
         threaded: bool = True,
         exposure: Optional[float] = -5.0,
@@ -42,8 +42,8 @@ class WebcamStream:
 
         Args:
             camera_index: Device index (default 0 for default primary webcam).
-            width: Desired capture frame width (pixels). Default 640 for 30+ FPS.
-            height: Desired capture frame height (pixels). Default 480 for 30+ FPS.
+            width: Desired capture frame width (pixels). Default 800.
+            height: Desired capture frame height (pixels). Default 600.
             target_fps: Desired capture frame rate (default 30).
             threaded: If True (default), acquires frames in a dedicated background
                 thread to eliminate sensor wait latency and achieve maximum FPS.

@@ -1,0 +1,27 @@
+{
+  "source_archive": "C:\\Users\\jibbi\\Downloads\\archive (4).zip",
+  "source_archive_recorded_sha256": "24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+  "session_id": "ext_c72cf97fc7fa5995335a73a1",
+  "source_identification": "Exact historical import-session hash; not individual image or signer identification for every row.",
+  "original_dataset_sha256": "17249bc657b7ed52f1d6a39f5d3bbbf6b8d2445efdab97f64094df68855647db",
+  "export_sha256": "63d7aec3a2d2ff9f0e171d48ca6168d7b064964cbe2546fa2242043e9b17cd07",
+  "label": "M",
+  "samples": 1062,
+  "original_csv_row_first": 109907,
+  "original_csv_row_last": 113221,
+  "original_rows_contiguous": false,
+  "partitions": {
+    "test": 1062
+  },
+  "handedness": {
+    "Right": 864,
+    "Left": 198
+  },
+  "original_data_unchanged": false,
+  "individual_image_recovered_for_row": 110182,
+  "current_dataset_sha256": "4a160bec73556408c12f9457577c765c89e9f8cf09eae3d658fe39d3064f58cd",
+  "current_csv_row_first": 109907,
+  "current_csv_row_last": 110968,
+  "correction_record": "archive\\data-corrections\\remove-downward-three-M-20261021T152303819569Z\\correction.json",
+  "row_number_note": "original_csv_row uses the original historical dataset; current_csv_row uses the latest corrected dataset."
+}

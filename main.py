@@ -34,14 +34,14 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--width",
         type=int,
-        default=640,
-        help="Webcam frame width (default: 640 for >=30 FPS)",
+        default=800,
+        help="Webcam frame width (default: 800)",
     )
     parser.add_argument(
         "--height",
         type=int,
-        default=480,
-        help="Webcam frame height (default: 480 for >=30 FPS)",
+        default=600,
+        help="Webcam frame height (default: 600)",
     )
     parser.add_argument(
         "--max-hands",
@@ -71,8 +71,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--exposure",
         type=str,
-        default="-5.0",
-        help="Webcam exposure: '-5.0' (locks 30 FPS), '-6.0' (60 FPS), or 'auto' (default: -5.0)",
+        default="auto",
+        help="Webcam exposure value or 'auto' (default: auto; driver-dependent)",
     )
     parser.add_argument(
         "--no-threads",
@@ -95,7 +95,24 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="Minimum static-sign confidence (default: 0.8)",
     )
     parser.add_argument("--sign-stable-frames", type=int, default=5)
+    parser.add_argument("--sign-calibration", help="Optional validation-fitted threshold JSON matching the static checkpoint")
     parser.add_argument("--sign-release-frames", type=int, default=10)
+    parser.add_argument(
+        "--sequence-model",
+        help="Optional dynamic sequence .pth checkpoint for live motion-sign classification",
+    )
+    parser.add_argument(
+        "--sequence-confidence",
+        type=float,
+        default=0.8,
+        help="Minimum dynamic sequence confidence (default: 0.8)",
+    )
+    parser.add_argument(
+        "--motion-threshold",
+        type=float,
+        default=0.045,
+        help="Normalized velocity threshold separating static and dynamic signs (default: 0.045)",
+    )
     return parser.parse_args(argv)
 
 
@@ -106,11 +123,28 @@ def run_pipeline(args: argparse.Namespace) -> None:
     print("=" * 60)
 
     sign_recognizer = None
-    if args.sign_model:
+    unified_recognizer = None
+    sequence_model_path = getattr(args, "sequence_model", None)
+    if sequence_model_path:
+        from ml.predict import SignPredictor, UnifiedSignRecognizer
+        from ml.predict_sequence import SequencePredictor
+
+        static_pred = SignPredictor(args.sign_model, args.sign_confidence,
+                                    calibration_path=getattr(args, "sign_calibration", None)) if args.sign_model else None
+        seq_pred = SequencePredictor(sequence_model_path, getattr(args, "sequence_confidence", 0.8))
+        unified_recognizer = UnifiedSignRecognizer(
+            static_predictor=static_pred,
+            sequence_predictor=seq_pred,
+            velocity_threshold=getattr(args, "motion_threshold", 0.025),
+            stable_frames=args.sign_stable_frames,
+            release_frames=args.sign_release_frames,
+        )
+    elif args.sign_model:
         from ml.predict import SignPredictor, SignRecognizer
 
         sign_recognizer = SignRecognizer(
-            SignPredictor(args.sign_model, args.sign_confidence),
+            SignPredictor(args.sign_model, args.sign_confidence,
+                          calibration_path=getattr(args, "sign_calibration", None)),
             stable_frames=args.sign_stable_frames,
             release_frames=args.sign_release_frames,
         )
@@ -125,6 +159,8 @@ def run_pipeline(args: argparse.Namespace) -> None:
             exposure=exposure_val,
         )
         camera.start()
+        if exposure_val is None:
+            camera.set_exposure(None)
     except CameraError as e:
         print(f"\n[ERROR] Camera initialization failed:\n{e}", file=sys.stderr)
         sys.exit(1)
@@ -154,7 +190,6 @@ def run_pipeline(args: argparse.Namespace) -> None:
     print("       'q' / ESC : Exit application")
     print("       'd'       : Toggle landmark drawing")
     print("       'h'       : Toggle HUD overlay")
-    print("       'e'       : Cycle exposure (30 FPS [-5.0] / 60 FPS [-6.0] / Auto)")
     print("       'p'       : Print structured landmark tree to console")
     print("       's'       : Save frame snapshot and JSON landmark coordinates")
     print("-" * 60)
@@ -173,8 +208,19 @@ def run_pipeline(args: argparse.Namespace) -> None:
                 draw=draw_landmarks,
             )
 
-            if sign_recognizer is not None:
-                for recognition in sign_recognizer.update(result.all_hands):
+            live_recognitions = None
+            live_dynamic_info = None
+            if unified_recognizer is not None:
+                live_dynamic_info = unified_recognizer.update(result.all_hands)
+                live_recognitions = live_dynamic_info["static"]
+                for recognition in live_recognitions:
+                    if recognition.emitted_label:
+                        print(f"[STATIC SIGN] {recognition.hand}: {recognition.emitted_label}")
+                if live_dynamic_info.get("dynamic_emitted"):
+                    print(f"[DYNAMIC SIGN] {live_dynamic_info['dynamic_emitted']}")
+            elif sign_recognizer is not None:
+                live_recognitions = sign_recognizer.update(result.all_hands, timestamp=time.monotonic())
+                for recognition in live_recognitions:
                     if recognition.emitted_label:
                         print(f"[SIGN] {recognition.hand}: {recognition.emitted_label}")
 
@@ -188,11 +234,13 @@ def run_pipeline(args: argparse.Namespace) -> None:
                     current_fps if fps_smooth == 0.0 else (alpha * current_fps + (1 - alpha) * fps_smooth)
                 )
 
-            # Render visual debugging HUD overlay
+            # Render visual debugging HUD overlay (including real-time sign recognition indicator)
             display_frame = visualizer.render_overlay(
                 annotated_frame,
                 result=result,
                 fps=fps_smooth,
+                recognitions=live_recognitions,
+                dynamic_info=live_dynamic_info,
             )
 
             # If continuous printing is enabled
@@ -214,19 +262,6 @@ def run_pipeline(args: argparse.Namespace) -> None:
             elif key in (ord("h"), ord("H")):
                 visualizer.show_hud = not visualizer.show_hud
                 print(f"[INFO] HUD overlay toggled: {'ON' if visualizer.show_hud else 'OFF'}")
-            elif key in (ord("e"), ord("E")):
-                # Cycle exposure: -5.0 (30 FPS) -> -6.0 (60 FPS) -> None (Auto) -> -5.0
-                if camera.exposure == -5.0:
-                    new_exp = -6.0
-                    label = "60 FPS mode (-6.0)"
-                elif camera.exposure == -6.0:
-                    new_exp = None
-                    label = "Driver Auto-Exposure mode"
-                else:
-                    new_exp = -5.0
-                    label = "30 FPS locked mode (-5.0)"
-                camera.set_exposure(new_exp)
-                print(f"[INFO] Camera exposure changed to: {label}")
             elif key in (ord("p"), ord("P")):
                 print("\n--- Current Frame Structured Output ---")
                 print(result.to_tree_string())

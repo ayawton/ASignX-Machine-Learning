@@ -1,0 +1,33 @@
+{
+  "status": "committed",
+  "reviewer": "user",
+  "reason": "User identified the handsign in M (100).jpg as wrong for M and requested removal of M samples with the same landmarks.",
+  "reference_archive": "C:\\Users\\jibbi\\Downloads\\archive (4).zip",
+  "reference_archive_member": "ASL_Alphabet_Dataset/asl_alphabet_train/M/M (100).jpg",
+  "reference_image_sha256": "2c3bb440220c9c18776dd24a93ad02172ba95a3c34db8e443a994b88c39971e5",
+  "matching_rule": "Label M; all 63 canonical float32 coordinates match at rtol=0, atol=1e-6; no approximate pose filtering.",
+  "original_dataset_sha256": "17249bc657b7ed52f1d6a39f5d3bbbf6b8d2445efdab97f64094df68855647db",
+  "reviewed_dataset_sha256": "b72cde2aa886f665d9b89248c9fd98cc759ea6fbc4cfdc8993435a336ee8d58d",
+  "removed_original_csv_rows": [
+    110182
+  ],
+  "removed_count": 1,
+  "original_rows": 159987,
+  "reviewed_rows": 159986,
+  "original_model_unchanged": true,
+  "old_reports_and_model_manifests": "Historical snapshots; still refer to the before-dataset hash and original row numbers.",
+  "backup_csv": "archive\\data-corrections\\remove-wrong-M-20261021T150522127835Z\\landmarks.before.csv",
+  "split_policy": "Preserve every retained sample partition and remap indices; no random repartition.",
+  "models_and_experiment_inputs_sha256_before": {
+    "ml\\models\\sequence_classifier.pth": "1e2228a5970d18b19a25f62cb76fc560aa4c5e33962a8bc2a362a87309db2ec9",
+    "ml\\models\\sign_classifier_canonical.pth": "98559a10c553c23d2c6aad227f52416b59ad92483bf4f079cfca5eb512bf5b66",
+    "output\\weak-class-training\\model.pth": "0294399a7d3bab77e096acba189739a5c7bb9b581290670e077870257da47864",
+    "output\\weak-class-training\\combined.csv": "d7af7db49fc194d1a2494477519765c9c7d45599da00fce2ab9ab7148897e39b"
+  },
+  "reviewed_split_counts": {
+    "train": 109223,
+    "validation": 13791,
+    "test": 36972
+  },
+  "protected_models_and_experiments_unchanged": true
+}

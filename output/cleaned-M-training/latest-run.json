@@ -1,0 +1,8 @@
+﻿{
+    "directory":  "output\\cleaned-M-training\\20261021T152633Z",
+    "status":  "complete",
+    "model":  "output\\cleaned-M-training\\20261021T152633Z\\model.pth",
+    "model_artifact_removed":  true,
+    "retained_application_model":  "ml/models/sign_classifier_canonical.pth",
+    "cleanup_record":  "output\\model-cleanup\\cleanup-20261021T164652Z.json"
+}

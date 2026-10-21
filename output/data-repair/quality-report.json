@@ -1,0 +1,119 @@
+{
+  "dataset_sha256": "17249bc657b7ed52f1d6a39f5d3bbbf6b8d2445efdab97f64094df68855647db",
+  "rows": 159987,
+  "resolved_sessions": 24,
+  "resolved_rows": 96145,
+  "source_evidence": [
+    {
+      "source_path": "C:\\Users\\jibbi\\Downloads\\archive (4).zip",
+      "source_tag": "C:\\Users\\jibbi\\Downloads\\archive (4).zip",
+      "source_sha256": "24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+      "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+      "evidence": "exact_import_session_hash",
+      "signer_known": false
+    }
+  ],
+  "coverage": {
+    "sources": {
+      "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae": {
+        "train": {
+          "A": 4189,
+          "B": 4210,
+          "C": 3867,
+          "D": 3935,
+          "E": 3676,
+          "F": 4895,
+          "H": 4065,
+          "L": 4637,
+          "N": 2602,
+          "P": 3384,
+          "R": 4135,
+          "S": 3997,
+          "T": 4316,
+          "U": 4181,
+          "V": 4025,
+          "Y": 4295
+        },
+        "validation": {
+          "W": 4165
+        },
+        "test": {
+          "G": 4126,
+          "I": 3940,
+          "K": 4523,
+          "M": 3315,
+          "O": 4146,
+          "Q": 3627,
+          "X": 3894
+        }
+      }
+    },
+    "unresolved_rows_by_split": {
+      "train": 44814,
+      "validation": 9626,
+      "test": 9402
+    },
+    "source_label_conditions_absent_from_training": [
+      {
+        "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "split": "validation",
+        "label": "W",
+        "support": 4165
+      },
+      {
+        "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "split": "test",
+        "label": "G",
+        "support": 4126
+      },
+      {
+        "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "split": "test",
+        "label": "I",
+        "support": 3940
+      },
+      {
+        "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "split": "test",
+        "label": "K",
+        "support": 4523
+      },
+      {
+        "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "split": "test",
+        "label": "M",
+        "support": 3315
+      },
+      {
+        "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "split": "test",
+        "label": "O",
+        "support": 4146
+      },
+      {
+        "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "split": "test",
+        "label": "Q",
+        "support": 3627
+      },
+      {
+        "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "split": "test",
+        "label": "X",
+        "support": 3894
+      }
+    ],
+    "source_overlap_across_splits": [
+      "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae"
+    ],
+    "signer_independence_established": false
+  },
+  "exact_conflicting_label_groups": [],
+  "numerical_and_canonical_split_validation": "passed",
+  "labels_changed": 0,
+  "rows_removed": 0,
+  "splits_changed": false,
+  "benchmark_ready": false,
+  "identity_warning": "Archive identity is not signer identity. Unresolved source/signer identities remain blank.",
+  "next_action": "Inspect original images and verify source conventions. Keep historical scores. Build a new explicitly source/signer-grouped benchmark after provenance review."
+}

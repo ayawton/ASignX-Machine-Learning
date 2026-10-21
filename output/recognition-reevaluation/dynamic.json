@@ -1,0 +1,390 @@
+{
+  "dataset_sha256": "659231d18589c6fc1980e593cb1eb9735305c874f94a4931e7e9e76dd8033698",
+  "data_dir": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\ml\\data\\recovered_sequence_baseline",
+  "identity_known": false,
+  "sample_count": 11,
+  "splits": {
+    "validation": {
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "macro_recall": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "J": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "Z": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        }
+      },
+      "labels": [
+        "J",
+        "Z"
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "loss": 0.00566002307459712
+    },
+    "test": {
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "macro_recall": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "J": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "Z": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        }
+      },
+      "labels": [
+        "J",
+        "Z"
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "loss": 0.0012999540194869041
+    }
+  },
+  "clips": [
+    {
+      "label": "J",
+      "session_id": "01443a7c20c34a23af7da2c8c3c25841",
+      "metadata": {
+        "capture_method": "manual_webcam",
+        "decoded_frames": 25,
+        "detection_ratio": 0.64,
+        "duration_seconds": 2.392,
+        "feature_width": 126,
+        "frames_with_hand": 16,
+        "hand_selection": "both",
+        "source": "webcam",
+        "target_fps": 15.0
+      }
+    },
+    {
+      "label": "J",
+      "session_id": "39645e92b8e3473ba3aab77a3162bcab",
+      "metadata": {
+        "capture_method": "manual_webcam",
+        "decoded_frames": 15,
+        "detection_ratio": 1.0,
+        "duration_seconds": 1.441,
+        "feature_width": 126,
+        "frames_with_hand": 15,
+        "hand_selection": "both",
+        "source": "webcam",
+        "target_fps": 15.0
+      }
+    },
+    {
+      "label": "J",
+      "session_id": "4cf42a085ca24925b6ea88d1e8ad26d6",
+      "metadata": {
+        "capture_method": "manual_webcam",
+        "decoded_frames": 67,
+        "detection_ratio": 0.7014925373134329,
+        "duration_seconds": 6.607,
+        "feature_width": 126,
+        "frames_with_hand": 47,
+        "hand_selection": "both",
+        "source": "webcam",
+        "target_fps": 15.0
+      }
+    },
+    {
+      "label": "J",
+      "session_id": "5c6f16c2cf5e4fe2a022fe260aa0dc34",
+      "metadata": {
+        "capture_method": "manual_webcam",
+        "decoded_frames": 15,
+        "detection_ratio": 1.0,
+        "duration_seconds": 1.489,
+        "feature_width": 126,
+        "frames_with_hand": 15,
+        "hand_selection": "both",
+        "source": "webcam",
+        "target_fps": 15.0
+      }
+    },
+    {
+      "label": "J",
+      "session_id": "9b177be4619340a987851b832d8900f0",
+      "metadata": {
+        "capture_method": "manual_webcam",
+        "decoded_frames": 46,
+        "detection_ratio": 0.7391304347826086,
+        "duration_seconds": 4.495,
+        "feature_width": 126,
+        "frames_with_hand": 34,
+        "hand_selection": "both",
+        "source": "webcam",
+        "target_fps": 15.0
+      }
+    },
+    {
+      "label": "J",
+      "session_id": "da1db032548c4125aef3b542ce6f3fc4",
+      "metadata": {
+        "capture_method": "manual_webcam",
+        "decoded_frames": 15,
+        "detection_ratio": 1.0,
+        "duration_seconds": 1.486,
+        "feature_width": 126,
+        "frames_with_hand": 15,
+        "hand_selection": "both",
+        "source": "webcam",
+        "target_fps": 15.0
+      }
+    },
+    {
+      "label": "Z",
+      "session_id": "01d2c62cd7c24b97a52f73f43bc82a27",
+      "metadata": {
+        "capture_method": "manual_webcam",
+        "decoded_frames": 48,
+        "detection_ratio": 0.9166666666666666,
+        "duration_seconds": 4.787,
+        "feature_width": 126,
+        "frames_with_hand": 44,
+        "hand_selection": "both",
+        "source": "webcam",
+        "target_fps": 15.0
+      }
+    },
+    {
+      "label": "Z",
+      "session_id": "66940fafa6e94fc494f09196d4d0f3c8",
+      "metadata": {
+        "capture_method": "manual_webcam",
+        "decoded_frames": 39,
+        "detection_ratio": 1.0,
+        "duration_seconds": 3.859,
+        "feature_width": 126,
+        "frames_with_hand": 39,
+        "hand_selection": "both",
+        "source": "webcam",
+        "target_fps": 15.0
+      }
+    },
+    {
+      "label": "Z",
+      "session_id": "6e48b131cdd04a53a15a2c136ac76dda",
+      "metadata": {
+        "capture_method": "manual_webcam",
+        "decoded_frames": 25,
+        "detection_ratio": 0.92,
+        "duration_seconds": 2.495,
+        "feature_width": 126,
+        "frames_with_hand": 23,
+        "hand_selection": "both",
+        "source": "webcam",
+        "target_fps": 15.0
+      }
+    },
+    {
+      "label": "Z",
+      "session_id": "84e1c600c46142eba0e2c6e8ff2090fb",
+      "metadata": {
+        "capture_method": "manual_webcam",
+        "decoded_frames": 20,
+        "detection_ratio": 1.0,
+        "duration_seconds": 1.95,
+        "feature_width": 126,
+        "frames_with_hand": 20,
+        "hand_selection": "both",
+        "source": "webcam",
+        "target_fps": 15.0
+      }
+    },
+    {
+      "label": "Z",
+      "session_id": "a93ab2bb94164bdfa3d267e3581b595f",
+      "metadata": {
+        "capture_method": "manual_webcam",
+        "decoded_frames": 50,
+        "detection_ratio": 0.86,
+        "duration_seconds": 4.934,
+        "feature_width": 126,
+        "frames_with_hand": 43,
+        "hand_selection": "both",
+        "source": "webcam",
+        "target_fps": 15.0
+      }
+    }
+  ],
+  "temporal_diagnostics": {
+    "time_reversed": {
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "macro_recall": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "J": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "Z": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        }
+      },
+      "labels": [
+        "J",
+        "Z"
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "last_frame_repeated": {
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "macro_recall": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "J": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "Z": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        }
+      },
+      "labels": [
+        "J",
+        "Z"
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "time_shuffled": {
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "macro_recall": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "J": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "Z": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        }
+      },
+      "labels": [
+        "J",
+        "Z"
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "wrist_travel_removed": {
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "macro_recall": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "per_class": {
+        "J": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "Z": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        }
+      },
+      "labels": [
+        "J",
+        "Z"
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  "temporal_diagnostic_warning": "Two test clips cannot establish motion understanding; unchanged scores after motion removal suggest a shortcut worth testing on broader data"
+}

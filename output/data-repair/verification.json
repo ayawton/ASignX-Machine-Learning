@@ -1,0 +1,15 @@
+{
+  "tests_passed": 114,
+  "existing_export_warnings": 13,
+  "recovery_cli_exit_code": 0,
+  "protected_inputs_unchanged": {
+    "ml\\data\\landmarks.csv": true,
+    "ml\\models\\sequence_classifier.pth": true,
+    "ml\\models\\sign_classifier_canonical.pth": true
+  },
+  "resolved_source_rows": 96145,
+  "labels_changed": 0,
+  "historical_splits_changed": false,
+  "recognition_improvement_claimed": false,
+  "matching_image_geometry_max_difference": 7.450580596923828e-09
+}

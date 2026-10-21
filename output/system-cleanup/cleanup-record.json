@@ -1,0 +1,130 @@
+﻿{
+    "status":  "complete",
+    "retained_package":  "output/extractor-reviewed/ASignX_DataExtractor",
+    "retained_zip":  "output/extractor-reviewed/ASignX_DataExtractor.zip",
+    "protected_files":  [
+                            {
+                                "path":  "ml/data/landmarks.csv",
+                                "sha256":  "4A160BEC73556408C12F9457577C765C89E9F8CF09EAE3D658FE39D3064F58CD"
+                            },
+                            {
+                                "path":  "ml/models/sign_classifier_canonical.pth",
+                                "sha256":  "98559A10C553C23D2C6AAD227F52416B59AD92483BF4F079CFCA5EB512BF5B66"
+                            },
+                            {
+                                "path":  "ml/models/sequence_classifier.pth",
+                                "sha256":  "1E2228A5970D18B19A25F62CB76FC560AA4C5E33962A8BC2A362A87309DB2EC9"
+                            },
+                            {
+                                "path":  "output/extractor-reviewed/ASignX_DataExtractor/ASignX_DataExtractor.exe",
+                                "sha256":  "0DC1F58F62D2550997673108AB91CA7E42B6CED4607F04EC05EA1FDC8D541721"
+                            },
+                            {
+                                "path":  "output/extractor-reviewed/ASignX_DataExtractor.zip",
+                                "sha256":  "108174B0835B74BD053A3CB3B292EBF6F273E35ADCC8A79CAAE0EE3B1D60E32E"
+                            },
+                            {
+                                "path":  "dist/ASignX_DynamicStudio.exe",
+                                "sha256":  "C5F09C0AAE466587060F797D60C98FA7E315873CBF70FE2497B2937AC7306304"
+                            },
+                            {
+                                "path":  "archive/data-corrections/remove-wrong-M-20261021T150522127835Z/landmarks.before.csv",
+                                "sha256":  "17249BC657B7ED52F1D6A39F5D3BBBF6B8D2445EFDAB97F64094DF68855647DB"
+                            },
+                            {
+                                "path":  "archive/data-corrections/remove-downward-three-M-20261021T152303819569Z/landmarks.before.csv",
+                                "sha256":  "B72CDE2AA886F665D9B89248C9FD98CC759EA6FBC4CFDC8993435A336EE8D58D"
+                            }
+                        ],
+    "removed_directories":  [
+                                {
+                                    "relative_path":  "output/extractor",
+                                    "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\extractor",
+                                    "files":  2016,
+                                    "bytes":  662646331
+                                },
+                                {
+                                    "relative_path":  "output/extractor-large-datasets",
+                                    "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\extractor-large-datasets",
+                                    "files":  2016,
+                                    "bytes":  662646286
+                                },
+                                {
+                                    "relative_path":  "dist/ASignX_DataExtractor",
+                                    "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\dist\\ASignX_DataExtractor",
+                                    "files":  2016,
+                                    "bytes":  662635597
+                                },
+                                {
+                                    "relative_path":  "build",
+                                    "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\build",
+                                    "files":  30,
+                                    "bytes":  216312984
+                                },
+                                {
+                                    "relative_path":  "tmp/extractor-build",
+                                    "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\tmp\\extractor-build",
+                                    "files":  16,
+                                    "bytes":  79471276
+                                },
+                                {
+                                    "relative_path":  "tmp/extractor-build-final",
+                                    "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\tmp\\extractor-build-final",
+                                    "files":  16,
+                                    "bytes":  79475593
+                                },
+                                {
+                                    "relative_path":  "tmp/extractor-build-label-conflicts",
+                                    "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\tmp\\extractor-build-label-conflicts",
+                                    "files":  16,
+                                    "bytes":  79477549
+                                },
+                                {
+                                    "relative_path":  "tmp/extractor-build-no-entry-limit",
+                                    "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\tmp\\extractor-build-no-entry-limit",
+                                    "files":  16,
+                                    "bytes":  79475629
+                                },
+                                {
+                                    "relative_path":  "tmp/csv-merger-build",
+                                    "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\tmp\\csv-merger-build",
+                                    "files":  16,
+                                    "bytes":  16651198
+                                },
+                                {
+                                    "relative_path":  ".pytest_cache",
+                                    "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\.pytest_cache",
+                                    "files":  5,
+                                    "bytes":  77801
+                                },
+                                {
+                                    "relative_path":  "__pycache__",
+                                    "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\__pycache__",
+                                    "files":  2,
+                                    "bytes":  26342
+                                },
+                                {
+                                    "relative_path":  "asignx\\__pycache__",
+                                    "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\asignx\\__pycache__",
+                                    "files":  10,
+                                    "bytes":  133905
+                                },
+                                {
+                                    "relative_path":  "ml\\__pycache__",
+                                    "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\ml\\__pycache__",
+                                    "files":  64,
+                                    "bytes":  1103652
+                                },
+                                {
+                                    "relative_path":  "tests\\__pycache__",
+                                    "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\tests\\__pycache__",
+                                    "files":  26,
+                                    "bytes":  923887
+                                }
+                            ],
+    "bytes_removed":  2541058030,
+    "source_audit_scripts_preserved":  true,
+    "datasets_and_model_weights_preserved":  true,
+    "git_index_unchanged":  true,
+    "completed_at_utc":  "2026-10-21T17:09:42.6148507Z"
+}

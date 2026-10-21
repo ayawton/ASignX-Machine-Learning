@@ -1,0 +1,17 @@
+{
+  "source_archive": "C:\\Users\\jibbi\\Downloads\\archive (4).zip",
+  "source_sha256": "24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+  "dataset_sha256": "b72cde2aa886f665d9b89248c9fd98cc759ea6fbc4cfdc8993435a336ee8d58d",
+  "images_scanned": 7900,
+  "unique_image_contents": 4876,
+  "stored_M_rows": 5640,
+  "matched_stored_M_rows": 3107,
+  "statuses": {
+    "matched": 4936,
+    "multiple_hands": 11,
+    "no_stored_match": 297,
+    "no_hand": 2656
+  },
+  "match_rule": "Canonical geometry, all 63 coordinates within absolute 1e-6, no relative tolerance. Image pose classification is separate from numerical matching.",
+  "main_dataset_unchanged": true
+}

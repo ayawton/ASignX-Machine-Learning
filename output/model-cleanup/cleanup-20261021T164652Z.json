@@ -1,0 +1,80 @@
+﻿{
+    "status":  "complete",
+    "requested_action":  "Remove unused experimental model checkpoints; retain the selected older static model and required live sequence model.",
+    "retained":  [
+                     {
+                         "path":  "ml/models/sign_classifier_canonical.pth",
+                         "sha256":  "98559a10c553c23d2c6aad227f52416b59ad92483bf4f079cfca5eb512bf5b66",
+                         "bytes":  946329
+                     },
+                     {
+                         "path":  "ml/models/sequence_classifier.pth",
+                         "sha256":  "1e2228a5970d18b19a25f62cb76fc560aa4c5e33962a8bc2a362a87309db2ec9",
+                         "bytes":  1198027
+                     }
+                 ],
+    "removed":  [
+                    {
+                        "path":  "output/weak-class-training/model.pth",
+                        "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\weak-class-training\\model.pth",
+                        "sha256":  "0294399a7d3bab77e096acba189739a5c7bb9b581290670e077870257da47864",
+                        "bytes":  965097
+                    },
+                    {
+                        "path":  "output/predeletion-training/20261021T162040Z/model.pth",
+                        "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\predeletion-training\\20261021T162040Z\\model.pth",
+                        "sha256":  "da0c482c0544de836db2f38a62c03c448546caddac3b2240e7e82ab7a8c60cf7",
+                        "bytes":  944489
+                    },
+                    {
+                        "path":  "output/cleaned-M-training/20261021T152633Z/model.pth",
+                        "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\cleaned-M-training\\20261021T152633Z\\model.pth",
+                        "sha256":  "3e38f344608a51ea4cb5a74ab5b4255bf09c917d4bb6ae5bae6a735d4d58f182",
+                        "bytes":  933225
+                    },
+                    {
+                        "path":  "output/f1-review/experiments/sqrt_weights/model.pth",
+                        "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\f1-review\\experiments\\sqrt_weights\\model.pth",
+                        "sha256":  "eca6de2a80aa23fa868c9d83c4675cb2a0354c703cf47d05a5029420250ccc50",
+                        "bytes":  944489
+                    },
+                    {
+                        "path":  "output/f1-review/experiments/reference/model.pth",
+                        "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\f1-review\\experiments\\reference\\model.pth",
+                        "sha256":  "fa9e26d6b9b513d1cf465277d818f312d55cea9c4f9a32b3127790b103907610",
+                        "bytes":  944489
+                    },
+                    {
+                        "path":  "output/f1-review/experiments/no_weights/model.pth",
+                        "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\f1-review\\experiments\\no_weights\\model.pth",
+                        "sha256":  "5bafb12bb20aeb179735eb548e216081e42800ede99af006f32ddc03b9bffb5b",
+                        "bytes":  944489
+                    },
+                    {
+                        "path":  "output/f1-review/experiments/no_smoothing/model.pth",
+                        "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\f1-review\\experiments\\no_smoothing\\model.pth",
+                        "sha256":  "05553a254265b6b5118bbb268fd8ff52cc88bc7ef287d5489a2d5b1d7ddb0ebf",
+                        "bytes":  944489
+                    },
+                    {
+                        "path":  "output/f1-review/experiments/mild_augmentation/model.pth",
+                        "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\f1-review\\experiments\\mild_augmentation\\model.pth",
+                        "sha256":  "9ac16966729074cf468029506e5d134f9b2948c69585d9ec1c9e364cb0c2facc",
+                        "bytes":  944489
+                    },
+                    {
+                        "path":  "output/f1-review/dynamic/tcn_attention/model.pth",
+                        "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\f1-review\\dynamic\\tcn_attention\\model.pth",
+                        "sha256":  "6c8b728c61ac8f88c0de5639ebda34fe0f8626fa47b1061b287873f60850ac60",
+                        "bytes":  1195703
+                    },
+                    {
+                        "path":  "output/f1-review/dynamic/lstm/model.pth",
+                        "absolute_path":  "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\f1-review\\dynamic\\lstm\\model.pth",
+                        "sha256":  "0ad8613e3a74faec5517417964b22c121889566d01968e93fe423a058de04eaa",
+                        "bytes":  1206673
+                    }
+                ],
+    "reports_datasets_and_manifests_preserved":  true,
+    "completed_at_utc":  "2026-10-21T16:46:52.5922563Z"
+}

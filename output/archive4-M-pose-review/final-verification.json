@@ -1,0 +1,7 @@
+{
+  "retained_rows_byte_identical": true,
+  "only_M_removed": true,
+  "source_zip_sha256_unchanged": true,
+  "dataset_and_partition_validation_passed": true,
+  "checkpoint_hashes_unchanged": true
+}

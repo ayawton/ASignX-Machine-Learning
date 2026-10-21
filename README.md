@@ -60,6 +60,20 @@ save a frame plus JSON.
 You can collect moving signs directly from the webcam, or import recordings.
 Both methods save sequences for the same `ml.train_sequence` command.
 
+### Standalone Windows GUI
+
+Double-click **`dist/ASignX_DynamicStudio.exe`** (or `ASignX_DynamicStudio.bat`).
+The single executable includes Python and the hand detector; recording PCs do not
+need Python or PyTorch installed. The GUI provides webcam preview, a preparation
+countdown, Start/Save/Discard controls, and labeled video folder extraction.
+It saves the same `.npz` sequences used below; raw webcam video is not retained.
+The portable EXE defaults to `data/sequences` and `data/video_sequences` beside
+itself; choose the output folder explicitly when moving data back for training.
+
+Source launch: `python -m ml.dynamic_studio_gui`. Build instructions and the full
+workflow are in [Dynamic Sign Studio guide](docs/dynamic-studio-guide.md).
+This GUI handles dynamic signs; `ASignX_ManualTraining.bat` opens the static studio.
+
 ### Option A: capture complete gestures from the webcam
 
 Open a terminal in the project folder and run this once for each sign label:
@@ -200,12 +214,25 @@ Press `r` to clear the temporal window and `q`/Escape to exit. Predictions are
 confidence-thresholded and stabilized across consecutive windows to reduce
 duplicate output.
 
+## Test static and dynamic recognition together
+
+To test static and dynamic recognition in one camera window, double-click
+`ASignX_TestRecognition.bat` or run:
+
+```powershell
+python main.py --sign-model ml/models/sign_classifier_canonical.pth --sequence-model ml/models/sequence_classifier.pth --exposure auto
+```
+
+Hold still signs for the static model and perform moving signs for the sequence
+model; the existing motion gate selects the recognition path. Both trained
+checkpoints are required. Press `q`/Escape to exit.
+
 ## Programmatic detector API
 
 ```python
 from asignx import HandDetector, WebcamStream
 
-with WebcamStream(camera_index=0, width=640, height=480) as camera:
+with WebcamStream(camera_index=0, width=800, height=600) as camera:
     with HandDetector(max_num_hands=2) as detector:
         for frame in camera.stream():
             result, annotated = detector.process(frame, draw=True)
@@ -217,6 +244,14 @@ with WebcamStream(camera_index=0, width=640, height=480) as camera:
 
 MediaPipe's index order is preserved: wrist `0`; thumb `1-4`; index finger
 `5-8`; middle finger `9-12`; ring finger `13-16`; and pinky `17-20`.
+
+## F1 evaluation and improvement workflow
+
+Source/session error review, validation macro-F1 selection, controlled ablations,
+explicit global identity plans, threshold calibration and collection readiness are
+documented in [F1 workflow](docs/f1-workflow.md). The current audit is at
+`output/f1-review/baseline/review.html`. Unknown signer identities must be supplied
+from real provenance; the tools never manufacture independent signers.
 
 ## Tests
 

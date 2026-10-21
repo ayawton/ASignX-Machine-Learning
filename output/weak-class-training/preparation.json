@@ -1,0 +1,30 @@
+{
+  "original_rows": 159987,
+  "new_extracted_rows": 4118,
+  "excluded_close_overlap": 0,
+  "added_training_rows": 4118,
+  "combined_rows": 164105,
+  "added_per_class": {
+    "C": 353,
+    "D": 344,
+    "G": 338,
+    "H": 353,
+    "K": 350,
+    "L": 357,
+    "M": 354,
+    "N": 352,
+    "P": 331,
+    "Q": 294,
+    "R": 347,
+    "V": 345
+  },
+  "split_counts": {
+    "train": 113341,
+    "validation": 13791,
+    "test": 36973
+  },
+  "overlap_threshold_canonical_l2": 0.015,
+  "baseline_validation_and_test_unchanged": true,
+  "new_data_training_only": true,
+  "limitation": "Distance checks cannot establish signer independence or detect all transformed/source-related overlap. Historical test is already development-known."
+}

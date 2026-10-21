@@ -1,13 +1,18 @@
-"""Small prediction types shared by static and sequence inference."""
+"""Static and unified motion-gated sign inference, OOD rejection, and instant sign registration."""
 
 from __future__ import annotations
 
+from collections import deque
 from dataclasses import dataclass
+from pathlib import Path
+import time
+from typing import Any
 
+import numpy as np
 import torch
 
-from ml.model import load_checkpoint
-from ml.preprocessing import normalize_landmarks
+from ml.model import load_checkpoint, save_checkpoint
+from ml.preprocessing import canonicalize_static_features, normalize_landmarks
 
 
 @dataclass(frozen=True)
@@ -20,24 +25,126 @@ class Prediction:
 class SignPredictor:
     def __init__(
         self,
-        model_path: str,
+        model_path: str | Path,
         confidence_threshold: float = 0.8,
         device: str = "cpu",
+        *, calibration_path: str | Path | None = None,
     ) -> None:
         if not 0 <= confidence_threshold <= 1:
             raise ValueError("Confidence threshold must be in [0, 1]")
+        self.model_path = Path(model_path)
         self.model, self.labels, self.metadata = load_checkpoint(model_path, device)
         self.threshold = confidence_threshold
+        if calibration_path:
+            from ml.calibrate_f1 import load_calibration
+            self.threshold = load_calibration(calibration_path, model_path, self.labels)
         self.device = device
 
     @torch.inference_mode()
-    def predict(self, landmarks) -> Prediction:
-        features = torch.from_numpy(normalize_landmarks(landmarks)).unsqueeze(0).to(self.device)
-        probabilities = torch.softmax(self.model(features), dim=1)
+    def predict(self, landmarks: np.ndarray, handedness: str | None = None) -> Prediction:
+        if handedness is None:
+            handedness = getattr(landmarks, "handedness", None)
+        prepared = canonicalize_static_features(
+            normalize_landmarks(landmarks), handedness, self.model.static_hand_preprocessing,
+        )
+        features = torch.from_numpy(prepared).unsqueeze(0).to(self.device)
+        logits = self.model(features)
+        probabilities = torch.softmax(logits, dim=1)
         confidence, index = probabilities.max(dim=1)
         score = float(confidence.item())
         raw_label = self.labels[int(index.item())]
         return Prediction(raw_label if score >= self.threshold else None, score, raw_label)
+
+    @torch.no_grad()
+    def register_new_sign(
+        self,
+        new_label: str,
+        landmark_samples: list[np.ndarray] | np.ndarray,
+        save_to: str | Path | None = None,
+        *, handedness: str | list[str] | None = None,
+    ) -> list[str]:
+        """Add a prototype from original raw/normalized samples, with a hand label per sample."""
+        clean_label = new_label.strip()
+        if not clean_label or clean_label in self.labels:
+            raise ValueError(f"Label {clean_label!r} is empty or already exists in {self.labels}")
+        norm_rows: list[np.ndarray] = []
+        if isinstance(handedness, list) and len(handedness) != len(landmark_samples):
+            raise ValueError("Provide one handedness label per registration sample")
+        for index, sample in enumerate(landmark_samples):
+            arr = np.asarray(sample, dtype=np.float32)
+            hand = handedness[index] if isinstance(handedness, list) else handedness
+            features = normalize_landmarks(arr) if arr.shape == (21, 3) else arr
+            norm_rows.append(canonicalize_static_features(
+                features, hand, self.model.static_hand_preprocessing,
+            ))
+        if not norm_rows:
+            raise ValueError("Provide at least one sample to register a new sign")
+        batch = torch.from_numpy(np.stack(norm_rows)).to(self.device)
+        self.model.add_sign_prototype(batch)
+        self.labels.append(clean_label)
+
+        centroids = dict(self.metadata.get("class_centroids", {}))
+        med = np.median(np.stack(norm_rows), axis=0).astype(np.float32)
+        centroids[clean_label] = [round(float(x), 6) for x in med.tolist()]
+        self.metadata["class_centroids"] = centroids
+
+        target_path = Path(save_to) if save_to is not None else self.model_path
+        save_checkpoint(
+            target_path,
+            self.model,
+            self.labels,
+            training=self.metadata.get("training"),
+            dataset_sha256=self.metadata.get("dataset_sha256"),
+            splits=self.metadata.get("splits"),
+            class_centroids=centroids,
+        )
+        return list(self.labels)
+
+
+class MotionGate:
+    """Sliding-window hand velocity tracker to route static vs. dynamic signs and suppress transition blur."""
+
+    def __init__(self, window_size: int = 8, velocity_threshold: float = 0.025) -> None:
+        if window_size < 2 or velocity_threshold < 0:
+            raise ValueError("window_size must be >= 2 and velocity_threshold >= 0")
+        self.window_size = window_size
+        self.velocity_threshold = velocity_threshold
+        self.history: deque[np.ndarray] = deque(maxlen=window_size * 16)
+        self.timestamps: deque[float] = deque(maxlen=window_size * 16)
+
+    def reset(self) -> None:
+        self.history.clear()
+        self.timestamps.clear()
+
+    def update(self, landmarks: np.ndarray | None, timestamp: float | None = None) -> tuple[float, bool]:
+        """Update with a (21, 3) hand array and return (mean_velocity, is_moving)."""
+        if landmarks is None:
+            self.reset()
+            return 0.0, False
+        pts = np.asarray(landmarks, dtype=np.float32)
+        if pts.shape != (21, 3) or not np.isfinite(pts).all():
+            self.reset()
+            return 0.0, False
+        # Track wrist + 5 fingertips in image space
+        tracked = pts[[0, 4, 8, 12, 16, 20]]
+        stamp = timestamp if timestamp is not None else (self.timestamps[-1] + 1 / 30 if self.timestamps else 0.0)
+        if not np.isfinite(stamp) or (self.timestamps and stamp <= self.timestamps[-1]):
+            raise ValueError("Motion timestamps must increase and be finite")
+        if self.timestamps and stamp - self.timestamps[-1] > 0.5:
+            self.reset()
+        self.history.append(tracked)
+        self.timestamps.append(stamp)
+        # Fixed-duration history instead of a camera-FPS-dependent span.
+        while len(self.timestamps) > 2 and stamp - self.timestamps[0] > (self.window_size - 1) / 30:
+            self.timestamps.popleft(); self.history.popleft()
+        if len(self.history) < 2:
+            return 0.0, False
+        diffs = [
+            float(np.linalg.norm(self.history[i] - self.history[i - 1], axis=1).mean())
+            for i in range(1, len(self.history))
+        ]
+        velocity = float(np.sum(diffs) / (30 * (self.timestamps[-1] - self.timestamps[0])))
+        return velocity, velocity >= self.velocity_threshold
 
 
 class PredictionStabilizer:
@@ -79,20 +186,29 @@ class Recognition:
     prediction: Prediction
     stable_label: str | None
     emitted_label: str | None
+    velocity: float = 0.0
+    is_moving: bool = False
 
 
 class SignRecognizer:
-    """Keep independent static-sign stabilization state for each hand."""
+    """Keep independent static-sign stabilization and optional motion-gating state for each hand."""
 
     def __init__(
-        self, predictor: SignPredictor, stable_frames: int = 5, release_frames: int = 10
+        self,
+        predictor: SignPredictor,
+        stable_frames: int = 5,
+        release_frames: int = 10,
+        *,
+        motion_gate_threshold: float | None = None,
     ) -> None:
         self.predictor = predictor
         self.stable_frames = stable_frames
         self.release_frames = release_frames
+        self.motion_gate_threshold = motion_gate_threshold
         self.states: dict[str, PredictionStabilizer] = {}
+        self.motion_gates: dict[str, MotionGate] = {}
 
-    def update(self, hands: list) -> list[Recognition]:
+    def update(self, hands: list[Any], timestamp: float | None = None) -> list[Recognition]:
         results: list[Recognition] = []
         present: set[str] = set()
         for index, hand in enumerate(hands):
@@ -101,14 +217,125 @@ class SignRecognizer:
             state = self.states.setdefault(
                 key, PredictionStabilizer(self.stable_frames, self.release_frames)
             )
+            pts = hand.to_numpy()
+            velocity, is_moving = 0.0, False
+            if self.motion_gate_threshold is not None:
+                gate = self.motion_gates.setdefault(
+                    key, MotionGate(velocity_threshold=self.motion_gate_threshold)
+                )
+                velocity, is_moving = gate.update(pts, timestamp)
+
             try:
-                prediction = self.predictor.predict(hand.to_numpy())
+                prediction = self.predictor.predict(pts, handedness=hand.handedness)
             except ValueError:
                 state.update(None)
                 continue
-            stable, emitted = state.update(prediction.label)
-            results.append(Recognition(key, prediction, stable, emitted))
+
+            # Suppress static confirmation when hand is mid-sweep if motion gate is active
+            effective_label = None if is_moving else prediction.label
+            stable, emitted = state.update(effective_label)
+            results.append(
+                Recognition(
+                    hand=key,
+                    prediction=prediction,
+                    stable_label=stable,
+                    emitted_label=emitted,
+                    velocity=velocity,
+                    is_moving=is_moving,
+                )
+            )
         for key in list(self.states):
             if key not in present:
                 self.states[key].update(None)
+                if key in self.motion_gates:
+                    self.motion_gates[key].reset()
         return results
+
+
+class UnifiedSignRecognizer:
+    """Unified Motion-Gated Router combining Static (SignMLP) and Dynamic (SignLSTM/TCN) recognition."""
+
+    def __init__(
+        self,
+        static_predictor: SignPredictor | None = None,
+        sequence_predictor: Any | None = None,
+        *,
+        velocity_threshold: float = 0.022,
+        stable_frames: int = 5,
+        release_frames: int = 10,
+    ) -> None:
+        self.static_recognizer = (
+            SignRecognizer(
+                static_predictor,
+                stable_frames=stable_frames,
+                release_frames=release_frames,
+                motion_gate_threshold=velocity_threshold,
+            )
+            if static_predictor is not None
+            else None
+        )
+        self.sequence_predictor = sequence_predictor
+        self.sequence_stabilizer = PredictionStabilizer(stable_frames=3, release_frames=8)
+        self.global_motion_gate = MotionGate(velocity_threshold=velocity_threshold)
+        self.hand_motion_gates: dict[str, MotionGate] = {}
+        self.velocity_threshold = velocity_threshold
+        self.last_motion_at: float | None = None
+
+    def update(self, hands: list[Any], timestamp: float | None = None) -> dict[str, Any]:
+        timestamp = time.perf_counter() if timestamp is None else timestamp
+        static_results = (
+            self.static_recognizer.update(hands, timestamp) if self.static_recognizer is not None else []
+        )
+        present = set()
+        velocity, is_moving = 0.0, False
+        for index, hand in enumerate(hands):
+            key = hand.handedness or f"Hand_{index}"
+            present.add(key)
+            gate = self.hand_motion_gates.setdefault(key, MotionGate(velocity_threshold=self.velocity_threshold))
+            speed, moving = gate.update(hand.to_numpy(), timestamp)
+            velocity, is_moving = max(velocity, speed), is_moving or moving
+        for key, gate in self.hand_motion_gates.items():
+            if key not in present:
+                gate.reset()
+        if is_moving:
+            self.last_motion_at = timestamp
+
+        dynamic_prediction = None
+        dynamic_stable = None
+        dynamic_emitted = None
+        if self.sequence_predictor is not None:
+            from ml.predict_sequence import _canonical_hands
+            from ml.preprocessing import DUAL_NUM_FEATURES
+
+            both = self.sequence_predictor.input_size == DUAL_NUM_FEATURES
+            self.sequence_predictor.add_frame(_canonical_hands(hands, both, "single"), timestamp=timestamp)
+            active = bool(hands) and self.last_motion_at is not None and timestamp - self.last_motion_at <= 0.35
+            if active and self.sequence_predictor.sampled:
+                dynamic_prediction = self.sequence_predictor.predict()
+                lbl = dynamic_prediction.label if dynamic_prediction else None
+                dynamic_stable, dynamic_emitted = self.sequence_stabilizer.update(lbl)
+            elif self.sequence_predictor.sampled:
+                self.sequence_stabilizer.update(None)
+
+        return {
+            "mode": "dynamic" if is_moving else "static",
+            "velocity": velocity,
+            "is_moving": is_moving,
+            "static": static_results,
+            "dynamic_prediction": dynamic_prediction,
+            "dynamic_stable": dynamic_stable,
+            "dynamic_emitted": dynamic_emitted,
+        }
+
+
+def main() -> None:
+    from main import parse_args, run_pipeline
+
+    args = parse_args()
+    if not args.sign_model:
+        args.sign_model = "ml/models/sign_classifier_canonical.pth"
+    run_pipeline(args)
+
+
+if __name__ == "__main__":
+    main()

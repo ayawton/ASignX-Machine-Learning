@@ -1,0 +1,22 @@
+{
+  "source_archive": "C:\\Users\\jibbi\\Downloads\\archive (4).zip",
+  "source_archive_recorded_sha256": "24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+  "session_id": "ext_c72cf97fc7fa5995335a73a1",
+  "source_identification": "Exact historical import-session hash; not individual image or signer identification for every row.",
+  "original_dataset_sha256": "17249bc657b7ed52f1d6a39f5d3bbbf6b8d2445efdab97f64094df68855647db",
+  "export_sha256": "810d4f86ea3159c9a7becd267802e8260aec1bd392bd2c1f618a6961b66dc8c1",
+  "label": "M",
+  "samples": 3315,
+  "original_csv_row_first": 109907,
+  "original_csv_row_last": 113221,
+  "original_rows_contiguous": true,
+  "partitions": {
+    "test": 3315
+  },
+  "handedness": {
+    "Right": 2257,
+    "Left": 1058
+  },
+  "original_data_unchanged": true,
+  "individual_image_recovered_for_row": 110182
+}

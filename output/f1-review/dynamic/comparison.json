@@ -1,0 +1,56 @@
+{
+  "variants": [
+    {
+      "backbone": "lstm",
+      "path": "output\\f1-review\\dynamic\\lstm\\model.pth",
+      "best_epoch": 14,
+      "validation_macro_f1": 1.0,
+      "validation_loss": 0.0011903170961886644
+    },
+    {
+      "backbone": "tcn_attention",
+      "path": "output\\f1-review\\dynamic\\tcn_attention\\model.pth",
+      "best_epoch": 14,
+      "validation_macro_f1": 1.0,
+      "validation_loss": 0.00566002307459712
+    }
+  ],
+  "selected": "lstm",
+  "test": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "per_class": {
+      "J": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "Z": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      }
+    },
+    "labels": [
+      "J",
+      "Z"
+    ],
+    "confusion_matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "loss": 0.0011522691929712892
+  },
+  "warning": "Only two validation and two test clips; signer identities missing; diagnostic only"
+}

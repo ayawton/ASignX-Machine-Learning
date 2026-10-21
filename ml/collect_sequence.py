@@ -12,7 +12,7 @@ import uuid
 import cv2
 
 from asignx import HandDetector, WebcamStream
-from ml.sequence_dataset import (
+from ml.sequence_io import (
     SequenceSample,
     read_sequence_dir,
     save_sequence_file,
@@ -34,6 +34,7 @@ def _save_take(
     min_frames: int,
     min_detection_ratio: float,
     duration_seconds: float,
+    provenance: dict | None = None,
 ) -> Path:
     features, handedness, metadata = capture.finish(
         sequence_length,
@@ -44,6 +45,7 @@ def _save_take(
     )
     metadata["duration_seconds"] = round(duration_seconds, 3)
     metadata["capture_method"] = "manual_webcam"
+    metadata.update(provenance or {})
     folder = output_dir / _label_folder(label)
     session_id = uuid.uuid4().hex
     destination = folder / f"{_label_folder(label)}_{session_id}.npz"
@@ -72,9 +74,10 @@ def collect_sequence(
     max_seconds: float = 10.0,
     takes: int = 0,
     camera_index: int = 0,
-    width: int = 640,
-    height: int = 480,
+    width: int = 800,
+    height: int = 600,
     exposure: float | None = -5.0,
+    provenance: dict | None = None,
 ) -> list[Path]:
     """Open the camera and save one session for each completed gesture take.
 
@@ -148,6 +151,7 @@ def collect_sequence(
                                 min_frames=min_frames,
                                 min_detection_ratio=min_detection_ratio,
                                 duration_seconds=now - started_at,
+                                provenance=provenance,
                             )
                             saved.append(path)
                             message = f"Saved {path.name}"
@@ -207,6 +211,7 @@ def collect_sequence(
                                     min_frames=min_frames,
                                     min_detection_ratio=min_detection_ratio,
                                     duration_seconds=time.monotonic() - started_at,
+                                    provenance=provenance,
                                 )
                                 saved.append(path)
                                 message = f"Saved {path.name}"
@@ -239,9 +244,14 @@ def main() -> None:
     parser.add_argument("--max-seconds", type=float, default=10.0)
     parser.add_argument("--takes", type=int, default=0, help="Stop after this many saved takes (0: unlimited)")
     parser.add_argument("--camera", type=int, default=0)
-    parser.add_argument("--width", type=int, default=640)
-    parser.add_argument("--height", type=int, default=480)
+    parser.add_argument("--width", type=int, default=800)
+    parser.add_argument("--height", type=int, default=600)
     parser.add_argument("--exposure", default="-5.0", help="Camera exposure or 'auto'")
+    parser.add_argument("--signer-id", help="Stable pseudonymous person ID across every label and take")
+    parser.add_argument("--recording-id", help="Independent recording visit ID")
+    parser.add_argument("--source-id", help="Source corpus ID; shared sources stay in one partition")
+    parser.add_argument("--device-id")
+    parser.add_argument("--benchmark-split", choices=("train", "validation", "test"))
     args = parser.parse_args()
     exposure = None if args.exposure.lower() == "auto" else float(args.exposure)
     collect_sequence(
@@ -258,6 +268,11 @@ def main() -> None:
         width=args.width,
         height=args.height,
         exposure=exposure,
+        provenance={key: value for key, value in {
+            "signer_id": args.signer_id, "recording_id": args.recording_id,
+            "source_id": args.source_id, "device": args.device_id,
+            "split": args.benchmark_split,
+        }.items() if value},
     )
 
 

@@ -1,0 +1,26 @@
+Checked 0/7900 images
+Checked 100/7900 images
+Checked 200/7900 images
+{
+  "csv_row": 110182,
+  "dataset_sha256": "17249bc657b7ed52f1d6a39f5d3bbbf6b8d2445efdab97f64094df68855647db",
+  "label": "M",
+  "session_id": "ext_c72cf97fc7fa5995335a73a1",
+  "archive": "C:\\Users\\jibbi\\Downloads\\archive (4).zip",
+  "archive_sha256": "24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+  "archive_member": "ASL_Alphabet_Dataset/asl_alphabet_train/M/M (100).jpg",
+  "image_sha256": "2c3bb440220c9c18776dd24a93ad02172ba95a3c34db8e443a994b88c39971e5",
+  "original_image": "row-110182-original.jpg",
+  "max_coordinate_difference": 7.450580596923828e-09,
+  "csv_handedness": "Right",
+  "detected_handedness": "Right",
+  "exact_geometry_match": true,
+  "label_verified": false,
+  "warning": "Found a geometrically matching source image, not proof of a unique image or a linguistically correct label."
+}
+
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1792591769.807112   12924 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792591769.823547   12924 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792591770.877896    9212 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.

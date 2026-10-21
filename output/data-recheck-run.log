@@ -1,0 +1,57 @@
+Reading and validating all current samples...
+Numerical, normalization, labels, session, duplicate and split checks passed.
+Checking closest training geometry for 2400 validation rows...
+validation {'sampled_rows': 2400, 'within_0.015': 0, 'within_0.015_same_label': 0, 'within_0.015_different_label': 0, 'minimum_distance': 0.015001226576840204, 'median_distance': 0.13805741136911057}
+Checking closest training geometry for 2400 test rows...
+test {'sampled_rows': 2400, 'within_0.015': 0, 'within_0.015_same_label': 0, 'within_0.015_different_label': 0, 'minimum_distance': 0.015113760905926341, 'median_distance': 0.19314491180244922}
+Recovering a N source image for row 113222...
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1792592271.484891   17200 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792592271.504683   17200 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792592272.599784   17200 landmark_projection_calculator.cc:186] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+Recovering a K source image for row 100747...
+W0000 00:00:1792592283.459657   18376 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792592283.479085   18376 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+Recovering a Q source image for row 123354...
+W0000 00:00:1792592294.403439   17516 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792592294.422253   17516 inference_feedback_manager.cc:114] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+{
+  "nearest_training_geometry": {
+    "validation": {
+      "sampled_rows": 2400,
+      "within_0.015": 0,
+      "within_0.015_same_label": 0,
+      "within_0.015_different_label": 0,
+      "minimum_distance": 0.015001226576840204,
+      "median_distance": 0.13805741136911057
+    },
+    "test": {
+      "sampled_rows": 2400,
+      "within_0.015": 0,
+      "within_0.015_same_label": 0,
+      "within_0.015_different_label": 0,
+      "minimum_distance": 0.015113760905926341,
+      "median_distance": 0.19314491180244922
+    }
+  },
+  "row_110182": {
+    "label": "M",
+    "handedness": "Right",
+    "top_predictions": [
+      {
+        "label": "N",
+        "confidence": 0.9616268873214722
+      },
+      {
+        "label": "W",
+        "confidence": 0.003679524175822735
+      },
+      {
+        "label": "M",
+        "confidence": 0.0036501013673841953
+      }
+    ]
+  },
+  "dataset_unchanged": true
+}

@@ -1,0 +1,30 @@
+{
+  "fit_split": "validation",
+  "unknown_examples": 0,
+  "test": [
+    {
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "accepted_accuracy": 0.5318746112027696,
+      "macro_precision": 0.6368307599842152,
+      "macro_recall": 0.8204105684847818,
+      "macro_f1": 0.5949074572196463
+    },
+    {
+      "threshold": 0.8,
+      "coverage": 0.8579233494712357,
+      "accepted_accuracy": 0.5681273644388398,
+      "macro_precision": 0.7087875865535395,
+      "macro_recall": 0.7971825380901656,
+      "macro_f1": 0.6305891520853796
+    },
+    {
+      "threshold": 0.535,
+      "coverage": 0.9439050117653423,
+      "accepted_accuracy": 0.5470070775666924,
+      "macro_precision": 0.6729440270991374,
+      "macro_recall": 0.81298865466999,
+      "macro_f1": 0.6154019692261669
+    }
+  ]
+}

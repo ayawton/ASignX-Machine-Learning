@@ -78,12 +78,12 @@ def main() -> None:
     from torch.utils.data import DataLoader
 
     from ml.data_io import read_samples
-    from ml.dataset import LandmarkDataset, load_manifest
+    from ml.dataset import LandmarkDataset, load_manifest, validate_splits
     from ml.model import load_checkpoint
 
     parser = argparse.ArgumentParser(description="Evaluate a static sign checkpoint")
     parser.add_argument("--data", default="ml/data/landmarks.csv")
-    parser.add_argument("--model", default="ml/models/sign_classifier.pth")
+    parser.add_argument("--model", default="ml/models/sign_classifier_canonical.pth")
     parser.add_argument("--manifest")
     parser.add_argument("--split", choices=("validation", "test"), default="test")
     parser.add_argument("--batch-size", type=int, default=64)
@@ -98,7 +98,11 @@ def main() -> None:
     if checkpoint.get("dataset_sha256") != manifest.get("dataset_sha256") or checkpoint.get("splits") != manifest.get("splits"):
         raise ValueError("Checkpoint and split manifest do not match")
     samples = read_samples(args.data)
-    dataset = LandmarkDataset(samples, manifest["splits"][args.split], labels)
+    mode = model.static_hand_preprocessing
+    validate_splits(samples, manifest["splits"], static_hand_preprocessing=mode)
+    dataset = LandmarkDataset(
+        samples, manifest["splits"][args.split], labels, static_hand_preprocessing=mode,
+    )
     metrics = evaluate_model(
         model, DataLoader(dataset, batch_size=args.batch_size), labels, args.device
     )

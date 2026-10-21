@@ -8,9 +8,10 @@ import hashlib
 from pathlib import Path
 import re
 import sys
+from typing import Callable
 
 from asignx import HandDetector
-from ml.sequence_dataset import SequenceSample, load_sequence_file, save_sequence_file
+from ml.sequence_io import SequenceSample, load_sequence_file, save_sequence_file
 from ml.video import HAND_SELECTIONS, VIDEO_EXTENSIONS, extract_video_landmarks
 
 
@@ -56,6 +57,8 @@ def prepare_video_dataset(
     min_detection_ratio: float = 0.5,
     overwrite: bool = False,
     skip_invalid: bool = False,
+    progress: Callable[[int, int, str], None] | None = None,
+    cancelled: Callable[[], bool] | None = None,
 ) -> list[Path]:
     if sequence_length < 2:
         raise ValueError("sequence_length must be at least 2")
@@ -104,6 +107,10 @@ def prepare_video_dataset(
     failures: list[str] = []
     with HandDetector(max_num_hands=2) as detector:
         for number, (label, video_path) in enumerate(labeled_videos, start=1):
+            if cancelled and cancelled():
+                raise InterruptedError("Import stopped. Completed sequences were kept; rerun to resume.")
+            if progress:
+                progress(number - 1, len(labeled_videos), str(video_path))
             relative = video_path.relative_to(source_root)
             digest = _file_sha256(video_path)
             if digest in seen_hashes:
@@ -188,6 +195,8 @@ def prepare_video_dataset(
             f"{too_small_after}"
         )
     print(f"Prepared {len(written)} sequence(s) in {output_root}")
+    if progress:
+        progress(len(labeled_videos), len(labeled_videos), "Import complete")
     return written
 
 

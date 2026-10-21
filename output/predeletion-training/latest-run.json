@@ -1,0 +1,10 @@
+﻿{
+    "directory":  "output\\predeletion-training\\20261021T162040Z",
+    "status":  "complete",
+    "model":  "output\\predeletion-training\\20261021T162040Z\\model.pth",
+    "current_comparison_report":  "output\\current-model-comparison\\report.md",
+    "current_comparison_evaluation_dataset_sha256":  "4a160bec73556408c12f9457577c765c89e9f8cf09eae3d658fe39d3064f58cd",
+    "model_artifact_removed":  true,
+    "retained_application_model":  "ml/models/sign_classifier_canonical.pth",
+    "cleanup_record":  "output\\model-cleanup\\cleanup-20261021T164652Z.json"
+}

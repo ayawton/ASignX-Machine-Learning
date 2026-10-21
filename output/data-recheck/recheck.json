@@ -1,0 +1,293 @@
+{
+  "dataset_sha256": "17249bc657b7ed52f1d6a39f5d3bbbf6b8d2445efdab97f64094df68855647db",
+  "rows": 159987,
+  "labels": {
+    "A": 5853,
+    "B": 5869,
+    "C": 6661,
+    "D": 7086,
+    "E": 6089,
+    "F": 7372,
+    "G": 7534,
+    "H": 7506,
+    "I": 7037,
+    "K": 7998,
+    "L": 8252,
+    "M": 5641,
+    "N": 5281,
+    "O": 6221,
+    "P": 5538,
+    "Q": 5557,
+    "R": 7451,
+    "S": 6241,
+    "T": 7106,
+    "U": 6876,
+    "V": 7410,
+    "W": 6041,
+    "X": 7000,
+    "Y": 6367
+  },
+  "handedness": {
+    "Right": 98909,
+    "Left": 61078
+  },
+  "numerical_normalization_canonical_split_checks": "passed",
+  "coverage": {
+    "sources": {
+      "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae": {
+        "train": {
+          "A": 4189,
+          "B": 4210,
+          "C": 3867,
+          "D": 3935,
+          "E": 3676,
+          "F": 4895,
+          "H": 4065,
+          "L": 4637,
+          "N": 2602,
+          "P": 3384,
+          "R": 4135,
+          "S": 3997,
+          "T": 4316,
+          "U": 4181,
+          "V": 4025,
+          "Y": 4295
+        },
+        "validation": {
+          "W": 4165
+        },
+        "test": {
+          "G": 4126,
+          "I": 3940,
+          "K": 4523,
+          "M": 3315,
+          "O": 4146,
+          "Q": 3627,
+          "X": 3894
+        }
+      }
+    },
+    "unresolved_rows_by_split": {
+      "train": 44814,
+      "validation": 9626,
+      "test": 9402
+    },
+    "source_label_conditions_absent_from_training": [
+      {
+        "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "split": "validation",
+        "label": "W",
+        "support": 4165
+      },
+      {
+        "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "split": "test",
+        "label": "G",
+        "support": 4126
+      },
+      {
+        "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "split": "test",
+        "label": "I",
+        "support": 3940
+      },
+      {
+        "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "split": "test",
+        "label": "K",
+        "support": 4523
+      },
+      {
+        "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "split": "test",
+        "label": "M",
+        "support": 3315
+      },
+      {
+        "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "split": "test",
+        "label": "O",
+        "support": 4146
+      },
+      {
+        "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "split": "test",
+        "label": "Q",
+        "support": 3627
+      },
+      {
+        "source_id": "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "split": "test",
+        "label": "X",
+        "support": 3894
+      }
+    ],
+    "source_overlap_across_splits": [
+      "sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae"
+    ],
+    "signer_independence_established": false
+  },
+  "labels_changed": 0,
+  "rows_removed": 0,
+  "splits_changed": false,
+  "nearest_neighbor_warning": "Seeded class-balanced diagnostic sample, not the complete dataset. Similar landmarks can be legitimate different signs; distance alone does not prove duplicated images or label errors.",
+  "nearest_training_geometry": {
+    "validation": {
+      "sampled_rows": 2400,
+      "within_0.015": 0,
+      "within_0.015_same_label": 0,
+      "within_0.015_different_label": 0,
+      "minimum_distance": 0.015001226576840204,
+      "median_distance": 0.13805741136911057
+    },
+    "test": {
+      "sampled_rows": 2400,
+      "within_0.015": 0,
+      "within_0.015_same_label": 0,
+      "within_0.015_different_label": 0,
+      "minimum_distance": 0.015113760905926341,
+      "median_distance": 0.19314491180244922
+    }
+  },
+  "row_110182": {
+    "label": "M",
+    "handedness": "Right",
+    "top_predictions": [
+      {
+        "label": "N",
+        "confidence": 0.9616268873214722
+      },
+      {
+        "label": "W",
+        "confidence": 0.003679524175822735
+      },
+      {
+        "label": "M",
+        "confidence": 0.0036501013673841953
+      }
+    ]
+  },
+  "recovered_images": [
+    {
+      "row": 110182,
+      "label": "M",
+      "evidence": {
+        "csv_row": 110182,
+        "dataset_sha256": "17249bc657b7ed52f1d6a39f5d3bbbf6b8d2445efdab97f64094df68855647db",
+        "label": "M",
+        "session_id": "ext_c72cf97fc7fa5995335a73a1",
+        "archive": "C:\\Users\\jibbi\\Downloads\\archive (4).zip",
+        "archive_sha256": "24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "archive_member": "ASL_Alphabet_Dataset/asl_alphabet_train/M/M (100).jpg",
+        "image_sha256": "2c3bb440220c9c18776dd24a93ad02172ba95a3c34db8e443a994b88c39971e5",
+        "original_image": "row-110182-original.jpg",
+        "max_coordinate_difference": 7.450580596923828e-09,
+        "csv_handedness": "Right",
+        "detected_handedness": "Right",
+        "exact_geometry_match": true,
+        "label_verified": false,
+        "warning": "Found a geometrically matching source image, not proof of a unique image or a linguistically correct label."
+      },
+      "image_size": [
+        200,
+        200
+      ],
+      "prediction": "N",
+      "confidence": 0.9616268873214722,
+      "partition": "test",
+      "matches_stored_label": false
+    },
+    {
+      "row": 113222,
+      "label": "N",
+      "evidence": {
+        "csv_row": 113222,
+        "dataset_sha256": "17249bc657b7ed52f1d6a39f5d3bbbf6b8d2445efdab97f64094df68855647db",
+        "label": "N",
+        "session_id": "ext_8ddcbfef9faa2c584a897540",
+        "archive": "C:\\Users\\jibbi\\Downloads\\archive (4).zip",
+        "archive_sha256": "24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "archive_member": "ASL_Alphabet_Dataset/asl_alphabet_train/N/1.jpg",
+        "image_sha256": "db4418edd739fff1bcc2a05a85ae300e0b1622476d27fac291bfb72f942b089f",
+        "original_image": "row-113222-original.jpg",
+        "max_coordinate_difference": 7.450580596923828e-09,
+        "csv_handedness": "Right",
+        "detected_handedness": "Right",
+        "exact_geometry_match": true,
+        "label_verified": false,
+        "warning": "Found a geometrically matching source image, not proof of a unique image or a linguistically correct label."
+      },
+      "image_size": [
+        1920,
+        1920
+      ],
+      "prediction": "N",
+      "confidence": 0.9571712017059326,
+      "partition": "train",
+      "matches_stored_label": true
+    },
+    {
+      "row": 100747,
+      "label": "K",
+      "evidence": {
+        "csv_row": 100747,
+        "dataset_sha256": "17249bc657b7ed52f1d6a39f5d3bbbf6b8d2445efdab97f64094df68855647db",
+        "label": "K",
+        "session_id": "ext_8bc6bda66dd36a159daf1e66",
+        "archive": "C:\\Users\\jibbi\\Downloads\\archive (4).zip",
+        "archive_sha256": "24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "archive_member": "ASL_Alphabet_Dataset/asl_alphabet_train/K/1.jpg",
+        "image_sha256": "d620e7a788fd54a0e564639a5d72663e35a67eecd5cba5788e2a9eb37cdefdbe",
+        "original_image": "row-100747-original.jpg",
+        "max_coordinate_difference": 7.450580596923828e-09,
+        "csv_handedness": "Right",
+        "detected_handedness": "Right",
+        "exact_geometry_match": true,
+        "label_verified": false,
+        "warning": "Found a geometrically matching source image, not proof of a unique image or a linguistically correct label."
+      },
+      "image_size": [
+        1920,
+        1920
+      ],
+      "prediction": "K",
+      "confidence": 0.9768034219741821,
+      "partition": "test",
+      "matches_stored_label": true
+    },
+    {
+      "row": 123354,
+      "label": "Q",
+      "evidence": {
+        "csv_row": 123354,
+        "dataset_sha256": "17249bc657b7ed52f1d6a39f5d3bbbf6b8d2445efdab97f64094df68855647db",
+        "label": "Q",
+        "session_id": "ext_b905b9395516a06c9a81ae72",
+        "archive": "C:\\Users\\jibbi\\Downloads\\archive (4).zip",
+        "archive_sha256": "24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae",
+        "archive_member": "ASL_Alphabet_Dataset/asl_alphabet_train/Q/1.jpg",
+        "image_sha256": "6ec458cc9f6a2084def5f59e425e0f4804e3ece2b12564cce79bd3a7554aa035",
+        "original_image": "row-123354-original.jpg",
+        "max_coordinate_difference": 7.450580596923828e-09,
+        "csv_handedness": "Left",
+        "detected_handedness": "Left",
+        "exact_geometry_match": true,
+        "label_verified": false,
+        "warning": "Found a geometrically matching source image, not proof of a unique image or a linguistically correct label."
+      },
+      "image_size": [
+        1920,
+        1920
+      ],
+      "prediction": "Q",
+      "confidence": 0.9303502440452576,
+      "partition": "test",
+      "matches_stored_label": true
+    }
+  ],
+  "dataset_unchanged": true,
+  "visual_observations": [
+    "The recovered M example is 200 x 200 pixels with overlapping fingers; this limits visual label review and assessment of finger/thumbnail landmark placement.",
+    "The recovered N, K and Q examples differ in resolution, hand size in frame and viewpoint. These are examples, not a quantified claim about every source image."
+  ]
+}

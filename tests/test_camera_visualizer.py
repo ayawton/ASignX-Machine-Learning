@@ -79,3 +79,27 @@ def test_visualizer_overlay_with_two_hands() -> None:
     assert out.dtype == frame.dtype
 
 
+def test_visualizer_overlay_with_sign_recognition_hud() -> None:
+    from ml.predict import Prediction, Recognition
+
+    vis = VisualDebugger()
+    frame = np.zeros((480, 640, 3), dtype=np.uint8)
+    hand = HandLandmarks(
+        landmarks=create_sample_landmarks(21),
+        handedness="Right",
+        score=0.99,
+    )
+    res = HandDetectionResult(hand_detected=True, hand=hand, all_hands=[hand])
+    rec = Recognition(
+        hand="Right",
+        prediction=Prediction(label="A", confidence=0.985, raw_label="A"),
+        stable_label="A",
+        emitted_label="A",
+    )
+
+    out_Without_rec = vis.render_overlay(frame, res, fps=30.0)
+    out_with_rec = vis.render_overlay(frame, res, fps=30.0, recognitions=[rec])
+    assert out_with_rec.shape == frame.shape
+    assert not np.array_equal(out_Without_rec, out_with_rec)
+
+
