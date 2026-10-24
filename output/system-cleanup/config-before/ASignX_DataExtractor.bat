@@ -1,14 +1,3 @@
-@echo off
-setlocal
-cd /d "%~dp0"
-if exist "output\extractor-reviewed\ASignX_DataExtractor\ASignX_DataExtractor.exe" (
-    start "" "output\extractor-reviewed\ASignX_DataExtractor\ASignX_DataExtractor.exe" %*
-) else if exist "output\extractor-large-datasets\ASignX_DataExtractor\ASignX_DataExtractor.exe" (
-    start "" "output\extractor-large-datasets\ASignX_DataExtractor\ASignX_DataExtractor.exe" %*
-) else if exist "output\extractor\ASignX_DataExtractor\ASignX_DataExtractor.exe" (
-    start "" "output\extractor\ASignX_DataExtractor\ASignX_DataExtractor.exe" %*
-) else (
-    py -3.11 -m ml.extractor_gui %*
-)
-endlocal
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:2a3aebc05a79e733de65ee617f89e73d8da7b5b2a6fc79f0e99930cd19ad9114
+size 623

@@ -1,11 +1,3 @@
-@echo off
-setlocal
-cd /d "%~dp0"
-if exist "output\csv-merger\ASignX_CSVMerger\ASignX_CSVMerger.exe" (
-    start "" "output\csv-merger\ASignX_CSVMerger\ASignX_CSVMerger.exe" %*
-) else if exist ".venv-py314\Scripts\python.exe" (
-    ".venv-py314\Scripts\python.exe" -m ml.csv_merger_gui %*
-) else (
-    py -3.14 -m ml.csv_merger_gui %*
-)
-endlocal
+version https://git-lfs.github.com/spec/v1
+oid sha256:b51b32761f237f93c4bd856e2d7d82fb8f07a8d024ee2a54212db11a09e78cab
+size 356

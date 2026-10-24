@@ -1,11 +1,3 @@
-@echo off
-cd /d "%~dp0"
-if exist "dist\ASignX_DynamicStudio.exe" (
-    start "" "dist\ASignX_DynamicStudio.exe"
-) else if exist ".venv-py314\Scripts\python.exe" (
-    ".venv-py314\Scripts\python.exe" -m ml.dynamic_studio_gui
-    if errorlevel 1 pause
-) else (
-    py -3.14 -m ml.dynamic_studio_gui
-    if errorlevel 1 pause
-)
+version https://git-lfs.github.com/spec/v1
+oid sha256:8d2cc9d760201062968e2f054f9cbf58513d7cabbb4989e9cc6abbca25f977af
+size 337

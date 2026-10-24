@@ -1,8 +1,3 @@
-@echo off
-cd /d "%~dp0"
-if exist ".venv-py314\Scripts\python.exe" (
-    ".venv-py314\Scripts\python.exe" -m ml.manual_training_gui
-) else (
-    py -3.14 -m ml.manual_training_gui
-)
-if errorlevel 1 pause
+version https://git-lfs.github.com/spec/v1
+oid sha256:c680388264908b2abe459a7d5a3d5b37639b44b4a2af128fa6b4427e67a97bfa
+size 211

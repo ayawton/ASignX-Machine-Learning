@@ -1,12 +1,3 @@
-@echo off
-setlocal
-cd /d "%~dp0"
-if exist "output\extractor-reviewed\ASignX_DataExtractor\ASignX_DataExtractor.exe" (
-    start "" "output\extractor-reviewed\ASignX_DataExtractor\ASignX_DataExtractor.exe" %*
-) else if exist ".venv-py314\Scripts\python.exe" (
-    ".venv-py314\Scripts\python.exe" -m ml.extractor_gui %*
-) else (
-    py -3.14 -m ml.extractor_gui %*
-)
-endlocal
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:40fc7b73f6f317ce23b1158ef229802ae1d89dac3b8dc0e8063d31248efd5489
+size 388
