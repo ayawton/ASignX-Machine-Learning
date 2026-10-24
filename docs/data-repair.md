@@ -31,9 +31,9 @@ Re-extraction agrees with all stored coordinates within approximately 7.45e-9 an
 ## Reproduce the investigation
 
 ```powershell
-py -3.11 -m ml.recover_image --row 110182 --archive "C:\Users\jibbi\Downloads\archive (4).zip" --max-images 1000
-py -3.11 -m ml.data_quality --source "C:\Users\jibbi\Downloads\archive (4).zip"
-py -3.11 -m pytest -q
+.\.venv-py314\Scripts\python.exe -m ml.recover_image --row 110182 --archive "C:\Users\jibbi\Downloads\archive (4).zip" --max-images 1000
+.\.venv-py314\Scripts\python.exe -m ml.data_quality --source "C:\Users\jibbi\Downloads\archive (4).zip"
+.\.venv-py314\Scripts\python.exe -m pytest -q
 ```
 
 Open `output/data-repair/review.html` for the source coverage table and the recovered original image alongside its landmarks. `session-provenance.csv` is bound to the current dataset hash. `benchmark-plan-template.csv` groups the recovered archive globally across labels and leaves unknown identities and split choices blank. It is deliberately incomplete and cannot yet be passed to training.

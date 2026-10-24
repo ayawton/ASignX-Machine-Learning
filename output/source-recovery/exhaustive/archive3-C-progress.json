@@ -1,0 +1,11 @@
+{
+  "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+  "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+  "total_images": 13393,
+  "processed_images": 13393,
+  "unique_current_rows_matched": 3369,
+  "complete": true,
+  "elapsed_seconds_this_process": 937.25,
+  "images_per_second": 14.29,
+  "scope": "Image/recording-folder evidence only. No signer identity invented."
+}

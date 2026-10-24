@@ -15,6 +15,6 @@ if not exist "ml\models\sequence_classifier.pth" (
 if exist ".venv-py314\Scripts\python.exe" (
     ".venv-py314\Scripts\python.exe" main.py --sign-model ml/models/sign_classifier_canonical.pth --sequence-model ml/models/sequence_classifier.pth --exposure auto %*
 ) else (
-    python main.py --sign-model ml/models/sign_classifier_canonical.pth --sequence-model ml/models/sequence_classifier.pth --exposure auto %*
+    py -3.14 main.py --sign-model ml/models/sign_classifier_canonical.pth --sequence-model ml/models/sequence_classifier.pth --exposure auto %*
 )
 if errorlevel 1 pause

@@ -76,6 +76,25 @@ python -m ml.predict_sequence --model ml/models/sequence_classifier.pth
 
 For a one-hand model, pass the same hand selection to live prediction, e.g. `--hand Right`.
 Copied sequence files retain their independent recording session IDs.
+Live sequence prediction uses automatic camera exposure by default. To set it manually,
+add e.g. `--exposure -5.0`; use `--exposure auto` to restore automatic brightness.
+
+## Test static and dynamic signs together
+
+Double-click `ASignX_TestRecognition.bat` in the project folder, or run:
+
+```powershell
+python main.py --sign-model ml/models/sign_classifier_canonical.pth --sequence-model ml/models/sequence_classifier.pth --exposure auto
+```
+
+Both models share one camera window. Hold a still sign for static recognition;
+perform a moving gesture for dynamic recognition. The motion gate routes recognition
+based on hand movement, and the overlay shows the results. Only labels learned by
+the respective models can be recognized. Press **Q** or **Esc** to exit.
+
+The launcher uses the project Python environment and requires both trained checkpoints.
+It is separate from the portable recording/extraction EXE, which does not run recognition.
+For different model versions, use the command above with their checkpoint paths.
 
 ## Run from source or rebuild
 

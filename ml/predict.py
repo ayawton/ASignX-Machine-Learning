@@ -207,8 +207,16 @@ class SignRecognizer:
         self.motion_gate_threshold = motion_gate_threshold
         self.states: dict[str, PredictionStabilizer] = {}
         self.motion_gates: dict[str, MotionGate] = {}
+        self._last_timestamp: float | None = None
 
     def update(self, hands: list[Any], timestamp: float | None = None) -> list[Recognition]:
+        if timestamp is not None:
+            if not np.isfinite(timestamp) or (self._last_timestamp is not None and timestamp <= self._last_timestamp):
+                raise ValueError("Recognition timestamps must increase and be finite")
+            if self._last_timestamp is not None and timestamp - self._last_timestamp > 0.5:
+                self.states.clear()
+                self.motion_gates.clear()
+            self._last_timestamp = timestamp
         results: list[Recognition] = []
         present: set[str] = set()
         for index, hand in enumerate(hands):
@@ -280,9 +288,14 @@ class UnifiedSignRecognizer:
         self.hand_motion_gates: dict[str, MotionGate] = {}
         self.velocity_threshold = velocity_threshold
         self.last_motion_at: float | None = None
+        self._last_timestamp: float | None = None
 
     def update(self, hands: list[Any], timestamp: float | None = None) -> dict[str, Any]:
         timestamp = time.perf_counter() if timestamp is None else timestamp
+        if self._last_timestamp is not None and timestamp - self._last_timestamp > 0.5:
+            self.sequence_stabilizer = PredictionStabilizer(stable_frames=3, release_frames=8)
+            self.last_motion_at = None
+        self._last_timestamp = timestamp
         static_results = (
             self.static_recognizer.update(hands, timestamp) if self.static_recognizer is not None else []
         )

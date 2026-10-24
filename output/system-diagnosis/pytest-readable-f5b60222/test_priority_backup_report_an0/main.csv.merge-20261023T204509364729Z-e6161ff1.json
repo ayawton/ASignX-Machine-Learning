@@ -1,0 +1,41 @@
+{
+  "main": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-f5b60222\\test_priority_backup_report_an0\\main.csv",
+  "incoming": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-f5b60222\\test_priority_backup_report_an0\\new.csv",
+  "backup": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-f5b60222\\test_priority_backup_report_an0\\main.csv.backup-20261023T204509364729Z-e6161ff1",
+  "main_before_sha256": "9b374c35ed931a9ba1697a84b286a44fcaa5128e3562135b8105d1955d3d8dee",
+  "incoming_sha256": "9c785e92bfb25bbab04259911a5429b1c40aca4057896e16f4913ced492ca129",
+  "expected_output_sha256": "fe1817544f8fe4708195d1d5691177780b9de8ec41de44072ed5c035f5965539",
+  "main_rows": 1,
+  "counts": {
+    "duplicate": 2,
+    "label conflict": 1,
+    "append": 1
+  },
+  "decisions": [
+    {
+      "row": 2,
+      "label": "A",
+      "session_id": "source1",
+      "decision": "duplicate"
+    },
+    {
+      "row": 3,
+      "label": "B",
+      "session_id": "source2",
+      "decision": "label conflict"
+    },
+    {
+      "row": 4,
+      "label": "A",
+      "session_id": "other-device",
+      "decision": "append"
+    },
+    {
+      "row": 5,
+      "label": "A",
+      "session_id": "other-device",
+      "decision": "duplicate"
+    }
+  ],
+  "note": "Prepared merge audit. Compare main CSV hash with expected_output_sha256 to verify application."
+}

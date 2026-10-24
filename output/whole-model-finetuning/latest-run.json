@@ -1,0 +1,9 @@
+{
+  "directory": "output\\whole-model-finetuning\\20261023T205534Z",
+  "status": "complete",
+  "model": "output\\whole-model-finetuning\\20261023T205534Z\\model.pth",
+  "report": "output\\whole-model-finetuning\\20261023T205534Z\\report.md",
+  "checkpoint_retained": false,
+  "checkpoint_removed_reason": "Owner requested deletion of unused models; historical metrics and predictions retained.",
+  "model_cleanup_manifest": "output/model-cleanup/20261024/plan.json"
+}

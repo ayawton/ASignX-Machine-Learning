@@ -1,0 +1,17 @@
+[
+  {
+    "zip": "ml/data/manual_recordings/backups/20261022T062606Z-b665b450a219.zip",
+    "member": "landmarks.csv",
+    "sha256": "16589a471bbbc2152aedc343f45298c007716066649dc8199d6d99952cda2023"
+  },
+  {
+    "zip": "ml/data/manual_recordings/backups/20261022T070547Z-d3adc897b144.zip",
+    "member": "landmarks.csv",
+    "sha256": "3e705e8fd1edd161e77703fd7057a30d33467c833fe3c9be42606b4da5c65d07"
+  },
+  {
+    "zip": "ml/data/manual_recordings/backups/20261022T071143Z-cf28df13ee05.zip",
+    "member": "landmarks.csv",
+    "sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2"
+  }
+]

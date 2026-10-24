@@ -1,0 +1,55 @@
+{
+  "source": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-run4\\test_conflicting_landmarks_do_0\\input",
+  "source_input_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-run4\\test_conflicting_landmarks_do_0\\input",
+  "dataset_before_sha256": "missing",
+  "output_rows": [],
+  "preprocessing": "wrist_max_radius_v1",
+  "status": "committed",
+  "settings": {
+    "unusual_pose_threshold": 0.0,
+    "similarity_distance": 0.0
+  },
+  "report": {
+    "total_files_scanned": 3,
+    "exact_duplicates_skipped": 0,
+    "label_conflicts_skipped": 3,
+    "no_hand_detected": 0,
+    "anatomical_outliers_rejected": 0,
+    "statistical_outliers_rejected": 0,
+    "near_duplicates_pruned": 0,
+    "already_in_csv_skipped": 0,
+    "samples_appended": 0,
+    "per_label_counts": {},
+    "unreadable_images": 0,
+    "multiple_hands_skipped": 0,
+    "animated_images_skipped": 0,
+    "warnings": [
+      "Skipped 3 examples assigned to conflicting sign labels. Other examples were processed. Review the paths in the detailed results file; original images and existing rows were kept."
+    ],
+    "decisions": [
+      {
+        "path": "A\\0.png",
+        "label": "A",
+        "reason": "Identical hand points assigned to different signs; review labels",
+        "sha256": "7c5c38c6e93d209595acc84de5f46100545647d6a798a343264fa21b1e3c68d6",
+        "group": "default"
+      },
+      {
+        "path": "A\\1.png",
+        "label": "A",
+        "reason": "Identical hand points assigned to different signs; review labels",
+        "sha256": "1fc7900de7073cbf7a54f056b24d832c73cc73e112d8a1a32a6ccd79ac56f47d",
+        "group": "default"
+      },
+      {
+        "path": "B\\other.png",
+        "label": "B",
+        "reason": "Identical hand points assigned to different signs; review labels",
+        "sha256": "5c8cfaca07c16b4fd955dba3dd35537b056e5811f1174011b9c424724de7b52b",
+        "group": "default"
+      }
+    ],
+    "audit_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-run4\\test_conflicting_landmarks_do_0\\landmarks.extraction-ae6cae15c77943bc9d493a7ed094c778.json"
+  },
+  "dataset_after_sha256": "missing"
+}

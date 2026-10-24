@@ -1,0 +1,16 @@
+{
+  "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+  "identity_plan_sha256": "5c5489fa960e9f3d616a184608e6f670c016816ef36d368d71c08d4115b85bb5",
+  "samples": 159534,
+  "sessions": 1648,
+  "identity_plan": "output\\signer-benchmark\\identity-plan.csv",
+  "unknown_identity_sessions": 1648,
+  "benchmark_ready": false,
+  "problems": [
+    "1648 sessions lack verified anonymous signer identity and evidence",
+    "Unknown/duplicate session, missing identity or invalid split: 085a77b9b6ac4e84a6ae3e551444e179"
+  ],
+  "coverage": {},
+  "criteria": "Verified anonymous identities/evidence; signer/source/session-disjoint splits; canonical duplicate checks; all labels and both hands per split; at least 3 training and 2 validation/test signers per label. These are collection targets, not statistical reliability guarantees.",
+  "test_policy": "Collect a new untouched test from different people; historical test is development-known. Do not assign invented distinct signers to unknown imported sessions."
+}

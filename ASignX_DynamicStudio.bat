@@ -6,6 +6,6 @@ if exist "dist\ASignX_DynamicStudio.exe" (
     ".venv-py314\Scripts\python.exe" -m ml.dynamic_studio_gui
     if errorlevel 1 pause
 ) else (
-    python -m ml.dynamic_studio_gui
+    py -3.14 -m ml.dynamic_studio_gui
     if errorlevel 1 pause
 )

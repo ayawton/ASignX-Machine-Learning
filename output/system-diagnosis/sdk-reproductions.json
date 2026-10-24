@@ -1,0 +1,22 @@
+{
+  "stale_label_on_target_switch": {
+    "confirmed": "A",
+    "new_prediction": "B",
+    "returned_stable": "A"
+  },
+  "stale_label_after_missing": {
+    "returned_internal_stable": "A"
+  },
+  "single_instance_two_hands_same_timestamp": {
+    "error": "Motion timestamps must increase and be finite",
+    "note": "Needs one instance per hand; the hand argument does not partition state."
+  },
+  "missing_centroid": {
+    "all_fingers_claim_aligned": true
+  },
+  "coach_target_switch": {
+    "first_target_progress": 0.5,
+    "second_target_progress": 1,
+    "second_target_passed": true
+  }
+}

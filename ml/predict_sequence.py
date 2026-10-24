@@ -232,8 +232,10 @@ def main() -> None:
             camera.set_exposure(None)
         with HandDetector(max_num_hands=2) as detector:
             for frame in camera.stream():
-                result, annotated = detector.process(frame, draw=True)
-                predictor.add_frame(_canonical_hands(result.all_hands, both, args.hand), timestamp=time.monotonic())
+                stamp = getattr(camera, "frame_timestamp", None)
+                stamp = time.monotonic() if stamp is None else stamp
+                result, annotated = detector.process(frame, draw=True, timestamp_ms=int(stamp * 1000))
+                predictor.add_frame(_canonical_hands(result.all_hands, both, args.hand), timestamp=stamp)
                 if not predictor.sampled:
                     cv2.imshow("ASignX - Moving Sign Recognition", annotated)
                     if cv2.waitKey(1) & 0xFF in (27, ord("q"), ord("Q")):

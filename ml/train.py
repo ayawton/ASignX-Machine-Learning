@@ -52,6 +52,7 @@ class TrainConfig:
     augmentation_scale: float = 1.0
     group_plan: str | None = None
     evaluate_test: bool = True
+    initial_checkpoint: str | None = None
 
 
 @torch.inference_mode()
@@ -111,6 +112,8 @@ def train(
     output_path = Path(output)
     if output_path.suffix.lower() != ".pth":
         raise ValueError("Model output must have a .pth extension")
+    if config.initial_checkpoint and Path(config.initial_checkpoint).resolve() == output_path.resolve():
+        raise ValueError("Fine-tuning requires a separate output path; preserve the initial checkpoint")
     random.seed(config.seed)
     np.random.seed(config.seed)
     torch.manual_seed(config.seed)
@@ -189,6 +192,16 @@ def train(
         cosine_head=config.cosine_head,
         static_hand_preprocessing=config.static_hand_preprocessing,
     ).to(config.device)
+    initialization = {}
+    if config.initial_checkpoint:
+        initial_model, initial_labels, _ = load_checkpoint(config.initial_checkpoint, config.device)
+        if initial_labels != labels or initial_model.config != model.config:
+            raise ValueError("Initial checkpoint labels, architecture and preprocessing must match the training configuration")
+        model.load_state_dict(initial_model.state_dict())
+        initialization = {"initial_checkpoint": str(config.initial_checkpoint),
+                          "initial_checkpoint_sha256": dataset_digest(config.initial_checkpoint),
+                          "mode": "whole_model_fine_tuning"}
+        del initial_model
 
     counts = torch.bincount(datasets["train"].targets, minlength=len(labels)).float()
     weights = class_weights(counts, config.class_weighting)
@@ -210,6 +223,16 @@ def train(
     best_score = -math.inf
     best_loss = math.inf
     history = []
+    initial_validation = None
+    if config.initial_checkpoint:
+        initial_validation = _evaluate(model, loaders["validation"], labels, config.device)
+        best_score = selection_score(initial_validation, config.selection_metric)
+        best_loss = initial_validation['loss']
+        save_checkpoint(output_path, model, labels,
+                        training={"config": asdict(config), "best_epoch": 0, **initialization},
+                        dataset_sha256=dataset_digest(data_path), splits=splits,
+                        class_centroids=class_centroids)
+        print(f"Initial checkpoint validation macro F1={initial_validation['macro_f1']:.5f}; epoch 0 remains eligible")
     for epoch in range(1, config.epochs + 1):
         model.train()
         total = 0.0
@@ -249,7 +272,7 @@ def train(
                 output_path,
                 model,
                 labels,
-                training={"config": asdict(config), "best_epoch": epoch},
+                training={"config": asdict(config), "best_epoch": epoch, **initialization},
                 dataset_sha256=dataset_digest(data_path),
                 splits=splits,
                 class_centroids=class_centroids,
@@ -258,7 +281,9 @@ def train(
     results = {
         "labels": labels,
         "best_epoch": checkpoint["training"]["best_epoch"],
-        "validation": history[checkpoint["training"]["best_epoch"] - 1]["validation"],
+        "validation": (initial_validation if checkpoint["training"]["best_epoch"] == 0 else
+                       history[checkpoint["training"]["best_epoch"] - 1]["validation"]),
+        "initial_validation": initial_validation,
         "test": _evaluate(model, loaders["test"], labels, config.device) if config.evaluate_test else None,
         "selection_metric": config.selection_metric,
         "benchmark": "global_identity_groups" if config.group_plan else "legacy_session_groups_not_signer_independent",
@@ -289,6 +314,7 @@ def main() -> None:
     parser.add_argument("--augmentation-scale", type=float, default=1.0)
     parser.add_argument("--group-plan")
     parser.add_argument("--no-test", dest="evaluate_test", action="store_false")
+    parser.add_argument("--initial-checkpoint", help="Fine-tune matching weights; requires a separate output path")
     parser.add_argument(
         "--static-hand-preprocessing", choices=(STATIC_HAND_CANONICAL, STATIC_HAND_LEGACY),
         default=STATIC_HAND_CANONICAL,

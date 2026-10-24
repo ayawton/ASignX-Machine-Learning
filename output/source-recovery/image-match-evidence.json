@@ -1,0 +1,1380 @@
+{
+  "attempted": 120,
+  "attempts": [
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/A/A1.jpg",
+      "label": "A",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/A/A10.jpg",
+      "label": "A",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/A/A100.jpg",
+      "label": "A",
+      "usable_hand": false,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/A/A1000.jpg",
+      "label": "A",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/C/C1.jpg",
+      "label": "C",
+      "usable_hand": false,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/C/C10.jpg",
+      "label": "C",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/C/C100.jpg",
+      "label": "C",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/C/C1000.jpg",
+      "label": "C",
+      "usable_hand": false,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/G/G1.jpg",
+      "label": "G",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/G/G10.jpg",
+      "label": "G",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/G/G100.jpg",
+      "label": "G",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/G/G1000.jpg",
+      "label": "G",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/K/K1.jpg",
+      "label": "K",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/K/K10.jpg",
+      "label": "K",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/K/K100.jpg",
+      "label": "K",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/K/K1000.jpg",
+      "label": "K",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/M/M1.jpg",
+      "label": "M",
+      "usable_hand": false,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/M/M10.jpg",
+      "label": "M",
+      "usable_hand": false,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/M/M100.jpg",
+      "label": "M",
+      "usable_hand": false,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/M/M1000.jpg",
+      "label": "M",
+      "usable_hand": false,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/N/N1.jpg",
+      "label": "N",
+      "usable_hand": false,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/N/N10.jpg",
+      "label": "N",
+      "usable_hand": false,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/N/N100.jpg",
+      "label": "N",
+      "usable_hand": false,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/N/N1000.jpg",
+      "label": "N",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/Q/Q1.jpg",
+      "label": "Q",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/Q/Q10.jpg",
+      "label": "Q",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/Q/Q100.jpg",
+      "label": "Q",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/Q/Q1000.jpg",
+      "label": "Q",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/R/R1.jpg",
+      "label": "R",
+      "usable_hand": false,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/R/R10.jpg",
+      "label": "R",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/R/R100.jpg",
+      "label": "R",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/R/R1000.jpg",
+      "label": "R",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/U/U1.jpg",
+      "label": "U",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/U/U10.jpg",
+      "label": "U",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/U/U100.jpg",
+      "label": "U",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/U/U1000.jpg",
+      "label": "U",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/X/X1.jpg",
+      "label": "X",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/X/X10.jpg",
+      "label": "X",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/X/X100.jpg",
+      "label": "X",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive.zip",
+      "member": "asl_alphabet_train/asl_alphabet_train/X/X1000.jpg",
+      "label": "X",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/a/color_0_0002.png",
+      "label": "A",
+      "usable_hand": false,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/a/color_0_0003.png",
+      "label": "A",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/a/color_0_0004.png",
+      "label": "A",
+      "usable_hand": false,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/a/color_0_0005.png",
+      "label": "A",
+      "usable_hand": false,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/c/color_2_0002.png",
+      "label": "C",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/c/color_2_0003.png",
+      "label": "C",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/c/color_2_0004.png",
+      "label": "C",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/c/color_2_0005.png",
+      "label": "C",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/g/color_6_0002.png",
+      "label": "G",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/g/color_6_0003.png",
+      "label": "G",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/g/color_6_0004.png",
+      "label": "G",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/g/color_6_0005.png",
+      "label": "G",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/k/color_10_0002.png",
+      "label": "K",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/k/color_10_0003.png",
+      "label": "K",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/k/color_10_0004.png",
+      "label": "K",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/k/color_10_0005.png",
+      "label": "K",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/m/color_12_0002.png",
+      "label": "M",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/m/color_12_0003.png",
+      "label": "M",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/m/color_12_0004.png",
+      "label": "M",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/m/color_12_0005.png",
+      "label": "M",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/n/color_13_0002.png",
+      "label": "N",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/n/color_13_0003.png",
+      "label": "N",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/n/color_13_0004.png",
+      "label": "N",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/n/color_13_0005.png",
+      "label": "N",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/q/color_16_0002.png",
+      "label": "Q",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/q/color_16_0003.png",
+      "label": "Q",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/q/color_16_0004.png",
+      "label": "Q",
+      "usable_hand": false,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/q/color_16_0005.png",
+      "label": "Q",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/r/color_17_0002.png",
+      "label": "R",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/r/color_17_0003.png",
+      "label": "R",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/r/color_17_0004.png",
+      "label": "R",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/r/color_17_0005.png",
+      "label": "R",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/u/color_20_0002.png",
+      "label": "U",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/u/color_20_0003.png",
+      "label": "U",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/u/color_20_0004.png",
+      "label": "U",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/u/color_20_0005.png",
+      "label": "U",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/x/color_23_0002.png",
+      "label": "X",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/x/color_23_0003.png",
+      "label": "X",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/x/color_23_0004.png",
+      "label": "X",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (3).zip",
+      "member": "dataset5/A/x/color_23_0005.png",
+      "label": "X",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/A/A_0.jpg",
+      "label": "A",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/A/A_1.jpg",
+      "label": "A",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/A/A_10.jpg",
+      "label": "A",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/A/A_100.jpg",
+      "label": "A",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/C/C_0.jpg",
+      "label": "C",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/C/C_1.jpg",
+      "label": "C",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/C/C_10.jpg",
+      "label": "C",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/C/C_100.jpg",
+      "label": "C",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/G/G_0.jpg",
+      "label": "G",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/G/G_1.jpg",
+      "label": "G",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/G/G_10.jpg",
+      "label": "G",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/G/G_100.jpg",
+      "label": "G",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/K/K_0.jpg",
+      "label": "K",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/K/K_1.jpg",
+      "label": "K",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/K/K_10.jpg",
+      "label": "K",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/K/K_100.jpg",
+      "label": "K",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/M/M_0.jpg",
+      "label": "M",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/M/M_1.jpg",
+      "label": "M",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/M/M_10.jpg",
+      "label": "M",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/M/M_100.jpg",
+      "label": "M",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/N/N_0.jpg",
+      "label": "N",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/N/N_1.jpg",
+      "label": "N",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/N/N_10.jpg",
+      "label": "N",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/N/N_100.jpg",
+      "label": "N",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/Q/Q_0.jpg",
+      "label": "Q",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/Q/Q_1.jpg",
+      "label": "Q",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/Q/Q_10.jpg",
+      "label": "Q",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/Q/Q_100.jpg",
+      "label": "Q",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/R/R_0.jpg",
+      "label": "R",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/R/R_1.jpg",
+      "label": "R",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/R/R_10.jpg",
+      "label": "R",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/R/R_100.jpg",
+      "label": "R",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/U/U_0.jpg",
+      "label": "U",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/U/U_1.jpg",
+      "label": "U",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/U/U_10.jpg",
+      "label": "U",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/U/U_100.jpg",
+      "label": "U",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/X/X_0.jpg",
+      "label": "X",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/X/X_1.jpg",
+      "label": "X",
+      "usable_hand": true,
+      "current_matches": 1
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/X/X_10.jpg",
+      "label": "X",
+      "usable_hand": true,
+      "current_matches": 0
+    },
+    {
+      "archive": "archive (5).zip",
+      "member": "SignAlphaSet/X/X_100.jpg",
+      "label": "X",
+      "usable_hand": true,
+      "current_matches": 1
+    }
+  ],
+  "matches": [
+    {
+      "current_csv_row": 64381,
+      "label": "A",
+      "session_id": "ext_a71d0903d8e78ae3fe735e18",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive.zip",
+      "archive_member": "asl_alphabet_train/asl_alphabet_train/A/A1.jpg",
+      "image_sha256": "99067d23a662b272f4881da7a6132df9faad8f62a2c86a976fe63c90d6fffb23",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-64381-archive.jpg"
+    },
+    {
+      "current_csv_row": 64382,
+      "label": "A",
+      "session_id": "ext_a71d0903d8e78ae3fe735e18",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive.zip",
+      "archive_member": "asl_alphabet_train/asl_alphabet_train/A/A10.jpg",
+      "image_sha256": "d292af5176be383109cd6205f46ac33daeaeddafa6a5d39a26c7e1e76f5cb5dd",
+      "max_coordinate_difference": 3.725290298461914e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-64382-archive.jpg"
+    },
+    {
+      "current_csv_row": 64383,
+      "label": "A",
+      "session_id": "ext_a71d0903d8e78ae3fe735e18",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive.zip",
+      "archive_member": "asl_alphabet_train/asl_alphabet_train/A/A1000.jpg",
+      "image_sha256": "880780c8e4d7dcd8f4f8b6313957d70e9b6ec80ad51047e581a36e49f18a3d2a",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-64383-archive.jpg"
+    },
+    {
+      "current_csv_row": 89412,
+      "label": "G",
+      "session_id": "ext_f30e7d1c0c3a742fdf7c87c1",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive.zip",
+      "archive_member": "asl_alphabet_train/asl_alphabet_train/G/G1000.jpg",
+      "image_sha256": "e812ccdbc75f532ca40d5f45415e49dfed841fc150efcddc86e02806e8a2ca27",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-89412-archive.jpg"
+    },
+    {
+      "current_csv_row": 104102,
+      "label": "K",
+      "session_id": "ext_8bc6bda66dd36a159daf1e66",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive.zip",
+      "archive_member": "asl_alphabet_train/asl_alphabet_train/K/K10.jpg",
+      "image_sha256": "73e6ac3174f1c19e47f27de34dd23c3aee3c2be6836a9b47d809bfac3e84ba34",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-104102-archive.jpg"
+    },
+    {
+      "current_csv_row": 101656,
+      "label": "K",
+      "session_id": "ext_8bc6bda66dd36a159daf1e66",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive.zip",
+      "archive_member": "asl_alphabet_train/asl_alphabet_train/K/K1000.jpg",
+      "image_sha256": "6fde03c4dd4752875b73ffb0c95f3e45ce2c457be3e88435e64a91eec1a5ac1e",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-101656-archive.jpg"
+    },
+    {
+      "current_csv_row": 111487,
+      "label": "N",
+      "session_id": "ext_8ddcbfef9faa2c584a897540",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive.zip",
+      "archive_member": "asl_alphabet_train/asl_alphabet_train/N/N1000.jpg",
+      "image_sha256": "515be0e2634c9a6738f0badc89d3d8451e1bb1ed4f8af3a9400155d499420f3e",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-111487-archive.jpg"
+    },
+    {
+      "current_csv_row": 124064,
+      "label": "Q",
+      "session_id": "ext_b905b9395516a06c9a81ae72",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive.zip",
+      "archive_member": "asl_alphabet_train/asl_alphabet_train/Q/Q100.jpg",
+      "image_sha256": "117ca37dac217868ffe41e9905d5537df323622c3fce95dee575bb8776af8f96",
+      "max_coordinate_difference": 5.587935447692871e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-124064-archive.jpg"
+    },
+    {
+      "current_csv_row": 121996,
+      "label": "Q",
+      "session_id": "ext_b905b9395516a06c9a81ae72",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive.zip",
+      "archive_member": "asl_alphabet_train/asl_alphabet_train/Q/Q1000.jpg",
+      "image_sha256": "4fd0743744b1a37f9194af2a78fd5195f6091afc1437a16d99eb56ce4cca8411",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-121996-archive.jpg"
+    },
+    {
+      "current_csv_row": 127918,
+      "label": "R",
+      "session_id": "ext_4654163c4582e500f63bb575",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive.zip",
+      "archive_member": "asl_alphabet_train/asl_alphabet_train/R/R10.jpg",
+      "image_sha256": "f3d1451bca2ea337f942ee6b6af43e05802ae723f3b84c32e05dc48e6513c282",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-127918-archive.jpg"
+    },
+    {
+      "current_csv_row": 128009,
+      "label": "R",
+      "session_id": "ext_4654163c4582e500f63bb575",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive.zip",
+      "archive_member": "asl_alphabet_train/asl_alphabet_train/R/R100.jpg",
+      "image_sha256": "f60625b7bd20d2107a61aea6f142ab44f5ca7c35c3bd2caba5c119225ac234ac",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-128009-archive.jpg"
+    },
+    {
+      "current_csv_row": 152463,
+      "label": "X",
+      "session_id": "ext_4602a3c0a49e5b644e1e0937",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive.zip",
+      "archive_member": "asl_alphabet_train/asl_alphabet_train/X/X10.jpg",
+      "image_sha256": "f548e1f6b7a893e281995c910337d8e8658d8ee03b09f5d4b5c9bdf9ac5af3c5",
+      "max_coordinate_difference": 5.587935447692871e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-152463-archive.jpg"
+    },
+    {
+      "current_csv_row": 152559,
+      "label": "X",
+      "session_id": "ext_4602a3c0a49e5b644e1e0937",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive.zip",
+      "archive_member": "asl_alphabet_train/asl_alphabet_train/X/X100.jpg",
+      "image_sha256": "83701710258007aa612e78a82c8a0af45859d63880515f5ac0a69e8c8fb0569f",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-152559-archive.jpg"
+    },
+    {
+      "current_csv_row": 150514,
+      "label": "X",
+      "session_id": "ext_4602a3c0a49e5b644e1e0937",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive.zip",
+      "archive_member": "asl_alphabet_train/asl_alphabet_train/X/X1000.jpg",
+      "image_sha256": "ac03a4709a5832001df0501365efe253faeb1e135068a9f9a9119180c33df094",
+      "max_coordinate_difference": 4.813955456484109e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-150514-archive.jpg"
+    },
+    {
+      "current_csv_row": 30395,
+      "label": "G",
+      "session_id": "ext_archive3_G_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+      "archive_member": "dataset5/A/g/color_6_0002.png",
+      "image_sha256": "969256ade6c3d90747b3cff8d232973752b235ab7cfce449ae6cb192d570bf7d",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Left",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-30395-archive_(3).png"
+    },
+    {
+      "current_csv_row": 30396,
+      "label": "G",
+      "session_id": "ext_archive3_G_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+      "archive_member": "dataset5/A/g/color_6_0003.png",
+      "image_sha256": "e1f59f8b15cb5877a0ccb4072b6632a652e28e5cab67e7220be3a50c8666eece",
+      "max_coordinate_difference": 3.725290298461914e-09,
+      "handedness": "Left",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-30396-archive_(3).png"
+    },
+    {
+      "current_csv_row": 30398,
+      "label": "G",
+      "session_id": "ext_archive3_G_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+      "archive_member": "dataset5/A/g/color_6_0005.png",
+      "image_sha256": "0e285b4dee95247ccfb6cadf2602fbe7241499eab6334dba55993d712aa106d6",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Left",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-30398-archive_(3).png"
+    },
+    {
+      "current_csv_row": 49385,
+      "label": "R",
+      "session_id": "ext_archive3_R_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+      "archive_member": "dataset5/A/r/color_17_0003.png",
+      "image_sha256": "2b1eaf23061f8cd172578e9e6018a5ae6040c0cad2a8af0b38dfcd0334e1bec0",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Left",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-49385-archive_(3).png"
+    },
+    {
+      "current_csv_row": 54929,
+      "label": "U",
+      "session_id": "ext_archive3_U_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+      "archive_member": "dataset5/A/u/color_20_0004.png",
+      "image_sha256": "b73fff67155c0b33d1d960f6977dcd2eb7b0e4627bd30795c54bce8e5e52c503",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Left",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-54929-archive_(3).png"
+    },
+    {
+      "current_csv_row": 54930,
+      "label": "U",
+      "session_id": "ext_archive3_U_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+      "archive_member": "dataset5/A/u/color_20_0005.png",
+      "image_sha256": "4dddc6ea19f732b25093b2280b3aa7c2ef6412aae35e7bc22df803dd73e827e1",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Left",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-54930-archive_(3).png"
+    },
+    {
+      "current_csv_row": 60161,
+      "label": "X",
+      "session_id": "ext_archive3_X_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+      "archive_member": "dataset5/A/x/color_23_0002.png",
+      "image_sha256": "1ee84c4147dfe59027de1272357880a1c3eb9ed78353f91ed155b6c0611a70e2",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Left",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-60161-archive_(3).png"
+    },
+    {
+      "current_csv_row": 60162,
+      "label": "X",
+      "session_id": "ext_archive3_X_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+      "archive_member": "dataset5/A/x/color_23_0003.png",
+      "image_sha256": "294280eae9341a96ea33dba9f4a8ea884d84f1692e6d58e14dfaf863d9c1f9fe",
+      "max_coordinate_difference": 3.725290298461914e-09,
+      "handedness": "Left",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-60162-archive_(3).png"
+    },
+    {
+      "current_csv_row": 60163,
+      "label": "X",
+      "session_id": "ext_archive3_X_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+      "archive_member": "dataset5/A/x/color_23_0004.png",
+      "image_sha256": "955d74e9d99f623b02a3d743bb39d16cf2932aa38c07352d085392cf3885f5bf",
+      "max_coordinate_difference": 3.725290298461914e-09,
+      "handedness": "Left",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-60163-archive_(3).png"
+    },
+    {
+      "current_csv_row": 5045,
+      "label": "G",
+      "session_id": "ext_archive5_G_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/G/G_1.jpg",
+      "image_sha256": "ef449626d63e1c2752f61341b829b46429acbb9090c0f9c074926946b12f70d4",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-5045-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 5047,
+      "label": "G",
+      "session_id": "ext_archive5_G_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/G/G_100.jpg",
+      "image_sha256": "82e9655b467e55a9f96968e67f039fb9e13dbf2871f098c4cf7c3bf8d47e476c",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-5047-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 7908,
+      "label": "K",
+      "session_id": "ext_archive5_K_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/K/K_10.jpg",
+      "image_sha256": "56a72617da0d5c4b01e40e4df6476eab304210f7a27275454358ef50d2f805db",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-7908-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 7909,
+      "label": "K",
+      "session_id": "ext_archive5_K_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/K/K_100.jpg",
+      "image_sha256": "29a873c50e72c6107d5915476254ea1435f3e396c3268e1148204b587cb037b4",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-7909-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 9882,
+      "label": "M",
+      "session_id": "ext_archive5_M_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/M/M_10.jpg",
+      "image_sha256": "67983deff469eecc285437f794a73e02a1fb3e15a3756a7154cdbca7db44881c",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-9882-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 9883,
+      "label": "M",
+      "session_id": "ext_archive5_M_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/M/M_100.jpg",
+      "image_sha256": "68996e8e45ce06ea5fae38c4bde00c1914ee2ddfc0c8652556c85b9185d68ae6",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-9883-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 10627,
+      "label": "N",
+      "session_id": "ext_archive5_N_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/N/N_0.jpg",
+      "image_sha256": "161b97bd6e6c5ad0cc9f4b351182558dc0b6729fddda63968e3fca145618a96c",
+      "max_coordinate_difference": 1.1641532182693481e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-10627-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 10628,
+      "label": "N",
+      "session_id": "ext_archive5_N_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/N/N_1.jpg",
+      "image_sha256": "42d6bd71bca7c48279597b4dbc32364e6f395a1b22d95e4e42afa5acaea6bf34",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-10628-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 10629,
+      "label": "N",
+      "session_id": "ext_archive5_N_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/N/N_10.jpg",
+      "image_sha256": "1bda1189374b65a5f17b46d754d3a464d4856e9e62a3e2f60e033830f864c4e2",
+      "max_coordinate_difference": 3.725290298461914e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-10629-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 10630,
+      "label": "N",
+      "session_id": "ext_archive5_N_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/N/N_100.jpg",
+      "image_sha256": "855f8fd69da7c09a2eff1c47bc6ea03c5eebf527eab80daf19d732eaba7e8c26",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-10630-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 13303,
+      "label": "Q",
+      "session_id": "ext_archive5_Q_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/Q/Q_0.jpg",
+      "image_sha256": "d4b5bde9ab0e9ecdc5baf5af20396e4476b8aa1fab5f2de01858c8532003ee24",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-13303-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 13304,
+      "label": "Q",
+      "session_id": "ext_archive5_Q_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/Q/Q_10.jpg",
+      "image_sha256": "a3485adef72bd71c52860e59667dc2c11e7471b225e897f8997783198b9208b4",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-13304-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 14257,
+      "label": "R",
+      "session_id": "ext_archive5_R_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/R/R_10.jpg",
+      "image_sha256": "76011a11908df8d4c0328b97ea53407d5dffa84744353bda730b149f8a474b8e",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-14257-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 17063,
+      "label": "U",
+      "session_id": "ext_archive5_U_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/U/U_1.jpg",
+      "image_sha256": "30fae02baeb06e084650dad4f808da85e01104701b672dac028dcdd6afa24690",
+      "max_coordinate_difference": 8.940696716308594e-07,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-17063-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 17064,
+      "label": "U",
+      "session_id": "ext_archive5_U_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/U/U_10.jpg",
+      "image_sha256": "f0cb9a1d4a77ca6e7526f503b05f37ba4f1255e9e710b22f118f5b5a3f4f3160",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-17064-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 17065,
+      "label": "U",
+      "session_id": "ext_archive5_U_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/U/U_100.jpg",
+      "image_sha256": "23a1546ef86ac0c6dcb4c1ef6962a054db56c8220248102daff8e58c5da43c68",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-17065-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 19785,
+      "label": "X",
+      "session_id": "ext_archive5_X_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/X/X_1.jpg",
+      "image_sha256": "8d8ab90600e70be9c6408ae71ca4c98389abfb14aeedb60c9f53451220cf4f9a",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-19785-archive_(5).jpg"
+    },
+    {
+      "current_csv_row": 19787,
+      "label": "X",
+      "session_id": "ext_archive5_X_s0000",
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+      "archive_member": "SignAlphaSet/X/X_100.jpg",
+      "image_sha256": "eef18ad8c1dde4df72c112c7cda78201e46b102c2d0e8685ebde2083e77f35f6",
+      "max_coordinate_difference": 7.450580596923828e-09,
+      "handedness": "Right",
+      "evidence": "all_63_float32_coordinates_atol_1e-6_same_label_and_handedness",
+      "warning": "Matching image geometry is not unique image identity, verified linguistic label, or signer identity.",
+      "local_image": "matched-images/row-19787-archive_(5).jpg"
+    }
+  ]
+}

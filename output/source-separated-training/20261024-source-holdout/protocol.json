@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-10-23T21:49:07.148344+00:00",
+  "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+  "retained_checkpoint_sha256": "98559a10c553c23d2c6aad227f52416b59ad92483bf4f079cfca5eb512bf5b66",
+  "allocation": {
+    "archive4": "train",
+    "manual": "train",
+    "archive5": "validation",
+    "archive3": "test"
+  },
+  "train_config": {
+    "batch_size": 64,
+    "learning_rate": 0.002,
+    "weight_decay": 0.0001,
+    "label_smoothing": 0.05,
+    "epochs": 50,
+    "hidden_sizes": [
+      128,
+      64
+    ],
+    "dropout": 0.2,
+    "augment": true,
+    "use_kinematics": true,
+    "residual": true,
+    "cosine_head": true,
+    "validation_fraction": 0.15,
+    "test_fraction": 0.15,
+    "seed": 42,
+    "device": "cpu",
+    "static_hand_preprocessing": "left_x_reflection_v1",
+    "selection_metric": "macro_f1",
+    "class_weighting": "inverse",
+    "augmentation_scale": 1.0,
+    "group_plan": null,
+    "evaluate_test": false,
+    "initial_checkpoint": null
+  },
+  "selection": "validation macro F1, tie-break validation loss; test only after checkpoint selection",
+  "inclusion": "Verified whole-session import/capture links or all-63-coordinate image replay within 1e-6, matching label and handedness. Exclude unresolved/multi-family/session-conflicting/canonical-conflicting rows.",
+  "scope": "Source-family transfer diagnostic; signer independence not verified. Never initialize with a checkpoint exposed to new holdout rows.",
+  "promotion": "No deployment or active model replacement",
+  "archives3and5_complete_before_training": true
+}

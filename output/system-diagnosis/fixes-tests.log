@@ -1,0 +1,30 @@
+........................................................................ [ 59%]
+..................................................                       [100%]
+============================== warnings summary ===============================
+tests/test_static_handedness.py::test_predictor_live_registration_and_export_contract
+  C:\Users\jibbi\Documents\Projects\ASignX-Machine-Learning\.venv-py314\Lib\site-packages\torch\jit\_trace.py:1000: FutureWarning: `torch.jit.trace` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+tests/test_static_handedness.py::test_predictor_live_registration_and_export_contract
+  C:\Users\jibbi\Documents\Projects\ASignX-Machine-Learning\.venv-py314\Lib\site-packages\torch\jit\_trace.py:1139: FutureWarning: `torch.jit.trace_method` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+tests/test_static_handedness.py::test_predictor_live_registration_and_export_contract
+  C:\Users\jibbi\Documents\Projects\ASignX-Machine-Learning\ml\model.py:68: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+    if width == NUM_FEATURES:
+
+tests/test_upgraded_architecture.py::test_tcn_attention_sequence_model_and_training
+  C:\Users\jibbi\Documents\Projects\ASignX-Machine-Learning\ml\export_onnx.py:150: UserWarning: # 'dynamic_axes' is not recommended when dynamo=True, and may lead to 'torch._dynamo.exc.UserError: Constraints violated.' Supply the 'dynamic_shapes' argument instead if export is unsuccessful.
+    torch.onnx.export(
+
+tests/test_upgraded_architecture.py::test_tcn_attention_sequence_model_and_training
+tests/test_upgraded_architecture.py::test_train_static_and_export_web_bundle
+  C:\Users\jibbi\Documents\Projects\ASignX-Machine-Learning\.venv-py314\Lib\site-packages\torch\onnx\_internal\exporter\_compat.py:112: DeprecationWarning: from_dynamic_axes_to_dynamic_shapes is deprecated and will be removed in a future release. This function converts 'dynamic_axes' format (including custom axis names) to 'dynamic_shapes' format. Instead of relying on this conversion, provide 'dynamic_shapes' directly with custom names.
+    _dynamic_shapes.from_dynamic_axes_to_dynamic_shapes(
+
+tests/test_upgraded_architecture.py::test_train_static_and_export_web_bundle
+  C:\Users\jibbi\Documents\Projects\ASignX-Machine-Learning\ml\export_onnx.py:83: UserWarning: # 'dynamic_axes' is not recommended when dynamo=True, and may lead to 'torch._dynamo.exc.UserError: Constraints violated.' Supply the 'dynamic_shapes' argument instead if export is unsuccessful.
+    torch.onnx.export(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+122 passed, 7 warnings in 27.20s

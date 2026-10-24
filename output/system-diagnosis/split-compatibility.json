@@ -1,0 +1,16 @@
+{
+  "manual_checkpoint": "ml\\models\\manual_runs\\20261022T071741Z-87dde74ec0df\\sign_classifier.pth",
+  "dataset_sha256_matches_current_experiment": true,
+  "historical_test_rows_in_manual_training": 1886,
+  "historical_validation_rows_in_manual_training": 784,
+  "manual_own_split_metrics": {
+    "validation": {
+      "accuracy": 0.7716528119630335,
+      "macro_f1": 0.857904330488358
+    },
+    "test": {
+      "accuracy": 0.5931550230836735,
+      "macro_f1": 0.742250024333238
+    }
+  }
+}

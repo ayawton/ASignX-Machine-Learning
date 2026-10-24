@@ -1,0 +1,28 @@
+{
+  "main": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-d9ce6171\\test_empty_main_and_signed_zer0\\main.csv",
+  "incoming": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-d9ce6171\\test_empty_main_and_signed_zer0\\new.csv",
+  "backup": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-d9ce6171\\test_empty_main_and_signed_zer0\\main.csv.backup-20261023T203828744521Z-788703c6",
+  "main_before_sha256": "49640a4c80306b0e6475b75ba94316b1dd9d5b3eb1fb846ff1cbd64f5fd3359d",
+  "incoming_sha256": "d0baa1a43ffdd0f34b3df0b31b98e74418acd21fb3c6334cb46cd743242124e2",
+  "expected_output_sha256": "9861d7cc5cd2ca6ece28b3814d0bdda703c2f317542636c7c65192f8e8716318",
+  "main_rows": 0,
+  "counts": {
+    "append": 1,
+    "duplicate": 1
+  },
+  "decisions": [
+    {
+      "row": 2,
+      "label": "A",
+      "session_id": "source1",
+      "decision": "append"
+    },
+    {
+      "row": 3,
+      "label": "A",
+      "session_id": "source1",
+      "decision": "duplicate"
+    }
+  ],
+  "note": "Prepared merge audit. Compare main CSV hash with expected_output_sha256 to verify application."
+}

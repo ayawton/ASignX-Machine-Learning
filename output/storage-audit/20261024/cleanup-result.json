@@ -1,0 +1,27 @@
+{
+  "completed_utc": "2026-10-24T00:32:07.1283960Z",
+  "deleted_files": 989,
+  "freed_bytes": 1067434515,
+  "protected_files_checked": 5975,
+  "protected_files_unchanged": true,
+  "verification_failures": [],
+  "deleted_targets_remaining": [],
+  "skipped_files": [
+    {
+      "path": "output/csv-merger/ASignX_CSVMerger-Windows.zip",
+      "bytes": 24087756,
+      "category": "Distribution ZIP copies",
+      "reason": "Not used by launchers. Keep extracted complete application folders; ZIP can be recreated for sharing.",
+      "restore_from": null,
+      "skip_reason": "Archive contains content different from extracted package"
+    }
+  ],
+  "dataset_restoration_manifest": "output/storage-audit/20261024/snapshot-restoration.json",
+  "git_and_lfs_untouched": true,
+  "snapshot_restore_test_passed": true,
+  "restored_test_duplicate_removed_again": true,
+  "final_deleted_targets_absent": true,
+  "intentional_documentation_updates": [
+    "docs/extractor-guide.md"
+  ]
+}

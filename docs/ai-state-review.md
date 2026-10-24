@@ -1,4 +1,7 @@
 # ASignX: AI current state, clarifications and suggestions
+
+Historical review: its measurements and environment descriptions refer to the original review. For current Python 3.14 setup and verified migration results, see [Python 3.14 migration](python314-migration.md).
+
 Repository review | 17 October 2026 | ASignLearn and ASignLive
 
 This report explains what the code and saved model actually do, what the evaluation establishes, what was repaired in the static dataset importer, and how the system can develop into a reliable browser application.

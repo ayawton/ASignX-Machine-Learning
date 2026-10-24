@@ -1,0 +1,80 @@
+{
+  "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+  "samples": 159534,
+  "added_samples": 1800,
+  "added_handedness": {
+    "Left": 1800
+  },
+  "added_sessions": 9,
+  "split_counts": {
+    "train": 111023,
+    "validation": 13791,
+    "test": 34720
+  },
+  "training_per_class": {
+    "A": 5381,
+    "B": 5395,
+    "C": 5796,
+    "D": 6145,
+    "E": 5379,
+    "F": 6591,
+    "G": 2417,
+    "H": 6476,
+    "I": 2186,
+    "K": 2487,
+    "L": 7142,
+    "M": 3458,
+    "N": 4495,
+    "O": 1491,
+    "P": 4901,
+    "Q": 1339,
+    "R": 6413,
+    "S": 5536,
+    "T": 6231,
+    "U": 6083,
+    "V": 6383,
+    "W": 1366,
+    "X": 2188,
+    "Y": 5744
+  },
+  "config": {
+    "batch_size": 64,
+    "learning_rate": 0.002,
+    "weight_decay": 0.0001,
+    "label_smoothing": 0.05,
+    "epochs": 50,
+    "hidden_sizes": [
+      128,
+      64
+    ],
+    "dropout": 0.2,
+    "augment": true,
+    "use_kinematics": true,
+    "residual": true,
+    "cosine_head": true,
+    "validation_fraction": 0.15,
+    "test_fraction": 0.15,
+    "seed": 42,
+    "device": "cpu",
+    "static_hand_preprocessing": "left_x_reflection_v1",
+    "selection_metric": "macro_f1",
+    "class_weighting": "inverse",
+    "augmentation_scale": 1.0,
+    "group_plan": null,
+    "evaluate_test": false
+  },
+  "protected_inputs": {
+    "ml\\data\\landmarks.csv": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+    "ml\\data\\landmarks.csv.backup-20261022T062606Z-b665b450a219": "4a160bec73556408c12f9457577c765c89e9f8cf09eae3d658fe39d3064f58cd",
+    "archive\\data-corrections\\remove-downward-three-M-20261021T152303819569Z\\reviewed.splits.json": "1ceded96af1e9c7cab8ddda04189f7eeabcd4b7547d221e9e2d507b4b54f23a1",
+    "output\\added-M-reevaluation\\20261023T190744Z\\after.pth": "4a9c3a3035b0ca5b6f19bbd22ada85132f055c4f5cd196eb8d1cb41a8c68c2b7",
+    "ml\\models\\sequence_classifier.metrics.json": "a46d8b011f782bc4c44181a7f387218df087db15491e58b8d3f012e60054e488",
+    "ml\\models\\sequence_classifier.pth": "1e2228a5970d18b19a25f62cb76fc560aa4c5e33962a8bc2a362a87309db2ec9",
+    "ml\\models\\sequence_classifier.splits.json": "6450419c2788f37d1932d16b4d314d55b1a22173148dff1322bb04c3f3e654b2",
+    "ml\\models\\sign_classifier_canonical.metrics.json": "2e9f823db9d35440564c38bce6eeeda3807ab049679a0327f801c780cc89769b",
+    "ml\\models\\sign_classifier_canonical.pth": "98559a10c553c23d2c6aad227f52416b59ad92483bf4f079cfca5eb512bf5b66",
+    "ml\\models\\sign_classifier_canonical.splits.json": "ad796a4a68232fd73588113513ed345b39905145b854c8863b2fd47f7a74d319"
+  },
+  "scope": "All 24 static classes retrained from scratch. All added M sessions training-only. Historical validation/test rows unchanged.",
+  "limitations": "Single seed; historical test is development-known and signer independence unverified. The previous 400 new-M holdout rows are now training data and cannot be reported as held-out evaluation. Dynamic J/Z data and model are not part of this static retraining."
+}

@@ -298,7 +298,11 @@ class ManualTrainingApp:
                 from ml.preprocessing import normalize_landmarks
                 ok, frame = self.camera.read()
                 if not ok or frame is None:
-                    raise RuntimeError('Camera stopped delivering frames.')
+                    # Threaded reads consume each capture once. A preview tick
+                    # between captures is normal; never record the cached image.
+                    self.quality.set('Waiting for a fresh camera frame')
+                    self.root.after(60, self.tick)
+                    return
                 result, annotated = self.detector.process(frame.copy(), draw=True)
                 hands = [h for h in result.all_hands if h.handedness == self.hand.get()]
                 valid = len(result.all_hands) == 1 and len(hands) == 1

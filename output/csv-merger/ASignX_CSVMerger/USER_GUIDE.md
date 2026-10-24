@@ -63,11 +63,11 @@ build requires compatible Windows architecture; it does not run on phones or mac
 
 ## Development
 
-Run from source with `py -3.11 -m ml.csv_merger_gui` (NumPy and Tkinter required).
-Build with Python 3.11, NumPy and PyInstaller installed:
+Run from source with `.\.venv-py314\Scripts\python.exe -m ml.csv_merger_gui` (NumPy and Tkinter required).
+Build with Python 3.14, NumPy and PyInstaller installed:
 
 ```powershell
-py -3.11 -m PyInstaller --noconfirm --distpath output/csv-merger --workpath tmp/csv-merger-build ASignX_CSVMerger.spec
+.\.venv-py314\Scripts\python.exe -m PyInstaller --noconfirm --distpath output/csv-merger --workpath tmp/csv-merger-build ASignX_CSVMerger.spec
 ```
 
-Run the focused tests with `py -3.11 -m pytest tests/test_csv_merger.py`.
+Run the focused tests with `.\.venv-py314\Scripts\python.exe -m pytest tests/test_csv_merger.py`.

@@ -4,7 +4,7 @@ ZIP imports have no entry-count limit. The total uncompressed-size limit remains
 
 Identical image files or hand-point vectors assigned to different signs are skipped and recorded in the detailed results, while other images continue importing. Every conflicting copy in the new import is skipped; the importer does not guess which label is correct or alter existing CSV rows. Review those source paths and correct their labels before importing them again.
 
-Run `ASignX_DataExtractor.bat` on Windows, or `python -m ml.extractor_gui` in a compatible Python environment. The launcher uses the retained complete package in `output/extractor-reviewed`; if it is unavailable, it runs the Python source. Older packaged extractor copies were removed during cleanup. The matching ZIP remains in `output/extractor-reviewed` for distribution.
+Run `ASignX_DataExtractor.bat` on Windows, or `python -m ml.extractor_gui` in a compatible Python environment. The launcher uses the retained complete package in `output/extractor-reviewed`; if it is unavailable, it runs the Python source. Older packaged extractor copies were removed during cleanup. The redundant matching distribution ZIP was removed during storage cleanup. The complete extracted package remains available; recreate a distribution ZIP when needed as described in [the cleanup record](../output/storage-audit/20261024/completed-cleanup.md).
 
 1. Choose a dataset folder or ZIP and the destination `landmarks.csv`.
 2. Select **Preview sign names**. Common layouts such as `train/a/*.jpg`, `A/*.png`, and `sign_hello/*.jpg` are inferred automatically. `A` and `a` become `A`. Folder guessing cannot resolve every dataset: check the preview.
@@ -37,13 +37,13 @@ The session-based trainer does not enforce signer separation across different si
 CLI example:
 
 ```powershell
-py -3.11 -m ml.extract_dataset --input C:\datasets\static.zip --output ml/data/landmarks.csv --manifest C:\datasets\labels.csv --source-id corpus-2026 --cleaning gentle
+.\.venv-py314\Scripts\python.exe -m ml.extract_dataset --input C:\datasets\static.zip --output ml/data/landmarks.csv --manifest C:\datasets\labels.csv --source-id corpus-2026 --cleaning gentle
 ```
 
 For the optional Windows build:
 
 ```powershell
-py -3.11 -m PyInstaller --noconfirm --distpath output/extractor-reviewed --workpath tmp/extractor-build ASignX_DataExtractor.spec
+.\.venv-py314\Scripts\python.exe -m PyInstaller --noconfirm --distpath output/extractor-reviewed --workpath tmp/extractor-build ASignX_DataExtractor.spec
 ```
 
 Copy the entire `ASignX_DataExtractor` output folder to another compatible Windows device, including `_internal`. A Windows executable does not run on Android, iOS, macOS or Linux. Those require a compatible Python installation, a build for that operating system, or the future browser extractor described in the report.

@@ -212,6 +212,9 @@ class HandDetector:
             nearest_distance <= self.left_hand_motion_distance_threshold
             and nearest_hand.handedness != "Left"
             and "Left" not in labels
+            # Motion history may repair uncertain labels, not override strong
+            # evidence when a different physical hand enters the old location.
+            and nearest_hand.score < 0.85
         ):
             nearest_hand.handedness = "Left"
 

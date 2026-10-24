@@ -1,0 +1,16 @@
+{
+  "dataset_sha256": "079f8499ecfb9b7e3193f160c696058f3ac471f3802e2d552ce1f4980960924d",
+  "identity_plan_sha256": "07b95d122c748df4bb237f9cbde85ba6ed4e6c988f0494fdacd81be599751bc3",
+  "samples": 28,
+  "sessions": 14,
+  "identity_plan": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-f5b60222\\test_unknown_identities_do_not0\\benchmark\\identity-plan.csv",
+  "unknown_identity_sessions": 14,
+  "benchmark_ready": false,
+  "problems": [
+    "14 sessions lack verified anonymous signer identity and evidence",
+    "Unknown/duplicate session, missing identity or invalid split: 0-A"
+  ],
+  "coverage": {},
+  "criteria": "Verified anonymous identities/evidence; signer/source/session-disjoint splits; canonical duplicate checks; all labels and both hands per split; at least 3 training and 2 validation/test signers per label. These are collection targets, not statistical reliability guarantees.",
+  "test_policy": "Collect a new untouched test from different people; historical test is development-known. Do not assign invented distinct signers to unknown imported sessions."
+}

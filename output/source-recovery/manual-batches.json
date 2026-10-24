@@ -1,0 +1,110 @@
+[
+  {
+    "session_id": "ec5736781f7e47579b3007e0c35a9588",
+    "source_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\ml\\data\\manual_recordings\\backups\\20261022T062606Z-b665b450a219.zip",
+    "source_id": "manual-batch:20261022T062606Z-b665b450a219",
+    "source_sha256": "a58fd08a40f3f4c907f940563942955ee36f29abeed59bdaf392367c175ebc7f",
+    "evidence": "archived_capture_manifest_session_and_frame_count",
+    "signer_known": false,
+    "camera": 0,
+    "batch_id": "20261022T062606Z-b665b450a219",
+    "label": "M",
+    "frame_count": 200
+  },
+  {
+    "session_id": "84f3f99ed34d4ddfa9a2fb7b451c1c18",
+    "source_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\ml\\data\\manual_recordings\\backups\\20261022T062606Z-b665b450a219.zip",
+    "source_id": "manual-batch:20261022T062606Z-b665b450a219",
+    "source_sha256": "a58fd08a40f3f4c907f940563942955ee36f29abeed59bdaf392367c175ebc7f",
+    "evidence": "archived_capture_manifest_session_and_frame_count",
+    "signer_known": false,
+    "camera": 0,
+    "batch_id": "20261022T062606Z-b665b450a219",
+    "label": "M",
+    "frame_count": 200
+  },
+  {
+    "session_id": "ef907b4941dc400d849486ba6356f8c3",
+    "source_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\ml\\data\\manual_recordings\\backups\\20261022T062606Z-b665b450a219.zip",
+    "source_id": "manual-batch:20261022T062606Z-b665b450a219",
+    "source_sha256": "a58fd08a40f3f4c907f940563942955ee36f29abeed59bdaf392367c175ebc7f",
+    "evidence": "archived_capture_manifest_session_and_frame_count",
+    "signer_known": false,
+    "camera": 0,
+    "batch_id": "20261022T062606Z-b665b450a219",
+    "label": "M",
+    "frame_count": 200
+  },
+  {
+    "session_id": "085a77b9b6ac4e84a6ae3e551444e179",
+    "source_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\ml\\data\\manual_recordings\\backups\\20261022T070547Z-d3adc897b144.zip",
+    "source_id": "manual-batch:20261022T070547Z-d3adc897b144",
+    "source_sha256": "d70914f1cc124173337b64216c8efdce0af70fafa2d1edfefd6d1926233c018a",
+    "evidence": "archived_capture_manifest_session_and_frame_count",
+    "signer_known": false,
+    "camera": 0,
+    "batch_id": "20261022T070547Z-d3adc897b144",
+    "label": "M",
+    "frame_count": 200
+  },
+  {
+    "session_id": "7b9aec0d5ebe4db294bf9b7d8c2c7f33",
+    "source_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\ml\\data\\manual_recordings\\backups\\20261022T070547Z-d3adc897b144.zip",
+    "source_id": "manual-batch:20261022T070547Z-d3adc897b144",
+    "source_sha256": "d70914f1cc124173337b64216c8efdce0af70fafa2d1edfefd6d1926233c018a",
+    "evidence": "archived_capture_manifest_session_and_frame_count",
+    "signer_known": false,
+    "camera": 0,
+    "batch_id": "20261022T070547Z-d3adc897b144",
+    "label": "M",
+    "frame_count": 200
+  },
+  {
+    "session_id": "2db6bdccd69d4bf8b019e41af92bb79c",
+    "source_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\ml\\data\\manual_recordings\\backups\\20261022T070547Z-d3adc897b144.zip",
+    "source_id": "manual-batch:20261022T070547Z-d3adc897b144",
+    "source_sha256": "d70914f1cc124173337b64216c8efdce0af70fafa2d1edfefd6d1926233c018a",
+    "evidence": "archived_capture_manifest_session_and_frame_count",
+    "signer_known": false,
+    "camera": 0,
+    "batch_id": "20261022T070547Z-d3adc897b144",
+    "label": "M",
+    "frame_count": 200
+  },
+  {
+    "session_id": "26dc3bfb676b4dbb939f2282d8d5df9c",
+    "source_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\ml\\data\\manual_recordings\\backups\\20261022T071143Z-cf28df13ee05.zip",
+    "source_id": "manual-batch:20261022T071143Z-cf28df13ee05",
+    "source_sha256": "b977c51af771591892996a8bb3c8f90fb00f2276837007e0f30b402dac9a9d9a",
+    "evidence": "archived_capture_manifest_session_and_frame_count",
+    "signer_known": false,
+    "camera": 0,
+    "batch_id": "20261022T071143Z-cf28df13ee05",
+    "label": "M",
+    "frame_count": 200
+  },
+  {
+    "session_id": "b2585047776c445da770f318eb321747",
+    "source_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\ml\\data\\manual_recordings\\backups\\20261022T071143Z-cf28df13ee05.zip",
+    "source_id": "manual-batch:20261022T071143Z-cf28df13ee05",
+    "source_sha256": "b977c51af771591892996a8bb3c8f90fb00f2276837007e0f30b402dac9a9d9a",
+    "evidence": "archived_capture_manifest_session_and_frame_count",
+    "signer_known": false,
+    "camera": 0,
+    "batch_id": "20261022T071143Z-cf28df13ee05",
+    "label": "M",
+    "frame_count": 200
+  },
+  {
+    "session_id": "de1f35fca06a409da1fa2d3eda4afc73",
+    "source_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\ml\\data\\manual_recordings\\backups\\20261022T071143Z-cf28df13ee05.zip",
+    "source_id": "manual-batch:20261022T071143Z-cf28df13ee05",
+    "source_sha256": "b977c51af771591892996a8bb3c8f90fb00f2276837007e0f30b402dac9a9d9a",
+    "evidence": "archived_capture_manifest_session_and_frame_count",
+    "signer_known": false,
+    "camera": 0,
+    "batch_id": "20261022T071143Z-cf28df13ee05",
+    "label": "M",
+    "frame_count": 200
+  }
+]

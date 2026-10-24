@@ -1,0 +1,20 @@
+{
+  "predictions_recomputed": {
+    "validation": true,
+    "test": true
+  },
+  "source_family_owners": {
+    "archive5": "validation",
+    "archive3": "test",
+    "archive4": "train",
+    "manual": "train"
+  },
+  "session_separation": true,
+  "split_row_counts": {
+    "validation": 11281,
+    "test": 15735,
+    "train": 95692
+  },
+  "epochs_completed": 50,
+  "protected_inputs_unchanged": true
+}

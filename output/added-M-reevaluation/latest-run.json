@@ -1,0 +1,8 @@
+{
+  "directory": "output\\added-M-reevaluation\\20261023T190744Z",
+  "status": "complete",
+  "report": "output\\added-M-reevaluation\\20261023T190744Z\\report.md",
+  "checkpoint_retained": false,
+  "checkpoint_removed_reason": "Owner requested deletion of unused models; historical metrics and predictions retained.",
+  "model_cleanup_manifest": "output/model-cleanup/20261024/plan.json"
+}

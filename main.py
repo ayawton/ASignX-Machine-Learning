@@ -202,16 +202,20 @@ def run_pipeline(args: argparse.Namespace) -> None:
 
     try:
         for frame in camera.stream():
+            capture_timestamp = getattr(camera, "frame_timestamp", None)
+            if capture_timestamp is None:
+                capture_timestamp = time.monotonic()
             # Process frame through MediaPipe Hands pipeline
             result, annotated_frame = detector.process(
                 frame,
                 draw=draw_landmarks,
+                timestamp_ms=int(capture_timestamp * 1000),
             )
 
             live_recognitions = None
             live_dynamic_info = None
             if unified_recognizer is not None:
-                live_dynamic_info = unified_recognizer.update(result.all_hands)
+                live_dynamic_info = unified_recognizer.update(result.all_hands, timestamp=capture_timestamp)
                 live_recognitions = live_dynamic_info["static"]
                 for recognition in live_recognitions:
                     if recognition.emitted_label:
@@ -219,7 +223,7 @@ def run_pipeline(args: argparse.Namespace) -> None:
                 if live_dynamic_info.get("dynamic_emitted"):
                     print(f"[DYNAMIC SIGN] {live_dynamic_info['dynamic_emitted']}")
             elif sign_recognizer is not None:
-                live_recognitions = sign_recognizer.update(result.all_hands, timestamp=time.monotonic())
+                live_recognitions = sign_recognizer.update(result.all_hands, timestamp=capture_timestamp)
                 for recognition in live_recognitions:
                     if recognition.emitted_label:
                         print(f"[SIGN] {recognition.hand}: {recognition.emitted_label}")

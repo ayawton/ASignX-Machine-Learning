@@ -1,0 +1,124 @@
+{
+  "labels": [
+    "A",
+    "B"
+  ],
+  "best_epoch": 1,
+  "validation": {
+    "accuracy": 0.5,
+    "macro_precision": 0.5,
+    "macro_recall": 0.5,
+    "macro_f1": 0.4505494505494506,
+    "weighted_f1": 0.45054945054945056,
+    "per_class": {
+      "A": {
+        "precision": 0.5,
+        "recall": 0.8,
+        "f1": 0.6153846153846154,
+        "support": 10
+      },
+      "B": {
+        "precision": 0.5,
+        "recall": 0.2,
+        "f1": 0.28571428571428575,
+        "support": 10
+      }
+    },
+    "labels": [
+      "A",
+      "B"
+    ],
+    "confusion_matrix": [
+      [
+        8,
+        2
+      ],
+      [
+        8,
+        2
+      ]
+    ],
+    "loss": 1.078066349029541
+  },
+  "test": {
+    "accuracy": 0.55,
+    "macro_precision": 0.5505050505050505,
+    "macro_recall": 0.55,
+    "macro_f1": 0.5488721804511277,
+    "weighted_f1": 0.5488721804511277,
+    "per_class": {
+      "A": {
+        "precision": 0.5555555555555556,
+        "recall": 0.5,
+        "f1": 0.5263157894736842,
+        "support": 10
+      },
+      "B": {
+        "precision": 0.5454545454545454,
+        "recall": 0.6,
+        "f1": 0.5714285714285713,
+        "support": 10
+      }
+    },
+    "labels": [
+      "A",
+      "B"
+    ],
+    "confusion_matrix": [
+      [
+        5,
+        5
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    "loss": 0.9084897994995117
+  },
+  "selection_metric": "macro_f1",
+  "benchmark": "legacy_session_groups_not_signer_independent",
+  "history": [
+    {
+      "epoch": 1,
+      "lr": 1e-05,
+      "train_loss": 1.0334831476211548,
+      "validation": {
+        "accuracy": 0.5,
+        "macro_precision": 0.5,
+        "macro_recall": 0.5,
+        "macro_f1": 0.4505494505494506,
+        "weighted_f1": 0.45054945054945056,
+        "per_class": {
+          "A": {
+            "precision": 0.5,
+            "recall": 0.8,
+            "f1": 0.6153846153846154,
+            "support": 10
+          },
+          "B": {
+            "precision": 0.5,
+            "recall": 0.2,
+            "f1": 0.28571428571428575,
+            "support": 10
+          }
+        },
+        "labels": [
+          "A",
+          "B"
+        ],
+        "confusion_matrix": [
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ]
+        ],
+        "loss": 1.078066349029541
+      }
+    }
+  ]
+}

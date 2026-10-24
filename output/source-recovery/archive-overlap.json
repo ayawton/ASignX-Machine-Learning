@@ -1,0 +1,121 @@
+[
+  {
+    "other_archive": "archive.zip",
+    "archive4_crc_size_candidate_images": 87028,
+    "byte_verified_examples": [
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/A_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/A_test.jpg",
+        "image_sha256": "45ca2df0062b019da28e397e4f764cfba98a4e6afe5b21474ca2183fc7e37c08"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/B_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/B_test.jpg",
+        "image_sha256": "6bf64562ed66a9e62c68f0875fee3ce731adca505c0702d4e69ffeb23ec21513"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/C_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/C_test.jpg",
+        "image_sha256": "2990c05899800f22b1a3511a1fed3e4844b1a5544c0dccce31be81c807506fa5"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/D_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/D_test.jpg",
+        "image_sha256": "d1c5a7ef0df2d020b627b0c717ae7d39fa24959492e39a34ae2c76e42e53e27a"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/E_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/E_test.jpg",
+        "image_sha256": "05f854bcb7cf447b5ba2aab1f4cdd1083756a722be3075ef6b0925ecc83e85e7"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/F_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/F_test.jpg",
+        "image_sha256": "5cff56fd5b8784ae089b9071bd51eccd03d971fc2ea4f1b507e7246614ff303c"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/G_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/G_test.jpg",
+        "image_sha256": "d7dea76d544dfa4c7ab4acb5885ecb27b05ebb4353de8297df29e131a6327e65"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/H_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/H_test.jpg",
+        "image_sha256": "70025e2ea954d80164800b4bf46499f6eb8de68212ddf075bd10934ec7b1ff03"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/I_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/I_test.jpg",
+        "image_sha256": "0a749e0be4944699b2a9bb655bff1a5c7f99092b38b7b69c4205513d656a50ef"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/J_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/J_test.jpg",
+        "image_sha256": "0982c446ab27630ca58de46655664c96134ccb7e4d4dc931a9ac1acd922822a5"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/K_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/K_test.jpg",
+        "image_sha256": "4d91f7a55247f3163ca3e41a2966644af11ac95fafc90e6f0c5c5cf1d32261cb"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/L_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/L_test.jpg",
+        "image_sha256": "3b3d9a397a009bbf5379228fe7cdc9f8d07f129580c10d685cdf8c477b01e1ce"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/M_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/M_test.jpg",
+        "image_sha256": "b4b8c4dc3309c7a354887b176dc05eea208a25e64a4c8e8b8ead5572ca871714"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/N_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/N_test.jpg",
+        "image_sha256": "ee115586be2057fffb0d5b3e920c2fecbefac17b6d303df7f09658d521cef9d2"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/O_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/O_test.jpg",
+        "image_sha256": "e1f53e9b485ea899f4f0c90fa06a59538ca6aa0102a6247c85d1f09ca0578fe6"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/P_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/P_test.jpg",
+        "image_sha256": "986b0398573f9d9d57f6a123c365d299aab52624389bcf0665dd2ce58b93b68f"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/Q_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/Q_test.jpg",
+        "image_sha256": "75292e4c90fac07f1348d0bd14ab13eb0106bce46a22ee6da913a8e8e69f4b61"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/R_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/R_test.jpg",
+        "image_sha256": "79952c71912691cc94cb966bad9c25ff4beda629ac727119d4f9ba5ea837eeab"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/S_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/S_test.jpg",
+        "image_sha256": "97a3a97aafc005939b01954045addb09cc8b841c312e778eceacacde46e3d771"
+      },
+      {
+        "source_member": "asl_alphabet_test/asl_alphabet_test/T_test.jpg",
+        "archive4_member": "ASL_Alphabet_Dataset/asl_alphabet_test/T_test.jpg",
+        "image_sha256": "738b28ff822b5cd0b4340f08fe76c2897b0066311a3de58b87163481b115e4bd"
+      }
+    ],
+    "warning": "Only the listed examples were verified byte-for-byte. Candidate totals are CRC/size matches, not exhaustive cryptographic verification."
+  },
+  {
+    "other_archive": "archive (3).zip",
+    "archive4_crc_size_candidate_images": 0,
+    "byte_verified_examples": [],
+    "warning": "Only the listed examples were verified byte-for-byte. Candidate totals are CRC/size matches, not exhaustive cryptographic verification."
+  },
+  {
+    "other_archive": "archive (5).zip",
+    "archive4_crc_size_candidate_images": 0,
+    "byte_verified_examples": [],
+    "warning": "Only the listed examples were verified byte-for-byte. Candidate totals are CRC/size matches, not exhaustive cryptographic verification."
+  }
+]

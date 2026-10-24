@@ -1,0 +1,56 @@
+{
+  "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "torch": "2.14.0",
+    "mediapipe": "1.0.1",
+    "numpy": "2.5.3",
+    "opencv-contrib-python": "5.0.0.93",
+    "reportlab": "5.1.0",
+    "pymupdf": "2.0",
+    "pypdf": "6.21.2",
+    "pyinstaller": "6.22.3",
+    "onnx": "1.23.2",
+    "onnxruntime": "1.31.0",
+    "onnxscript": "0.7.2"
+  },
+  "protected_data_models_unchanged": true,
+  "zip_files_verified": 500,
+  "active_sizes": {
+    "output/extractor-reviewed/ASignX_DataExtractor": 306288173,
+    "output/extractor-reviewed/ASignX_DataExtractor.zip": 125647016,
+    "output/csv-merger/ASignX_CSVMerger": 60878855,
+    "dist/ASignX_DynamicStudio.exe": 124987039
+  },
+  "cleanup_targets": {
+    "tmp/python314-rollback": 1105848173,
+    "tmp/py314-build": 190618822,
+    "tmp/pdf_dependencies": 85821389,
+    "tmp/dynamic-build-tools": 320285
+  },
+  "global_python311_retained": true,
+  "active_package_hashes": {
+    "output/extractor-reviewed/ASignX_DataExtractor/ASignX_DataExtractor.exe": "4535086ad04b1141dc5da74d56d48afbb6409c108c4465607fff07882c72abae",
+    "output/extractor-reviewed/ASignX_DataExtractor.zip": "aa5afbb83b6d2d4638351de92e8b5afac9fe4f916862d951214b4b0d508cc0c1",
+    "output/csv-merger/ASignX_CSVMerger/ASignX_CSVMerger.exe": "d20cfdfb4997597de9cf45963619eb3844d523dac37f55acaff68b7d17139072",
+    "dist/ASignX_DynamicStudio.exe": "dc7108f0c5e7f47bcf584b3cf0c3fed66dd6859c39b25a11a652ae6d189beae6"
+  },
+  "cleanup_completed": true,
+  "removed_bytes": 1382608669,
+  "packaged_deliverable_reduction_bytes": 488047090,
+  "reporting_modules": {
+    "reportlab": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\.venv-py314\\Lib\\site-packages\\reportlab\\__init__.py",
+    "pymupdf": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\.venv-py314\\Lib\\site-packages\\pymupdf\\__init__.py"
+  },
+  "active_source_hashes": {
+    "ASignX_CSVMerger.bat": "b51b32761f237f93c4bd856e2d7d82fb8f07a8d024ee2a54212db11a09e78cab",
+    "ASignX_DataExtractor.bat": "40fc7b73f6f317ce23b1158ef229802ae1d89dac3b8dc0e8063d31248efd5489",
+    "ASignX_DynamicStudio.bat": "8d2cc9d760201062968e2f054f9cbf58513d7cabbb4989e9cc6abbca25f977af",
+    "ASignX_ManualTraining.bat": "c680388264908b2abe459a7d5a3d5b37639b44b4a2af128fa6b4427e67a97bfa",
+    "ASignX_TestRecognition.bat": "04995760819854a9e0733309b41337a78fd8a4c416521cf378dd4f1d782f9aaf",
+    "ml/export_onnx.py": "b07b71734a99ce62736b302b163fb94edffd10b2e4a6873f5f64f780186f0922",
+    "ml/csv_merger_gui.py": "1f3ddefde1e50524db7e991020340b2f716e26444ed73115c625776b6bdaafc1",
+    "setup_python314.ps1": "e557f5c2f21e8c0b1dc4453f37d46415571793d147b6011c1007fd961a37a98f",
+    "requirements-tools.txt": "c7d076bdc889b80632bd71a166c681a9ed5341877758fb78fffd2f25e3ea5c0f",
+    "requirements-py314.lock.txt": "97a0e9305ad00b63ff7fd4e6728d9f8ce90c1d92131411fd19fe07ef1193415e"
+  }
+}

@@ -24,9 +24,20 @@ built-in pretrained vocabulary.
 
 ## Installation
 
-```bash
-pip install -r requirements.txt
+Use standard Windows x64 Python 3.14 for recognition, training, extraction,
+evaluation, packaging and report generation. Set up the project environment:
+
+```powershell
+.\setup_python314.ps1
+.\.venv-py314\Scripts\Activate.ps1
+python --version
 ```
+
+The commands below assume this environment is activated. Alternatively use
+`.\.venv-py314\Scripts\python.exe` directly. `requirements.txt` covers recognition
+and training; `requirements-tools.txt` adds reporting, ONNX export and packaging.
+The tested Windows environment is recorded in `requirements-py314.lock.txt`.
+See [Python 3.14 migration](docs/python314-migration.md) for checks and build commands.
 
 The main dependencies are MediaPipe Tasks, OpenCV, NumPy, PyTorch, and pytest.
 The MediaPipe model is bundled at `asignx/assets/hand_landmarker.task`.

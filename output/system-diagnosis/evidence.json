@@ -1,0 +1,404 @@
+{
+  "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+  "rows": 159534,
+  "labels": {
+    "A": 5853,
+    "B": 5869,
+    "C": 6661,
+    "D": 7086,
+    "E": 6089,
+    "F": 7372,
+    "G": 7534,
+    "H": 7506,
+    "I": 7037,
+    "K": 7998,
+    "L": 8252,
+    "M": 5188,
+    "N": 5281,
+    "O": 6221,
+    "P": 5538,
+    "Q": 5557,
+    "R": 7451,
+    "S": 6241,
+    "T": 7106,
+    "U": 6876,
+    "V": 7410,
+    "W": 6041,
+    "X": 7000,
+    "Y": 6367
+  },
+  "handedness": {
+    "Right": 97516,
+    "Left": 62018
+  },
+  "sessions": 1648,
+  "splits": {
+    "train": {
+      "rows": 111023,
+      "labels": {
+        "A": 5381,
+        "B": 5395,
+        "C": 5796,
+        "D": 6145,
+        "E": 5379,
+        "F": 6591,
+        "G": 2417,
+        "H": 6476,
+        "I": 2186,
+        "K": 2487,
+        "L": 7142,
+        "M": 3458,
+        "N": 4495,
+        "O": 1491,
+        "P": 4901,
+        "Q": 1339,
+        "R": 6413,
+        "S": 5536,
+        "T": 6231,
+        "U": 6083,
+        "V": 6383,
+        "W": 1366,
+        "X": 2188,
+        "Y": 5744
+      },
+      "source_hints": {
+        "legacy:archive5": 14858,
+        "legacy:archive3": 29956,
+        "hashed_import:source_identity_unavailable": 66209
+      },
+      "handedness": {
+        "Right": 67440,
+        "Left": 43583
+      }
+    },
+    "validation": {
+      "rows": 13791,
+      "labels": {
+        "A": 237,
+        "B": 237,
+        "C": 434,
+        "D": 469,
+        "E": 355,
+        "F": 394,
+        "G": 513,
+        "H": 515,
+        "I": 478,
+        "K": 512,
+        "L": 552,
+        "M": 352,
+        "N": 393,
+        "O": 311,
+        "P": 320,
+        "Q": 316,
+        "R": 518,
+        "S": 351,
+        "T": 436,
+        "U": 396,
+        "V": 512,
+        "W": 4401,
+        "X": 479,
+        "Y": 310
+      },
+      "source_hints": {
+        "legacy:archive5": 3581,
+        "legacy:archive3": 6045,
+        "hashed_import:source_identity_unavailable": 4165
+      },
+      "handedness": {
+        "Right": 6813,
+        "Left": 6978
+      }
+    },
+    "test": {
+      "rows": 34720,
+      "labels": {
+        "A": 235,
+        "B": 237,
+        "C": 431,
+        "D": 472,
+        "E": 355,
+        "F": 387,
+        "G": 4604,
+        "H": 515,
+        "I": 4373,
+        "K": 4999,
+        "L": 558,
+        "M": 1378,
+        "N": 393,
+        "O": 4419,
+        "P": 317,
+        "Q": 3902,
+        "R": 520,
+        "S": 354,
+        "T": 439,
+        "U": 397,
+        "V": 515,
+        "W": 274,
+        "X": 4333,
+        "Y": 313
+      },
+      "source_hints": {
+        "legacy:archive5": 2838,
+        "legacy:archive3": 6564,
+        "hashed_import:source_identity_unavailable": 25318
+      },
+      "handedness": {
+        "Right": 23263,
+        "Left": 11457
+      }
+    }
+  },
+  "checkpoint_inventory": [
+    {
+      "path": "ml\\models\\manual_runs\\20261022T071741Z-87dde74ec0df\\sign_classifier.pth",
+      "sha256": "4fb80db8f024a4dd5add686ad31d3914d7d05253b2fb4ce2cc63c9fc34a658f9",
+      "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+      "matches_current_dataset": true,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y"
+      ],
+      "parameters": 63681,
+      "training": {
+        "config": {
+          "batch_size": 64,
+          "learning_rate": 0.002,
+          "weight_decay": 0.0001,
+          "label_smoothing": 0.05,
+          "epochs": 50,
+          "hidden_sizes": [
+            128,
+            64
+          ],
+          "dropout": 0.2,
+          "augment": true,
+          "use_kinematics": true,
+          "residual": true,
+          "cosine_head": true,
+          "validation_fraction": 0.15,
+          "test_fraction": 0.15,
+          "seed": 42,
+          "device": "cpu",
+          "static_hand_preprocessing": "left_x_reflection_v1",
+          "selection_metric": "macro_f1",
+          "class_weighting": "inverse",
+          "augmentation_scale": 1.0,
+          "group_plan": null,
+          "evaluate_test": true
+        },
+        "best_epoch": 16
+      }
+    },
+    {
+      "path": "ml\\models\\sign_classifier_canonical.pth",
+      "sha256": "98559a10c553c23d2c6aad227f52416b59ad92483bf4f079cfca5eb512bf5b66",
+      "dataset_sha256": "17249bc657b7ed52f1d6a39f5d3bbbf6b8d2445efdab97f64094df68855647db",
+      "matches_current_dataset": false,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y"
+      ],
+      "parameters": 63681,
+      "training": {
+        "config": {
+          "batch_size": 64,
+          "learning_rate": 0.002,
+          "weight_decay": 0.0001,
+          "label_smoothing": 0.05,
+          "epochs": 50,
+          "hidden_sizes": [
+            128,
+            64
+          ],
+          "dropout": 0.2,
+          "augment": true,
+          "use_kinematics": true,
+          "residual": true,
+          "cosine_head": true,
+          "validation_fraction": 0.15,
+          "test_fraction": 0.15,
+          "seed": 42,
+          "device": "cpu",
+          "static_hand_preprocessing": "left_x_reflection_v1"
+        },
+        "best_epoch": 25
+      }
+    },
+    {
+      "path": "output\\full-static-retraining\\20261023T195828Z\\model.pth",
+      "sha256": "75bc59921a4fc3c9432e34fb06b34003084054d60bceacac6f51fa4770521a6b",
+      "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+      "matches_current_dataset": true,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y"
+      ],
+      "parameters": 63681,
+      "training": {
+        "config": {
+          "batch_size": 64,
+          "learning_rate": 0.002,
+          "weight_decay": 0.0001,
+          "label_smoothing": 0.05,
+          "epochs": 50,
+          "hidden_sizes": [
+            128,
+            64
+          ],
+          "dropout": 0.2,
+          "augment": true,
+          "use_kinematics": true,
+          "residual": true,
+          "cosine_head": true,
+          "validation_fraction": 0.15,
+          "test_fraction": 0.15,
+          "seed": 42,
+          "device": "cpu",
+          "static_hand_preprocessing": "left_x_reflection_v1",
+          "selection_metric": "macro_f1",
+          "class_weighting": "inverse",
+          "augmentation_scale": 1.0,
+          "group_plan": null,
+          "evaluate_test": false
+        },
+        "best_epoch": 47
+      }
+    }
+  ],
+  "performance": {
+    "retained": {
+      "validation": {
+        "accuracy": 0.976433906170691,
+        "macro_f1": 0.9733340966989431,
+        "macro_recall": 0.9814534084453514,
+        "threshold_0_8": {
+          "threshold": 0.8,
+          "coverage": 0.9803495032992532,
+          "accepted_accuracy": 0.9857988165680474,
+          "macro_precision": 0.9804005164194213,
+          "macro_recall": 0.9685470667586619,
+          "macro_f1": 0.9737910249650897
+        },
+        "accuracy_standardized_to_test_label_mix": 0.9833743909629028
+      },
+      "test": {
+        "accuracy": 0.5661578341013825,
+        "macro_f1": 0.6307274540775193,
+        "macro_recall": 0.8356846799532859,
+        "threshold_0_8": {
+          "threshold": 0.8,
+          "coverage": 0.8553283410138249,
+          "accepted_accuracy": 0.606727952318416,
+          "macro_precision": 0.7243257395402546,
+          "macro_recall": 0.8112945089074984,
+          "macro_f1": 0.6627113738871682
+        },
+        "accuracy_standardized_to_test_label_mix": 0.5661578341013825
+      }
+    },
+    "full": {
+      "validation": {
+        "accuracy": 0.9770139946341817,
+        "macro_f1": 0.9756782504961296,
+        "macro_recall": 0.9852401614996863,
+        "threshold_0_8": {
+          "threshold": 0.8,
+          "coverage": 0.9844826336016242,
+          "accepted_accuracy": 0.9860057450099433,
+          "macro_precision": 0.9801395506308405,
+          "macro_recall": 0.9773482854921417,
+          "macro_f1": 0.9781927761075432
+        }
+      },
+      "test": {
+        "accuracy": 0.5207085253456222,
+        "macro_f1": 0.5929831924887498,
+        "macro_recall": 0.8284636888260953,
+        "threshold_0_8": {
+          "threshold": 0.8,
+          "coverage": 0.8332085253456222,
+          "accepted_accuracy": 0.5933492343323309,
+          "macro_precision": 0.7133147751794242,
+          "macro_recall": 0.8152061803688757,
+          "macro_f1": 0.6480708083462331
+        }
+      }
+    }
+  },
+  "camera_stale_frame_reproduction": {
+    "new_frame_event_signaled": false,
+    "yielded_two_cached_frames": true
+  },
+  "handedness_override_reproduction": {
+    "detector_label": "Right",
+    "detector_score": 0.99,
+    "corrected_label": "Left",
+    "note": "Synthetic previous Left track and new Right detection at identical centroid. Demonstrates unconditional override, not frequency on real recordings."
+  }
+}

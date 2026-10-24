@@ -1,0 +1,1450 @@
+{
+  "created_utc": "2026-10-24T00:13:53.551034+00:00",
+  "workspace": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning",
+  "keep": [
+    {
+      "path": "asignx/assets/hand_landmarker.task",
+      "bytes": 7819105,
+      "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1",
+      "reason": "required hand detector asset"
+    },
+    {
+      "path": "ml/models/sequence_classifier.pth",
+      "bytes": 1198027,
+      "sha256": "1e2228a5970d18b19a25f62cb76fc560aa4c5e33962a8bc2a362a87309db2ec9",
+      "reason": "current recognition checkpoint/export"
+    },
+    {
+      "path": "ml/models/sign_classifier_canonical.pth",
+      "bytes": 946329,
+      "sha256": "98559a10c553c23d2c6aad227f52416b59ad92483bf4f079cfca5eb512bf5b66",
+      "reason": "current recognition checkpoint/export"
+    },
+    {
+      "path": "output/extractor-reviewed/ASignX_DataExtractor/_internal/asignx/assets/hand_landmarker.task",
+      "bytes": 7819105,
+      "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1",
+      "reason": "required hand detector asset"
+    },
+    {
+      "path": "output/python314-migration/onnx/models/sequence_classifier.onnx",
+      "bytes": 209043,
+      "sha256": "42fd9c5a2ac548f55f602f89a43dc1b4940b917f9db0de1b5acad8311d64b44e",
+      "reason": "current recognition checkpoint/export"
+    },
+    {
+      "path": "output/python314-migration/onnx/models/sequence_classifier.onnx.data",
+      "bytes": 1185792,
+      "sha256": "e38036bd601f87bfd88a5505039020a0357f23eae85edece44ae3ba5a512b343",
+      "reason": "current recognition checkpoint/export"
+    },
+    {
+      "path": "output/python314-migration/onnx/models/sign_classifier_canonical.onnx",
+      "bytes": 105776,
+      "sha256": "916fb9331f1e828350f4b105ee20ca5dfe94b6e8d37ffa7d2531f3681aed8713",
+      "reason": "current recognition checkpoint/export"
+    },
+    {
+      "path": "output/python314-migration/onnx/models/sign_classifier_canonical.onnx.data",
+      "bytes": 252928,
+      "sha256": "cb26934d96a25ef8964d27b373a41e13c92ec6449e4ebf5e1a2a3388187eea10",
+      "reason": "current recognition checkpoint/export"
+    }
+  ],
+  "delete": [
+    {
+      "path": "ml/models/manual_runs/20261022T071741Z-87dde74ec0df/sign_classifier.pth",
+      "bytes": 943873,
+      "sha256": "4fb80db8f024a4dd5add686ad31d3914d7d05253b2fb4ce2cc63c9fc34a658f9",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/added-M-reevaluation/20261023T190744Z/after.pth",
+      "bytes": 940265,
+      "sha256": "4a9c3a3035b0ca5b6f19bbd22ada85132f055c4f5cd196eb8d1cb41a8c68c2b7",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/added-M-reevaluation/20261023T190744Z/before.pth",
+      "bytes": 933253,
+      "sha256": "61d86ccfb937c86bb3d73437354a5d441e6b2629e57ea0fbf920f5389f38e4e6",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/full-static-retraining/20261023T195828Z/model.pth",
+      "bytes": 942249,
+      "sha256": "75bc59921a4fc3c9432e34fb06b34003084054d60bceacac6f51fa4770521a6b",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/python314-migration/onnx/20261022T071741Z-87dde74ec0df/sign_classifier.onnx",
+      "bytes": 105636,
+      "sha256": "c684b0beb58abdc17ab7bdb1b2b8d89af95d40087be21123e49926d2836d6335",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/python314-migration/onnx/20261022T071741Z-87dde74ec0df/sign_classifier.meta.json",
+      "bytes": 27424,
+      "sha256": "6d769c9864d28133244548a4821dc9b6d3023d3069b2ed5050c76aef115434c6",
+      "reason": "metadata for removed unused export"
+    },
+    {
+      "path": "output/python314-migration/onnx/20261022T071741Z-87dde74ec0df/sign_classifier.onnx.data",
+      "bytes": 252928,
+      "sha256": "9387a02178ca5eaf0120180a6a2446edf5f824b849558fda9836eb2307236548",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/python314-migration/onnx/20261022T071741Z-87dde74ec0df/sign_classifier.traced.pt",
+      "bytes": 302662,
+      "sha256": "4789dcff0ff1b6aac0e182b3cbdbe56446e96493de18f82945d2ae51f517a18f",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/source-separated-training/20261024-source-holdout/model.pth",
+      "bytes": 758057,
+      "sha256": "3febcd99b815d350b0bf81c62691fc5a4723724cce37aac54874413d9bbe5849",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-finetune-contract/test_finetune_loads_weights_an0/fine.pth",
+      "bytes": 10249,
+      "sha256": "59b9f8ba220ecb1be68af5ecae14bd03a0d2653b3753ee56c98b97564cd64491",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-finetune-contract/test_finetune_loads_weights_an0/initial.pth",
+      "bytes": 8319,
+      "sha256": "b061a57e554ab472c35555872d412f1308fd7c2d4fe451c28e5ea436ae718bad",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_calibration_refuses_test_0/m.pth",
+      "bytes": 7,
+      "sha256": "d67e2e944994496c8d8ec76eed0cf9f09679448d584b532bebf941852a37f5ed",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_captured_takes_can_train_0/sequence_classifier.pth",
+      "bytes": 20995,
+      "sha256": "337b4e7e55feec3c41687fb60fb02284bbe950d0e2c5013a7a5bedbb923c7da2",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_gui_training_uses_snapsho0/app/ml/models/manual_runs/20261023T204029Z-46ffcbddb4bd/sign_classifier.pth",
+      "bytes": 258817,
+      "sha256": "53e5d2111f507bdf49239d1698a5ae5ff47447836ce7a9e7d486b345893635b5",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_identity_training_skips_t0/model.pth",
+      "bytes": 10075,
+      "sha256": "1c64c1fcac9a1f1b65c90df8cb2c55b84eb0ebfaf3f221ff086c94f59d672e32",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_live_sequence_sampling_is0/s.pth",
+      "bytes": 19813,
+      "sha256": "1c193198b8ef8228b7c8f4ebd34f2ff8cfffb8fc9184e7f8a2a48501f3904fcd",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_motion_gate_and_unified_s0/static.pth",
+      "bytes": 31685,
+      "sha256": "f9f4d924dac82e30ac6efdb7a6cebec9baa75fc5484a09e2ae1b8a1256622dfb",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_old_checkpoint_keeps_orig0/old.pth",
+      "bytes": 8119,
+      "sha256": "ef1f786401c15c1fab570753127b0ef2694e8d28d399775c117501f5de5e7f63",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_predictor_live_registrati0/export.traced.pt",
+      "bytes": 34728,
+      "sha256": "ffa6b5caf9116067da4937441a0f9df36ea496d595be3996c57dfcbdf1cd094c",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_predictor_live_registrati0/export.weights.json",
+      "bytes": 11257,
+      "sha256": "437898959ac287e54c5442a15e45cc424b97bc6075c61018b4c96c2ce53fa593",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_predictor_live_registrati0/model.pth",
+      "bytes": 8859,
+      "sha256": "9fc17bc79ef19eec113256aa28ecc732e36f599cb7e3afd9ca9c9cffc96e2961",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_recorded_dataset_trains_c0/model.pth",
+      "bytes": 257193,
+      "sha256": "58f9bcd2d291d9dc9286f7f380b48ccbccb18d0ae062deb87bba1ca2466d4c4a",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_resmlp_cosine_prototype_a0/static_resmlp.pth",
+      "bytes": 85769,
+      "sha256": "7a7e145715c20c02dab85bdbfc4282dae41d50bade8787347c2116502e1fa85e",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_sequence_storage_and_pred0/model.pth",
+      "bytes": 20069,
+      "sha256": "545afae7ab22db1edec708202892ccf811a01f9d1761fdaded9d713a974a6588",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_small_training_and_cli_ev0/model.pth",
+      "bytes": 9947,
+      "sha256": "87a873ca591345c1211fb9d3981d7fe6fadb00924c5d592e1b16f5a04bfb3935",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_tcn_attention_sequence_mo0/seq_tcn.pth",
+      "bytes": 111619,
+      "sha256": "e8d9db93f140cc1ddb5dbb8e42ce4d5e5bb45e68ba4efafc9a8418effb941200",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_tcn_attention_sequence_mo0/web/sequence.onnx",
+      "bytes": 209777,
+      "sha256": "66373ca61473c5f33bdfb6c579732e5ea34b38ce91fcaa8adf269b5e60eef745",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_tcn_attention_sequence_mo0/web/sequence.meta.json",
+      "bytes": 329,
+      "sha256": "4beae8898a818509f71980bec0ab3dc897645ea3937c89612b8ac557a928d5ea",
+      "reason": "metadata for removed unused export"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_tcn_attention_sequence_mo0/web/sequence.onnx.data",
+      "bytes": 97920,
+      "sha256": "b87b35f5aeaf2a649846b0351ed9bf42e5005896e6f365ed7aee475345b17e85",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_tcn_attention_sequence_mo0/web/sequence.weights.json",
+      "bytes": 264217,
+      "sha256": "70f3f35e986cc1f6d5a1258861f7337eb05f731750edc0b2dedc31b93ce089ad",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_train_static_and_export_w0/sign_classifier.pth",
+      "bytes": 35073,
+      "sha256": "9a5c6a7dc31bca18334770ecc72dc46aab46e06f126af0d57bd060311a576e9a",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_train_static_and_export_w0/web/sign_classifier.onnx",
+      "bytes": 104700,
+      "sha256": "67c32cb95925803c946bb54f9f8334a26ac251d7f6e7b9900e488eafa2cae2a5",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_train_static_and_export_w0/web/sign_classifier.meta.json",
+      "bytes": 2618,
+      "sha256": "fabb0bd7d185a90490120d9e5e4ea42489536fcecbebfea26b841369928e2853",
+      "reason": "metadata for removed unused export"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_train_static_and_export_w0/web/sign_classifier.onnx.data",
+      "bytes": 23936,
+      "sha256": "d56fdc4b8fb311156f6dc3a68454cbfafbde6839cd9364541e8df18bd66aab8b",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-9a10f81d/test_train_static_and_export_w0/web/sign_classifier.weights.json",
+      "bytes": 68745,
+      "sha256": "b4c29cb6c31eca228978458bd424bb671bcbda8595fa83b63a758f6d91149e7b",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_calibration_refuses_test_0/m.pth",
+      "bytes": 7,
+      "sha256": "d67e2e944994496c8d8ec76eed0cf9f09679448d584b532bebf941852a37f5ed",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_captured_takes_can_train_0/sequence_classifier.pth",
+      "bytes": 20995,
+      "sha256": "a4cdd59e0bd59453c83eb7994d21206ff6bc68f0d568d0c67b975fb99679775e",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_gui_training_uses_snapsho0/app/ml/models/manual_runs/20261023T203836Z-eabf268cffc1/sign_classifier.pth",
+      "bytes": 258817,
+      "sha256": "5e1f47a54d14742ddf3ab8ce9ff8d906bde172462ed8aa0964a1748a4a46cd2f",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_identity_training_skips_t0/model.pth",
+      "bytes": 10075,
+      "sha256": "6a86a67bb222c3c9039dd98dccf42fe6f096bb8e35562269f99e2b89cb79dcd3",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_live_sequence_sampling_is0/s.pth",
+      "bytes": 19813,
+      "sha256": "1c193198b8ef8228b7c8f4ebd34f2ff8cfffb8fc9184e7f8a2a48501f3904fcd",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_motion_gate_and_unified_s0/static.pth",
+      "bytes": 31685,
+      "sha256": "f9f4d924dac82e30ac6efdb7a6cebec9baa75fc5484a09e2ae1b8a1256622dfb",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_old_checkpoint_keeps_orig0/old.pth",
+      "bytes": 8119,
+      "sha256": "ef1f786401c15c1fab570753127b0ef2694e8d28d399775c117501f5de5e7f63",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_predictor_live_registrati0/export.traced.pt",
+      "bytes": 34728,
+      "sha256": "ffa6b5caf9116067da4937441a0f9df36ea496d595be3996c57dfcbdf1cd094c",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_predictor_live_registrati0/export.weights.json",
+      "bytes": 11257,
+      "sha256": "437898959ac287e54c5442a15e45cc424b97bc6075c61018b4c96c2ce53fa593",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_predictor_live_registrati0/model.pth",
+      "bytes": 8859,
+      "sha256": "9fc17bc79ef19eec113256aa28ecc732e36f599cb7e3afd9ca9c9cffc96e2961",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_recorded_dataset_trains_c0/model.pth",
+      "bytes": 257193,
+      "sha256": "b1b0158c484075985a028b82dfc3c508abc1fa94902a9e912a5cb131d4e1a100",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_resmlp_cosine_prototype_a0/static_resmlp.pth",
+      "bytes": 85769,
+      "sha256": "7a7e145715c20c02dab85bdbfc4282dae41d50bade8787347c2116502e1fa85e",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_sequence_storage_and_pred0/model.pth",
+      "bytes": 20069,
+      "sha256": "545afae7ab22db1edec708202892ccf811a01f9d1761fdaded9d713a974a6588",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_small_training_and_cli_ev0/model.pth",
+      "bytes": 9947,
+      "sha256": "87a873ca591345c1211fb9d3981d7fe6fadb00924c5d592e1b16f5a04bfb3935",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_tcn_attention_sequence_mo0/seq_tcn.pth",
+      "bytes": 111619,
+      "sha256": "e8d9db93f140cc1ddb5dbb8e42ce4d5e5bb45e68ba4efafc9a8418effb941200",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_tcn_attention_sequence_mo0/web/sequence.onnx",
+      "bytes": 209777,
+      "sha256": "66373ca61473c5f33bdfb6c579732e5ea34b38ce91fcaa8adf269b5e60eef745",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_tcn_attention_sequence_mo0/web/sequence.meta.json",
+      "bytes": 329,
+      "sha256": "4beae8898a818509f71980bec0ab3dc897645ea3937c89612b8ac557a928d5ea",
+      "reason": "metadata for removed unused export"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_tcn_attention_sequence_mo0/web/sequence.onnx.data",
+      "bytes": 97920,
+      "sha256": "b87b35f5aeaf2a649846b0351ed9bf42e5005896e6f365ed7aee475345b17e85",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_tcn_attention_sequence_mo0/web/sequence.weights.json",
+      "bytes": 264217,
+      "sha256": "70f3f35e986cc1f6d5a1258861f7337eb05f731750edc0b2dedc31b93ce089ad",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_train_static_and_export_w0/sign_classifier.pth",
+      "bytes": 35073,
+      "sha256": "9a5c6a7dc31bca18334770ecc72dc46aab46e06f126af0d57bd060311a576e9a",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_train_static_and_export_w0/web/sign_classifier.onnx",
+      "bytes": 104700,
+      "sha256": "67c32cb95925803c946bb54f9f8334a26ac251d7f6e7b9900e488eafa2cae2a5",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_train_static_and_export_w0/web/sign_classifier.meta.json",
+      "bytes": 2618,
+      "sha256": "fabb0bd7d185a90490120d9e5e4ea42489536fcecbebfea26b841369928e2853",
+      "reason": "metadata for removed unused export"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_train_static_and_export_w0/web/sign_classifier.onnx.data",
+      "bytes": 23936,
+      "sha256": "d56fdc4b8fb311156f6dc3a68454cbfafbde6839cd9364541e8df18bd66aab8b",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-d9ce6171/test_train_static_and_export_w0/web/sign_classifier.weights.json",
+      "bytes": 68745,
+      "sha256": "b4c29cb6c31eca228978458bd424bb671bcbda8595fa83b63a758f6d91149e7b",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_calibration_refuses_test_0/m.pth",
+      "bytes": 7,
+      "sha256": "d67e2e944994496c8d8ec76eed0cf9f09679448d584b532bebf941852a37f5ed",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_captured_takes_can_train_0/sequence_classifier.pth",
+      "bytes": 20995,
+      "sha256": "d76fd3705606b2820b0a77dc85c8343be9bfea002c05acdbe8c02ec04e0ad00f",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_finetune_loads_weights_an0/fine.pth",
+      "bytes": 10249,
+      "sha256": "db41772ddf70a3aff8086d03fd11e4da0b31d8036ae29626859af81964a876b6",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_finetune_loads_weights_an0/initial.pth",
+      "bytes": 8319,
+      "sha256": "e0033a2decd7d106c0ba867fe9878d395df64cdc6317bbabc4eb358d150a4805",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_gui_training_uses_snapsho0/app/ml/models/manual_runs/20261023T204518Z-fc4c61ec1182/sign_classifier.pth",
+      "bytes": 258817,
+      "sha256": "fad1a21d4d7d3086a03e77928107fe56fd21b67a6f657afd2b3b90f0d4bf43c4",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_identity_training_skips_t0/model.pth",
+      "bytes": 10139,
+      "sha256": "63edb233cf5bb8fe979100dc28e32a1f643406f0ad77418130258c21657d88e8",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_live_sequence_sampling_is0/s.pth",
+      "bytes": 19813,
+      "sha256": "1c193198b8ef8228b7c8f4ebd34f2ff8cfffb8fc9184e7f8a2a48501f3904fcd",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_motion_gate_and_unified_s0/static.pth",
+      "bytes": 31685,
+      "sha256": "f9f4d924dac82e30ac6efdb7a6cebec9baa75fc5484a09e2ae1b8a1256622dfb",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_old_checkpoint_keeps_orig0/old.pth",
+      "bytes": 8119,
+      "sha256": "ef1f786401c15c1fab570753127b0ef2694e8d28d399775c117501f5de5e7f63",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_predictor_live_registrati0/export.traced.pt",
+      "bytes": 34728,
+      "sha256": "ffa6b5caf9116067da4937441a0f9df36ea496d595be3996c57dfcbdf1cd094c",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_predictor_live_registrati0/export.weights.json",
+      "bytes": 11257,
+      "sha256": "437898959ac287e54c5442a15e45cc424b97bc6075c61018b4c96c2ce53fa593",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_predictor_live_registrati0/model.pth",
+      "bytes": 8859,
+      "sha256": "9fc17bc79ef19eec113256aa28ecc732e36f599cb7e3afd9ca9c9cffc96e2961",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_recorded_dataset_trains_c0/model.pth",
+      "bytes": 257193,
+      "sha256": "5b50ea5da3edb87ad2ba89fb5a9bea1b7054f6561093bc7f291fb10734dad751",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_resmlp_cosine_prototype_a0/static_resmlp.pth",
+      "bytes": 85769,
+      "sha256": "7a7e145715c20c02dab85bdbfc4282dae41d50bade8787347c2116502e1fa85e",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_sequence_storage_and_pred0/model.pth",
+      "bytes": 20069,
+      "sha256": "545afae7ab22db1edec708202892ccf811a01f9d1761fdaded9d713a974a6588",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_small_training_and_cli_ev0/model.pth",
+      "bytes": 9947,
+      "sha256": "2681bb506161c12d65d505cadc8ebdabeabbd40de097f4487c4e8386a06b5831",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_tcn_attention_sequence_mo0/seq_tcn.pth",
+      "bytes": 111619,
+      "sha256": "e8d9db93f140cc1ddb5dbb8e42ce4d5e5bb45e68ba4efafc9a8418effb941200",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_tcn_attention_sequence_mo0/web/sequence.onnx",
+      "bytes": 209777,
+      "sha256": "66373ca61473c5f33bdfb6c579732e5ea34b38ce91fcaa8adf269b5e60eef745",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_tcn_attention_sequence_mo0/web/sequence.meta.json",
+      "bytes": 329,
+      "sha256": "4beae8898a818509f71980bec0ab3dc897645ea3937c89612b8ac557a928d5ea",
+      "reason": "metadata for removed unused export"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_tcn_attention_sequence_mo0/web/sequence.onnx.data",
+      "bytes": 97920,
+      "sha256": "b87b35f5aeaf2a649846b0351ed9bf42e5005896e6f365ed7aee475345b17e85",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_tcn_attention_sequence_mo0/web/sequence.weights.json",
+      "bytes": 264217,
+      "sha256": "70f3f35e986cc1f6d5a1258861f7337eb05f731750edc0b2dedc31b93ce089ad",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_train_static_and_export_w0/sign_classifier.pth",
+      "bytes": 35073,
+      "sha256": "066e1f6d8d74cf7fe41cf76698035901e392169cb206ff061024a56253ed956f",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_train_static_and_export_w0/web/sign_classifier.onnx",
+      "bytes": 104700,
+      "sha256": "67c32cb95925803c946bb54f9f8334a26ac251d7f6e7b9900e488eafa2cae2a5",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_train_static_and_export_w0/web/sign_classifier.meta.json",
+      "bytes": 2618,
+      "sha256": "fabb0bd7d185a90490120d9e5e4ea42489536fcecbebfea26b841369928e2853",
+      "reason": "metadata for removed unused export"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_train_static_and_export_w0/web/sign_classifier.onnx.data",
+      "bytes": 23936,
+      "sha256": "d56fdc4b8fb311156f6dc3a68454cbfafbde6839cd9364541e8df18bd66aab8b",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-f5b60222/test_train_static_and_export_w0/web/sign_classifier.weights.json",
+      "bytes": 68745,
+      "sha256": "b4c29cb6c31eca228978458bd424bb671bcbda8595fa83b63a758f6d91149e7b",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_calibration_refuses_test_0/m.pth",
+      "bytes": 7,
+      "sha256": "d67e2e944994496c8d8ec76eed0cf9f09679448d584b532bebf941852a37f5ed",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_captured_takes_can_train_0/sequence_classifier.pth",
+      "bytes": 20995,
+      "sha256": "f3809da8ca523cd82d88acf2136382b5c651fffb3c9abeb94475d2961c9a906d",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_gui_training_uses_snapsho0/app/ml/models/manual_runs/20261023T202806Z-9431661250da/sign_classifier.pth",
+      "bytes": 258817,
+      "sha256": "fb165538a6482e47fba1526782aa7a9c8d29305c46d7f69f17fc0ec1ad0bbec2",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_identity_training_skips_t0/model.pth",
+      "bytes": 10075,
+      "sha256": "447365e25f7f12bdf437d3bbdc9ec93ba4c8f107f1d57d4cd33b82b6b29292aa",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_live_sequence_sampling_is0/s.pth",
+      "bytes": 19813,
+      "sha256": "1c193198b8ef8228b7c8f4ebd34f2ff8cfffb8fc9184e7f8a2a48501f3904fcd",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_motion_gate_and_unified_s0/static.pth",
+      "bytes": 31685,
+      "sha256": "f9f4d924dac82e30ac6efdb7a6cebec9baa75fc5484a09e2ae1b8a1256622dfb",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_old_checkpoint_keeps_orig0/old.pth",
+      "bytes": 8119,
+      "sha256": "ef1f786401c15c1fab570753127b0ef2694e8d28d399775c117501f5de5e7f63",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_predictor_live_registrati0/export.traced.pt",
+      "bytes": 34728,
+      "sha256": "9ec764478b04d8744a762d0d052a566acff2b8d737cc86b1c4839514f4d66f45",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_predictor_live_registrati0/export.weights.json",
+      "bytes": 11257,
+      "sha256": "437898959ac287e54c5442a15e45cc424b97bc6075c61018b4c96c2ce53fa593",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_predictor_live_registrati0/model.pth",
+      "bytes": 8859,
+      "sha256": "9fc17bc79ef19eec113256aa28ecc732e36f599cb7e3afd9ca9c9cffc96e2961",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_recorded_dataset_trains_c0/model.pth",
+      "bytes": 257193,
+      "sha256": "1875e0700953542e2260996c9453f1ee6e9be538b03306b60ab240f312086869",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_resmlp_cosine_prototype_a0/static_resmlp.pth",
+      "bytes": 85769,
+      "sha256": "7a7e145715c20c02dab85bdbfc4282dae41d50bade8787347c2116502e1fa85e",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_sequence_storage_and_pred0/model.pth",
+      "bytes": 20069,
+      "sha256": "545afae7ab22db1edec708202892ccf811a01f9d1761fdaded9d713a974a6588",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_small_training_and_cli_ev0/model.pth",
+      "bytes": 9947,
+      "sha256": "87a873ca591345c1211fb9d3981d7fe6fadb00924c5d592e1b16f5a04bfb3935",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_tcn_attention_sequence_mo0/seq_tcn.pth",
+      "bytes": 111619,
+      "sha256": "e8d9db93f140cc1ddb5dbb8e42ce4d5e5bb45e68ba4efafc9a8418effb941200",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_tcn_attention_sequence_mo0/web/sequence.onnx",
+      "bytes": 209777,
+      "sha256": "66373ca61473c5f33bdfb6c579732e5ea34b38ce91fcaa8adf269b5e60eef745",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_tcn_attention_sequence_mo0/web/sequence.meta.json",
+      "bytes": 329,
+      "sha256": "4beae8898a818509f71980bec0ab3dc897645ea3937c89612b8ac557a928d5ea",
+      "reason": "metadata for removed unused export"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_tcn_attention_sequence_mo0/web/sequence.onnx.data",
+      "bytes": 97920,
+      "sha256": "b87b35f5aeaf2a649846b0351ed9bf42e5005896e6f365ed7aee475345b17e85",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_tcn_attention_sequence_mo0/web/sequence.weights.json",
+      "bytes": 264217,
+      "sha256": "70f3f35e986cc1f6d5a1258861f7337eb05f731750edc0b2dedc31b93ce089ad",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_train_static_and_export_w0/sign_classifier.pth",
+      "bytes": 35073,
+      "sha256": "9a5c6a7dc31bca18334770ecc72dc46aab46e06f126af0d57bd060311a576e9a",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_train_static_and_export_w0/web/sign_classifier.onnx",
+      "bytes": 104700,
+      "sha256": "67c32cb95925803c946bb54f9f8334a26ac251d7f6e7b9900e488eafa2cae2a5",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_train_static_and_export_w0/web/sign_classifier.meta.json",
+      "bytes": 2618,
+      "sha256": "fabb0bd7d185a90490120d9e5e4ea42489536fcecbebfea26b841369928e2853",
+      "reason": "metadata for removed unused export"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_train_static_and_export_w0/web/sign_classifier.onnx.data",
+      "bytes": 23936,
+      "sha256": "d56fdc4b8fb311156f6dc3a68454cbfafbde6839cd9364541e8df18bd66aab8b",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/system-diagnosis/pytest-readable-run4/test_train_static_and_export_w0/web/sign_classifier.weights.json",
+      "bytes": 68745,
+      "sha256": "b4c29cb6c31eca228978458bd424bb671bcbda8595fa83b63a758f6d91149e7b",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/whole-model-finetuning/20261023T204455Z/model.pth",
+      "bytes": 942505,
+      "sha256": "4a3aaf53e3e1f8153b813bbcbf60d5095ee0f9efcffeaa2efb5b70db894beaa8",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "output/whole-model-finetuning/20261023T205534Z/model.pth",
+      "bytes": 942505,
+      "sha256": "5a82c39c4d722043ccc088cf29749cd117adece94623ab0fdfd1feca55428ea4",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/test314-True.onnx",
+      "bytes": 274889,
+      "sha256": "7ec81135b775670e309d0f95dfa647349d4247a1d821865535825c6b98d41640",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/combined-recognition-check-2/test_motion_gate_and_unified_s0/static.pth",
+      "bytes": 31685,
+      "sha256": "bf1690ae03ab0ac6203a6e306c762ddc4b7ec97a9bd29066abbc5c3ecc25146c",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_captured_takes_can_train_0/sequence_classifier.pth",
+      "bytes": 20803,
+      "sha256": "471b13b0b3f3251df240bf41de097eca2b830963e74ee768822465aa77d930d7",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_gui_training_uses_snapsho0/app/ml/models/manual_runs/20261018T145909Z-ba1ccef1098c/sign_classifier.pth",
+      "bytes": 258689,
+      "sha256": "4f95982bdc76356b318b359fc966a66b553082e2ee36ae50e9cd65c35f13ed8a",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_motion_gate_and_unified_s0/static.pth",
+      "bytes": 31685,
+      "sha256": "f9f4d924dac82e30ac6efdb7a6cebec9baa75fc5484a09e2ae1b8a1256622dfb",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_old_checkpoint_keeps_orig0/old.pth",
+      "bytes": 8119,
+      "sha256": "ef1f786401c15c1fab570753127b0ef2694e8d28d399775c117501f5de5e7f63",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_predictor_live_registrati0/export.traced.pt",
+      "bytes": 35176,
+      "sha256": "84c4164d21d57e51de9f88b7c2bb17c68f0c10789eb9d2aa8deb272187a3b2cf",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_predictor_live_registrati0/export.weights.json",
+      "bytes": 11257,
+      "sha256": "437898959ac287e54c5442a15e45cc424b97bc6075c61018b4c96c2ce53fa593",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_predictor_live_registrati0/model.pth",
+      "bytes": 8859,
+      "sha256": "9fc17bc79ef19eec113256aa28ecc732e36f599cb7e3afd9ca9c9cffc96e2961",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_recorded_dataset_trains_c0/model.pth",
+      "bytes": 257001,
+      "sha256": "9dac6ee4c1135bef36a5f124491bbc2e06d0532ace8dc3803f526867fd6d1a46",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_resmlp_cosine_prototype_a0/static_resmlp.pth",
+      "bytes": 85769,
+      "sha256": "7a7e145715c20c02dab85bdbfc4282dae41d50bade8787347c2116502e1fa85e",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_sequence_storage_and_pred0/model.pth",
+      "bytes": 20069,
+      "sha256": "545afae7ab22db1edec708202892ccf811a01f9d1761fdaded9d713a974a6588",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_small_training_and_cli_ev0/model.pth",
+      "bytes": 9819,
+      "sha256": "65656e79d9827b05b0f1283c6f66d5d6ee8cd6049be1a36cc827a52eea2cb65f",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_tcn_attention_sequence_mo0/seq_tcn.pth",
+      "bytes": 111427,
+      "sha256": "479c0555f234185f74ca3b120c487e5a8ababce45a0484aa06a72c3cdc540a00",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_tcn_attention_sequence_mo0/web/sequence.traced.pt",
+      "bytes": 174181,
+      "sha256": "9bd5272b105f20b3035dae571339b40cc2ba407d080bfbe9428279bf3e87a75a",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_tcn_attention_sequence_mo0/web/sequence.weights.json",
+      "bytes": 264217,
+      "sha256": "70f3f35e986cc1f6d5a1258861f7337eb05f731750edc0b2dedc31b93ce089ad",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_train_static_and_export_w0/sign_classifier.pth",
+      "bytes": 34945,
+      "sha256": "bfe711023108591b9ef3c61a3a3f3ad3f0c9eefdebc448c51e1b43f7146e7fde",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_train_static_and_export_w0/web/sign_classifier.traced.pt",
+      "bytes": 87816,
+      "sha256": "29b3b74a72abb13746b04c8a89a03d4e71d7b058891b83558cbf08a3e8ca2886",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-full-suite/test_train_static_and_export_w0/web/sign_classifier.weights.json",
+      "bytes": 68745,
+      "sha256": "b4c29cb6c31eca228978458bd424bb671bcbda8595fa83b63a758f6d91149e7b",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-pytest-2/test_captured_takes_can_train_0/sequence_classifier.pth",
+      "bytes": 20803,
+      "sha256": "6414c9393ac7a665d1c915c6c3985e1124a8b4224cc591fff71906c925d69ae3",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/dynamic-pytest-2/test_sequence_storage_and_pred0/model.pth",
+      "bytes": 20069,
+      "sha256": "2de517313f7587f8678860d7aeb9fbd83f1646595d61a2835fc6d894c33d9af8",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/exposure-regression/test_sequence_storage_and_pred0/model.pth",
+      "bytes": 20069,
+      "sha256": "bee5628126ad8a2b54f259a8dd7a4adf174d9de1ae2aae13b59bf6ec16212edb",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_calibration_refuses_test_0/m.pth",
+      "bytes": 7,
+      "sha256": "d67e2e944994496c8d8ec76eed0cf9f09679448d584b532bebf941852a37f5ed",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_captured_takes_can_train_0/sequence_classifier.pth",
+      "bytes": 20995,
+      "sha256": "2f9468570f453b74e48cc8a26fa5490b09323bf759deca68f85fb76c6703cb32",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_gui_training_uses_snapsho0/app/ml/models/manual_runs/20261022T135201Z-fbd07974943b/sign_classifier.pth",
+      "bytes": 258817,
+      "sha256": "f4e96a23a257dad01f7c33b34ebc2ab9cfed1e631d3c361fb77243e44e45829e",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_identity_training_skips_t0/model.pth",
+      "bytes": 10075,
+      "sha256": "1697b203679ad97fb3f062939c6165a2fbf3cae3561ece0c8c33aa321037a752",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_live_sequence_sampling_is0/s.pth",
+      "bytes": 19813,
+      "sha256": "1c193198b8ef8228b7c8f4ebd34f2ff8cfffb8fc9184e7f8a2a48501f3904fcd",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_motion_gate_and_unified_s0/static.pth",
+      "bytes": 31685,
+      "sha256": "f9f4d924dac82e30ac6efdb7a6cebec9baa75fc5484a09e2ae1b8a1256622dfb",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_old_checkpoint_keeps_orig0/old.pth",
+      "bytes": 8119,
+      "sha256": "ef1f786401c15c1fab570753127b0ef2694e8d28d399775c117501f5de5e7f63",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_predictor_live_registrati0/export.traced.pt",
+      "bytes": 35176,
+      "sha256": "e3554d3aa2941e214082cb07e286ee05335df082627557665fd5cdeef2801213",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_predictor_live_registrati0/export.weights.json",
+      "bytes": 11257,
+      "sha256": "437898959ac287e54c5442a15e45cc424b97bc6075c61018b4c96c2ce53fa593",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_predictor_live_registrati0/model.pth",
+      "bytes": 8859,
+      "sha256": "9fc17bc79ef19eec113256aa28ecc732e36f599cb7e3afd9ca9c9cffc96e2961",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_recorded_dataset_trains_c0/model.pth",
+      "bytes": 257193,
+      "sha256": "52566a26d5e9d6e554e8ad12bd7c66bab31e4c6e38b4f617907f051c1b2ae5d4",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_resmlp_cosine_prototype_a0/static_resmlp.pth",
+      "bytes": 85769,
+      "sha256": "7a7e145715c20c02dab85bdbfc4282dae41d50bade8787347c2116502e1fa85e",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_sequence_storage_and_pred0/model.pth",
+      "bytes": 20069,
+      "sha256": "545afae7ab22db1edec708202892ccf811a01f9d1761fdaded9d713a974a6588",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_small_training_and_cli_ev0/model.pth",
+      "bytes": 9947,
+      "sha256": "87a873ca591345c1211fb9d3981d7fe6fadb00924c5d592e1b16f5a04bfb3935",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_tcn_attention_sequence_mo0/seq_tcn.pth",
+      "bytes": 111619,
+      "sha256": "e8d9db93f140cc1ddb5dbb8e42ce4d5e5bb45e68ba4efafc9a8418effb941200",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_tcn_attention_sequence_mo0/web/sequence.onnx",
+      "bytes": 209777,
+      "sha256": "66373ca61473c5f33bdfb6c579732e5ea34b38ce91fcaa8adf269b5e60eef745",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_tcn_attention_sequence_mo0/web/sequence.meta.json",
+      "bytes": 329,
+      "sha256": "4beae8898a818509f71980bec0ab3dc897645ea3937c89612b8ac557a928d5ea",
+      "reason": "metadata for removed unused export"
+    },
+    {
+      "path": "tmp/py314-final/test_tcn_attention_sequence_mo0/web/sequence.onnx.data",
+      "bytes": 97920,
+      "sha256": "b87b35f5aeaf2a649846b0351ed9bf42e5005896e6f365ed7aee475345b17e85",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_tcn_attention_sequence_mo0/web/sequence.weights.json",
+      "bytes": 264217,
+      "sha256": "70f3f35e986cc1f6d5a1258861f7337eb05f731750edc0b2dedc31b93ce089ad",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_train_static_and_export_w0/sign_classifier.pth",
+      "bytes": 35073,
+      "sha256": "9a5c6a7dc31bca18334770ecc72dc46aab46e06f126af0d57bd060311a576e9a",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_train_static_and_export_w0/web/sign_classifier.onnx",
+      "bytes": 104700,
+      "sha256": "67c32cb95925803c946bb54f9f8334a26ac251d7f6e7b9900e488eafa2cae2a5",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_train_static_and_export_w0/web/sign_classifier.meta.json",
+      "bytes": 2618,
+      "sha256": "fabb0bd7d185a90490120d9e5e4ea42489536fcecbebfea26b841369928e2853",
+      "reason": "metadata for removed unused export"
+    },
+    {
+      "path": "tmp/py314-final/test_train_static_and_export_w0/web/sign_classifier.onnx.data",
+      "bytes": 23936,
+      "sha256": "d56fdc4b8fb311156f6dc3a68454cbfafbde6839cd9364541e8df18bd66aab8b",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-final/test_train_static_and_export_w0/web/sign_classifier.weights.json",
+      "bytes": 68745,
+      "sha256": "b4c29cb6c31eca228978458bd424bb671bcbda8595fa83b63a758f6d91149e7b",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_calibration_refuses_test_0/m.pth",
+      "bytes": 7,
+      "sha256": "d67e2e944994496c8d8ec76eed0cf9f09679448d584b532bebf941852a37f5ed",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_captured_takes_can_train_0/sequence_classifier.pth",
+      "bytes": 20995,
+      "sha256": "a84d5412363631f27969b7c86c30dd2a189708a1c212d6bcafdd3ce8dae9554a",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_gui_training_uses_snapsho0/app/ml/models/manual_runs/20261022T134546Z-0fd421829bb4/sign_classifier.pth",
+      "bytes": 258817,
+      "sha256": "a8d61bc4270432b2f06b236107f048ddd0d22d8d872f25410b2710feabf86cd2",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_identity_training_skips_t0/model.pth",
+      "bytes": 10075,
+      "sha256": "b3ff6cf64cb08ea35a3038141210142a3c0468a2978fc01ca57883e6f9f2020f",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_live_sequence_sampling_is0/s.pth",
+      "bytes": 19813,
+      "sha256": "1c193198b8ef8228b7c8f4ebd34f2ff8cfffb8fc9184e7f8a2a48501f3904fcd",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_motion_gate_and_unified_s0/static.pth",
+      "bytes": 31685,
+      "sha256": "f9f4d924dac82e30ac6efdb7a6cebec9baa75fc5484a09e2ae1b8a1256622dfb",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_old_checkpoint_keeps_orig0/old.pth",
+      "bytes": 8119,
+      "sha256": "ef1f786401c15c1fab570753127b0ef2694e8d28d399775c117501f5de5e7f63",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_predictor_live_registrati0/export.traced.pt",
+      "bytes": 35176,
+      "sha256": "84c4164d21d57e51de9f88b7c2bb17c68f0c10789eb9d2aa8deb272187a3b2cf",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_predictor_live_registrati0/export.weights.json",
+      "bytes": 11257,
+      "sha256": "437898959ac287e54c5442a15e45cc424b97bc6075c61018b4c96c2ce53fa593",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_predictor_live_registrati0/model.pth",
+      "bytes": 8859,
+      "sha256": "9fc17bc79ef19eec113256aa28ecc732e36f599cb7e3afd9ca9c9cffc96e2961",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_recorded_dataset_trains_c0/model.pth",
+      "bytes": 257193,
+      "sha256": "3b608f57849c7c5875b227221c209d2180db33579bea9f93a7a7fa1ffda266c9",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_resmlp_cosine_prototype_a0/static_resmlp.pth",
+      "bytes": 85769,
+      "sha256": "7a7e145715c20c02dab85bdbfc4282dae41d50bade8787347c2116502e1fa85e",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_sequence_storage_and_pred0/model.pth",
+      "bytes": 20069,
+      "sha256": "545afae7ab22db1edec708202892ccf811a01f9d1761fdaded9d713a974a6588",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_small_training_and_cli_ev0/model.pth",
+      "bytes": 9947,
+      "sha256": "87a873ca591345c1211fb9d3981d7fe6fadb00924c5d592e1b16f5a04bfb3935",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_tcn_attention_sequence_mo0/seq_tcn.pth",
+      "bytes": 111619,
+      "sha256": "e8d9db93f140cc1ddb5dbb8e42ce4d5e5bb45e68ba4efafc9a8418effb941200",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_tcn_attention_sequence_mo0/web/sequence.traced.pt",
+      "bytes": 174181,
+      "sha256": "9bd5272b105f20b3035dae571339b40cc2ba407d080bfbe9428279bf3e87a75a",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_tcn_attention_sequence_mo0/web/sequence.weights.json",
+      "bytes": 264217,
+      "sha256": "70f3f35e986cc1f6d5a1258861f7337eb05f731750edc0b2dedc31b93ce089ad",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_train_static_and_export_w0/sign_classifier.pth",
+      "bytes": 35073,
+      "sha256": "9a5c6a7dc31bca18334770ecc72dc46aab46e06f126af0d57bd060311a576e9a",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_train_static_and_export_w0/web/sign_classifier.traced.pt",
+      "bytes": 87816,
+      "sha256": "29b3b74a72abb13746b04c8a89a03d4e71d7b058891b83558cbf08a3e8ca2886",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-migration-verified/test_train_static_and_export_w0/web/sign_classifier.weights.json",
+      "bytes": 68745,
+      "sha256": "b4c29cb6c31eca228978458bd424bb671bcbda8595fa83b63a758f6d91149e7b",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_calibration_refuses_test_0/m.pth",
+      "bytes": 7,
+      "sha256": "d67e2e944994496c8d8ec76eed0cf9f09679448d584b532bebf941852a37f5ed",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_captured_takes_can_train_0/sequence_classifier.pth",
+      "bytes": 20995,
+      "sha256": "25c91dc2dbe20adab727238e4d4f845d4c18e6712260843644593cb14a435ff5",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_gui_training_uses_snapsho0/app/ml/models/manual_runs/20261022T134732Z-0ec82da5c1e9/sign_classifier.pth",
+      "bytes": 258817,
+      "sha256": "e0c574f32731054dd82bd7d1b4146e7079f34cab0b86f3cedf13dfa2b6b9c27e",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_identity_training_skips_t0/model.pth",
+      "bytes": 10075,
+      "sha256": "36518e98e302c9878e0709a5f356b36269ceb618fe47ce6629556ece373e2be4",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_live_sequence_sampling_is0/s.pth",
+      "bytes": 19813,
+      "sha256": "1c193198b8ef8228b7c8f4ebd34f2ff8cfffb8fc9184e7f8a2a48501f3904fcd",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_motion_gate_and_unified_s0/static.pth",
+      "bytes": 31685,
+      "sha256": "f9f4d924dac82e30ac6efdb7a6cebec9baa75fc5484a09e2ae1b8a1256622dfb",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_old_checkpoint_keeps_orig0/old.pth",
+      "bytes": 8119,
+      "sha256": "ef1f786401c15c1fab570753127b0ef2694e8d28d399775c117501f5de5e7f63",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_predictor_live_registrati0/export.traced.pt",
+      "bytes": 35176,
+      "sha256": "84c4164d21d57e51de9f88b7c2bb17c68f0c10789eb9d2aa8deb272187a3b2cf",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_predictor_live_registrati0/export.weights.json",
+      "bytes": 11257,
+      "sha256": "437898959ac287e54c5442a15e45cc424b97bc6075c61018b4c96c2ce53fa593",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_predictor_live_registrati0/model.pth",
+      "bytes": 8859,
+      "sha256": "9fc17bc79ef19eec113256aa28ecc732e36f599cb7e3afd9ca9c9cffc96e2961",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_recorded_dataset_trains_c0/model.pth",
+      "bytes": 257193,
+      "sha256": "be31a9eae258a80937f868e347c3e31d5d7d45b8ff8ba10bba0fb451e7821e05",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_resmlp_cosine_prototype_a0/static_resmlp.pth",
+      "bytes": 85769,
+      "sha256": "7a7e145715c20c02dab85bdbfc4282dae41d50bade8787347c2116502e1fa85e",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_sequence_storage_and_pred0/model.pth",
+      "bytes": 20069,
+      "sha256": "545afae7ab22db1edec708202892ccf811a01f9d1761fdaded9d713a974a6588",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_small_training_and_cli_ev0/model.pth",
+      "bytes": 9947,
+      "sha256": "87a873ca591345c1211fb9d3981d7fe6fadb00924c5d592e1b16f5a04bfb3935",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_tcn_attention_sequence_mo0/seq_tcn.pth",
+      "bytes": 111619,
+      "sha256": "e8d9db93f140cc1ddb5dbb8e42ce4d5e5bb45e68ba4efafc9a8418effb941200",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_tcn_attention_sequence_mo0/web/sequence.onnx",
+      "bytes": 209777,
+      "sha256": "66373ca61473c5f33bdfb6c579732e5ea34b38ce91fcaa8adf269b5e60eef745",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_tcn_attention_sequence_mo0/web/sequence.meta.json",
+      "bytes": 329,
+      "sha256": "4beae8898a818509f71980bec0ab3dc897645ea3937c89612b8ac557a928d5ea",
+      "reason": "metadata for removed unused export"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_tcn_attention_sequence_mo0/web/sequence.onnx.data",
+      "bytes": 97920,
+      "sha256": "b87b35f5aeaf2a649846b0351ed9bf42e5005896e6f365ed7aee475345b17e85",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_tcn_attention_sequence_mo0/web/sequence.weights.json",
+      "bytes": 264217,
+      "sha256": "70f3f35e986cc1f6d5a1258861f7337eb05f731750edc0b2dedc31b93ce089ad",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_train_static_and_export_w0/sign_classifier.pth",
+      "bytes": 35073,
+      "sha256": "9a5c6a7dc31bca18334770ecc72dc46aab46e06f126af0d57bd060311a576e9a",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_train_static_and_export_w0/web/sign_classifier.onnx",
+      "bytes": 104700,
+      "sha256": "67c32cb95925803c946bb54f9f8334a26ac251d7f6e7b9900e488eafa2cae2a5",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_train_static_and_export_w0/web/sign_classifier.meta.json",
+      "bytes": 2618,
+      "sha256": "fabb0bd7d185a90490120d9e5e4ea42489536fcecbebfea26b841369928e2853",
+      "reason": "metadata for removed unused export"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_train_static_and_export_w0/web/sign_classifier.onnx.data",
+      "bytes": 23936,
+      "sha256": "d56fdc4b8fb311156f6dc3a68454cbfafbde6839cd9364541e8df18bd66aab8b",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/py314-with-tooling/test_train_static_and_export_w0/web/sign_classifier.weights.json",
+      "bytes": 68745,
+      "sha256": "b4c29cb6c31eca228978458bd424bb671bcbda8595fa83b63a758f6d91149e7b",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/studio-tests-20261018-v2/test_captured_takes_can_train_0/sequence_classifier.pth",
+      "bytes": 20803,
+      "sha256": "1a8e343f6ae1357504b02f115cdda15599969e3e10b29b167366deb7d3c3aac8",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/studio-tests-20261018-v2/test_old_checkpoint_keeps_orig0/old.pth",
+      "bytes": 8119,
+      "sha256": "f3b2fd225b04069430cc297f0022725292cefd31a031872b56fa430c955a88ac",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/studio-tests-20261018-v2/test_predictor_live_registrati0/export.traced.pt",
+      "bytes": 35176,
+      "sha256": "d1e3e41b9ffe70b972a0e4366e2e14ef535857faff3ed1c69d7cc6e680fb2bc3",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/studio-tests-20261018-v2/test_predictor_live_registrati0/export.weights.json",
+      "bytes": 11219,
+      "sha256": "b9932971060544d18eef143543a6a87c54f20ffd66c3e82f2b029b26706a6476",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/studio-tests-20261018-v2/test_predictor_live_registrati0/model.pth",
+      "bytes": 8859,
+      "sha256": "ec0480e9d2e7dd68755d0198f111bea2ded6afb8335bf42b4f51ff8e9702cd5d",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/studio-tests-20261018-v2/test_sequence_storage_and_pred0/model.pth",
+      "bytes": 20069,
+      "sha256": "2de517313f7587f8678860d7aeb9fbd83f1646595d61a2835fc6d894c33d9af8",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/studio-tests-20261018-v2/test_small_training_and_cli_ev0/model.pth",
+      "bytes": 9819,
+      "sha256": "65656e79d9827b05b0f1283c6f66d5d6ee8cd6049be1a36cc827a52eea2cb65f",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/studio-tests-20261018-v3/test_recorded_dataset_trains_c0/model.pth",
+      "bytes": 257001,
+      "sha256": "e31619e00e33934688cb547427a8b30f44899da80ae7b55969c5d966cc573665",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/studio-tests-20261018-v4/test_recorded_dataset_trains_c0/model.pth",
+      "bytes": 257001,
+      "sha256": "e495aa98be0fe35364790bfa193fb2128708eadb66786e654c7aabe68d6820d3",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/studio-tests-20261018-v5/test_gui_training_uses_snapsho0/app/ml/models/manual_runs/20261018T142228Z-fa15a881e25d/sign_classifier.pth",
+      "bytes": 258689,
+      "sha256": "2a89734ba0100c22779be9758a1c85134be0f56371763dd58a3cfd9d287cb0cb",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/studio-tests-20261018-v5/test_recorded_dataset_trains_c0/model.pth",
+      "bytes": 257001,
+      "sha256": "c25a6247720ab81e54c3ef0b62f2382e4df0616cad7ea14d00e0e8ebd6658cca",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_calibration_refuses_test_0/m.pth",
+      "bytes": 7,
+      "sha256": "d67e2e944994496c8d8ec76eed0cf9f09679448d584b532bebf941852a37f5ed",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_captured_takes_can_train_0/sequence_classifier.pth",
+      "bytes": 20995,
+      "sha256": "7533b78f6021b5d6c50d4e48c0572d48b80bb2c6d9c2b67733ba8f490a4b1750",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_gui_training_uses_snapsho0/app/ml/models/manual_runs/20261022T125928Z-f5ed01b9c98f/sign_classifier.pth",
+      "bytes": 258817,
+      "sha256": "8343ac46ebf1cab28baf340ece71aad2fb985c401f31ae15a8b76a8f209cf0a0",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_identity_training_skips_t0/model.pth",
+      "bytes": 10075,
+      "sha256": "feb17b312916d0f32158ea3d9e14eaa806e3232d330327a5bf3d7c307b235680",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_live_sequence_sampling_is0/s.pth",
+      "bytes": 19813,
+      "sha256": "1c193198b8ef8228b7c8f4ebd34f2ff8cfffb8fc9184e7f8a2a48501f3904fcd",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_motion_gate_and_unified_s0/static.pth",
+      "bytes": 31685,
+      "sha256": "f9f4d924dac82e30ac6efdb7a6cebec9baa75fc5484a09e2ae1b8a1256622dfb",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_old_checkpoint_keeps_orig0/old.pth",
+      "bytes": 8119,
+      "sha256": "ef1f786401c15c1fab570753127b0ef2694e8d28d399775c117501f5de5e7f63",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_predictor_live_registrati0/export.traced.pt",
+      "bytes": 35240,
+      "sha256": "bab5587976399138258a4a89c28f071168f34a33fdb44ebb6514a44f04cf5551",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_predictor_live_registrati0/export.weights.json",
+      "bytes": 11257,
+      "sha256": "437898959ac287e54c5442a15e45cc424b97bc6075c61018b4c96c2ce53fa593",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_predictor_live_registrati0/model.pth",
+      "bytes": 8859,
+      "sha256": "9fc17bc79ef19eec113256aa28ecc732e36f599cb7e3afd9ca9c9cffc96e2961",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_recorded_dataset_trains_c0/model.pth",
+      "bytes": 257193,
+      "sha256": "4fb2f6b3c5e097275d50e0499f35dadec2bb2fe397eda92948abac33dff2f12c",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_resmlp_cosine_prototype_a0/static_resmlp.pth",
+      "bytes": 85769,
+      "sha256": "7a7e145715c20c02dab85bdbfc4282dae41d50bade8787347c2116502e1fa85e",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_sequence_storage_and_pred0/model.pth",
+      "bytes": 20069,
+      "sha256": "545afae7ab22db1edec708202892ccf811a01f9d1761fdaded9d713a974a6588",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_small_training_and_cli_ev0/model.pth",
+      "bytes": 9947,
+      "sha256": "87a873ca591345c1211fb9d3981d7fe6fadb00924c5d592e1b16f5a04bfb3935",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_tcn_attention_sequence_mo0/seq_tcn.pth",
+      "bytes": 111619,
+      "sha256": "e8d9db93f140cc1ddb5dbb8e42ce4d5e5bb45e68ba4efafc9a8418effb941200",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_tcn_attention_sequence_mo0/web/sequence.traced.pt",
+      "bytes": 174437,
+      "sha256": "0a234fd6d5bb2c81d807628ec9c3ed16c1041df0cf60f2131af50b8b86977ee5",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_tcn_attention_sequence_mo0/web/sequence.weights.json",
+      "bytes": 264217,
+      "sha256": "70f3f35e986cc1f6d5a1258861f7337eb05f731750edc0b2dedc31b93ce089ad",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_train_static_and_export_w0/sign_classifier.pth",
+      "bytes": 35073,
+      "sha256": "9a5c6a7dc31bca18334770ecc72dc46aab46e06f126af0d57bd060311a576e9a",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_train_static_and_export_w0/web/sign_classifier.traced.pt",
+      "bytes": 87880,
+      "sha256": "482c50aaecfaeb05016d867891d50665271b3de13072053e3b2e8f1000a1cdb8",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    },
+    {
+      "path": "tmp/system-report-tests-20261022/test_train_static_and_export_w0/web/sign_classifier.weights.json",
+      "bytes": 68745,
+      "sha256": "b4c29cb6c31eca228978458bd424bb671bcbda8595fa83b63a758f6d91149e7b",
+      "reason": "unused experiment, obsolete export or disposable test model"
+    }
+  ],
+  "scan_errors": [],
+  "scope": "Model binaries, external model weights and obsolete export metadata only; datasets, reports and metrics remain."
+}

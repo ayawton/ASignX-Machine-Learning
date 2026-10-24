@@ -1,0 +1,31 @@
+{
+  "batch_id": "20261023T204025Z-77b413b625c5",
+  "label": "A",
+  "hand": "Right",
+  "samples": 10,
+  "camera": 0,
+  "state": "recording",
+  "capture_settings": {
+    "interval_seconds": 0.15,
+    "exposure": "auto",
+    "movement_limit_per_frame": 0.025
+  },
+  "preprocessing": "wrist_max_radius_v1",
+  "sessions": [
+    {
+      "id": "fa71499cc3ed46cfb9c3dd77e913e5da",
+      "complete": true,
+      "frames": 10
+    },
+    {
+      "id": "9498339096dc4a5d81a6d58dcc89e104",
+      "complete": true,
+      "frames": 10
+    },
+    {
+      "id": "1eb7c7c0bf874cf49dfa8ab422c643a1",
+      "complete": true,
+      "frames": 10
+    }
+  ]
+}

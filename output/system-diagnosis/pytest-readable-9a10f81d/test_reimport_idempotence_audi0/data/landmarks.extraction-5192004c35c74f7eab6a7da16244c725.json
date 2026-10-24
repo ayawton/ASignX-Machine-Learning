@@ -1,0 +1,46 @@
+{
+  "source": "origin",
+  "source_input_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-9a10f81d\\test_reimport_idempotence_audi0\\input",
+  "dataset_before_sha256": "c5c4f86fc956090b1ee974f3221998ae3a36ed685696a3ed60017125d49a0c1c",
+  "output_rows": [],
+  "preprocessing": "wrist_max_radius_v1",
+  "status": "committed",
+  "settings": {
+    "unusual_pose_threshold": 0.0,
+    "similarity_distance": 0.0
+  },
+  "report": {
+    "total_files_scanned": 2,
+    "exact_duplicates_skipped": 0,
+    "label_conflicts_skipped": 0,
+    "no_hand_detected": 0,
+    "anatomical_outliers_rejected": 0,
+    "statistical_outliers_rejected": 0,
+    "near_duplicates_pruned": 0,
+    "already_in_csv_skipped": 2,
+    "samples_appended": 0,
+    "per_label_counts": {},
+    "unreadable_images": 0,
+    "multiple_hands_skipped": 0,
+    "animated_images_skipped": 0,
+    "warnings": [],
+    "decisions": [
+      {
+        "path": "A\\0.png",
+        "label": "A",
+        "reason": "Repeated or very similar hand points",
+        "sha256": "7c5c38c6e93d209595acc84de5f46100545647d6a798a343264fa21b1e3c68d6",
+        "group": "default"
+      },
+      {
+        "path": "A\\1.png",
+        "label": "A",
+        "reason": "Repeated or very similar hand points",
+        "sha256": "1fc7900de7073cbf7a54f056b24d832c73cc73e112d8a1a32a6ccd79ac56f47d",
+        "group": "default"
+      }
+    ],
+    "audit_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-9a10f81d\\test_reimport_idempotence_audi0\\data\\landmarks.extraction-5192004c35c74f7eab6a7da16244c725.json"
+  },
+  "dataset_after_sha256": "c5c4f86fc956090b1ee974f3221998ae3a36ed685696a3ed60017125d49a0c1c"
+}

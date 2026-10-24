@@ -1,0 +1,17 @@
+{
+  "static_checkpoint_load_and_inference": true,
+  "dynamic_checkpoint_load_and_inference": true,
+  "static_labels": 24,
+  "dynamic_labels": [
+    "J",
+    "Z"
+  ],
+  "detector_and_camera_import": true,
+  "gui_source_imports": [
+    "ml.extractor_gui",
+    "ml.csv_merger_gui",
+    "ml.manual_training_gui",
+    "ml.dynamic_studio_gui"
+  ],
+  "camera_or_visible_gui_opened": false
+}

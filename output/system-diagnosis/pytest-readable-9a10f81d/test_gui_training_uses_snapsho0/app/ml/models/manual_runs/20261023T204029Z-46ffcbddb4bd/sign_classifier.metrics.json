@@ -1,0 +1,124 @@
+{
+  "labels": [
+    "A",
+    "B"
+  ],
+  "best_epoch": 1,
+  "validation": {
+    "accuracy": 0.55,
+    "macro_precision": 0.5666666666666667,
+    "macro_recall": 0.55,
+    "macro_f1": 0.52,
+    "weighted_f1": 0.52,
+    "per_class": {
+      "A": {
+        "precision": 0.6,
+        "recall": 0.3,
+        "f1": 0.4,
+        "support": 10
+      },
+      "B": {
+        "precision": 0.5333333333333333,
+        "recall": 0.8,
+        "f1": 0.64,
+        "support": 10
+      }
+    },
+    "labels": [
+      "A",
+      "B"
+    ],
+    "confusion_matrix": [
+      [
+        3,
+        7
+      ],
+      [
+        2,
+        8
+      ]
+    ],
+    "loss": 1.0088119506835938
+  },
+  "test": {
+    "accuracy": 0.35,
+    "macro_precision": 0.30000000000000004,
+    "macro_recall": 0.35,
+    "macro_f1": 0.30666666666666664,
+    "weighted_f1": 0.30666666666666664,
+    "per_class": {
+      "A": {
+        "precision": 0.2,
+        "recall": 0.1,
+        "f1": 0.13333333333333333,
+        "support": 10
+      },
+      "B": {
+        "precision": 0.4,
+        "recall": 0.6,
+        "f1": 0.48,
+        "support": 10
+      }
+    },
+    "labels": [
+      "A",
+      "B"
+    ],
+    "confusion_matrix": [
+      [
+        1,
+        9
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    "loss": 1.205500602722168
+  },
+  "selection_metric": "macro_f1",
+  "benchmark": "legacy_session_groups_not_signer_independent",
+  "history": [
+    {
+      "epoch": 1,
+      "lr": 1e-05,
+      "train_loss": 0.7858648300170898,
+      "validation": {
+        "accuracy": 0.55,
+        "macro_precision": 0.5666666666666667,
+        "macro_recall": 0.55,
+        "macro_f1": 0.52,
+        "weighted_f1": 0.52,
+        "per_class": {
+          "A": {
+            "precision": 0.6,
+            "recall": 0.3,
+            "f1": 0.4,
+            "support": 10
+          },
+          "B": {
+            "precision": 0.5333333333333333,
+            "recall": 0.8,
+            "f1": 0.64,
+            "support": 10
+          }
+        },
+        "labels": [
+          "A",
+          "B"
+        ],
+        "confusion_matrix": [
+          [
+            3,
+            7
+          ],
+          [
+            2,
+            8
+          ]
+        ],
+        "loss": 1.0088119506835938
+      }
+    }
+  ]
+}

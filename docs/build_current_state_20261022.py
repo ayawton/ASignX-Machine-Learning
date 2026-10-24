@@ -4,7 +4,7 @@ from collections import Counter
 from datetime import datetime,timezone
 import csv,json,sys,hashlib,re
 from xml.sax.saxutils import escape
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tmp/pdf_dependencies'))
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));
 import torch
 from ml.model import load_checkpoint
 from ml.sequence_model import load_sequence_checkpoint

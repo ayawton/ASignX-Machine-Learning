@@ -1,0 +1,67 @@
+{
+  "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+  "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+  "total_images": 65774,
+  "processed_images": 65774,
+  "unique_current_rows_matched": 15735,
+  "complete": true,
+  "scope": "Image/recording-folder evidence only. No signer identity invented.",
+  "partitioned_execution": true,
+  "partitions": [
+    {
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+      "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+      "total_images": 12547,
+      "processed_images": 12547,
+      "unique_current_rows_matched": 2411,
+      "complete": true,
+      "elapsed_seconds_this_process": 299.45,
+      "images_per_second": 10.51,
+      "scope": "Image/recording-folder evidence only. No signer identity invented."
+    },
+    {
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+      "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+      "total_images": 13898,
+      "processed_images": 13898,
+      "unique_current_rows_matched": 4311,
+      "complete": true,
+      "elapsed_seconds_this_process": 935.03,
+      "images_per_second": 14.86,
+      "scope": "Image/recording-folder evidence only. No signer identity invented."
+    },
+    {
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+      "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+      "total_images": 13393,
+      "processed_images": 13393,
+      "unique_current_rows_matched": 3369,
+      "complete": true,
+      "elapsed_seconds_this_process": 937.25,
+      "images_per_second": 14.29,
+      "scope": "Image/recording-folder evidence only. No signer identity invented."
+    },
+    {
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+      "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+      "total_images": 13154,
+      "processed_images": 13154,
+      "unique_current_rows_matched": 2292,
+      "complete": true,
+      "elapsed_seconds_this_process": 978.95,
+      "images_per_second": 13.44,
+      "scope": "Image/recording-folder evidence only. No signer identity invented."
+    },
+    {
+      "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+      "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+      "total_images": 12782,
+      "processed_images": 12782,
+      "unique_current_rows_matched": 3352,
+      "complete": true,
+      "elapsed_seconds_this_process": 893.06,
+      "images_per_second": 14.31,
+      "scope": "Image/recording-folder evidence only. No signer identity invented."
+    }
+  ]
+}

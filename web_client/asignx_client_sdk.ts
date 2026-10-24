@@ -23,7 +23,9 @@ export interface ASignXModelMetadata {
   model_type: string;
   labels: string[];
   input_dim: number;
-  hidden_dim: number;
+  hidden_sizes?: number[];
+  /** Legacy export field. New exports provide hidden_sizes. */
+  hidden_dim?: number;
   use_kinematic_features: boolean;
   use_cosine_head: boolean;
   class_centroids?: Record<string, number[]>;
@@ -32,8 +34,9 @@ export interface ASignXModelMetadata {
 
 export interface FingerCoachingFeedback {
   finger: "Thumb" | "Index" | "Middle" | "Ring" | "Pinky";
-  meanError: number;
-  isAligned: boolean;
+  meanError: number | null;
+  isAligned: boolean | null;
+  referenceAvailable: boolean;
   hint: string;
 }
 
@@ -228,6 +231,7 @@ export function softmax(logits: Float32Array | number[]): Float32Array {
  */
 export class ASignLearnCoach {
   private holdCounter = 0;
+  private targetLabel: string | null = null;
   private readonly metadata: ASignXModelMetadata;
   private readonly requiredHoldFrames: number;
   private readonly passConfidence: number;
@@ -248,6 +252,11 @@ export class ASignLearnCoach {
     logits: Float32Array,
     targetLabel: string
   ): ASignLearnDiagnostic {
+    targetLabel = targetLabel.trim().toUpperCase();
+    if (targetLabel !== this.targetLabel) {
+      this.holdCounter = 0;
+      this.targetLabel = targetLabel;
+    }
     const probs = softmax(logits);
     const targetIdx = this.metadata.labels.indexOf(targetLabel.toUpperCase());
     const targetProbability = targetIdx >= 0 ? probs[targetIdx] : 0.0;
@@ -275,8 +284,9 @@ export class ASignLearnCoach {
       FingerCoachingFeedback["finger"],
       number[]
     ][]) {
-      let meanError = 0.0;
-      if (centroid && centroid.length === 63) {
+      const referenceAvailable = !!centroid && centroid.length === 63 && centroid.every(Number.isFinite);
+      let meanError: number | null = null;
+      if (referenceAvailable && centroid) {
         let totalDist = 0.0;
         for (const idx of jointIndices) {
           const dx = normalized63D[idx * 3] - centroid[idx * 3];
@@ -287,12 +297,15 @@ export class ASignLearnCoach {
         meanError = totalDist / jointIndices.length;
       }
 
-      const isAligned = meanError <= this.fingerErrorTolerance;
+      const isAligned = meanError === null ? null : meanError <= this.fingerErrorTolerance;
       fingerFeedback.push({
         finger,
         meanError,
         isAligned,
-        hint: isAligned
+        referenceAvailable,
+        hint: !referenceAvailable
+          ? `Reference pose unavailable for '${targetLabel}'.`
+          : isAligned
           ? `${finger} position looks great!`
           : `Adjust your ${finger.toLowerCase()} finger to match the '${targetLabel}' reference pose.`,
       });
@@ -310,6 +323,7 @@ export class ASignLearnCoach {
 
   public reset(): void {
     this.holdCounter = 0;
+    this.targetLabel = null;
   }
 }
 
@@ -317,7 +331,7 @@ export class ASignLearnCoach {
  * ASignLive Temporal Stabilizer + MotionGate:
  * Prevents duplicate emissions and suppresses static false positives during fast motion.
  */
-export class ASignLiveStabilizer {
+class HandLiveStabilizer {
   private candidateLabel: string | null = null;
   private candidateStreak = 0;
   private stableLabel: string | null = null;
@@ -325,6 +339,7 @@ export class ASignLiveStabilizer {
   private missingStreak = 0;
   private prevWrist: Point3D | null = null;
   private motionHistory: { points: Point3D[]; timestamp: number }[] = [];
+  private lastTimestamp: number | null = null;
   private readonly metadata: ASignXModelMetadata;
   private readonly confidenceThreshold: number;
   private readonly stableFrames: number;
@@ -351,11 +366,18 @@ export class ASignLiveStabilizer {
     // Match Python: wrist + fingertips over a time-bounded history, at reference 30 FPS.
     const wrist = rawLandmarks[0];
     let velocity = 0.0;
-    const previous = this.motionHistory[this.motionHistory.length - 1];
-    if (!Number.isFinite(timestamp) || (previous && timestamp <= previous.timestamp)) {
+    if (!Number.isFinite(timestamp) || (this.lastTimestamp !== null && timestamp <= this.lastTimestamp)) {
       throw new Error("Motion timestamps must increase and be finite");
     }
-    if (previous && timestamp - previous.timestamp > 0.5) this.motionHistory = [];
+    if (this.lastTimestamp !== null && timestamp - this.lastTimestamp > 0.5) {
+      this.motionHistory = [];
+      this.candidateLabel = null;
+      this.candidateStreak = 0;
+      this.stableLabel = null;
+      this.lastEmittedLabel = null;
+      this.missingStreak = 0;
+    }
+    this.lastTimestamp = timestamp;
     this.motionHistory.push({ points: [0, 4, 8, 12, 16, 20].map(i => ({ ...rawLandmarks[i] })), timestamp });
     if (this.motionHistory.length > 128) this.motionHistory.shift();
     while (this.motionHistory.length > 2 && timestamp - this.motionHistory[0].timestamp > 7 / 30) this.motionHistory.shift();
@@ -391,6 +413,7 @@ export class ASignLiveStabilizer {
     } else {
       this.candidateLabel = predictedLabel;
       this.candidateStreak = 1;
+      this.stableLabel = null;
     }
 
     if (this.candidateLabel !== null && this.candidateStreak >= this.stableFrames) {
@@ -416,12 +439,56 @@ export class ASignLiveStabilizer {
     this.missingStreak += 1;
     this.candidateLabel = null;
     this.candidateStreak = 0;
+    this.stableLabel = null;
     this.prevWrist = null;
     this.motionHistory = [];
     if (this.missingStreak >= this.releaseFrames) {
       this.stableLabel = null;
       this.lastEmittedLabel = null;
     }
+  }
+}
+
+/** Independent motion and confirmation state for each physical hand slot. */
+export class ASignLiveStabilizer {
+  private readonly states = new Map<"Left" | "Right", HandLiveStabilizer>();
+  private readonly createState: () => HandLiveStabilizer;
+
+  constructor(
+    metadata: ASignXModelMetadata,
+    confidenceThreshold: number = 0.8,
+    stableFrames: number = 5,
+    releaseFrames: number = 10,
+    motionThreshold: number = 0.045
+  ) {
+    this.createState = () => new HandLiveStabilizer(
+      metadata, confidenceThreshold, stableFrames, releaseFrames, motionThreshold
+    );
+  }
+
+  public update(
+    hand: "Left" | "Right",
+    rawLandmarks: Point3D[],
+    logits: Float32Array,
+    timestamp: number = performance.now() / 1000
+  ): ASignLiveRecognition {
+    let state = this.states.get(hand);
+    if (!state) {
+      state = this.createState();
+      this.states.set(hand, state);
+    }
+    return state.update(hand, rawLandmarks, logits, timestamp);
+  }
+
+  /** Omit hand when neither hand is visible; otherwise release only that hand. */
+  public markHandMissing(hand?: "Left" | "Right"): void {
+    if (hand) this.states.get(hand)?.markHandMissing();
+    else for (const state of this.states.values()) state.markHandMissing();
+  }
+
+  public reset(hand?: "Left" | "Right"): void {
+    if (hand) this.states.delete(hand);
+    else this.states.clear();
   }
 }
 

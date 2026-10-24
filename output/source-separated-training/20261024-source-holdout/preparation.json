@@ -1,0 +1,274 @@
+{
+  "protocol": {
+    "created_utc": "2026-10-23T21:49:07.148344+00:00",
+    "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+    "retained_checkpoint_sha256": "98559a10c553c23d2c6aad227f52416b59ad92483bf4f079cfca5eb512bf5b66",
+    "allocation": {
+      "archive4": "train",
+      "manual": "train",
+      "archive5": "validation",
+      "archive3": "test"
+    },
+    "train_config": {
+      "batch_size": 64,
+      "learning_rate": 0.002,
+      "weight_decay": 0.0001,
+      "label_smoothing": 0.05,
+      "epochs": 50,
+      "hidden_sizes": [
+        128,
+        64
+      ],
+      "dropout": 0.2,
+      "augment": true,
+      "use_kinematics": true,
+      "residual": true,
+      "cosine_head": true,
+      "validation_fraction": 0.15,
+      "test_fraction": 0.15,
+      "seed": 42,
+      "device": "cpu",
+      "static_hand_preprocessing": "left_x_reflection_v1",
+      "selection_metric": "macro_f1",
+      "class_weighting": "inverse",
+      "augmentation_scale": 1.0,
+      "group_plan": null,
+      "evaluate_test": false,
+      "initial_checkpoint": null
+    },
+    "selection": "validation macro F1, tie-break validation loss; test only after checkpoint selection",
+    "inclusion": "Verified whole-session import/capture links or all-63-coordinate image replay within 1e-6, matching label and handedness. Exclude unresolved/multi-family/session-conflicting/canonical-conflicting rows.",
+    "scope": "Source-family transfer diagnostic; signer independence not verified. Never initialize with a checkpoint exposed to new holdout rows.",
+    "promotion": "No deployment or active model replacement",
+    "archives3and5_complete_before_training": true
+  },
+  "cache_metadata": {
+    "archive3": {
+      "inputs": {
+        "archive_sha256": "522f6219d876d1c98eccdece63d2d7ea0a277b5343b74106f0fb57bbc1f63a7f",
+        "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+        "detector_sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1",
+        "extractor_sha256": "05718bd83b9da91b461d74eda96280e9407b629a32405f476e6b50c72637e4bc",
+        "handedness_policy": "must_match",
+        "opencv": "5.0.0",
+        "tolerance": 1e-06
+      },
+      "progress": {
+        "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+        "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+        "total_images": 65774,
+        "processed_images": 65774,
+        "unique_current_rows_matched": 15735,
+        "complete": true,
+        "scope": "Image/recording-folder evidence only. No signer identity invented.",
+        "partitioned_execution": true,
+        "partitions": [
+          {
+            "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+            "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+            "total_images": 12547,
+            "processed_images": 12547,
+            "unique_current_rows_matched": 2411,
+            "complete": true,
+            "elapsed_seconds_this_process": 299.45,
+            "images_per_second": 10.51,
+            "scope": "Image/recording-folder evidence only. No signer identity invented."
+          },
+          {
+            "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+            "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+            "total_images": 13898,
+            "processed_images": 13898,
+            "unique_current_rows_matched": 4311,
+            "complete": true,
+            "elapsed_seconds_this_process": 935.03,
+            "images_per_second": 14.86,
+            "scope": "Image/recording-folder evidence only. No signer identity invented."
+          },
+          {
+            "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+            "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+            "total_images": 13393,
+            "processed_images": 13393,
+            "unique_current_rows_matched": 3369,
+            "complete": true,
+            "elapsed_seconds_this_process": 937.25,
+            "images_per_second": 14.29,
+            "scope": "Image/recording-folder evidence only. No signer identity invented."
+          },
+          {
+            "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+            "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+            "total_images": 13154,
+            "processed_images": 13154,
+            "unique_current_rows_matched": 2292,
+            "complete": true,
+            "elapsed_seconds_this_process": 978.95,
+            "images_per_second": 13.44,
+            "scope": "Image/recording-folder evidence only. No signer identity invented."
+          },
+          {
+            "archive": "C:\\Users\\jibbi\\Downloads\\archive (3).zip",
+            "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+            "total_images": 12782,
+            "processed_images": 12782,
+            "unique_current_rows_matched": 3352,
+            "complete": true,
+            "elapsed_seconds_this_process": 893.06,
+            "images_per_second": 14.31,
+            "scope": "Image/recording-folder evidence only. No signer identity invented."
+          }
+        ]
+      },
+      "status_counts": {
+        "geometry_match": 15735,
+        "no_geometry_match": 46247,
+        "no_single_hand": 3792
+      }
+    },
+    "archive5": {
+      "inputs": {
+        "archive_sha256": "5346f6b753c097adf1e665e540ea5e5d13617d88bfbb8497938aa3d9836b86c4",
+        "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+        "detector_sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1",
+        "extractor_sha256": "05718bd83b9da91b461d74eda96280e9407b629a32405f476e6b50c72637e4bc",
+        "handedness_policy": "must_match",
+        "opencv": "5.0.0",
+        "tolerance": 1e-06
+      },
+      "progress": {
+        "archive": "C:\\Users\\jibbi\\Downloads\\archive (5).zip",
+        "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+        "total_images": 24000,
+        "processed_images": 24000,
+        "unique_current_rows_matched": 11281,
+        "complete": true,
+        "elapsed_seconds_this_process": 1156.63,
+        "images_per_second": 20.75,
+        "scope": "Image/recording-folder evidence only. No signer identity invented."
+      },
+      "status_counts": {
+        "geometry_match": 11281,
+        "no_geometry_match": 12365,
+        "no_single_hand": 354
+      }
+    }
+  },
+  "included_rows": 122708,
+  "excluded_rows": 36826,
+  "excluded_reasons": {
+    "unresolved_source": 36826
+  },
+  "source_counts": {
+    "archive5": 11281,
+    "archive3": 15735,
+    "archive4": 93892,
+    "manual": 1800
+  },
+  "split_counts": {
+    "train": 95692,
+    "validation": 11281,
+    "test": 15735
+  },
+  "per_class_counts": {
+    "train": {
+      "A": 4189,
+      "B": 4210,
+      "C": 3867,
+      "D": 3935,
+      "E": 3676,
+      "F": 4895,
+      "G": 4126,
+      "H": 4065,
+      "I": 3940,
+      "K": 4523,
+      "L": 4637,
+      "M": 2862,
+      "N": 2602,
+      "O": 4146,
+      "P": 3384,
+      "Q": 3627,
+      "R": 4135,
+      "S": 3997,
+      "T": 4316,
+      "U": 4181,
+      "V": 4025,
+      "W": 4165,
+      "X": 3894,
+      "Y": 4295
+    },
+    "validation": {
+      "A": 271,
+      "B": 447,
+      "C": 470,
+      "D": 494,
+      "E": 471,
+      "F": 282,
+      "G": 603,
+      "H": 572,
+      "I": 485,
+      "K": 535,
+      "L": 481,
+      "M": 406,
+      "N": 592,
+      "O": 386,
+      "P": 562,
+      "Q": 535,
+      "R": 527,
+      "S": 424,
+      "T": 540,
+      "U": 502,
+      "V": 473,
+      "W": 408,
+      "X": 564,
+      "Y": 251
+    },
+    "test": {
+      "A": 425,
+      "B": 267,
+      "C": 823,
+      "D": 672,
+      "E": 555,
+      "F": 633,
+      "G": 1114,
+      "H": 1145,
+      "I": 762,
+      "K": 840,
+      "L": 716,
+      "M": 637,
+      "N": 673,
+      "O": 599,
+      "P": 462,
+      "Q": 417,
+      "R": 692,
+      "S": 605,
+      "T": 701,
+      "U": 508,
+      "V": 774,
+      "W": 338,
+      "X": 781,
+      "Y": 596
+    }
+  },
+  "handedness_counts": {
+    "train": {
+      "Right": 78492,
+      "Left": 17200
+    },
+    "validation": {
+      "Right": 10043,
+      "Left": 1238
+    },
+    "test": {
+      "Left": 15688,
+      "Right": 47
+    }
+  },
+  "protected_inputs": {
+    "ml\\data\\landmarks.csv": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+    "ml\\models\\manual_runs\\20261022T071741Z-87dde74ec0df\\sign_classifier.pth": "4fb80db8f024a4dd5add686ad31d3914d7d05253b2fb4ce2cc63c9fc34a658f9",
+    "ml\\models\\sequence_classifier.pth": "1e2228a5970d18b19a25f62cb76fc560aa4c5e33962a8bc2a362a87309db2ec9",
+    "ml\\models\\sign_classifier_canonical.pth": "98559a10c553c23d2c6aad227f52416b59ad92483bf4f079cfca5eb512bf5b66"
+  },
+  "dataset_sha256": "077a1f76cfad3a023155991b6a237cef7dff3a7234b46d401560d885b7140614"
+}

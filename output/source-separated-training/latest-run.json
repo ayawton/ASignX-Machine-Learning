@@ -1,0 +1,14 @@
+{
+  "directory": "output\\source-separated-training\\20261024-source-holdout",
+  "status": "complete",
+  "report": "output\\source-separated-training\\20261024-source-holdout\\report.md",
+  "model": "output\\source-separated-training\\20261024-source-holdout\\model.pth",
+  "epochs_completed": 50,
+  "best_epoch": 11,
+  "test_accuracy": 0.6284080076263108,
+  "test_macro_f1": 0.5978771709871854,
+  "deployed": false,
+  "checkpoint_retained": false,
+  "checkpoint_removed_reason": "Owner requested deletion of unused models; historical metrics and predictions retained.",
+  "model_cleanup_manifest": "output/model-cleanup/20261024/plan.json"
+}

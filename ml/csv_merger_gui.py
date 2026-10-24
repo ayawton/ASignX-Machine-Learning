@@ -150,6 +150,17 @@ class MergerApp:
 
 def main():
     root = tk.Tk()
+    if '--self-test' in sys.argv:
+        import json
+        import numpy as np
+        root.withdraw()
+        MergerApp(root)
+        root.update()
+        output = Path(sys.argv[sys.argv.index('--self-test') + 1])
+        output.write_text(json.dumps({'ok': True, 'python': sys.version,
+                                     'tk': tk.TkVersion, 'numpy': np.__version__}), encoding='utf-8')
+        root.destroy()
+        return
     MergerApp(root)
     root.mainloop()
 

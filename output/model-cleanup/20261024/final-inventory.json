@@ -1,0 +1,16 @@
+{
+  "remaining_model_files": [
+    "asignx/assets/hand_landmarker.task",
+    "ml/models/sequence_classifier.pth",
+    "ml/models/sign_classifier_canonical.pth",
+    "output/extractor-reviewed/ASignX_DataExtractor/_internal/asignx/assets/hand_landmarker.task",
+    "output/python314-migration/onnx/models/sequence_classifier.onnx",
+    "output/python314-migration/onnx/models/sequence_classifier.onnx.data",
+    "output/python314-migration/onnx/models/sign_classifier_canonical.onnx",
+    "output/python314-migration/onnx/models/sign_classifier_canonical.onnx.data"
+  ],
+  "retained_hashes_match": true,
+  "unused_model_files_remaining": 0,
+  "deleted_files_confirmed_absent": 232,
+  "scan_errors": []
+}

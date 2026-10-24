@@ -1,0 +1,63 @@
+{
+  "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+  "archives": {
+    "archive3": {
+      "images_processed": 65774,
+      "unique_current_rows_matched": 15735,
+      "status_counts": {
+        "geometry_match": 15735,
+        "no_geometry_match": 46247,
+        "no_single_hand": 3792
+      },
+      "inputs": {
+        "archive_sha256": "522f6219d876d1c98eccdece63d2d7ea0a277b5343b74106f0fb57bbc1f63a7f",
+        "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+        "detector_sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1",
+        "extractor_sha256": "05718bd83b9da91b461d74eda96280e9407b629a32405f476e6b50c72637e4bc",
+        "handedness_policy": "must_match",
+        "opencv": "5.0.0",
+        "tolerance": 1e-06
+      }
+    },
+    "archive5": {
+      "images_processed": 24000,
+      "unique_current_rows_matched": 11281,
+      "status_counts": {
+        "geometry_match": 11281,
+        "no_geometry_match": 12365,
+        "no_single_hand": 354
+      },
+      "inputs": {
+        "archive_sha256": "5346f6b753c097adf1e665e540ea5e5d13617d88bfbb8497938aa3d9836b86c4",
+        "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+        "detector_sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1",
+        "extractor_sha256": "05718bd83b9da91b461d74eda96280e9407b629a32405f476e6b50c72637e4bc",
+        "handedness_policy": "must_match",
+        "opencv": "5.0.0",
+        "tolerance": 1e-06
+      }
+    }
+  },
+  "signer_independence_verified": false,
+  "implementation_sha256": {
+    "tmp\\recover_sources_exhaustive.py": "fc35ca84204119b7f291b46409c44b35041d77cf9e19e83a9570ee4bcbf56026",
+    "asignx\\detector.py": "cfe71963a2eb345182e2480fd4a30c1fde1c43339d7bc35573330a2fef32a36d",
+    "ml\\extract_dataset.py": "05718bd83b9da91b461d74eda96280e9407b629a32405f476e6b50c72637e4bc",
+    "ml\\preprocessing.py": "2a895c81e40dcef0d66b543ab9660f1540df4255eb77491fa31deb9b40ce1d3f",
+    "ml\\data_io.py": "b25725f2a559a6b69a615eaf067f8d75ed7fbd3c1875952f318bf98af9526f07"
+  },
+  "recovery_configuration": {
+    "static_image_mode": true,
+    "max_num_hands": 2,
+    "min_detection_confidence": 0.5,
+    "require_single_hand": true,
+    "retry_path": "ml.extract_dataset._detect_hand_with_retries"
+  },
+  "newly_source_supported_rows": 27016,
+  "source_supported_rows_total": 122708,
+  "current_rows": 159534,
+  "sessions_with_legacy_image_evidence": 1615,
+  "new_source_co_location_constraints": 1603,
+  "multi_family_sessions": [],
+  "constrained_sessions_total": 1648
+}

@@ -1,0 +1,11 @@
+{
+  "output/extractor-reviewed/ASignX_DataExtractor": 662646898,
+  "output/extractor-reviewed/ASignX_DataExtractor.zip": 260353919,
+  "output/csv-merger/ASignX_CSVMerger": 58895360,
+  "dist/ASignX_DynamicStudio.exe": 123951996,
+  "tmp/py314-packages/ASignX_DataExtractor": 306288173,
+  "tmp/py314-packages/ASignX_CSVMerger": 60874675,
+  "tmp/py314-packages/ASignX_DynamicStudio.exe": 124987039,
+  "tmp/pdf_dependencies": 85821389,
+  "tmp/dynamic-build-tools": 320285
+}

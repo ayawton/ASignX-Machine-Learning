@@ -2,6 +2,9 @@
 
 A comprehensive, easy-to-follow guide on how to extract and clean datasets (via the portable `.exe` GUI or CLI), collect live data, train the upgraded **SignResMLP** and **TCN-Attention** models, run unified static + dynamic inference, and export models for client-side web deployment (**ASignLearn** & **ASignLive**).
 
+All Python commands in this guide use the project Python 3.14 environment.
+Run `.\setup_python314.ps1`, then `.\.venv-py314\Scripts\Activate.ps1` first.
+
 ---
 
 ## Which Model Are You Training?
@@ -17,17 +20,17 @@ ASignX provides a **Dual-Path Unified Architecture**:
 ## Part 1: Static Hand Signs (Letters A–Y, Static Poses)
 
 ### Option A: Portable Standalone Executable & Desktop GUI (Recommended for Any Device)
-You can copy the **`dist/ASignX_DataExtractor/`** folder to any Windows PC or USB drive (no Python or PyTorch installation required on that PC) and launch the **Standalone Static Dataset Extractor**:
+You can copy the **`output/extractor-reviewed/ASignX_DataExtractor/`** folder to any Windows PC or USB drive (no Python or PyTorch installation required on that PC) and launch the **Standalone Static Dataset Extractor**:
 
 - **Launch Desktop GUI (Double-Click or Run in Terminal):**
   ```powershell
-  .\dist\ASignX_DataExtractor\ASignX_DataExtractor.exe
+  .\output\extractor-reviewed\ASignX_DataExtractor\ASignX_DataExtractor.exe
   ```
   *(Or via Python: `python -m ml.extractor_gui`)*
 
 - **Or Run in Headless CLI Mode (`.exe` or Python):**
   ```powershell
-  .\dist\ASignX_DataExtractor\ASignX_DataExtractor.exe --input path/to/dataset_folder_or_zip --output ml/data/landmarks.csv
+  .\output\extractor-reviewed\ASignX_DataExtractor\ASignX_DataExtractor.exe --input path/to/dataset_folder_or_zip --output ml/data/landmarks.csv
   # Or via Python module:
   python -m ml.extract_dataset --input path/to/dataset_folder_or_zip --output ml/data/landmarks.csv
   ```
@@ -232,7 +235,7 @@ python -m ml.export_onnx --checkpoint ml/models/sequence_classifier.pth --output
 
 | Task | Input | Output Format | Command |
 |---|---|---|---|
-| **Launch Portable Extractor GUI** | Folder or `.zip` | Appends clean rows to `landmarks.csv` | `.\dist\ASignX_DataExtractor\ASignX_DataExtractor.exe` |
+| **Launch Portable Extractor GUI** | Folder or `.zip` | Appends clean rows to `landmarks.csv` | `.\output\extractor-reviewed\ASignX_DataExtractor\ASignX_DataExtractor.exe` |
 | **Extract & clean via CLI** | Folder or `.zip` | Appends clean rows to `landmarks.csv` | `python -m ml.extract_dataset --input dataset.zip --output ml/data/landmarks.csv` |
 | **Collect static poses** | Webcam | Rows in `ml/data/landmarks.csv` | `python -m ml.collect_data --label A --samples 200` |
 | **Train static model (`SignResMLP`)** | `landmarks.csv` | `ml/models/sign_classifier_canonical.pth` | `python -m ml.train --epochs 50` |

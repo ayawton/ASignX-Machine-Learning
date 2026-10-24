@@ -1,0 +1,85 @@
+{
+  "datasets": [
+    {
+      "path": "ml/data/landmarks.csv",
+      "bytes": 205563209,
+      "sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2"
+    },
+    {
+      "path": "ml/data/landmarks.csv.backup-20261022T062606Z-b665b450a219",
+      "bytes": 125536324,
+      "sha256": "4a160bec73556408c12f9457577c765c89e9f8cf09eae3d658fe39d3064f58cd"
+    },
+    {
+      "path": "ml/data/landmarks.csv.backup-20261022T070547Z-d3adc897b144",
+      "bytes": 204004282,
+      "sha256": "16589a471bbbc2152aedc343f45298c007716066649dc8199d6d99952cda2023"
+    },
+    {
+      "path": "ml/data/landmarks.csv.backup-20261022T071143Z-cf28df13ee05",
+      "bytes": 204783224,
+      "sha256": "3e705e8fd1edd161e77703fd7057a30d33467c833fe3c9be42606b4da5c65d07"
+    },
+    {
+      "path": "ml/models/manual_runs/20261022T071741Z-87dde74ec0df/landmarks.csv",
+      "bytes": 205563209,
+      "sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2"
+    },
+    {
+      "path": "output/full-static-retraining/20261023T195828Z/dataset.csv",
+      "bytes": 205563209,
+      "sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2"
+    },
+    {
+      "path": "output/added-M-reevaluation/20261023T190744Z/candidate-data.csv",
+      "bytes": 205043991,
+      "sha256": "f78e4581c7815ac60a34c963530535e396fd2f5a075b8a7c6cd88097216bc9f5"
+    },
+    {
+      "path": "output/source-separated-training/20261024-source-holdout/dataset.csv",
+      "bytes": 158251320,
+      "sha256": "077a1f76cfad3a023155991b6a237cef7dff3a7234b46d401560d885b7140614"
+    }
+  ],
+  "manual_archives": [
+    {
+      "path": "ml/data/manual_recordings/backups/20261022T062606Z-b665b450a219.zip",
+      "pngs": 600,
+      "png_compressed_bytes": 204085406,
+      "csvs": [
+        {
+          "name": "landmarks.csv",
+          "compressed": 86108599,
+          "uncompressed": 204004282
+        }
+      ],
+      "has_manifest": true
+    },
+    {
+      "path": "ml/data/manual_recordings/backups/20261022T070547Z-d3adc897b144.zip",
+      "pngs": 600,
+      "png_compressed_bytes": 178863032,
+      "csvs": [
+        {
+          "name": "landmarks.csv",
+          "compressed": 86434173,
+          "uncompressed": 204783224
+        }
+      ],
+      "has_manifest": true
+    },
+    {
+      "path": "ml/data/manual_recordings/backups/20261022T071143Z-cf28df13ee05.zip",
+      "pngs": 600,
+      "png_compressed_bytes": 187851773,
+      "csvs": [
+        {
+          "name": "landmarks.csv",
+          "compressed": 86759752,
+          "uncompressed": 205563209
+        }
+      ],
+      "has_manifest": true
+    }
+  ]
+}

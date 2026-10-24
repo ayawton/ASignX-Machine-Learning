@@ -1,0 +1,26 @@
+[
+  {
+    "path": "output/added-M-reevaluation/20261023T190744Z/candidate-data.csv",
+    "rows": 159134,
+    "rows_not_in_main_by_label_hand_float32_geometry": 0,
+    "unique_geometry_not_in_main": 0
+  },
+  {
+    "path": "output/source-separated-training/20261024-source-holdout/dataset.csv",
+    "rows": 122708,
+    "rows_not_in_main_by_label_hand_float32_geometry": 0,
+    "unique_geometry_not_in_main": 0
+  },
+  {
+    "path": "output/weak-class-training/combined.csv",
+    "rows": 164105,
+    "rows_not_in_main_by_label_hand_float32_geometry": 6371,
+    "unique_geometry_not_in_main": 6371
+  },
+  {
+    "path": "output/datasets/weak-classes/landmarks-weak-classes.csv",
+    "rows": 4118,
+    "rows_not_in_main_by_label_hand_float32_geometry": 4118,
+    "unique_geometry_not_in_main": 4118
+  }
+]

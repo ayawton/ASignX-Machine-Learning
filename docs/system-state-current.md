@@ -1,4 +1,7 @@
 # ASignX system state and development review
+
+Historical review: its measurements and environment descriptions refer to the original review. For current Python 3.14 setup and verified migration results, see [Python 3.14 migration](python314-migration.md).
+
 Build review | 20 October 2026 | Local working tree
 
 ASignX is a working landmark-based recognition prototype with static alphabet recognition, a two-class dynamic model, collection/import tools and an early browser SDK. It is not yet a validated general sign-language translator. The next useful work is to establish reliable data and live evaluation before expanding the neural networks or vocabulary.
@@ -150,20 +153,20 @@ Build identity
 Reviewed date: 20 October 2026, Asia/Singapore. Git HEAD at review: 9050c234d3e346223045e64f3a2e13501d65ccac. The checkout contains extensive uncommitted changes, so that commit alone does not reproduce the reviewed system. The report builder records SHA-256 hashes of relevant current source, model, manifest and metrics files in a companion evidence JSON. Such hashes identify inspected bytes; they do not replace archiving those files.
 
 Update this report every build
-The editable narrative is docs/system-state-current.md. Rebuild with py -3.11 docs/build_system_state_report.py. The builder refreshes the evidence JSON and PDF at output/pdf/system-state-current.pdf; it does not automatically rewrite interpretations, run tests or evaluate models. Review and update this narrative first so stale prose is not mistaken for a fresh audit. 
+The editable narrative is docs/system-state-current.md. Rebuild with .\.venv-py314\Scripts\python.exe docs/build_system_state_report.py. The builder refreshes the evidence JSON and PDF at output/pdf/system-state-current.pdf; it does not automatically rewrite interpretations, run tests or evaluate models. Review and update this narrative first so stale prose is not mistaken for a fresh audit. 
 
 For each new build: archive the previous PDF/source/evidence; rerun tests; reevaluate compatible checkpoints against their matching datasets/manifests; replace the numerical findings and verification dates in the source; review changes to preprocessing, labels, groups and deployment; rebuild and inspect rendered pages. 
 
 Static reproduction command
-    py -3.11 -m ml.evaluate `
+    .\.venv-py314\Scripts\python.exe -m ml.evaluate `
       --model ml/models/sign_classifier_canonical.pth `
       --output tmp/canonical-review-test.json
 
 Repository test command
-    py -3.11 -m pytest -q
+    .\.venv-py314\Scripts\python.exe -m pytest -q
 
 Report dependencies
-Python 3.11 with reportlab, pymupdf and Pillow. Install these explicitly for a clean environment. Rendered page PNGs/contact sheets go to tmp/pdfs/system-state/. 
+Python 3.14 with reportlab, pymupdf and Pillow. Install these explicitly for a clean environment. Rendered page PNGs/contact sheets go to tmp/pdfs/system-state/. 
 
 Primary repository references
 asignx/detector.py and main.py: tracking and launch wiring. ml/model.py and ml/sequence_model.py: model definitions. ml/preprocessing.py and ml/video.py: normalization, augmentation and sequence preparation. ml/dataset.py and ml/sequence_dataset.py: grouping and integrity checks. ml/train.py, ml/train_sequence.py and ml/evaluate.py: optimization and scoring. ml/predict.py and ml/predict_sequence.py: live decisions. ml/models/: inspected checkpoints, metrics and manifests. ml/data/landmarks.csv: current static dataset. ml/export_onnx.py and web_client/asignx_client_sdk.ts: browser export/helpers.

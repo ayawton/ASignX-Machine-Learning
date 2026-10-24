@@ -1,0 +1,1 @@
+The redundant dataset CSV in this directory was removed during approved cleanup. Its exact contents remain in the pinned final capture ZIP. See [restoration instructions](../../storage-audit/20261024/completed-cleanup.md). The restoration tool verifies the original SHA-256 and refuses to overwrite existing data.

@@ -88,6 +88,7 @@ def export_static_checkpoint(
             output_names=["logits"],
             dynamic_axes={"landmarks": {0: "batch_size"}, "logits": {0: "batch_size"}},
             opset_version=17,
+            verbose=False,  # Exporter progress glyphs can fail on redirected Windows cp1252 streams.
         )
         artifacts["onnx"] = output_onnx_path
     except Exception:
@@ -154,6 +155,7 @@ def export_sequence_checkpoint(
             output_names=["logits"],
             dynamic_axes={"sequence": {0: "batch_size"}, "logits": {0: "batch_size"}},
             opset_version=17,
+            verbose=False,
         )
         artifacts["onnx"] = output_onnx_path
     except Exception:

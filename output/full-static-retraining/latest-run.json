@@ -1,0 +1,9 @@
+{
+  "directory": "output\\full-static-retraining\\20261023T195828Z",
+  "status": "complete",
+  "model": "output\\full-static-retraining\\20261023T195828Z\\model.pth",
+  "report": "output\\full-static-retraining\\20261023T195828Z\\report.md",
+  "checkpoint_retained": false,
+  "checkpoint_removed_reason": "Owner requested deletion of unused models; historical metrics and predictions retained.",
+  "model_cleanup_manifest": "output/model-cleanup/20261024/plan.json"
+}

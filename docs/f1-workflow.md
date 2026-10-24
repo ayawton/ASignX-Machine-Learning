@@ -13,8 +13,8 @@ The baseline test macro F1 is 59.49%. Accuracy on rows with the legacy archive5 
 Reproduce the audit:
 
 ```powershell
-py -3.11 -m ml.audit_f1
-py -3.11 -m ml.audit_f1 --split validation --output output/f1-review/baseline-validation
+.\.venv-py314\Scripts\python.exe -m ml.audit_f1
+.\.venv-py314\Scripts\python.exe -m ml.audit_f1 --split validation --output output/f1-review/baseline-validation
 ```
 
 ## Controlled training
@@ -24,7 +24,7 @@ Both trainers now select checkpoints by validation **macro F1**, breaking ties w
 Run the paired five-variant experiment:
 
 ```powershell
-py -3.11 -m ml.experiment_f1 --epochs 12
+.\.venv-py314\Scripts\python.exe -m ml.experiment_f1 --epochs 12
 ```
 
 Variants change weighting, augmentation strength or label smoothing one at a time. Each uses the same seed, frozen split, 12-epoch schedule and batch size 512. Selection uses validation only; the winner is tested once after selection. These short CPU experiments are not directly equivalent to the older 50-epoch, batch-64 production run. Results and candidate checkpoints live under `output/f1-review/experiments/`; production files are never overwritten. The command resumes completed variants and refuses to reuse different configurations at the same paths.
@@ -36,8 +36,8 @@ Compare per-class precision/recall as well as macro F1. A validation improvement
 `output/f1-review/baseline/identity-plan-template.csv` lists every current session with identity fields blank. Fill them only from verified provenance. Required columns are `session_id,group_id,split`; optional identity columns are `signer_id,recording_id,source_id,device`. Each session needs exactly one row. A global group, signer, recording or supplied source must stay in one split across **all** labels. Each split must contain all labels. Use globally unique recording IDs, such as `person01-visit01`, rather than reusing `visit01` for unrelated people.
 
 ```powershell
-py -3.11 -m ml.train --group-plan path/to/reviewed-identities.csv --output ml/models/new-benchmark/model.pth --no-test
-py -3.11 -m ml.train_sequence --group-plan path/to/reviewed-sequence-identities.csv --output ml/models/new-sequence-benchmark/model.pth --no-test
+.\.venv-py314\Scripts\python.exe -m ml.train --group-plan path/to/reviewed-identities.csv --output ml/models/new-benchmark/model.pth --no-test
+.\.venv-py314\Scripts\python.exe -m ml.train_sequence --group-plan path/to/reviewed-sequence-identities.csv --output ml/models/new-sequence-benchmark/model.pth --no-test
 ```
 
 The default historical session splitting remains available for compatibility and diagnostic comparisons. Metrics explicitly label it as not signer-independent. The new group-plan loader rejects blank identities and identity leakage; it does not infer identities from a class name or session suffix.
@@ -47,7 +47,7 @@ The default historical session splitting remains available for compatibility and
 Fit thresholds from validation predictions only:
 
 ```powershell
-py -3.11 -m ml.calibrate_f1 --predictions output/f1-review/baseline-validation/predictions.npz --output output/f1-review/baseline.calibration.json
+.\.venv-py314\Scripts\python.exe -m ml.calibrate_f1 --predictions output/f1-review/baseline-validation/predictions.npz --output output/f1-review/baseline.calibration.json
 ```
 
 Rejected known signs count as false negatives. A fitted threshold is bound to the checkpoint SHA-256 and label order. Optional negative prediction files must contain validation logits from the same model, matching labels/hash, and targets of `-1`; provide them using `--negative-predictions`.
@@ -63,19 +63,19 @@ The portable app's `dist/data/sequences` contains 16 clips: 11 J and 5 Z. An exa
 Generate the checklist and readiness report (automatically discovers the portable data folder):
 
 ```powershell
-py -3.11 -m ml.collection_plan
+.\.venv-py314\Scripts\python.exe -m ml.collection_plan
 ```
 
 The checklist proposes 10 people, two visits, varied J/Z takes and separate negative streams. These are planned slots, not recorded samples or a statistical guarantee. Reserve people 1â€“6 for training, 7â€“8 for validation and 9â€“10 for final testing before recording. Replace planning placeholders with actual consistent pseudonymous identities. Keep negative recordings in a separate folder so J/Z training does not accidentally treat them as ordinary target classes.
 
-Reproduce the saved sequence evaluation with `py -3.11 -m ml.audit_sequence`. A paired 50-epoch LSTM/TCN-attention diagnostic comparison is saved under `output/f1-review/dynamic`. Both use the recovered original split and validation-only selection. This tiny comparison is not a reason to replace the production model.
+Reproduce the saved sequence evaluation with `.\.venv-py314\Scripts\python.exe -m ml.audit_sequence`. A paired 50-epoch LSTM/TCN-attention diagnostic comparison is saved under `output/f1-review/dynamic`. Both use the recovered original split and validation-only selection. This tiny comparison is not a reason to replace the production model.
 
 Temporal diagnostics leave the original checkpoint at 100% on its two test clips even after time reversal, shuffling, repeating the last frame or removing wrist travel. This benchmark therefore does not demonstrate that the model recognizes the actual movement. The checklist includes matching-handshape holds and incorrect J/Z paths as hard negatives. Review these attempts with a knowledgeable signer. Five additional J clips outside the saved dataset are all accepted as J, but their signer identities are unknown and they provide no additional Z/negative evidence.
 
-Dynamic Studio now has a **Recording identity** tab for person, recording visit, source, device and reserved split. Source launch is `py -3.11 -m ml.dynamic_studio_gui`; existing packaged executables require rebuilding to include the new fields. CLI collection also supports metadata:
+Dynamic Studio now has a **Recording identity** tab for person, recording visit, source, device and reserved split. Source launch is `.\.venv-py314\Scripts\python.exe -m ml.dynamic_studio_gui`; existing packaged executables require rebuilding to include the new fields. CLI collection also supports metadata:
 
 ```powershell
-py -3.11 -m ml.collect_sequence --label J --takes 5 --exposure auto --signer-id person01 --recording-id person01-visit01 --device-id laptop01 --benchmark-split train
+.\.venv-py314\Scripts\python.exe -m ml.collect_sequence --label J --takes 5 --exposure auto --signer-id person01 --recording-id person01-visit01 --device-id laptop01 --benchmark-split train
 ```
 
 Rerun `ml.collection_plan` after capture to extract an identity CSV from `.npz` metadata and check benchmark readiness. Imported videos still require a reviewed identity plan; their filenames are not automatically trusted as person IDs.
@@ -85,8 +85,8 @@ Live inference now samples by timestamp at the saved training FPS, with a docume
 ## Verify and update the build report
 
 ```powershell
-py -3.11 -m pytest -q
-py -3.11 docs/build_system_state_report.py
+.\.venv-py314\Scripts\python.exe -m pytest -q
+.\.venv-py314\Scripts\python.exe docs/build_system_state_report.py
 ```
 
 Update `docs/system-state-current.md` with measured results before rebuilding. Archive the previous report and matching artifacts. The report builder refreshes hashes, not the interpretation of new experiments.

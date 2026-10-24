@@ -200,14 +200,14 @@ def test_fast_left_hand_reacquisition() -> None:
         )
         detector._stabilize_handedness([(initial, None)])
 
-        # A rapid move makes the raw classifier briefly report the opposite side.
+        # A rapid move makes an uncertain raw classifier report the opposite side.
         reacquired = HandLandmarks(
             landmarks=[
                 Landmark(id=i, name=HAND_LANDMARK_NAMES[i], x=0.48 + 0.002 * i, y=0.5, z=0.0)
                 for i in range(21)
             ],
             handedness="Right",
-            score=0.98,
+            score=0.65,
         )
         detector._stabilize_handedness([(reacquired, None)])
 

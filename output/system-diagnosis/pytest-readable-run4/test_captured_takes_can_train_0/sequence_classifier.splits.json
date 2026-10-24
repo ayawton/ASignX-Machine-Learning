@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "preprocessing": "sequence_anchor_trajectory_v2",
+  "dataset_sha256": "5d97a8ab1b6d3fbba3297d4b78dcf402e6d6f6488139b2062d9bc96af2fdeb43",
+  "seed": 42,
+  "labels": [
+    "J",
+    "Z"
+  ],
+  "splits": {
+    "train": [
+      0,
+      4
+    ],
+    "validation": [
+      2,
+      3
+    ],
+    "test": [
+      1,
+      5
+    ]
+  },
+  "counts": {
+    "train": {
+      "J": 1,
+      "Z": 1
+    },
+    "validation": {
+      "J": 1,
+      "Z": 1
+    },
+    "test": {
+      "J": 1,
+      "Z": 1
+    }
+  }
+}

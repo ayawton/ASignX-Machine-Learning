@@ -1,0 +1,38 @@
+{
+  "batch_id": "20261023T204026Z-b7d050cf7d5c",
+  "label": "A",
+  "hand": "Right",
+  "samples": 10,
+  "camera": 0,
+  "state": "processed",
+  "capture_settings": {
+    "interval_seconds": 0.15,
+    "exposure": "auto",
+    "movement_limit_per_frame": 0.025
+  },
+  "preprocessing": "wrist_max_radius_v1",
+  "sessions": [
+    {
+      "id": "cff4b45443f8402284e56fe352641e9a",
+      "complete": true,
+      "frames": 10
+    },
+    {
+      "id": "0cb453c727634f5b9e20e2726a971840",
+      "complete": true,
+      "frames": 10
+    },
+    {
+      "id": "79fc4a48330246a591f1ffed966b3cec",
+      "complete": true,
+      "frames": 10
+    }
+  ],
+  "accepted": [
+    10,
+    10,
+    10
+  ],
+  "destination": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-9a10f81d\\test_backup_failure_never_chan0\\landmarks.csv",
+  "replace": false
+}

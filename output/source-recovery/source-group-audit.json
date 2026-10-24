@@ -1,0 +1,40 @@
+{
+  "dataset_sha256": "03b949d3874b68bf0179c73fdfe918da7973ba89345e3b0d981171cc3da461d2",
+  "identity_plan_sha256": "4d6b22173458b91e4e4edf49ae3158640daa5b77d6ae0552934d0afeb2799d61",
+  "source_constraints_applied": true,
+  "constrained_sessions": 45,
+  "source_families": 4,
+  "unresolved_sessions": 1603,
+  "person_independence_verified": false,
+  "split_assignments_changed": false,
+  "signer_ids_created": 0,
+  "historical_group_rows_by_split": {
+    "source-family:sha256:5346f6b753c097adf1e665e540ea5e5d13617d88bfbb8497938aa3d9836b86c4": {
+      "validation": 120,
+      "train": 200
+    },
+    "source-family:sha256:522f6219d876d1c98eccdece63d2d7ea0a277b5343b74106f0fb57bbc1f63a7f": {
+      "test": 40,
+      "train": 120
+    },
+    "source-family:sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae": {
+      "train": 64409,
+      "test": 25318,
+      "validation": 4165
+    },
+    "source-family:capture-collection:20261022": {
+      "train": 1800
+    }
+  },
+  "historical_groups_crossing_partitions": [
+    "source-family:sha256:5346f6b753c097adf1e665e540ea5e5d13617d88bfbb8497938aa3d9836b86c4",
+    "source-family:sha256:522f6219d876d1c98eccdece63d2d7ea0a277b5343b74106f0fb57bbc1f63a7f",
+    "source-family:sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae"
+  ],
+  "scope": "Co-location constraints only: keep related sources/sessions together. Partial image evidence ties a whole session conservatively; it does not attribute every row exclusively to an archive or identify a signer.",
+  "readiness": "Incomplete. Unknown groups and absent verified person identities prevent a claimed signer-independent benchmark. Historical scores and partitions are preserved.",
+  "enforcement_replay": {
+    "historical_split_rejected": true,
+    "reason": "Global group leaks across labels/splits: source-family:sha256:24bb5445aaf058a10cbde50e0d7870a04778ec39c520d5dee3245f916cf194ae"
+  }
+}

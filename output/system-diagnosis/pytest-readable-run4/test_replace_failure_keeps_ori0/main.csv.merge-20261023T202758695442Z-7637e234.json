@@ -1,0 +1,21 @@
+{
+  "main": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-run4\\test_replace_failure_keeps_ori0\\main.csv",
+  "incoming": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-run4\\test_replace_failure_keeps_ori0\\new.csv",
+  "backup": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-run4\\test_replace_failure_keeps_ori0\\main.csv.backup-20261023T202758695442Z-7637e234",
+  "main_before_sha256": "9861d7cc5cd2ca6ece28b3814d0bdda703c2f317542636c7c65192f8e8716318",
+  "incoming_sha256": "1d4b1ef7df10034c363a9f74f3e3cac2a5f1ce8b6beadf42519c004b0b96f128",
+  "expected_output_sha256": "cd4b3088a38a17a1269a201767071ba2dfd79dab213c215bd87b7a39deb3a849",
+  "main_rows": 1,
+  "counts": {
+    "append": 1
+  },
+  "decisions": [
+    {
+      "row": 2,
+      "label": "A",
+      "session_id": "source1",
+      "decision": "append"
+    }
+  ],
+  "note": "Prepared merge audit. Compare main CSV hash with expected_output_sha256 to verify application."
+}

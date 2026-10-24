@@ -1,0 +1,76 @@
+{
+  "source": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-d9ce6171\\test_zip_provenance_survives_t0\\original.zip",
+  "source_input_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-d9ce6171\\test_zip_provenance_survives_t0\\original.zip",
+  "dataset_before_sha256": "missing",
+  "output_rows": [
+    {
+      "csv_row": 2,
+      "label": "A",
+      "session_id": "ext_1617e39a00ad01284daa6e10",
+      "handedness": "Right",
+      "source_relative_path": "dataset/A/0.png",
+      "image_sha256": "7c5c38c6e93d209595acc84de5f46100545647d6a798a343264fa21b1e3c68d6",
+      "stored_feature_sha256": "d7768f079e4d065e1f0c119e2adf3903c5c826ef18d184707a5d8540b47c6e06",
+      "original_image_path": null,
+      "archive_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-d9ce6171\\test_zip_provenance_survives_t0\\original.zip",
+      "archive_member": "dataset/A/0.png"
+    },
+    {
+      "csv_row": 3,
+      "label": "A",
+      "session_id": "ext_1617e39a00ad01284daa6e10",
+      "handedness": "Right",
+      "source_relative_path": "dataset/A/1.png",
+      "image_sha256": "1fc7900de7073cbf7a54f056b24d832c73cc73e112d8a1a32a6ccd79ac56f47d",
+      "stored_feature_sha256": "561f630c25b7c9d07cf023842d713fed55186ae51f2ea4672da1ae5bf812d462",
+      "original_image_path": null,
+      "archive_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-d9ce6171\\test_zip_provenance_survives_t0\\original.zip",
+      "archive_member": "dataset/A/1.png"
+    }
+  ],
+  "preprocessing": "wrist_max_radius_v1",
+  "status": "committed",
+  "settings": {
+    "unusual_pose_threshold": 0.0,
+    "similarity_distance": 0.0
+  },
+  "report": {
+    "total_files_scanned": 2,
+    "exact_duplicates_skipped": 0,
+    "label_conflicts_skipped": 0,
+    "no_hand_detected": 0,
+    "anatomical_outliers_rejected": 0,
+    "statistical_outliers_rejected": 0,
+    "near_duplicates_pruned": 0,
+    "already_in_csv_skipped": 0,
+    "samples_appended": 2,
+    "per_label_counts": {
+      "A": 2
+    },
+    "unreadable_images": 0,
+    "multiple_hands_skipped": 0,
+    "animated_images_skipped": 0,
+    "warnings": [
+      "A: fewer than 3 source groups. Extraction succeeds, but honest train/validation/test splitting needs more independent recordings or signers.",
+      "A: origin unknown; all ungrouped images stay together. Supply a label map with real signer groups when available."
+    ],
+    "decisions": [
+      {
+        "path": "dataset\\A\\0.png",
+        "label": "A",
+        "reason": "Accepted",
+        "sha256": "7c5c38c6e93d209595acc84de5f46100545647d6a798a343264fa21b1e3c68d6",
+        "group": "default"
+      },
+      {
+        "path": "dataset\\A\\1.png",
+        "label": "A",
+        "reason": "Accepted",
+        "sha256": "1fc7900de7073cbf7a54f056b24d832c73cc73e112d8a1a32a6ccd79ac56f47d",
+        "group": "default"
+      }
+    ],
+    "audit_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\system-diagnosis\\pytest-readable-d9ce6171\\test_zip_provenance_survives_t0\\samples.extraction-47351c5a8f214bfa91cd322ca093ddc5.json"
+  },
+  "dataset_after_sha256": "825d776124c85912746d6e27903d02cd7ea7e342c79605e80d8ba64fd347d118"
+}
