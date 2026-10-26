@@ -54,13 +54,13 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         type=int,
         choices=[0, 1],
         default=1,
-        help="MediaPipe Hands model complexity: 0=Lite (fastest), 1=Full (default: 1)",
+        help="Legacy compatibility option; Tasks uses the bundled hand model for both values",
     )
     parser.add_argument(
         "--min-detection-confidence",
         type=float,
-        default=0.6,
-        help="Minimum hand detection confidence [0.0 - 1.0] (default: 0.6; better rapid reacquisition)",
+        default=0.5,
+        help="Minimum hand detection confidence [0.0 - 1.0] (default: 0.5)",
     )
     parser.add_argument(
         "--min-tracking-confidence",
@@ -68,6 +68,10 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         default=0.5,
         help="Minimum hand tracking confidence [0.0 - 1.0] (default: 0.5)",
     )
+    parser.add_argument("--min-presence-confidence", type=float, default=0.45,
+                        help="Minimum hand presence confidence (default: 0.45)")
+    parser.add_argument("--no-hand-recovery", action="store_true",
+                        help="Disable rate-limited full-image retry after hand tracking loss")
     parser.add_argument(
         "--exposure",
         type=str,
@@ -132,6 +136,9 @@ def run_pipeline(args: argparse.Namespace) -> None:
         static_pred = SignPredictor(args.sign_model, args.sign_confidence,
                                     calibration_path=getattr(args, "sign_calibration", None)) if args.sign_model else None
         seq_pred = SequencePredictor(sequence_model_path, getattr(args, "sequence_confidence", 0.8))
+        print(f"[INFO] Dynamic model: {sequence_model_path}")
+        print(f"[INFO] Dynamic vocabulary: {', '.join(seq_pred.labels)}")
+        print(f"[INFO] Dynamic features: {seq_pred.input_size}; preprocessing: {seq_pred.metadata.get('preprocessing', 'unknown')}")
         unified_recognizer = UnifiedSignRecognizer(
             static_predictor=static_pred,
             sequence_predictor=seq_pred,
@@ -166,12 +173,17 @@ def run_pipeline(args: argparse.Namespace) -> None:
         sys.exit(1)
 
     try:
-        detector = HandDetector(
+        from ml.body_context import BODY_FEATURE_WIDTHS
+        from asignx.body_detector import BodyHandDetector
+        detector_type = BodyHandDetector if unified_recognizer is not None and unified_recognizer.sequence_predictor.input_size in BODY_FEATURE_WIDTHS else HandDetector
+        detector = detector_type(
             static_image_mode=False,
             max_num_hands=args.max_hands,
             model_complexity=args.model_complexity,
             min_detection_confidence=args.min_detection_confidence,
             min_tracking_confidence=args.min_tracking_confidence,
+            min_presence_confidence=getattr(args, "min_presence_confidence", 0.45),
+            recovery_enabled=not getattr(args, "no_hand_recovery", False),
         )
     except Exception:
         camera.stop()
@@ -185,7 +197,7 @@ def run_pipeline(args: argparse.Namespace) -> None:
     mode_str = "Threaded (high-FPS)" if not args.no_threads else "Synchronous"
     exp_str = f"Exposure: {camera.exposure}" if camera.exposure is not None else "Auto-Exposure"
     print(f"[INFO] Camera initialized ({res_w}x{res_h} | {mode_str} | {exp_str})")
-    print(f"[INFO] Tracking configured for up to {args.max_hands} hands (model complexity: {args.model_complexity})")
+    print(f"[INFO] Tracking configured for up to {args.max_hands} hands (bundled MediaPipe Tasks model)")
     print("[INFO] Controls:")
     print("       'q' / ESC : Exit application")
     print("       'd'       : Toggle landmark drawing")
@@ -215,7 +227,7 @@ def run_pipeline(args: argparse.Namespace) -> None:
             live_recognitions = None
             live_dynamic_info = None
             if unified_recognizer is not None:
-                live_dynamic_info = unified_recognizer.update(result.all_hands, timestamp=capture_timestamp)
+                live_dynamic_info = unified_recognizer.update(result.all_hands, timestamp=capture_timestamp, body_context=getattr(result, "body_context", None))
                 live_recognitions = live_dynamic_info["static"]
                 for recognition in live_recognitions:
                     if recognition.emitted_label:

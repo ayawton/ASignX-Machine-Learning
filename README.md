@@ -57,6 +57,8 @@ Useful options:
 --max-hands {1,2}
 --model-complexity {0,1}
 --min-detection-confidence FLOAT
+--min-presence-confidence FLOAT
+--no-hand-recovery
 --exposure -5.0|-6.0|auto
 --no-threads
 --print-stream
@@ -73,8 +75,8 @@ Both methods save sequences for the same `ml.train_sequence` command.
 
 ### Standalone Windows GUI
 
-Double-click **`dist/ASignX_DynamicStudio.exe`** (or `ASignX_DynamicStudio.bat`).
-The single executable includes Python and the hand detector; recording PCs do not
+Double-click **`ASignX_DynamicStudio.bat`** (or `dist/body/ASignX_DynamicStudio.exe`).
+The single executable includes Python and hand, pose, and face detectors; recording PCs do not
 need Python or PyTorch installed. The GUI provides webcam preview, a preparation
 countdown, Start/Save/Discard controls, and labeled video folder extraction.
 It saves the same `.npz` sequences used below; raw webcam video is not retained.
@@ -84,6 +86,23 @@ itself; choose the output folder explicitly when moving data back for training.
 Source launch: `python -m ml.dynamic_studio_gui`. Build instructions and the full
 workflow are in [Dynamic Sign Studio guide](docs/dynamic-studio-guide.md).
 This GUI handles dynamic signs; `ASignX_ManualTraining.bat` opens the static studio.
+The normal **`ASignX_DynamicStudio.bat`** launcher selects the updated build in
+`dist/body/ASignX_DynamicStudio.exe` when available.
+Choose **Landmarks ? hands + body** and **Hand mode ? both** for body-relative
+dynamic signs. This adds chin, nose, shoulders, elbows, and wrist positions
+relative to the shoulders. Use a fresh output folder and train a new model; existing
+hand-only models retain their original behavior. See the guide for commands.
+
+**hands + body** now includes temple-region references and hand/head offsets
+as part of its standard 180-feature format. Use a fresh dataset folder. Continue
+existing 150-feature datasets with **hands + body (legacy 150)**; their models
+remain supported. See the [body feature analysis](docs/temple-context-analysis.md)
+and [collection/training guide](docs/dynamic-studio-guide.md#body-context-for-wider-asl-signs).
+
+`ASignX_TestRecognition.bat` loads the static alphabet checkpoint and one dynamic
+hands + body checkpoint configured in the launcher. Its vocabulary comes from
+that checkpoint; startup prints the actual labels. Legacy separate J/Z checkpoints
+are not automatically loaded.
 
 ### Option A: capture complete gestures from the webcam
 
@@ -225,13 +244,40 @@ Press `r` to clear the temporal window and `q`/Escape to exit. Predictions are
 confidence-thresholded and stabilized across consecutive windows to reduce
 duplicate output.
 
+### Updating a dynamic model at the same path
+
+Add new recordings to your compatible sequence dataset and rerun training with
+**the same `--output` filename**. Changed data automatically refreshes the saved
+session splits; unchanged data reuses them. Successful runs back up the previous
+model, metrics and splits under `ml/models/backups/` before replacing the output.
+Training failures leave the current model intact. Restart recognition after
+training; no launcher path change is needed. Use `--strict-splits` for fixed
+benchmark behavior. Scores across refreshed splits are not directly comparable.
+Training uses all current recordings from scratch; retain old labels' recordings.
+
+### Check whether a dynamic model relies on movement
+
+```powershell
+python -m ml.audit_sequence_motion --data-dir dist/body/data/sequences --model ml/models/sequence_body_v3.pth --output output/sequence-motion-audit-v3
+```
+
+The audit compares original, frozen first/middle frames, reversed, shuffled, and
+first-half sequences. Reports are saved as `report.md`, `report.json` and
+`predictions.csv`. It never edits recordings or weights. The default `test` split
+requires the dataset to match the trained checkpoint. Use `--split all` only for
+exploratory checks when the dataset has changed; those results are not held-out
+performance. Scores bypass live gating and visibility rejection. Similar scores
+on frozen or shuffled sequences suggest reliance on pose/location shortcuts;
+reversal alone is not conclusive, and partial/reversed sequences are not
+necessarily invalid ASL examples. Confirm with real complete/incomplete takes.
+
 ## Test static and dynamic recognition together
 
 To test static and dynamic recognition in one camera window, double-click
 `ASignX_TestRecognition.bat` or run:
 
 ```powershell
-python main.py --sign-model ml/models/sign_classifier_canonical.pth --sequence-model ml/models/sequence_classifier.pth --exposure auto
+python main.py --sign-model ml/models/sign_classifier_canonical.pth --sequence-model ml/models/sequence_body_v1.pth --exposure auto
 ```
 
 Hold still signs for the static model and perform moving signs for the sequence

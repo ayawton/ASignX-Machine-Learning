@@ -1,0 +1,276 @@
+{
+  "source": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\duplicate-hand-motion-check\\test_flexible_static_dataset_e0\\dataset_upload.zip",
+  "source_input_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\duplicate-hand-motion-check\\test_flexible_static_dataset_e0\\dataset_upload.zip",
+  "dataset_before_sha256": "b8635a94060d65f657383c808f197c410ce10c3d1340eb11aee593899b7940b6",
+  "output_rows": [
+    {
+      "csv_row": 3,
+      "label": "A",
+      "session_id": "ext_2bd81a78a345efd337e623eb",
+      "handedness": "Right",
+      "source_relative_path": "train/a/img_0.png",
+      "image_sha256": "e450c026bff0a22dae51fd89fdad0a7a582074b93760a7b06e2f803ac3d31c7a",
+      "stored_feature_sha256": "d9abd3648781c6e2cf34ed14928c0c80ec050872a93ebfc3ae4111abb7683342",
+      "original_image_path": null,
+      "archive_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\duplicate-hand-motion-check\\test_flexible_static_dataset_e0\\dataset_upload.zip",
+      "archive_member": "train/a/img_0.png"
+    },
+    {
+      "csv_row": 4,
+      "label": "A",
+      "session_id": "ext_2bd81a78a345efd337e623eb",
+      "handedness": "Right",
+      "source_relative_path": "train/a/img_1.png",
+      "image_sha256": "a8acd3aa60a12338abe1a195650a5d7d544412d750b5af160344622465039cf2",
+      "stored_feature_sha256": "7899718712d473beec25f80018b9a3786a85c8d7558d8d1c0e888e068513f39b",
+      "original_image_path": null,
+      "archive_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\duplicate-hand-motion-check\\test_flexible_static_dataset_e0\\dataset_upload.zip",
+      "archive_member": "train/a/img_1.png"
+    },
+    {
+      "csv_row": 5,
+      "label": "A",
+      "session_id": "ext_2bd81a78a345efd337e623eb",
+      "handedness": "Right",
+      "source_relative_path": "train/a/img_2.png",
+      "image_sha256": "b4f9dcc17ccbfbff499834842c86492096f40533619ec0b1089cd7c992edf14d",
+      "stored_feature_sha256": "257967ad6c00bbfbf5f79b35da252cae538c9d4ae46cbdf6a50f52ec80e9e6ef",
+      "original_image_path": null,
+      "archive_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\duplicate-hand-motion-check\\test_flexible_static_dataset_e0\\dataset_upload.zip",
+      "archive_member": "train/a/img_2.png"
+    },
+    {
+      "csv_row": 6,
+      "label": "A",
+      "session_id": "ext_2bd81a78a345efd337e623eb",
+      "handedness": "Right",
+      "source_relative_path": "train/a/img_3.png",
+      "image_sha256": "f7014fbbdd6568fafffca286c4c8794e71624d0dc7ea755b592133b42893c81a",
+      "stored_feature_sha256": "209f428f03c02c2b526dacd891f7dc87b294f966299a3686ad7c4d752456342e",
+      "original_image_path": null,
+      "archive_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\duplicate-hand-motion-check\\test_flexible_static_dataset_e0\\dataset_upload.zip",
+      "archive_member": "train/a/img_3.png"
+    },
+    {
+      "csv_row": 7,
+      "label": "A",
+      "session_id": "ext_2bd81a78a345efd337e623eb",
+      "handedness": "Right",
+      "source_relative_path": "train/a/img_4.png",
+      "image_sha256": "dbd32822fb996e6c422af3bb8cdccc43e315d2d25d98a3daf5f5cdc3e72c422e",
+      "stored_feature_sha256": "7133768a8b5e5be5d06e7973314f410ba20e3a3a1b958bbe01242d7116a03334",
+      "original_image_path": null,
+      "archive_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\duplicate-hand-motion-check\\test_flexible_static_dataset_e0\\dataset_upload.zip",
+      "archive_member": "train/a/img_4.png"
+    },
+    {
+      "csv_row": 8,
+      "label": "A",
+      "session_id": "ext_2bd81a78a345efd337e623eb",
+      "handedness": "Right",
+      "source_relative_path": "train/a/img_5.png",
+      "image_sha256": "381582538d29b32f0512a4ab55792c75b64646601033bc38bc65d321f6344e01",
+      "stored_feature_sha256": "554adfedd87bfec1571254e20e88e0eda510130907c9a0907f7d0986ed3191c6",
+      "original_image_path": null,
+      "archive_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\duplicate-hand-motion-check\\test_flexible_static_dataset_e0\\dataset_upload.zip",
+      "archive_member": "train/a/img_5.png"
+    },
+    {
+      "csv_row": 9,
+      "label": "B",
+      "session_id": "ext_afeeff990e1c898f8c39d138",
+      "handedness": "Right",
+      "source_relative_path": "test/Sign_B/img_0.png",
+      "image_sha256": "ff1fc3529845cecb2f45ad63012c5edf2255855d3929ffaec2bcddf9e370e68b",
+      "stored_feature_sha256": "fcbd75dff618d0b3d0ac054eaa46e166cd34ff28c720791d85fbc96c6637e82a",
+      "original_image_path": null,
+      "archive_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\duplicate-hand-motion-check\\test_flexible_static_dataset_e0\\dataset_upload.zip",
+      "archive_member": "test/Sign_B/img_0.png"
+    },
+    {
+      "csv_row": 10,
+      "label": "B",
+      "session_id": "ext_afeeff990e1c898f8c39d138",
+      "handedness": "Right",
+      "source_relative_path": "test/Sign_B/img_1.png",
+      "image_sha256": "4ffa59b2008e8e2c1d1e9cb6cd3327026f431486157cd4573122dc24e5c9469b",
+      "stored_feature_sha256": "93dabb5d566458d24b336c157ef606013553eda66666777523d2eaf4cfbb8870",
+      "original_image_path": null,
+      "archive_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\duplicate-hand-motion-check\\test_flexible_static_dataset_e0\\dataset_upload.zip",
+      "archive_member": "test/Sign_B/img_1.png"
+    },
+    {
+      "csv_row": 11,
+      "label": "B",
+      "session_id": "ext_afeeff990e1c898f8c39d138",
+      "handedness": "Right",
+      "source_relative_path": "test/Sign_B/img_2.png",
+      "image_sha256": "5dfa37df17022aee1f80079e54af53c0b1a2375beb6c4ad3d31524b17980efdd",
+      "stored_feature_sha256": "60ce7b19ce4d733bbd89ad7efe4bed4b6c8575d6c4ac23f8fd3f42a15944c9c8",
+      "original_image_path": null,
+      "archive_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\duplicate-hand-motion-check\\test_flexible_static_dataset_e0\\dataset_upload.zip",
+      "archive_member": "test/Sign_B/img_2.png"
+    },
+    {
+      "csv_row": 12,
+      "label": "B",
+      "session_id": "ext_afeeff990e1c898f8c39d138",
+      "handedness": "Right",
+      "source_relative_path": "test/Sign_B/img_3.png",
+      "image_sha256": "1f1a717ac42e359ce9f6958b83b08ac4ecb95274615bab886b43cb848676cefc",
+      "stored_feature_sha256": "0149c453d4812ae5ed0d7b0c94b2adaec5e0cbcaf774db5bbb03ab9885b56b93",
+      "original_image_path": null,
+      "archive_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\duplicate-hand-motion-check\\test_flexible_static_dataset_e0\\dataset_upload.zip",
+      "archive_member": "test/Sign_B/img_3.png"
+    },
+    {
+      "csv_row": 13,
+      "label": "B",
+      "session_id": "ext_afeeff990e1c898f8c39d138",
+      "handedness": "Right",
+      "source_relative_path": "test/Sign_B/img_4.png",
+      "image_sha256": "673d5191bcd58c2b30087a85685d4990fefb8cadc6dc2717e1cb25f3cd9e18e6",
+      "stored_feature_sha256": "fe61e12862bb2ea4c31a1b973ee81fc8bd7f121ef1dc11f7f49f31f162446f7c",
+      "original_image_path": null,
+      "archive_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\duplicate-hand-motion-check\\test_flexible_static_dataset_e0\\dataset_upload.zip",
+      "archive_member": "test/Sign_B/img_4.png"
+    },
+    {
+      "csv_row": 14,
+      "label": "B",
+      "session_id": "ext_afeeff990e1c898f8c39d138",
+      "handedness": "Right",
+      "source_relative_path": "test/Sign_B/img_5.png",
+      "image_sha256": "3b01935574ace67bbdd798331ec17aa985e609ccf60eda02d9de77706faaf035",
+      "stored_feature_sha256": "ab1d176d202d0c0d4ad87c41183bc7a99719fa83882062efdcc9585fde353c13",
+      "original_image_path": null,
+      "archive_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\duplicate-hand-motion-check\\test_flexible_static_dataset_e0\\dataset_upload.zip",
+      "archive_member": "test/Sign_B/img_5.png"
+    }
+  ],
+  "preprocessing": "wrist_max_radius_v1",
+  "status": "committed",
+  "settings": {
+    "unusual_pose_threshold": 0.0,
+    "similarity_distance": 0.001
+  },
+  "report": {
+    "total_files_scanned": 13,
+    "exact_duplicates_skipped": 1,
+    "label_conflicts_skipped": 0,
+    "no_hand_detected": 0,
+    "anatomical_outliers_rejected": 0,
+    "statistical_outliers_rejected": 0,
+    "near_duplicates_pruned": 0,
+    "already_in_csv_skipped": 0,
+    "samples_appended": 12,
+    "per_label_counts": {
+      "A": 6,
+      "B": 6
+    },
+    "unreadable_images": 0,
+    "multiple_hands_skipped": 0,
+    "animated_images_skipped": 0,
+    "warnings": [
+      "A: fewer than 3 source groups. Extraction succeeds, but honest train/validation/test splitting needs more independent recordings or signers.",
+      "A: origin unknown; all ungrouped images stay together. Supply a label map with real signer groups when available.",
+      "B: fewer than 3 source groups. Extraction succeeds, but honest train/validation/test splitting needs more independent recordings or signers.",
+      "B: origin unknown; all ungrouped images stay together. Supply a label map with real signer groups when available."
+    ],
+    "decisions": [
+      {
+        "path": "train\\a\\img_0_copy.png",
+        "label": "A",
+        "reason": "Repeated image file",
+        "sha256": "",
+        "group": ""
+      },
+      {
+        "path": "train\\a\\img_0.png",
+        "label": "A",
+        "reason": "Accepted",
+        "sha256": "e450c026bff0a22dae51fd89fdad0a7a582074b93760a7b06e2f803ac3d31c7a",
+        "group": "default"
+      },
+      {
+        "path": "train\\a\\img_1.png",
+        "label": "A",
+        "reason": "Accepted",
+        "sha256": "a8acd3aa60a12338abe1a195650a5d7d544412d750b5af160344622465039cf2",
+        "group": "default"
+      },
+      {
+        "path": "train\\a\\img_2.png",
+        "label": "A",
+        "reason": "Accepted",
+        "sha256": "b4f9dcc17ccbfbff499834842c86492096f40533619ec0b1089cd7c992edf14d",
+        "group": "default"
+      },
+      {
+        "path": "train\\a\\img_3.png",
+        "label": "A",
+        "reason": "Accepted",
+        "sha256": "f7014fbbdd6568fafffca286c4c8794e71624d0dc7ea755b592133b42893c81a",
+        "group": "default"
+      },
+      {
+        "path": "train\\a\\img_4.png",
+        "label": "A",
+        "reason": "Accepted",
+        "sha256": "dbd32822fb996e6c422af3bb8cdccc43e315d2d25d98a3daf5f5cdc3e72c422e",
+        "group": "default"
+      },
+      {
+        "path": "train\\a\\img_5.png",
+        "label": "A",
+        "reason": "Accepted",
+        "sha256": "381582538d29b32f0512a4ab55792c75b64646601033bc38bc65d321f6344e01",
+        "group": "default"
+      },
+      {
+        "path": "test\\Sign_B\\img_0.png",
+        "label": "B",
+        "reason": "Accepted",
+        "sha256": "ff1fc3529845cecb2f45ad63012c5edf2255855d3929ffaec2bcddf9e370e68b",
+        "group": "default"
+      },
+      {
+        "path": "test\\Sign_B\\img_1.png",
+        "label": "B",
+        "reason": "Accepted",
+        "sha256": "4ffa59b2008e8e2c1d1e9cb6cd3327026f431486157cd4573122dc24e5c9469b",
+        "group": "default"
+      },
+      {
+        "path": "test\\Sign_B\\img_2.png",
+        "label": "B",
+        "reason": "Accepted",
+        "sha256": "5dfa37df17022aee1f80079e54af53c0b1a2375beb6c4ad3d31524b17980efdd",
+        "group": "default"
+      },
+      {
+        "path": "test\\Sign_B\\img_3.png",
+        "label": "B",
+        "reason": "Accepted",
+        "sha256": "1f1a717ac42e359ce9f6958b83b08ac4ecb95274615bab886b43cb848676cefc",
+        "group": "default"
+      },
+      {
+        "path": "test\\Sign_B\\img_4.png",
+        "label": "B",
+        "reason": "Accepted",
+        "sha256": "673d5191bcd58c2b30087a85685d4990fefb8cadc6dc2717e1cb25f3cd9e18e6",
+        "group": "default"
+      },
+      {
+        "path": "test\\Sign_B\\img_5.png",
+        "label": "B",
+        "reason": "Accepted",
+        "sha256": "3b01935574ace67bbdd798331ec17aa985e609ccf60eda02d9de77706faaf035",
+        "group": "default"
+      }
+    ],
+    "audit_path": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\duplicate-hand-motion-check\\test_flexible_static_dataset_e0\\data\\landmarks.extraction-5d193df9b1f948c1a51c520b41a1f7e8.json"
+  },
+  "dataset_after_sha256": "e25691f111f27a42ad735405b9f6510282adf911daaba69bd30c7e193ab5ee54"
+}

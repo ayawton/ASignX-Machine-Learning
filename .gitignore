@@ -12,3 +12,5 @@ __pycache__/
 /ml/data/manual_recordings/
 /ml/models/manual_runs/
 
+
+/ml/models/backups/

@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "preprocessing": "wrist_max_radius_v1",
+  "static_hand_preprocessing": "left_x_reflection_v1",
+  "dataset_sha256": "72b819791517dd97adb082e169c486b06d7c39f349eb95b94b3ee4d143469258",
+  "seed": 42,
+  "labels": [
+    "A",
+    "B"
+  ],
+  "splits": {
+    "train": [
+      0,
+      1,
+      2,
+      3,
+      16,
+      17,
+      18,
+      19
+    ],
+    "validation": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "test": [
+      4,
+      5,
+      6,
+      7,
+      20,
+      21,
+      22,
+      23
+    ]
+  },
+  "counts": {
+    "train": {
+      "A": 4,
+      "B": 4
+    },
+    "validation": {
+      "A": 4,
+      "B": 4
+    },
+    "test": {
+      "A": 4,
+      "B": 4
+    }
+  }
+}

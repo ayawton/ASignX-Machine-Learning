@@ -167,6 +167,7 @@ class HandDetectionResult:
     hand: Optional[HandLandmarks] = None
     all_hands: List[HandLandmarks] = field(default_factory=list)
     frame_timestamp_ms: int = 0
+    body_context: Optional[np.ndarray] = None
 
     @property
     def hands(self) -> List[HandLandmarks]:

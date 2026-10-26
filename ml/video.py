@@ -18,9 +18,15 @@ HAND_SELECTIONS = ("single", "Left", "Right", "both")
 class LandmarkSequenceCapture:
     """Accumulate detected hands in frame order for one complete gesture."""
 
-    def __init__(self, hand_selection: str = "both") -> None:
+    def __init__(self, hand_selection: str = "both", *, body_context: bool = False, temple_context: bool = False) -> None:
+        body_context = body_context or temple_context
+        self.temple_context = temple_context
         if hand_selection not in HAND_SELECTIONS:
             raise ValueError(f"hand_selection must be one of {HAND_SELECTIONS}")
+        if body_context and hand_selection != "both":
+            raise ValueError("Body context requires both hand slots")
+        self.body_context = body_context
+        self._context_frames = []
         self.hand_selection = hand_selection
         self.hand_count = 2 if hand_selection == "both" else 1
         self._frames: list[np.ndarray] = []
@@ -39,7 +45,14 @@ class LandmarkSequenceCapture:
     def detection_ratio(self) -> float:
         return self.frames_with_hand / self.frame_count if self.frame_count else 0.0
 
-    def add_hands(self, hands: Sequence[Any]) -> None:
+    @property
+    def temple_detection_ratio(self):
+        if not self.temple_context or not self._context_frames:
+            return 0.0
+        return float(np.mean([np.all(frame[150:156].reshape(2, 3)[:, 2] == 1)
+                              for frame in self._context_frames]))
+
+    def add_hands(self, hands: Sequence[Any], body_context=None) -> None:
         """Store one sampled frame, including an empty one on detection loss."""
         frame = np.full((self.hand_count, 21, 3), np.nan, dtype=np.float32)
         valid = np.zeros(self.hand_count, dtype=bool)
@@ -59,6 +72,9 @@ class LandmarkSequenceCapture:
             frame[slot] = landmarks
             valid[slot] = True
             self._handedness[hand.handedness or "Unknown"] += 1
+        if self.body_context:
+            from ml.body_context import context_features
+            self._context_frames.append(context_features(hands, body_context, temple_context=self.temple_context))
         self._frames.append(frame)
         self._valid.append(valid)
 
@@ -88,8 +104,17 @@ class LandmarkSequenceCapture:
         raw = np.stack(self._frames)
         valid = np.stack(self._valid)
         raw, valid = fill_landmark_gaps(raw, valid)
-        normalized = normalize_landmark_sequence(raw, valid=valid)
-        normalized = resample_sequence(normalized, target_length, interpolate=True)
+        if self.body_context:
+            from ml.body_context import resample_context
+            context = np.stack(self._context_frames)
+            if np.mean(context[:, 126:].reshape(len(context), -1, 3)[:, 2:4, 2].all(axis=1)) < min_detection_ratio:
+                raise ValueError("Shoulders not visible often enough; keep upper body in view")
+            if self.temple_context and self.temple_detection_ratio < min_detection_ratio:
+                raise ValueError("Temple references not visible often enough; keep face in view")
+            normalized = resample_context(context, target_length)
+        else:
+            normalized = normalize_landmark_sequence(raw, valid=valid)
+            normalized = resample_sequence(normalized, target_length, interpolate=True)
         dominant = self._handedness.most_common(1)[0][0] if self._handedness else ""
         metadata = {
             "source": source,
@@ -97,6 +122,9 @@ class LandmarkSequenceCapture:
             "frames_with_hand": self.frames_with_hand,
             "detection_ratio": self.detection_ratio,
             "hand_selection": self.hand_selection,
+            "body_context": self.body_context,
+            "temple_context": self.temple_context,
+            "temple_detection_ratio": self.temple_detection_ratio if self.temple_context else None,
             "feature_width": int(normalized.shape[1]),
             "target_fps": target_fps,
         }
@@ -197,6 +225,8 @@ def extract_video_landmarks(
     *,
     interpolate: bool = True,
     return_metadata: bool = False,
+    body_context: bool = False,
+    temple_context: bool = False,
 ) -> tuple[np.ndarray, str] | tuple[np.ndarray, str, dict[str, Any]]:
     """Extract a normalized landmark trajectory from a video or frame list.
 
@@ -204,6 +234,7 @@ def extract_video_landmarks(
     the other modes produce 63. Brief missed detections are interpolated, so
     timing is never compressed by silently dropping frames.
     """
+    body_context = body_context or temple_context
     if hand_selection not in HAND_SELECTIONS:
         raise ValueError(f"hand_selection must be one of {HAND_SELECTIONS}")
     if isinstance(video_or_frames, (str, Path)):
@@ -219,15 +250,19 @@ def extract_video_landmarks(
     if detector is None:
         from asignx import HandDetector
 
-        detector = HandDetector(max_num_hands=2)
+        if body_context:
+            from asignx.body_detector import BodyHandDetector
+            detector = BodyHandDetector(max_num_hands=2)
+        else:
+            detector = HandDetector(max_num_hands=2)
 
-    capture = LandmarkSequenceCapture(hand_selection)
+    capture = LandmarkSequenceCapture(hand_selection, body_context=body_context, temple_context=temple_context)
     fps = float(target_fps or 30.0)
     try:
         for frame_index, frame in enumerate(frames):
             timestamp_ms = int(round(frame_index * 1000.0 / fps))
             result, _ = detector.process(frame, draw=False, timestamp_ms=timestamp_ms)
-            capture.add_hands(result.all_hands)
+            capture.add_hands(result.all_hands, getattr(result, "body_context", None))
     finally:
         if owns_detector:
             detector.close()

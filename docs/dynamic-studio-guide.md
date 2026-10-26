@@ -35,6 +35,51 @@ folder containing incompatible sequences is rejected. Collect at least three ind
 takes per label and at least two labels for training. More varied takes are preferable;
 vary signer, lighting, speed, position, and recording conditions.
 
+## Body context for wider ASL signs
+
+Choose **Landmarks: hands + body** with **Hand mode: both**. Temple-region
+references are included in body mode; there is no separate temple option.
+Use a fresh folder, such as `ml/data/sequences_body_new`, consistently across all
+labels. Keep one signer, face, shoulders and arms in view. The preview marks nose,
+chin, shoulders, elbows and temple A/B; hips are not included. Recording status
+reports temple visibility and takes with insufficient head visibility are rejected.
+
+Standard body mode saves **180 features per frame**: handshape, body-relative
+wrist positions, temple-region anchors, and head-size-normalized wrist/index-tip
+offsets. Face and pose context use image-plane x/y and explicit visibility masks;
+hand-local depth remains in the handshape blocks. Body tracking automatically
+uses the checkpoint's matching preprocessing at recognition time.
+
+The references provide a reusable location signal for any dynamic label, including
+J, Z, HELLO, or THANK_YOU. They do not impose a HELLO-specific contact rule. Include
+valid natural variation plus **BACKGROUND** examples of similar movements at
+incorrect locations. BACKGROUND predictions are suppressed. Hold out recordings
+to evaluate both valid acceptance and wrong-location rejection after training.
+
+For existing 150-feature datasets only, choose **hands + body (legacy 150)**.
+Existing checkpoints remain supported automatically. Do not mix the two formats,
+append zero temple columns, or use `unify_sequence_width.py` on body data. Existing
+landmark-only files cannot recover missing temple positions; re-record or extract
+original videos. The earlier hip-containing 156-feature format is unsupported.
+Both body formats disable hand-only spatial augmentation to preserve masks.
+
+```powershell
+python -m ml.collect_sequence --label HELLO --hand both --body-context --output ml/data/sequences_body_new --exposure auto
+python -m ml.prepare_videos --input videos --output ml/data/sequences_body_import --hand both --body-context
+python -m ml.train_sequence --data-dir ml/data/sequences_body_new --output ml/models/sequence_body_v3.pth --epochs 50
+.\ASignX_TestRecognition.bat --sequence-model ml/models/sequence_body_v3.pth
+```
+
+Use `--legacy-body-context` instead of `--body-context` to continue a legacy
+150-feature recording/import dataset. The old `--temple-context` flag remains
+an alias for standard body mode for command compatibility.
+
+Collect at least two labels and three independent sessions per label; more varied
+data is needed for useful recognition. The launcher continues using its configured
+checkpoint until you provide or configure the newly trained model. Static
+recognition remains separate. See the [design analysis](temple-context-analysis.md)
+for the benefits and limits of the included temple references.
+
 ## Extract existing video recordings
 
 Arrange one complete sign per video:
@@ -74,6 +119,32 @@ python -m ml.train_sequence --data-dir "PATH_TO_SEQUENCES" --output ml/models/se
 python -m ml.predict_sequence --model ml/models/sequence_classifier.pth
 ```
 
+### Reuse the same model filename when adding data
+
+You can keep using the same `--output` path, such as
+`ml/models/sequence_body_v2.pth`. Add recordings to the same compatible dataset
+and rerun your training command. No version-number increment is required.
+
+- Unchanged data reuses the saved split.
+- Changed data automatically rebuilds session-disjoint train/validation/test splits.
+  The console reports the reset; old and new scores are not directly comparable.
+- Training runs in a temporary staging directory. After successful training,
+  the old checkpoint, metrics and split manifest are copied into
+  `ml/models/backups/<model-name>/<timestamp>/`, then the new artifacts replace
+  the stable output. Training/validation failures leave the current files intact.
+- Restart recognition to load the updated checkpoint. The launcher's path need
+  not change when you keep the same filename.
+
+Training still uses the **whole current dataset** and starts a fresh model; this
+is not incremental weight training. Keep old sign recordings if you want to retain
+those labels. Changed feature formats cannot be mixed: keep the 150-feature and
+180-feature datasets separate, even when reusing a model output path.
+
+Use `--strict-splits` to retain the old refusal-on-change behavior for benchmark
+runs. Existing explicit identity-group benchmarks remain protected and require a
+reviewed new split/output path when the dataset changes. To compare model quality
+across growing datasets, use a separately controlled fixed evaluation set.
+
 For a one-hand model, pass the same hand selection to live prediction, e.g. `--hand Right`.
 Copied sequence files retain their independent recording session IDs.
 Live sequence prediction uses automatic camera exposure by default. To set it manually,
@@ -84,17 +155,65 @@ add e.g. `--exposure -5.0`; use `--exposure auto` to restore automatic brightnes
 Double-click `ASignX_TestRecognition.bat` in the project folder, or run:
 
 ```powershell
-python main.py --sign-model ml/models/sign_classifier_canonical.pth --sequence-model ml/models/sequence_classifier.pth --exposure auto
+python main.py --sign-model ml/models/sign_classifier_canonical.pth --sequence-model ml/models/sequence_body_v1.pth --exposure auto
 ```
+
+`ASignX_TestRecognition.bat` loads `sign_classifier_canonical.pth` for static
+recognition and the configured `sequence_body_*.pth` for hands + body dynamic
+recognition. Its vocabulary comes from that checkpoint. Separate J/Z checkpoints
+remain available but are not automatically loaded by this launcher. Startup prints the
+dynamic checkpoint and its labels. The session uses a single dynamic classifier,
+so there is no arbitration between independently trained dynamic vocabularies.
 
 Both models share one camera window. Hold a still sign for static recognition;
 perform a moving gesture for dynamic recognition. The motion gate routes recognition
 based on hand movement, and the overlay shows the results. Only labels learned by
 the respective models can be recognized. Press **Q** or **Esc** to exit.
 
+Combined recognition captures a moving gesture with 200 ms of preceding landmarks.
+Static confirmation is blocked during movement and until 400 ms of quiet has elapsed.
+The completed take is sampled at the checkpoint FPS and resampled to its training
+sequence length before classification. Static recognition then requires a fresh
+stable pose. The dynamic result stays visible for 600 ms and emits once per take.
+Long tracking gaps reject a take; a camera stall clears it. Continuous movement
+beyond 10 seconds aborts the take and requires quiet before another can begin.
+Motion uses the fastest tracked wrist/fingertip point and a lower exit threshold
+to reduce switching around the motion threshold. Small tracking jitter can therefore
+require adjusting `--motion-threshold` on the recognition command.
+
 The launcher uses the project Python environment and requires both trained checkpoints.
 It is separate from the portable recording/extraction EXE, which does not run recognition.
 For different model versions, use the command above with their checkpoint paths.
+
+## Hand tracking during fast movement
+
+Hand detection runs on every processed frame. The default palm detection threshold
+is 0.5 and hand-presence threshold is independently set to 0.45; tracking IoU remains
+0.5. These are separate controls in the [MediaPipe Tasks API](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker/python).
+The duplicate filter compares corresponding landmark geometry relative to hand size
+so touching wrists or overlapping hand boxes alone do not remove a hand.
+
+When a recently tracked hand disappears, a full-image hand detector retries the
+current frame at most once per 150 ms, for up to 500 ms since the last complete
+detection. Recovery adds inference work only during recent tracking loss. It does
+not reuse or predict old hand landmarks. Pose and face tracking refresh at up to
+20 FPS, with body references cached for less than 50 ms between refreshes; hand
+tracking continues on every frame. This prioritizes hand processing when using
+body-context models. Static-image extraction still detects all references per image.
+
+Test recognition accepts `--min-detection-confidence`, `--min-presence-confidence`,
+and `--min-tracking-confidence`. Add `--no-hand-recovery` to compare without the
+extra recovery pass. For example:
+
+```powershell
+.\ASignX_TestRecognition.bat --min-detection-confidence 0.5 --min-presence-confidence 0.45
+```
+
+Flat or edge-on poses and motion blur still need testing on the actual camera.
+Bright, even lighting helps permit a shorter exposure. You can compare e.g.
+`--exposure -6` with auto-exposure, but manual values are camera-dependent and may
+make the image too dark. Added sign-training data does not retrain MediaPipe's
+hand detector. No sign-model retraining is required for these tracking changes.
 
 ## Run from source or rebuild
 
@@ -104,7 +223,7 @@ python -m ml.dynamic_studio_gui
 .\build_dynamic_studio.ps1 -Python python
 ```
 
-Build on Windows x64 with Python 3.14. The build produces `dist/ASignX_DynamicStudio.exe`
+Build on Windows x64 with Python 3.14. The build produces `dist/body/ASignX_DynamicStudio.exe`
 and a copy of this guide. The single EXE includes its runtime and hand model; no separate
 `_internal` folder is needed. The existing static training studio and static extractor
 remain available through their original launchers.

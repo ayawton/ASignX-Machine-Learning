@@ -6,6 +6,11 @@ import argparse
 from dataclasses import asdict, dataclass
 import json
 import math
+import os
+import shutil
+import tempfile
+from datetime import datetime, timezone
+from uuid import uuid4
 from pathlib import Path
 import random
 from typing import Any
@@ -18,6 +23,7 @@ from torch.utils.data import DataLoader
 from ml.evaluate import classification_metrics
 from ml.sequence_dataset import (
     SequenceDataset,
+    SEQUENCE_MANIFEST_VERSION,
     create_sequence_splits,
     dataset_sequence_digest,
     load_sequence_manifest,
@@ -52,6 +58,7 @@ class SequenceTrainConfig:
     class_weighting: str = "inverse"
     group_plan: str | None = None
     evaluate_test: bool = True
+    strict_splits: bool = False
 
 
 @torch.inference_mode()
@@ -75,6 +82,42 @@ def evaluate_sequence_model(
 
 
 def train_sequence(
+    data_dir: str = "ml/data/sequences",
+    output: str = "ml/models/sequence_classifier.pth",
+    config: SequenceTrainConfig | None = None,
+) -> dict[str, Any]:
+    """Train to staging, then back up and replace the stable output on success."""
+    target = Path(output)
+    if target.suffix.lower() != ".pth":
+        raise ValueError("Model output must have a .pth extension")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    suffixes = (".pth", ".metrics.json", ".splits.json")
+    print(f"Training output: {target}")
+    with tempfile.TemporaryDirectory(prefix=f".{target.stem}-training-", dir=target.parent) as directory:
+        staged = Path(directory) / target.name
+        previous_manifest = target.with_suffix(".splits.json")
+        if previous_manifest.exists():
+            shutil.copy2(previous_manifest, staged.with_suffix(".splits.json"))
+        results = _train_sequence(data_dir, str(staged), config)
+        # Verify the trained checkpoint before touching the current output.
+        load_sequence_checkpoint(staged)
+        existing = [target.with_suffix(suffix) for suffix in suffixes if target.with_suffix(suffix).exists()]
+        if existing:
+            stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ") + "-" + uuid4().hex[:8]
+            backup = target.parent / "backups" / target.stem / stamp
+            backup.mkdir(parents=True, exist_ok=False)
+            for path in existing:
+                shutil.copy2(path, backup / path.name)
+            print(f"Previous model and reports backed up to: {backup}")
+        # Publish reports first and checkpoint last. Each replacement is atomic;
+        # a running recognition process can continue using its loaded old model.
+        for suffix in (".splits.json", ".metrics.json", ".pth"):
+            os.replace(staged.with_suffix(suffix), target.with_suffix(suffix))
+    print(f"Model ready: {target}; restart recognition to load the updated model")
+    return results
+
+
+def _train_sequence(
     data_dir: str = "ml/data/sequences",
     output: str = "ml/models/sequence_classifier.pth",
     config: SequenceTrainConfig | None = None,
@@ -119,7 +162,17 @@ def train_sequence(
             splits = manifest["splits"]
             print(f"Reusing fixed split manifest: {manifest_path}")
         except ValueError as err:
-            raise ValueError("Existing benchmark changed; use a new output path and an explicitly reviewed split") from err
+            previous = json.loads(manifest_path.read_text(encoding="utf-8"))
+            if config.strict_splits:
+                raise ValueError("Existing benchmark changed; --strict-splits requires the original dataset or a new output path") from err
+            if previous.get("version") != SEQUENCE_MANIFEST_VERSION:
+                raise ValueError("Unsupported saved split manifest; inspect it before retraining") from err
+            if previous.get("dataset_sha256") == dataset_sequence_digest(samples):
+                raise ValueError("Saved split manifest is invalid for unchanged data; inspect it before retraining") from err
+            if previous.get("global_identity_groups") or config.group_plan:
+                raise ValueError("Identity-group benchmarks require an explicitly reviewed new split/output path") from err
+            print("Dataset changed: rebuilding session-disjoint train/validation/test splits.")
+            print("Evaluation split changed; scores are not directly comparable with the previous run.")
 
     if splits is None:
         splits = load_group_plan(config.group_plan, samples)[0] if config.group_plan else create_sequence_splits(
@@ -286,6 +339,8 @@ def main() -> None:
     parser.add_argument("--selection-metric", choices=("macro_f1", "loss"), default="macro_f1")
     parser.add_argument("--class-weighting", choices=("none", "sqrt", "inverse"), default="inverse")
     parser.add_argument("--group-plan")
+    parser.add_argument("--strict-splits", action="store_true",
+                        help="Refuse dataset changes instead of refreshing saved session splits")
     parser.add_argument("--no-test", dest="evaluate_test", action="store_false")
     args = parser.parse_args()
     values = vars(args).copy()

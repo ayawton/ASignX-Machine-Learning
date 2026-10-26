@@ -388,7 +388,8 @@ class VisualDebugger:
                 )
                 cv2.putText(
                     canvas,
-                    f"MOTION: {dyn_label} ({dyn_conf * 100:.0f}%)",
+                    (f"MOTION: {dyn_label}" if dyn_pred.raw_label in ("AMBIGUOUS", "UNKNOWN")
+                     else f"MOTION: {dyn_label} ({dyn_conf * 100:.0f}%)"),
                     (card_x + 12, y_dyn + 36),
                     self.font,
                     0.6,

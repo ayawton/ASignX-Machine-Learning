@@ -10,6 +10,7 @@ from torch import nn
 from torch.nn import functional as F
 
 from ml.model import CosinePrototypeHead, TorchKinematicEnricher
+from ml.body_context import BODY_CONTEXT_VERSION, TEMPLE_CONTEXT_VERSION, sequence_contract
 from ml.preprocessing import (
     DUAL_KINEMATIC_NUM_FEATURES,
     DUAL_NUM_FEATURES,
@@ -306,7 +307,7 @@ def save_sequence_checkpoint(
         {
             "format_version": 2,
             "architecture": "lstm",
-            "preprocessing": SEQUENCE_PREPROCESSING_VERSION,
+            "preprocessing": sequence_contract(model.config["input_size"]),
             "num_features": model.config["input_size"],
             "sequence_length": int(sequence_length),
             "model_config": model.config,
@@ -330,7 +331,7 @@ def load_sequence_checkpoint(
     if (
         checkpoint.get("architecture") != "lstm"
         or checkpoint.get("format_version") != 2
-        or preprocessing != SEQUENCE_PREPROCESSING_VERSION
+        or preprocessing not in (SEQUENCE_PREPROCESSING_VERSION, BODY_CONTEXT_VERSION, TEMPLE_CONTEXT_VERSION)
     ):
         raise ValueError("Unsupported checkpoint architecture, version, or preprocessing")
     labels = checkpoint.get("labels")
@@ -350,6 +351,8 @@ def load_sequence_checkpoint(
         config["cosine_head"] = False
         config["backbone"] = "lstm"
 
+    if sequence_contract(config.get("input_size", NUM_FEATURES)) != preprocessing:
+        raise ValueError("Body context checkpoint contract does not match input size")
     model = SignLSTM(**config).to(device)
     model.load_state_dict(state_dict)
     model.eval()

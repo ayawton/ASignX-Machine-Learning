@@ -101,6 +101,27 @@ class SignPredictor:
         return list(self.labels)
 
 
+def _unique_hands(hands: list[Any]) -> list[Any]:
+    """Keep one detection per named hand so each tracker advances once per frame."""
+    selected: dict[str, Any] = {}
+    for hand in hands:
+        label = hand.handedness
+        if label in ("Left", "Right"):
+            previous = selected.get(label)
+            if previous is None or getattr(hand, "score", 0.0) > getattr(previous, "score", 0.0):
+                selected[label] = hand
+    emitted: set[str] = set()
+    result = []
+    for hand in hands:
+        label = hand.handedness
+        if label not in selected:
+            result.append(hand)
+        elif label not in emitted:
+            result.append(selected[label])
+            emitted.add(label)
+    return result
+
+
 class MotionGate:
     """Sliding-window hand velocity tracker to route static vs. dynamic signs and suppress transition blur."""
 
@@ -117,7 +138,7 @@ class MotionGate:
         self.timestamps.clear()
 
     def update(self, landmarks: np.ndarray | None, timestamp: float | None = None) -> tuple[float, bool]:
-        """Update with a (21, 3) hand array and return (mean_velocity, is_moving)."""
+        """Return time-averaged speed of the fastest tracked point and motion state."""
         if landmarks is None:
             self.reset()
             return 0.0, False
@@ -140,7 +161,7 @@ class MotionGate:
         if len(self.history) < 2:
             return 0.0, False
         diffs = [
-            float(np.linalg.norm(self.history[i] - self.history[i - 1], axis=1).mean())
+            float(np.linalg.norm(self.history[i] - self.history[i - 1], axis=1).max())
             for i in range(1, len(self.history))
         ]
         velocity = float(np.sum(diffs) / (30 * (self.timestamps[-1] - self.timestamps[0])))
@@ -209,7 +230,8 @@ class SignRecognizer:
         self.motion_gates: dict[str, MotionGate] = {}
         self._last_timestamp: float | None = None
 
-    def update(self, hands: list[Any], timestamp: float | None = None) -> list[Recognition]:
+    def update(self, hands: list[Any], timestamp: float | None = None, *, suppress: bool = False) -> list[Recognition]:
+        hands = _unique_hands(hands)
         if timestamp is not None:
             if not np.isfinite(timestamp) or (self._last_timestamp is not None and timestamp <= self._last_timestamp):
                 raise ValueError("Recognition timestamps must increase and be finite")
@@ -240,7 +262,7 @@ class SignRecognizer:
                 continue
 
             # Suppress static confirmation when hand is mid-sweep if motion gate is active
-            effective_label = None if is_moving else prediction.label
+            effective_label = None if is_moving or suppress else prediction.label
             stable, emitted = state.update(effective_label)
             results.append(
                 Recognition(
@@ -283,62 +305,127 @@ class UnifiedSignRecognizer:
             else None
         )
         self.sequence_predictor = sequence_predictor
-        self.sequence_stabilizer = PredictionStabilizer(stable_frames=3, release_frames=8)
-        self.global_motion_gate = MotionGate(velocity_threshold=velocity_threshold)
         self.hand_motion_gates: dict[str, MotionGate] = {}
         self.velocity_threshold = velocity_threshold
         self.last_motion_at: float | None = None
         self._last_timestamp: float | None = None
+        self.state = "static"
+        self.pre_roll_seconds = 0.2
+        self.settle_seconds = 0.4
+        self.max_gesture_seconds = 10.0
+        self._history: deque[tuple[float, np.ndarray | None]] = deque(maxlen=1600)
+        self._gesture: list[tuple[float, np.ndarray | None]] = []
+        self._started_at: float | None = None
+        self._result = None
+        self._result_at: float | None = None
+        self._discard_gesture = False
 
-    def update(self, hands: list[Any], timestamp: float | None = None) -> dict[str, Any]:
+    def update(self, hands: list[Any], timestamp: float | None = None, *, body_context=None) -> dict[str, Any]:
+        hands = _unique_hands(hands)
         timestamp = time.perf_counter() if timestamp is None else timestamp
+        if not np.isfinite(timestamp) or (self._last_timestamp is not None and timestamp <= self._last_timestamp):
+            raise ValueError("Recognition timestamps must increase and be finite")
         if self._last_timestamp is not None and timestamp - self._last_timestamp > 0.5:
-            self.sequence_stabilizer = PredictionStabilizer(stable_frames=3, release_frames=8)
+            self.state = "static"
             self.last_motion_at = None
+            self._history.clear()
+            self._gesture.clear()
+            self._result = None
+            self._discard_gesture = False
+            for gate in self.hand_motion_gates.values():
+                gate.reset()
+            if self.sequence_predictor is not None:
+                self.sequence_predictor.reset()
         self._last_timestamp = timestamp
-        static_results = (
-            self.static_recognizer.update(hands, timestamp) if self.static_recognizer is not None else []
-        )
         present = set()
-        velocity, is_moving = 0.0, False
+        velocity = 0.0
+        # Lower exit threshold prevents switching routes around the entry threshold.
+        threshold = self.velocity_threshold * (0.6 if self.state != "static" else 1.0)
         for index, hand in enumerate(hands):
             key = hand.handedness or f"Hand_{index}"
             present.add(key)
             gate = self.hand_motion_gates.setdefault(key, MotionGate(velocity_threshold=self.velocity_threshold))
-            speed, moving = gate.update(hand.to_numpy(), timestamp)
-            velocity, is_moving = max(velocity, speed), is_moving or moving
+            speed, _ = gate.update(hand.to_numpy(), timestamp)
+            velocity = max(velocity, speed)
         for key, gate in self.hand_motion_gates.items():
             if key not in present:
                 gate.reset()
+        is_moving = bool(hands) and velocity >= threshold
         if is_moving:
             self.last_motion_at = timestamp
 
-        dynamic_prediction = None
-        dynamic_stable = None
         dynamic_emitted = None
+        dynamic_stable = None
+        finalized = False
         if self.sequence_predictor is not None:
             from ml.predict_sequence import _canonical_hands
             from ml.preprocessing import DUAL_NUM_FEATURES
 
-            both = self.sequence_predictor.input_size == DUAL_NUM_FEATURES
-            self.sequence_predictor.add_frame(_canonical_hands(hands, both, "single"), timestamp=timestamp)
-            active = bool(hands) and self.last_motion_at is not None and timestamp - self.last_motion_at <= 0.35
-            if active and self.sequence_predictor.sampled:
-                dynamic_prediction = self.sequence_predictor.predict()
-                lbl = dynamic_prediction.label if dynamic_prediction else None
-                dynamic_stable, dynamic_emitted = self.sequence_stabilizer.update(lbl)
-            elif self.sequence_predictor.sampled:
-                self.sequence_stabilizer.update(None)
+            from ml.body_context import BODY_NUM_FEATURES, TEMPLE_NUM_FEATURES, BODY_FEATURE_WIDTHS, context_features
+            both = self.sequence_predictor.input_size in (DUAL_NUM_FEATURES, *BODY_FEATURE_WIDTHS)
+            if hasattr(self.sequence_predictor, "prepare_frame"):
+                raw = self.sequence_predictor.prepare_frame(hands, body_context)
+            else:
+                raw = (context_features(hands, body_context, temple_context=self.sequence_predictor.input_size == TEMPLE_NUM_FEATURES) if self.sequence_predictor.input_size in BODY_FEATURE_WIDTHS
+                       else _canonical_hands(hands, both, "single"))
+            raw = raw.copy() if raw is not None else None
+            self._history.append((timestamp, raw))
+            while self._history and timestamp - self._history[0][0] > self.pre_roll_seconds:
+                self._history.popleft()
+            if self.state == "static" and is_moving:
+                self.state = "gesture"
+                self._started_at = timestamp
+                self._gesture = list(self._history)
+                self._result = None
+                self._discard_gesture = False
+            elif self.state != "static":
+                self._gesture.append((timestamp, raw))
 
+            if self.state != "static":
+                self.state = "gesture" if is_moving else "settling"
+                quiet = timestamp - self.last_motion_at >= self.settle_seconds
+                timed_out = timestamp - self._started_at >= self.max_gesture_seconds
+                if quiet or timed_out:
+                    finalized = True
+                    # Replay the completed take at the checkpoint sampling rate, then
+                    # resample it to the training sequence length. Missing samples
+                    # still pass through the predictor's visibility/gap checks.
+                    predictor = self.sequence_predictor
+                    try:
+                        if quiet and not self._discard_gesture:
+                            self._result = predictor.predict_take(self._gesture)
+                            self._result_at = timestamp
+                            dynamic_stable = self._result.label
+                            dynamic_emitted = self._result.label
+                    except ValueError:
+                        self._result = None
+                    self._gesture.clear()
+                    self.state = "static" if quiet else "settling"
+                    if timed_out and not quiet:
+                        # Abort an excessively long take; wait for quiet before rearming.
+                        self._started_at = timestamp
+                        self._discard_gesture = True
+
+        # Block static confirmation through settling and on the finalization frame.
+        suppress = self.state != "static" or finalized
+        static_results = (
+            self.static_recognizer.update(hands, timestamp, suppress=suppress)
+            if self.static_recognizer is not None else []
+        )
+        visible_result = self._result if self._result_at is not None and timestamp - self._result_at <= 0.6 else None
         return {
-            "mode": "dynamic" if is_moving else "static",
+            "mode": "dynamic" if suppress or is_moving else "static",
+            "state": self.state,
             "velocity": velocity,
             "is_moving": is_moving,
             "static": static_results,
-            "dynamic_prediction": dynamic_prediction,
-            "dynamic_stable": dynamic_stable,
+            "dynamic_prediction": visible_result,
+            "dynamic_stable": dynamic_stable or (visible_result.label if visible_result else None),
             "dynamic_emitted": dynamic_emitted,
+            "dynamic_evaluated": finalized and self._result is not None,
+            "dynamic_candidates": getattr(self.sequence_predictor, "last_predictions", {}),
         }
+
 
 
 def main() -> None:

@@ -6,7 +6,7 @@ a = Analysis(
     ['ml/dynamic_studio_entry.py'],
     pathex=[SPECPATH],
     binaries=mp_binaries,
-    datas=mp_data + [('asignx/assets/hand_landmarker.task', 'asignx/assets')],
+    datas=mp_data + [(f'asignx/assets/{name}', 'asignx/assets') for name in ('hand_landmarker.task', 'pose_landmarker_lite.task', 'face_landmarker.task')],
     hiddenimports=mp_imports,
     excludes=['torch', 'torchvision', 'pytest', 'IPython'],
     hooksconfig={'matplotlib': {'backends': ['Agg']}},

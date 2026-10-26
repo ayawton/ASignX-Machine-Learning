@@ -216,3 +216,93 @@ def test_fast_left_hand_reacquisition() -> None:
         detector.close()
 
 
+
+def _task_result(x=None):
+    if x is None:
+        return SimpleNamespace(hand_landmarks=[], handedness=[])
+    return SimpleNamespace(hand_landmarks=[[
+        SimpleNamespace(x=x+i*.005,y=.3+i*.004,z=0.) for i in range(21)
+    ]],handedness=[[SimpleNamespace(category_name='Right',score=.99)]])
+
+
+def test_recovery_uses_fresh_detection_and_is_rate_limited():
+    with HandDetector() as detector:
+        class Primary:
+            def __init__(self): self.calls = 0
+            def detect_for_video(self,image,stamp):
+                self.calls += 1
+                return _task_result(.2 if self.calls == 1 else None)
+            def close(self): pass
+        class Recovery:
+            def __init__(self): self.calls = 0
+            def detect(self,image):
+                self.calls += 1
+                return _task_result(.4 if self.calls == 1 else None)
+            def close(self): pass
+        detector._hands.close()
+        detector._hands = Primary()
+        recovery = detector._recovery_hands = Recovery()
+        image = np.zeros((128,128,3), dtype=np.uint8)
+        assert detector.process(image,False,1000)[0].hand_detected
+        recovered = detector.process(image,False,1033)[0]
+        assert recovered.hand_detected
+        assert recovered.hand[0].x == .4
+        assert not detector.process(image,False,1066)[0].hand_detected
+        assert recovery.calls == 1
+        assert not detector.process(image,False,1250)[0].hand_detected
+        assert recovery.calls == 2
+        assert not detector.process(image,False,1700)[0].hand_detected
+        assert recovery.calls == 2
+
+
+def test_touching_wrists_do_not_suppress_different_hand_shapes():
+    from asignx.models import HAND_LANDMARK_NAMES, HandLandmarks, Landmark
+    with HandDetector(static_image_mode=True) as detector:
+        def hand(direction):
+            return HandLandmarks([Landmark(i,HAND_LANDMARK_NAMES[i],.5+direction*i*.008,.5+i*.003,0.) for i in range(21)])
+        a,b = hand(-1),hand(1)
+        assert not detector._is_duplicate(a,b)
+        assert len(detector._suppress_duplicates([(a,None),(b,None)])) == 2
+
+
+def test_presence_threshold_is_independent_of_tracking(monkeypatch):
+    import mediapipe as mp
+    options = []
+    class Tracker:
+        def close(self): pass
+    monkeypatch.setattr(mp.tasks.vision.HandLandmarker,'create_from_options',lambda opts: options.append(opts) or Tracker())
+    with HandDetector(min_detection_confidence=.4,min_presence_confidence=.35,min_tracking_confidence=.65):
+        assert options[0].min_hand_detection_confidence == .4
+        assert options[0].min_hand_presence_confidence == .35
+        assert options[0].min_tracking_confidence == .65
+
+
+def test_body_context_throttle_keeps_hand_processing_every_frame(monkeypatch):
+    from asignx.body_detector import BodyHandDetector
+    from asignx.models import HandDetectionResult
+    hand_calls = []
+    def process(self,frame,draw=True,timestamp_ms=None):
+        hand_calls.append(timestamp_ms)
+        return HandDetectionResult(False,frame_timestamp_ms=timestamp_ms),frame
+    monkeypatch.setattr(HandDetector,'process',process)
+    detector = BodyHandDetector.__new__(BodyHandDetector)
+    detector.static_image_mode = False
+    detector._context_interval_ms = 50.
+    detector._body_timestamp = detector._body_source_timestamp = -1
+    detector._body_cache = np.full((8,2),np.nan,dtype=np.float32)
+    class Pose:
+        def __init__(self): self.stamps=[]
+        def detect_for_video(self,image,stamp):
+            self.stamps.append(stamp)
+            return SimpleNamespace(pose_landmarks=[])
+    class Face(Pose):
+        def detect_for_video(self,image,stamp):
+            self.stamps.append(stamp)
+            return SimpleNamespace(face_landmarks=[])
+    detector._pose,detector._face = Pose(),Face()
+    image = np.zeros((32,32,3),dtype=np.uint8)
+    for stamp in (0,16,33,50,66,100,0):
+        detector.process(image,False,stamp)
+    assert len(hand_calls) == 7
+    assert detector._pose.stamps == [0,50,100,101]
+    assert detector._face.stamps == detector._pose.stamps

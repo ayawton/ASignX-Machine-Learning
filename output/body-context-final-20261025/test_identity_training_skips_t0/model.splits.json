@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "preprocessing": "wrist_max_radius_v1",
+  "static_hand_preprocessing": "left_x_reflection_v1",
+  "dataset_sha256": "5384bdfdd36318cb46ba6220380ca322723808101496c6057da99030379cf2b9",
+  "seed": 42,
+  "labels": [
+    "A",
+    "B"
+  ],
+  "splits": {
+    "train": [
+      0,
+      1
+    ],
+    "validation": [
+      2,
+      3
+    ],
+    "test": [
+      4,
+      5
+    ]
+  },
+  "counts": {
+    "train": {
+      "A": 1,
+      "B": 1
+    },
+    "validation": {
+      "A": 1,
+      "B": 1
+    },
+    "test": {
+      "A": 1,
+      "B": 1
+    }
+  },
+  "group_plan_sha256": "af229321cc2f7520a878ce873fe80032b2617cc37b60ad50fe09948782275512",
+  "group_plan": "C:\\Users\\jibbi\\Documents\\Projects\\ASignX-Machine-Learning\\output\\body-context-final-20261025\\test_identity_training_skips_t0\\groups.csv",
+  "global_identity_groups": true
+}

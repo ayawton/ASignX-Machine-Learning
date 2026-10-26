@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "preprocessing": "sequence_anchor_trajectory_v2",
+  "dataset_sha256": "ab9b9e721764b03e18afec23882dea70d4c3dea83c22542d286304f8e6adccdf",
+  "seed": 42,
+  "labels": [
+    "HELLO",
+    "HELP"
+  ],
+  "splits": {
+    "train": [
+      0,
+      4
+    ],
+    "validation": [
+      2,
+      3
+    ],
+    "test": [
+      1,
+      5
+    ]
+  },
+  "counts": {
+    "train": {
+      "HELLO": 1,
+      "HELP": 1
+    },
+    "validation": {
+      "HELLO": 1,
+      "HELP": 1
+    },
+    "test": {
+      "HELLO": 1,
+      "HELP": 1
+    }
+  }
+}

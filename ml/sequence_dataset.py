@@ -13,6 +13,7 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset
 
+from ml.body_context import sequence_contract
 from ml.sequence_io import SequenceSample, save_sequence_file, load_sequence_file, read_sequence_dir
 
 from ml.preprocessing import (
@@ -131,7 +132,7 @@ def save_sequence_manifest(
     validate_sequence_splits(samples, splits)
     payload = {
         "version": SEQUENCE_MANIFEST_VERSION,
-        "preprocessing": SEQUENCE_PREPROCESSING_VERSION,
+        "preprocessing": sequence_contract(samples[0].features.shape[1]),
         "dataset_sha256": dataset_sequence_digest(samples),
         "seed": seed,
         "labels": sorted({sample.label for sample in samples}),
@@ -152,7 +153,7 @@ def load_sequence_manifest(
     payload = json.loads(Path(manifest_path).read_text(encoding="utf-8"))
     if (
         payload.get("version") != SEQUENCE_MANIFEST_VERSION
-        or payload.get("preprocessing") != SEQUENCE_PREPROCESSING_VERSION
+        or payload.get("preprocessing") != (sequence_contract(samples[0].features.shape[1]))
     ):
         raise ValueError("Incompatible sequence split manifest version or preprocessing")
     if payload.get("dataset_sha256") != dataset_sequence_digest(samples):
@@ -181,7 +182,8 @@ class SequenceDataset(Dataset):
         self.targets = torch.tensor(
             [label_to_index[samples[index].label] for index in indices], dtype=torch.long
         )
-        self.augment = bool(augment)
+        # Hand-only spatial augmentation cannot rotate mixed body/mask columns.
+        self.augment = bool(augment) and self.raw_features.shape[-1] in (63, 126)
         self.rng = np.random.default_rng(seed)
 
     def __len__(self) -> int:

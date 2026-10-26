@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
+from ml.body_context import BODY_CONTEXT_VERSION, BODY_NUM_FEATURES, TEMPLE_CONTEXT_VERSION, TEMPLE_NUM_FEATURES, BODY_FEATURE_WIDTHS, sequence_contract
 from ml.preprocessing import DUAL_NUM_FEATURES, NUM_FEATURES, SEQUENCE_PREPROCESSING_VERSION
 
 
@@ -28,11 +29,11 @@ class SequenceSample:
         if (
             self.features.ndim != 2
             or self.features.shape[0] < 1
-            or self.features.shape[1] not in (NUM_FEATURES, DUAL_NUM_FEATURES)
+            or self.features.shape[1] not in (NUM_FEATURES, DUAL_NUM_FEATURES, *BODY_FEATURE_WIDTHS)
         ):
             raise ValueError(
                 f"Features must have shape (T, {NUM_FEATURES}) or "
-                f"(T, {DUAL_NUM_FEATURES}), got {self.features.shape}"
+                f"(T, {DUAL_NUM_FEATURES}), (T, {BODY_NUM_FEATURES}) or (T, {TEMPLE_NUM_FEATURES}), got {self.features.shape}"
             )
         if not np.isfinite(self.features).all():
             raise ValueError("Sequence features must be finite")
@@ -49,7 +50,7 @@ def save_sequence_file(output_path: str | Path, sample: SequenceSample) -> Path:
         label=sample.label,
         session_id=sample.session_id,
         handedness=sample.handedness,
-        preprocessing=SEQUENCE_PREPROCESSING_VERSION,
+        preprocessing=sequence_contract(sample.features.shape[1]),
         metadata=json.dumps(sample.metadata, sort_keys=True),
     )
     return path
@@ -58,12 +59,15 @@ def save_sequence_file(output_path: str | Path, sample: SequenceSample) -> Path:
 def load_sequence_file(path: str | Path) -> SequenceSample:
     with np.load(Path(path), allow_pickle=False) as data:
         preprocessing = str(data["preprocessing"]) if "preprocessing" in data else ""
-        if preprocessing != SEQUENCE_PREPROCESSING_VERSION:
+        if preprocessing not in (SEQUENCE_PREPROCESSING_VERSION, BODY_CONTEXT_VERSION, TEMPLE_CONTEXT_VERSION):
             raise ValueError(
                 f"Incompatible preprocessing version {preprocessing!r}; "
-                f"expected {SEQUENCE_PREPROCESSING_VERSION!r}. Regenerate videos "
+                f"expected a supported hand/body contract, including {TEMPLE_CONTEXT_VERSION!r}. Regenerate videos "
                 "with python -m ml.prepare_videos"
             )
+        width = data["features"].shape[-1]
+        if sequence_contract(width) != preprocessing:
+            raise ValueError("Body context feature width and preprocessing contract disagree")
         metadata = json.loads(str(data["metadata"])) if "metadata" in data else {}
         return SequenceSample(
             label=str(data["label"]),

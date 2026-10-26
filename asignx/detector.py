@@ -9,6 +9,7 @@ from __future__ import annotations
 
 from collections import deque
 from pathlib import Path
+from types import SimpleNamespace
 import time
 from typing import Any, Deque, List, Optional, Tuple
 
@@ -39,18 +40,34 @@ class HandDetector:
         self,
         static_image_mode: bool = False,
         max_num_hands: int = 2,
-        min_detection_confidence: float = 0.6,
+        min_detection_confidence: float = 0.5,
         min_tracking_confidence: float = 0.5,
         model_complexity: int = 1,
         duplicate_distance_threshold: float = 0.12,
         duplicate_iou_threshold: float = 0.30,
         left_hand_motion_distance_threshold: float = 0.45,
+        min_presence_confidence: float = 0.45,
+        recovery_enabled: bool = True,
+        recovery_interval_ms: int = 150,
     ) -> None:
         """Initialize the MediaPipe Tasks hand detector.
 
         ``model_complexity`` is accepted for compatibility with the old CLI,
         but the Tasks API uses the bundled ``hand_landmarker.task`` model.
         """
+        for value in (min_detection_confidence, min_tracking_confidence, min_presence_confidence):
+            if not np.isfinite(value) or not 0 <= value <= 1:
+                raise ValueError("Hand confidence thresholds must be between 0 and 1")
+        if recovery_interval_ms < 1:
+            raise ValueError("Recovery interval must be positive")
+        self.min_presence_confidence = min_presence_confidence
+        self.recovery_enabled = recovery_enabled
+        self.recovery_interval_ms = recovery_interval_ms
+        self._recovery_hands = None
+        self._last_recovery_ms = -float("inf")
+        self._last_full_hand_ms = -float("inf")
+        self._recent_hand_count = 0
+        self.recovery_attempts = self.recovery_successes = 0
         self.static_image_mode = static_image_mode
         self.max_num_hands = max_num_hands
         self.min_detection_confidence = min_detection_confidence
@@ -78,6 +95,7 @@ class HandDetector:
             base_options = mp.tasks.BaseOptions(model_asset_buffer=model_path.read_bytes())
         else:
             base_options = mp.tasks.BaseOptions(model_asset_path=str(model_path))
+        self._hand_base_options = base_options
         vision = mp.tasks.vision
         running_mode = (
             vision.RunningMode.IMAGE
@@ -89,7 +107,7 @@ class HandDetector:
             running_mode=running_mode,
             num_hands=self.max_num_hands,
             min_hand_detection_confidence=self.min_detection_confidence,
-            min_hand_presence_confidence=self.min_tracking_confidence,
+            min_hand_presence_confidence=self.min_presence_confidence,
             min_tracking_confidence=self.min_tracking_confidence,
         )
         self._hands = vision.HandLandmarker.create_from_options(options)
@@ -99,36 +117,16 @@ class HandDetector:
 
     def _is_duplicate(self, hand_a: HandLandmarks, hand_b: HandLandmarks) -> bool:
         """Determine if two hand detections represent the same physical hand."""
-        w_a = hand_a[0]
-        w_b = hand_b[0]
-        d_wrist = np.sqrt((w_a.x - w_b.x) ** 2 + (w_a.y - w_b.y) ** 2)
-
-        pts_a = np.array([(lm.x, lm.y) for lm in hand_a.landmarks], dtype=np.float32)
-        pts_b = np.array([(lm.x, lm.y) for lm in hand_b.landmarks], dtype=np.float32)
-        c_a = np.mean(pts_a, axis=0)
-        c_b = np.mean(pts_b, axis=0)
-        d_centroid = float(np.linalg.norm(c_a - c_b))
-
-        min_a = np.min(pts_a, axis=0)
-        max_a = np.max(pts_a, axis=0)
-        min_b = np.min(pts_b, axis=0)
-        max_b = np.max(pts_b, axis=0)
-
-        inter_min = np.maximum(min_a, min_b)
-        inter_max = np.minimum(max_a, max_b)
-        inter_dims = np.maximum(0.0, inter_max - inter_min)
-        inter_area = float(inter_dims[0] * inter_dims[1])
-
-        area_a = float(max(0.0, max_a[0] - min_a[0]) * max(0.0, max_a[1] - min_a[1]))
-        area_b = float(max(0.0, max_b[0] - min_b[0]) * max(0.0, max_b[1] - min_b[1]))
-        union_area = area_a + area_b - inter_area
-        iou = (inter_area / union_area) if union_area > 1e-6 else 0.0
-
-        return bool(
-            d_wrist < self.duplicate_distance_threshold
-            or d_centroid < self.duplicate_distance_threshold
-            or iou > self.duplicate_iou_threshold
-        )
+        pts_a = hand_a.to_numpy()[:, :2]
+        pts_b = hand_b.to_numpy()[:, :2]
+        # Proximity or overlapping boxes alone do not imply a duplicate: two
+        # genuine hands can touch or overlap during signs such as HELP.
+        extent = max(float(np.linalg.norm(np.ptp(pts_a, axis=0))),
+                     float(np.linalg.norm(np.ptp(pts_b, axis=0))), 1e-6)
+        tolerance = min(self.duplicate_distance_threshold, extent * 0.25)
+        distances = np.linalg.norm(pts_a - pts_b, axis=1)
+        return bool(np.sqrt(np.mean(distances ** 2)) < tolerance
+                    and np.quantile(distances, .9) < tolerance * 1.5)
 
     def _suppress_duplicates(
         self, candidates: List[Tuple[HandLandmarks, Any]]
@@ -241,6 +239,35 @@ class HandDetector:
         self._last_timestamp_ms = timestamp_ms
         return self._hands.detect_for_video(mp_image, timestamp_ms)
 
+    def _recover_missing_hands(self, rgb_frame, results, timestamp_ms):
+        """Retry current image on brief tracking loss; never reuse old landmarks."""
+        primary = list(getattr(results, "hand_landmarks", []) or [])
+        if (self.static_image_mode or not self.recovery_enabled
+                or len(primary) >= self._recent_hand_count
+                or timestamp_ms - self._last_full_hand_ms > 500
+                or timestamp_ms - self._last_recovery_ms < self.recovery_interval_ms):
+            return results
+        self._last_recovery_ms = timestamp_ms
+        if self._recovery_hands is None:
+            vision = mp.tasks.vision
+            self._recovery_hands = vision.HandLandmarker.create_from_options(vision.HandLandmarkerOptions(
+                base_options=self._hand_base_options, running_mode=vision.RunningMode.IMAGE,
+                num_hands=self.max_num_hands,
+                min_hand_detection_confidence=self.min_detection_confidence,
+                min_hand_presence_confidence=self.min_presence_confidence))
+        self.recovery_attempts += 1
+        retry = self._recovery_hands.detect(mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame))
+        recovered = list(getattr(retry, "hand_landmarks", []) or [])
+        if not recovered:
+            return results
+        self.recovery_successes += 1
+        categories = list(getattr(results, "handedness", []) or [])
+        categories += [[] for _ in range(len(primary) - len(categories))]
+        retry_categories = list(getattr(retry, "handedness", []) or [])
+        retry_categories += [[] for _ in range(len(recovered) - len(retry_categories))]
+        return SimpleNamespace(hand_landmarks=primary + recovered,
+                               handedness=categories + retry_categories)
+
     def _draw_hand(self, frame: np.ndarray, hand: HandLandmarks) -> None:
         height, width = frame.shape[:2]
         points = [(int(lm.x * width), int(lm.y * height)) for lm in hand.landmarks]
@@ -276,6 +303,8 @@ class HandDetector:
         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         rgb_frame.flags.writeable = False
         results = self._detect(rgb_frame, timestamp_ms)
+        stamp = timestamp_ms if self.static_image_mode else self._last_timestamp_ms
+        results = self._recover_missing_hands(rgb_frame, results, stamp)
         rgb_frame.flags.writeable = True
 
         raw_candidates: List[Tuple[HandLandmarks, Any]] = []
@@ -314,11 +343,14 @@ class HandDetector:
             )
             raw_candidates.append((hand_obj, raw_landmarks))
 
-        valid_candidates = self._suppress_duplicates(raw_candidates)
+        valid_candidates = self._suppress_duplicates(raw_candidates)[:self.max_num_hands]
         if not self.static_image_mode:
             valid_candidates = self._stabilize_handedness(valid_candidates)
 
         detected_hands: List[HandLandmarks] = [pair[0] for pair in valid_candidates]
+        if len(detected_hands) >= self._recent_hand_count or stamp - self._last_full_hand_ms > 500:
+            self._recent_hand_count = len(detected_hands)
+            self._last_full_hand_ms = stamp
 
         if draw:
             for hand, _ in valid_candidates:
@@ -334,6 +366,9 @@ class HandDetector:
 
     def close(self) -> None:
         """Release MediaPipe resources."""
+        if getattr(self, "_recovery_hands", None) is not None:
+            self._recovery_hands.close()
+            self._recovery_hands = None
         if hasattr(self, "_hands") and self._hands is not None:
             self._hands.close()
             self._hands = None

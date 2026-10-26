@@ -45,6 +45,7 @@ class DynamicStudio:
         self.config_widgets = []
         self.label = tk.StringVar(value="J")
         self.hand = tk.StringVar(value="both")
+        self.body_mode = tk.StringVar(value="hands")
         self.length = tk.StringVar(value="30")
         self.fps = tk.StringVar(value="15")
         self.minimum = tk.StringVar(value="10")
@@ -72,7 +73,7 @@ class DynamicStudio:
 
     def field(self, parent, row, title, variable, choices=None):
         ttk.Label(parent, text=title).grid(row=row, column=0, sticky="w", padx=(0, 12), pady=4)
-        widget = (ttk.Combobox(parent, textvariable=variable, values=choices, state="readonly", width=18)
+        widget = (ttk.Combobox(parent, textvariable=variable, values=choices, state="readonly", width=24 if variable is self.body_mode else 18)
                   if choices else ttk.Entry(parent, textvariable=variable, width=21))
         widget.grid(row=row, column=1, sticky="ew", pady=4)
         self.config_widgets.append((widget, "readonly" if choices else "normal"))
@@ -126,9 +127,10 @@ class DynamicStudio:
             ("Sampling FPS", self.fps, None), ("Minimum frames", self.minimum, None),
             ("Min. detection ratio", self.ratio, None), ("Max. take seconds", self.maximum, None),
             ("Countdown seconds", self.countdown, None),
+            ("Landmarks", self.body_mode, ("hands", "hands + body", "hands + body (legacy 150)")),
         ]):
             self.field(settings, row, title, variable, choices)
-        ttk.Label(settings, text="Keep settings consistent across labels.\nRecord 3+ takes per label and 2+ labels.\nVary signer, lighting and position.", wraplength=280).grid(row=10, column=0, columnspan=2, sticky="w", pady=8)
+        ttk.Label(settings, text="Keep settings consistent across labels.\nRecord 3+ takes per label and 2+ labels.\nVary signer, lighting and position.\nBody mode includes temples; keep face visible.\nUse legacy 150 only for older datasets.", wraplength=280).grid(row=11, column=0, columnspan=2, sticky="w", pady=8)
         preview = ttk.Frame(body)
         preview.pack(side="left", fill="both", expand=True)
         self.preview = tk.Label(preview, text="Open camera to preview", bg="#101827", fg="#cbd5e1", font=("Segoe UI", 15))
@@ -173,7 +175,8 @@ class DynamicStudio:
                                float(self.ratio.get()), float(self.maximum.get()), float(self.countdown.get()),
                                signer_id=self.signer_id.get().strip(), recording_id=self.recording_id.get().strip(),
                                source_id=self.source_id.get().strip(), device=self.device_id.get().strip(),
-                               split=self.benchmark_split.get())
+                               split=self.benchmark_split.get(), body_context=self.body_mode.get() != "hands",
+                               temple_context=self.body_mode.get() == "hands + body")
 
     def append(self, message):
         self.log.configure(state="normal")
@@ -227,7 +230,9 @@ class DynamicStudio:
     def camera_worker(self, settings, camera_index):
         recorder = TakeRecorder(settings)
         with WebcamStream(camera_index=camera_index, threaded=False, exposure=None) as camera:
-            with HandDetector(max_num_hands=2) as detector:
+            from asignx.body_detector import BodyHandDetector
+            detector_type = BodyHandDetector if settings.body_context or settings.temple_context else HandDetector
+            with detector_type(max_num_hands=2) as detector:
                 self.events.put(("camera_ready", None))
                 while not self.stop.is_set():
                     success, frame = camera.read()
@@ -247,7 +252,7 @@ class DynamicStudio:
                             elif command == "discard":
                                 recorder.discard()
                                 self.events.put(("message", "Take discarded. Press Start take to retry."))
-                        saved = recorder.update(result.all_hands, now)
+                        saved = recorder.update(result.all_hands, now, getattr(result, "body_context", None))
                         if saved:
                             self.events.put(("saved", str(saved)))
                     except ValueError as error:
@@ -280,7 +285,11 @@ class DynamicStudio:
             hand, length, fps, ratio = self.hand.get(), int(self.length.get()), float(self.fps.get()), float(self.ratio.get())
             if length < 2 or not 0 < fps <= 120 or not 0 < ratio <= 1:
                 raise ValueError("Check sequence steps, sampling FPS, and detection ratio.")
-            validate_output(output, hand, length)
+            body_context = self.body_mode.get() != "hands"
+            temple_context = self.body_mode.get() == "hands + body"
+            if body_context and hand != "both":
+                raise ValueError("Body context requires hand mode both.")
+            validate_output(output, hand, length, body_context, temple_context)
             skip = self.skip_invalid.get()
         except (ValueError, OSError) as error:
             messagebox.showerror("Check import settings", str(error), parent=self.root)
@@ -289,7 +298,7 @@ class DynamicStudio:
         self.status.set("Preparing video extraction...")
         def work():
             paths = prepare_video_dataset(source, output, hand_selection=hand, sequence_length=length,
-                target_fps=fps, min_detection_ratio=ratio, skip_invalid=skip,
+                target_fps=fps, min_detection_ratio=ratio, skip_invalid=skip, body_context=body_context, temple_context=temple_context,
                 progress=lambda done, total, path: self.events.put(("progress", (done, total, path))),
                 cancelled=self.stop.is_set)
             self.events.put(("message", f"Extraction complete: {len(paths)} sequences in {output}"))
@@ -361,9 +370,18 @@ def self_test(output: Path):
     ImageTk.PhotoImage(Image.new("RGB", (16, 16)))
     with HandDetector(max_num_hands=2) as detector:
         result, _ = detector.process(np.zeros((64, 64, 3), dtype=np.uint8), draw=True)
+    from asignx.body_detector import BodyHandDetector
+    with BodyHandDetector(max_num_hands=2) as detector:
+        body_result, _ = detector.process(np.zeros((128, 128, 3), dtype=np.uint8), draw=True)
+        assert body_result.body_context.shape == (8, 2)
     from types import SimpleNamespace
     import tempfile
     with tempfile.TemporaryDirectory() as directory:
+        app.output.set(directory)
+        app.body_mode.set("hands + body")
+        assert app.settings().body_context and app.settings().temple_context
+        app.body_mode.set("hands + body (legacy 150)")
+        assert app.settings().body_context and not app.settings().temple_context
         recorder = TakeRecorder(CaptureSettings(Path(directory), "SMOKE", min_frames=2, countdown_seconds=0))
         recorder.start(0)
         for step in range(3):
@@ -375,7 +393,7 @@ def self_test(output: Path):
         assert sample.features.shape == (30, 126)
     root.destroy()
     output.write_text(json.dumps({"ok": True, "tk": tk.TkVersion, "opencv": cv2.__version__,
-                                 "blank_frame_hands": len(result.all_hands), "shape": [30, 126]}), encoding="utf-8")
+                                 "body_context": True, "blank_frame_hands": len(result.all_hands), "shape": [30, 126]}), encoding="utf-8")
 
 
 def main():

@@ -26,6 +26,8 @@ class CaptureSettings:
     source_id: str = ""
     device: str = ""
     split: str = ""
+    body_context: bool = False
+    temple_context: bool = False
 
     def validate(self) -> None:
         if self.split not in ("", "train", "validation", "test"):
@@ -46,12 +48,14 @@ class CaptureSettings:
             raise ValueError("Preparation countdown must be between 0 and 30 seconds.")
         if self.max_seconds * self.target_fps < self.min_frames:
             raise ValueError("Increase maximum duration or FPS to allow the minimum frames.")
-        validate_output(self.output, self.hand, self.sequence_length)
+        if (self.body_context or self.temple_context) and self.hand != "both":
+            raise ValueError("Body context requires hand mode both.")
+        validate_output(self.output, self.hand, self.sequence_length, self.body_context, self.temple_context)
 
 
-def validate_output(output: Path, hand: str, sequence_length: int) -> None:
+def validate_output(output: Path, hand: str, sequence_length: int, body_context: bool = False, temple_context: bool = False) -> None:
     """Prevent incompatible hand contracts from being mixed, even at equal widths."""
-    width = 126 if hand == "both" else 63
+    width = 180 if temple_context else 150 if body_context else 126 if hand == "both" else 63
     if output.exists() and not output.is_dir():
         raise ValueError("Output must be a folder, not a file.")
     for path in output.rglob("*.npz"):
@@ -89,14 +93,14 @@ class TakeRecorder:
         self.capture = None
         self.deadline = None
 
-    def update(self, hands, now: float) -> Path | None:
+    def update(self, hands, now: float, body_context=None) -> Path | None:
         if self.deadline is not None and now >= self.deadline:
             self.deadline = None
-            self.capture = LandmarkSequenceCapture(self.settings.hand)
+            self.capture = LandmarkSequenceCapture(self.settings.hand, body_context=self.settings.body_context, temple_context=self.settings.temple_context)
             self.started_at = self.next_sample_at = now
         if self.capture is not None:
             if now >= self.next_sample_at:
-                self.capture.add_hands(hands)
+                self.capture.add_hands(hands, body_context)
                 self.next_sample_at = now + 1.0 / self.settings.target_fps
             if now - self.started_at >= self.settings.max_seconds:
                 return self.save(now)
@@ -124,5 +128,6 @@ class TakeRecorder:
             return f"Get ready: {max(0, math.ceil(self.deadline - now))}"
         if self.capture is not None:
             return (f"RECORDING {now - self.started_at:.1f}s | "
-                    f"{self.capture.frame_count} frames | hand visible {self.capture.detection_ratio:.0%}")
+                    f"{self.capture.frame_count} frames | hand visible {self.capture.detection_ratio:.0%}"
+                    + (f" | temples visible {self.capture.temple_detection_ratio:.0%}" if self.settings.temple_context else ""))
         return f"Ready | {len(self.saved)} new take(s) saved"

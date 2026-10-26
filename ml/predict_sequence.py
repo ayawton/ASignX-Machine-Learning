@@ -13,6 +13,7 @@ import numpy as np
 import torch
 
 from ml.predict import Prediction, PredictionStabilizer
+from ml.body_context import BODY_NUM_FEATURES, TEMPLE_NUM_FEATURES, BODY_FEATURE_WIDTHS, context_features, resample_context
 from ml.preprocessing import (
     DUAL_NUM_FEATURES,
     fill_landmark_gaps,
@@ -39,7 +40,7 @@ class SequencePredictor:
             self.metadata.get("sequence_length", DEFAULT_SEQUENCE_LENGTH)
         )
         self.input_size = int(self.model.config["input_size"])
-        if self.input_size not in (NUM_FEATURES, DUAL_NUM_FEATURES):
+        if self.input_size not in (NUM_FEATURES, DUAL_NUM_FEATURES, *BODY_FEATURE_WIDTHS):
             raise ValueError(f"Unsupported sequence feature width: {self.input_size}")
         self.threshold = confidence_threshold
         self.device = device
@@ -88,6 +89,12 @@ class SequencePredictor:
         self.sampled = True
 
     def _append_frame(self, landmarks):
+        if self.input_size in BODY_FEATURE_WIDTHS:
+            array = np.zeros(self.input_size, dtype=np.float32) if landmarks is None else np.asarray(landmarks, dtype=np.float32)
+            if array.shape != (self.input_size,) or not np.isfinite(array).all():
+                raise ValueError(f"Body-context checkpoint requires {self.input_size} preprocessed features")
+            self.buffer.append(("features", array, None))
+            return
         hands = self.input_size // NUM_FEATURES
         if landmarks is None:
             raw = np.full((hands, 21, 3), np.nan, dtype=np.float32)
@@ -133,7 +140,20 @@ class SequencePredictor:
             if kind != "features":
                 raise ValueError("Do not mix raw landmarks and preprocessed features in one window")
             rows.append(value)
-        return np.stack(rows).astype(np.float32)
+        features = np.stack(rows).astype(np.float32)
+        if self.input_size in BODY_FEATURE_WIDTHS:
+            masks = features[:, 126:].reshape(len(features), -1, 3)[:, :, 2]
+            visible = (masks[:, 2] == 1) & (masks[:, 3] == 1) & (masks[:, 6:8] == 1).any(axis=1)
+            if self.input_size == TEMPLE_NUM_FEATURES:
+                visible &= (masks[:, 8:10] == 1).all(axis=1)
+            if visible.mean() < self.min_visibility:
+                raise ValueError("Insufficient visible hands and shoulders")
+            run = 0
+            for valid in visible:
+                run = 0 if valid else run + 1
+                if run > self.max_gap_frames:
+                    raise ValueError("Body/hand tracking gap is too long")
+        return features
 
     @torch.inference_mode()
     def predict(self, min_filled_ratio: float = 0.5) -> Prediction | None:
@@ -159,10 +179,25 @@ class SequencePredictor:
         score = float(confidence.item())
         raw_label = self.labels[int(index.item())]
         return Prediction(
-            label=raw_label if score >= self.threshold else None,
+            label=raw_label if score >= self.threshold and raw_label.casefold() != "background" else None,
             confidence=score,
             raw_label=raw_label,
         )
+
+    def predict_take(self, frames) -> Prediction:
+        """Classify a complete timestamped take without truncating its duration."""
+        self.reset()
+        self.buffer = deque()
+        try:
+            for stamp, frame in frames:
+                self.add_frame(frame, timestamp=stamp)
+            features = self._buffer_features()
+            if len(features) < 10:
+                raise ValueError("Too few sampled gesture frames")
+            return self.predict_sequence(features)
+        finally:
+            self.reset()
+            self.buffer = deque(maxlen=self.sequence_length)
 
     def predict_sequence(self, sequence: np.ndarray) -> Prediction:
         array = np.asarray(sequence, dtype=np.float32)
@@ -176,7 +211,7 @@ class SequencePredictor:
                 raise ValueError("Raw sequence hand count does not match the checkpoint")
         if array.ndim != 2 or array.shape[1] != self.input_size:
             raise ValueError(f"Expected sequence shape (T, {self.input_size}), got {array.shape}")
-        array = resample_sequence(array, self.sequence_length, interpolate=True)
+        array = resample_context(array, self.sequence_length) if self.input_size in BODY_FEATURE_WIDTHS else resample_sequence(array, self.sequence_length, interpolate=True)
         self.reset()
         for row in array:
             self.add_frame(row)
@@ -184,6 +219,50 @@ class SequencePredictor:
         if prediction is None:
             raise ValueError("Sequence has insufficient valid hand evidence")
         return prediction
+
+
+class SequencePredictorGroup:
+    """Evaluate independent checkpoints on one take, abstaining on disagreement.
+
+    Softmax scores from separately trained models are not compared as if calibrated.
+    Each model must pass its own threshold; different accepted labels are ambiguous.
+    """
+    def __init__(self, predictors):
+        if not predictors:
+            raise ValueError("Provide at least one sequence predictor")
+        self.predictors = dict(predictors)
+        self.input_size = max(p.input_size for p in self.predictors.values())
+        self.labels = list(dict.fromkeys(label for p in self.predictors.values() for label in p.labels))
+        self.last_predictions = {}
+
+    def reset(self):
+        for predictor in self.predictors.values():
+            predictor.reset()
+        self.last_predictions = {}
+
+    def prepare_frame(self, hands, body_context):
+        return {
+            name: (context_features(hands, body_context, temple_context=predictor.input_size == TEMPLE_NUM_FEATURES) if predictor.input_size in BODY_FEATURE_WIDTHS
+                   else _canonical_hands(hands, predictor.input_size == DUAL_NUM_FEATURES, "single"))
+            for name, predictor in self.predictors.items()
+        }
+
+    def predict_take(self, frames):
+        self.last_predictions = {}
+        for name, predictor in self.predictors.items():
+            try:
+                prediction = predictor.predict_take([(stamp, frame[name]) for stamp, frame in frames])
+            except ValueError:
+                prediction = None
+            self.last_predictions[name] = prediction
+        accepted = [p for p in self.last_predictions.values() if p is not None and p.label is not None
+                    and p.label.casefold() != "background"]
+        labels = {p.label for p in accepted}
+        if len(labels) == 1:
+            # Confidence is displayed only; it does not choose between labels.
+            return accepted[0]
+        score = max((p.confidence for p in self.last_predictions.values() if p is not None), default=0.)
+        return Prediction(None, score, "AMBIGUOUS" if labels else "UNKNOWN")
 
 
 def _canonical_hands(hands: list[Any], both: bool, selection: str) -> np.ndarray | None:
@@ -225,17 +304,21 @@ def main() -> None:
 
     predictor = SequencePredictor(args.model, args.confidence, args.device)
     stabilizer = PredictionStabilizer(args.stable_windows, args.release_windows)
-    both = predictor.input_size == DUAL_NUM_FEATURES
+    both = predictor.input_size in (DUAL_NUM_FEATURES, *BODY_FEATURE_WIDTHS)
     with WebcamStream(camera_index=args.camera, threaded=True, exposure=exposure) as camera:
         if exposure is None:
             # Explicitly restore auto mode: a previous run may have left the driver in manual mode.
             camera.set_exposure(None)
-        with HandDetector(max_num_hands=2) as detector:
+        from asignx.body_detector import BodyHandDetector
+        detector_type = BodyHandDetector if predictor.input_size in BODY_FEATURE_WIDTHS else HandDetector
+        with detector_type(max_num_hands=2) as detector:
             for frame in camera.stream():
                 stamp = getattr(camera, "frame_timestamp", None)
                 stamp = time.monotonic() if stamp is None else stamp
                 result, annotated = detector.process(frame, draw=True, timestamp_ms=int(stamp * 1000))
-                predictor.add_frame(_canonical_hands(result.all_hands, both, args.hand), timestamp=stamp)
+                frame_features = (context_features(result.all_hands, result.body_context, temple_context=predictor.input_size == TEMPLE_NUM_FEATURES)
+                                  if predictor.input_size in BODY_FEATURE_WIDTHS else _canonical_hands(result.all_hands, both, args.hand))
+                predictor.add_frame(frame_features, timestamp=stamp)
                 if not predictor.sampled:
                     cv2.imshow("ASignX - Moving Sign Recognition", annotated)
                     if cv2.waitKey(1) & 0xFF in (27, ord("q"), ord("Q")):

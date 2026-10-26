@@ -67,6 +67,8 @@ def collect_sequence(
     *,
     output_dir: str | Path = "ml/data/sequences",
     hand_selection: str = "both",
+    body_context: bool = False,
+    temple_context: bool = False,
     sequence_length: int = 30,
     target_fps: float = 15.0,
     min_frames: int = 10,
@@ -103,10 +105,13 @@ def collect_sequence(
     if max_seconds * target_fps < min_frames - 1:
         raise ValueError("max_seconds is too short to collect min_frames at target_fps")
 
+    body_context = body_context or temple_context
+    if body_context and hand_selection != "both":
+        raise ValueError("Body context requires both hand slots")
     output = Path(output_dir)
     if any(output.rglob("*.npz")):
         existing_samples = read_sequence_dir(output)
-        expected_width = 126 if hand_selection == "both" else 63
+        expected_width = 180 if temple_context else 150 if body_context else 126 if hand_selection == "both" else 63
         if existing_samples[0].features.shape != (sequence_length, expected_width):
             raise ValueError(
                 "Existing sequences use a different hand mode or sequence length. "
@@ -132,12 +137,14 @@ def collect_sequence(
             threaded=True,
             exposure=exposure,
         ) as camera:
-            with HandDetector(max_num_hands=2) as detector:
+            from asignx.body_detector import BodyHandDetector
+            detector_type = BodyHandDetector if body_context else HandDetector
+            with detector_type(max_num_hands=2) as detector:
                 for frame in camera.stream():
                     now = time.monotonic()
                     result, annotated = detector.process(frame, draw=True)
                     if capture is not None and now >= next_sample_at:
-                        capture.add_hands(result.all_hands)
+                        capture.add_hands(result.all_hands, getattr(result, "body_context", None))
                         next_sample_at = now + interval
 
                     if capture is not None and now - started_at >= max_seconds:
@@ -196,7 +203,7 @@ def collect_sequence(
                         print(message)
                     elif key == 32:
                         if capture is None:
-                            capture = LandmarkSequenceCapture(hand_selection)
+                            capture = LandmarkSequenceCapture(hand_selection, body_context=body_context, temple_context=temple_context)
                             started_at = time.monotonic()
                             next_sample_at = started_at
                             message = "Perform the complete gesture, then press SPACE"
@@ -236,6 +243,9 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--label", required=True, help="Sign label, e.g. J, Z, HELLO")
     parser.add_argument("--output", default="ml/data/sequences")
+    parser.add_argument("--temple-context", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--legacy-body-context", action="store_true", help="Use the older 150-feature body format without temple features")
+    parser.add_argument("--body-context", action="store_true", help="Include upper-body and temple features; requires --hand both")
     parser.add_argument("--hand", choices=HAND_SELECTIONS, default="both")
     parser.add_argument("--sequence-length", type=int, default=30)
     parser.add_argument("--target-fps", type=float, default=15.0)
@@ -253,11 +263,17 @@ def main() -> None:
     parser.add_argument("--device-id")
     parser.add_argument("--benchmark-split", choices=("train", "validation", "test"))
     args = parser.parse_args()
+    if args.legacy_body_context and args.temple_context:
+        parser.error("Choose standard body context or legacy body context, not both")
+    body_enabled = args.body_context or args.temple_context or args.legacy_body_context
+    temples_enabled = body_enabled and not args.legacy_body_context
     exposure = None if args.exposure.lower() == "auto" else float(args.exposure)
     collect_sequence(
         args.label,
         output_dir=args.output,
         hand_selection=args.hand,
+        body_context=body_enabled,
+        temple_context=temples_enabled,
         sequence_length=args.sequence_length,
         target_fps=args.target_fps,
         min_frames=args.min_frames,

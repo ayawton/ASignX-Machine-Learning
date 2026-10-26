@@ -54,6 +54,8 @@ def prepare_video_dataset(
     sequence_length: int = 30,
     target_fps: float = 15.0,
     hand_selection: str = "both",
+    body_context: bool = False,
+    temple_context: bool = False,
     min_detection_ratio: float = 0.5,
     overwrite: bool = False,
     skip_invalid: bool = False,
@@ -66,6 +68,9 @@ def prepare_video_dataset(
         raise ValueError("min_detection_ratio must be in (0, 1]")
     if hand_selection not in HAND_SELECTIONS:
         raise ValueError(f"hand_selection must be one of {HAND_SELECTIONS}")
+    body_context = body_context or temple_context
+    if body_context and hand_selection != "both":
+        raise ValueError("Body context requires both hand slots")
     source_root = Path(input_dir).resolve()
     output_root = Path(output_dir).resolve()
     labeled_videos = discover_labeled_videos(source_root)
@@ -105,7 +110,9 @@ def prepare_video_dataset(
     prepared_counts: Counter[str] = Counter()
     seen_hashes: dict[str, tuple[str, Path]] = {}
     failures: list[str] = []
-    with HandDetector(max_num_hands=2) as detector:
+    from asignx.body_detector import BodyHandDetector
+    detector_type = BodyHandDetector if body_context else HandDetector
+    with detector_type(max_num_hands=2) as detector:
         for number, (label, video_path) in enumerate(labeled_videos, start=1):
             if cancelled and cancelled():
                 raise InterruptedError("Import stopped. Completed sequences were kept; rerun to resume.")
@@ -127,7 +134,7 @@ def prepare_video_dataset(
             session_id = expected[destination][2]
             if destination.exists() and not overwrite:
                 existing = load_sequence_file(destination)
-                expected_width = 126 if hand_selection == "both" else 63
+                expected_width = 180 if temple_context else 150 if body_context else 126 if hand_selection == "both" else 63
                 if (
                     existing.label != label
                     or existing.session_id != session_id
@@ -153,10 +160,17 @@ def prepare_video_dataset(
                     target_length=sequence_length,
                     interpolate=True,
                     return_metadata=True,
+                    body_context=body_context,
+                    temple_context=temple_context,
                 )
                 if metadata["detection_ratio"] < min_detection_ratio:
                     raise ValueError(
                         f"hand detected in only {metadata['detection_ratio']:.1%} of sampled frames"
+                    )
+                if temple_context and metadata.get("temple_detection_ratio", 0) < min_detection_ratio:
+                    raise ValueError(
+                        f"temples visible in only {metadata.get('temple_detection_ratio', 0):.1%} "
+                        "of sampled frames; keep the face in view"
                     )
                 metadata["relative_source"] = relative.as_posix()
                 metadata["source_sha256"] = digest
@@ -206,17 +220,26 @@ def main() -> None:
     parser.add_argument("--output", default="ml/data/sequences")
     parser.add_argument("--sequence-length", type=int, default=30)
     parser.add_argument("--target-fps", type=float, default=15.0)
+    parser.add_argument("--temple-context", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--legacy-body-context", action="store_true", help="Use the older 150-feature body format without temple features")
+    parser.add_argument("--body-context", action="store_true", help="Include upper-body and temple features; requires --hand both")
     parser.add_argument("--hand", choices=HAND_SELECTIONS, default="both")
     parser.add_argument("--min-detection-ratio", type=float, default=0.5)
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--skip-invalid", action="store_true")
     args = parser.parse_args()
+    if args.legacy_body_context and args.temple_context:
+        parser.error("Choose standard body context or legacy body context, not both")
+    body_enabled = args.body_context or args.temple_context or args.legacy_body_context
+    temples_enabled = body_enabled and not args.legacy_body_context
     prepare_video_dataset(
         args.input,
         args.output,
         sequence_length=args.sequence_length,
         target_fps=args.target_fps,
         hand_selection=args.hand,
+        body_context=body_enabled,
+        temple_context=temples_enabled,
         min_detection_ratio=args.min_detection_ratio,
         overwrite=args.overwrite,
         skip_invalid=args.skip_invalid,
