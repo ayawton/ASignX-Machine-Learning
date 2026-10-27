@@ -1,0 +1,327 @@
+{
+  "counts": {
+    "HELLO": 8,
+    "J": 9,
+    "Z": 10,
+    "BACKGROUND": 9
+  },
+  "source_roots": [
+    "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2",
+    "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\negative_pilot"
+  ],
+  "tracking_audit": [
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_0d04ab71c06342db9602d55a2a58987e.npz",
+      "session_id": "0d04ab71c06342db9602d55a2a58987e",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "99e0aeb58aff9379b443df8c9d46a000d3d39109b65841d2a458cf6a9466da2a"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_470ec1f142d24efb82576eff4e682308.npz",
+      "session_id": "470ec1f142d24efb82576eff4e682308",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "66381ed74ed2e429f30f6edf2964a5f3a309182cb8d70dbc4adf1c6c673681b4"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_5a76ecb584fd42e98c9ebbb0727c1a4e.npz",
+      "session_id": "5a76ecb584fd42e98c9ebbb0727c1a4e",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "42f7e0bf1146fbb71673549a9d086b0c9176e48e557c7ea8005ee774354c6f79"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_8082d94135994195a2155aba4fd4c879.npz",
+      "session_id": "8082d94135994195a2155aba4fd4c879",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "de56f0af6db6e118ddb596a74c110315431bb76dd3fe0105fa1fa8e4651a67f5"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_85fce07303d046e99110c629744002c2.npz",
+      "session_id": "85fce07303d046e99110c629744002c2",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "a76146b59748995406bb87212b24fad9b19492974d0ccc1b45018b604e256857"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_eec4b8a6169a473abda2d161e574d4d2.npz",
+      "session_id": "eec4b8a6169a473abda2d161e574d4d2",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "a63de5160ab0d5c53a5eb5b96f18a7ed6d5700e1933092306502b3c9c42b0fbe"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_ef64aba2d2174a2989495e5b9fcd090b.npz",
+      "session_id": "ef64aba2d2174a2989495e5b9fcd090b",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "3314c2b2511541ffe12a74cd76838a77121f28454e25eabf5d14520b5e9e34c7"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_f54f639071de4dffaab7fef7490637dc.npz",
+      "session_id": "f54f639071de4dffaab7fef7490637dc",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "46d206dee1a26404a890f1780931d9911381226fd47c3ec9da240b78f19c2d5b"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\J\\J_0854170a8fe6436fb23fa103ecc2033a.npz",
+      "session_id": "0854170a8fe6436fb23fa103ecc2033a",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "657a5fb51ea8667433d54fb90b8cb540245680a06077f21f2666ee2f32258f9f"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\J\\J_0bfbaa9e535c450a8d2c28cfe159605b.npz",
+      "session_id": "0bfbaa9e535c450a8d2c28cfe159605b",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "3ed22b08310173369b3bb85aebb6ee74037a8a42f9b5ca24ba0af3eb0d4d6ad1"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\J\\J_1f83e03bf5bc43edb1a1647f848f88b6.npz",
+      "session_id": "1f83e03bf5bc43edb1a1647f848f88b6",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "e77b7ba58203d08a9eaa8485b2701b889fdefbacc9c107162ccfb8dd9afa4858"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\J\\J_581f6da521b849afbf1143691e7632ba.npz",
+      "session_id": "581f6da521b849afbf1143691e7632ba",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "75c5718702169074bf6e1024df9a154cd0519eadffcecabb2c3235d0a89673ea"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\J\\J_66fceb7f0077489e85935e810b582312.npz",
+      "session_id": "66fceb7f0077489e85935e810b582312",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "fed324ce039721cf2e56678d12e2a7fa8c10ab6396175c3a04732d41e5dab2fc"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\J\\J_70be26dd59d74914b2df2d2c94bbd4ee.npz",
+      "session_id": "70be26dd59d74914b2df2d2c94bbd4ee",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "cbba29571b99a407fc1c7ef79a365c18c9eda56360cf40cfbb15776011fd41db"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\J\\J_7545ce4112a246578b8f82d12e70f9a1.npz",
+      "session_id": "7545ce4112a246578b8f82d12e70f9a1",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "ce87bc193ae9e608ee1c73548a70927719c8d1882a7c3b1124c8660df67e8848"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\J\\J_c60da094e17748e196d19f9aeb5db725.npz",
+      "session_id": "c60da094e17748e196d19f9aeb5db725",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "d1309cbada14a70eb0ac67314a10d83c3ac6b6c352d342e7b91abe4f0cabebe5"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\J\\J_d4fe68be2b3a48c184da22fad72bcc5f.npz",
+      "session_id": "d4fe68be2b3a48c184da22fad72bcc5f",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "77d2a877931f6ede5fe91a6ad17ed44185bc77afb38ba459d85cba1f1b87f25e"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\Z\\Z_051ffe1c454845d7a935e976e1d305bc.npz",
+      "session_id": "051ffe1c454845d7a935e976e1d305bc",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "730b4a0f91639a77d01a2d5b4588cc3275ad73b4401d2cd8f46e7f6e0a4c1f6a"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\Z\\Z_06c0ae65fc454f499ac58f9fd4840a3e.npz",
+      "session_id": "06c0ae65fc454f499ac58f9fd4840a3e",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "9b0533c2a5f196980d1cfdadd334ec2433a554d351041b87057fba4bf6a5ed37"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\Z\\Z_0af2afc6032242568be63487cc5423d0.npz",
+      "session_id": "0af2afc6032242568be63487cc5423d0",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "d0cbe1925e04dbfe84df47e883346b98365ec13ce17c0b4c1fb842b8539bb585"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\Z\\Z_701586dbb02f4af49d3783ac365ca48e.npz",
+      "session_id": "701586dbb02f4af49d3783ac365ca48e",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "f3293c717e4a51801618a5f5c15b62d67774415ac8b781bb3f6ed21a93366705"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\Z\\Z_7f3844216b0e43068d0de5d2d44eaf87.npz",
+      "session_id": "7f3844216b0e43068d0de5d2d44eaf87",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "c01ef1d80ac85a6a17dfd65ef4a6e0340c2c14b0adef79c89e648c2797472aa7"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\Z\\Z_80c12e592ea649fe859d7c2a635a2087.npz",
+      "session_id": "80c12e592ea649fe859d7c2a635a2087",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "6e5720708811f22e3ae8e1b90615fd99e7e804ecd7edc40861b01b93451ba7e8"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\Z\\Z_c8d51f5c4566473caebaeb04fd0cafa2.npz",
+      "session_id": "c8d51f5c4566473caebaeb04fd0cafa2",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "838329fd1ff6e7f1a8063727623738757bb532b3bcaaf6a1955b82e3fb0bc7c1"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\Z\\Z_cf185e82dd854afbac9c96993d93173a.npz",
+      "session_id": "cf185e82dd854afbac9c96993d93173a",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "753ba930fdc6f35561775923c1c60b0765451804cc3c13ca1586c4287b385c2f"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\Z\\Z_f0f9823bc7fc4b858150bd1ad70d6c90.npz",
+      "session_id": "f0f9823bc7fc4b858150bd1ad70d6c90",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "89bade66a0e5712d568907280f985e22851b73bbc1ffaff95338f9f62fb431de"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\Z\\Z_f4f7d10d9d0e476e9485cecc185178d7.npz",
+      "session_id": "f4f7d10d9d0e476e9485cecc185178d7",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "1a71163477460482edb51a302487021c02a0fb26f1bbc0b3cbf08e72f3b3c858"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_00481cd743c84745b3a0a2aafe0fe363.npz",
+      "session_id": "00481cd743c84745b3a0a2aafe0fe363",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "ef0a8e4f02020fadbb25b0b8058311097acc4e6e85b7631758efa45d935f0da8"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_01ead69f2ff34a84afa134188940c244.npz",
+      "session_id": "01ead69f2ff34a84afa134188940c244",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "cce530cf05e8ee425164760a1deba356543c6d061750a741d7ad493413a148d0"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_25f1ec813f5a404e81466c57f4979fdd.npz",
+      "session_id": "25f1ec813f5a404e81466c57f4979fdd",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "ec3955a652b5c9d3b2336defe0d95c45aaae8377a839176ef5b8c95c866e714c"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_3d8fadbb670d4d5e81dce156de42404e.npz",
+      "session_id": "3d8fadbb670d4d5e81dce156de42404e",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "a8ea71f72ae5d3e7a4bf045fb9039095616e06f91e7f8fda91114e693efe90a4"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_3fa39dab8bcd40568b375b0563b576bb.npz",
+      "session_id": "3fa39dab8bcd40568b375b0563b576bb",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "aad543451e16224b97d0fa75e99c3d52fe0bc1d49e1b0f8358bf6b0c2f340082"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_475ce8e9b7554d81b907aebeef2c167c.npz",
+      "session_id": "475ce8e9b7554d81b907aebeef2c167c",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "0bdb4d61ae3dc0e390a1c281c5ed16739acccdd1aceae81a9b699cdd50969276"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_869e0675da4341b8b1d9bc598c7a0778.npz",
+      "session_id": "869e0675da4341b8b1d9bc598c7a0778",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "ed23c496b359b1c8bf2a12a5ed02580e8aaf3db39b273863bdb081fa855068a2"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_b790d667e2da4391887e4bc1d4b2a63c.npz",
+      "session_id": "b790d667e2da4391887e4bc1d4b2a63c",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "9531ce827745d6ecd4673833b6f8c9a935301e9ce8463dd274d1071c34d61912"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_d55619de923849c39918264b6437d0d4.npz",
+      "session_id": "d55619de923849c39918264b6437d0d4",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "ef15a3835de60832d8fbeb88ebb17f0d337a5e83c171ebfb33ef50f9836cb70e"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_da0e8e7a99094392935dd8ac05d81bf2.npz",
+      "session_id": "da0e8e7a99094392935dd8ac05d81bf2",
+      "label": "BACKGROUND",
+      "status": "Body/hand tracking gap is too long",
+      "sha256": "7f2e71b9424452f759fc9ef6c373b967c3c2ec6a6bbf0c6da82cbc00afb05423"
+    }
+  ],
+  "original_and_checkpoint_sha256": {
+    "dist\\data\\sequences2\\HELLO\\HELLO_0d04ab71c06342db9602d55a2a58987e.npz": "99e0aeb58aff9379b443df8c9d46a000d3d39109b65841d2a458cf6a9466da2a",
+    "dist\\data\\sequences2\\HELLO\\HELLO_470ec1f142d24efb82576eff4e682308.npz": "66381ed74ed2e429f30f6edf2964a5f3a309182cb8d70dbc4adf1c6c673681b4",
+    "dist\\data\\sequences2\\HELLO\\HELLO_5a76ecb584fd42e98c9ebbb0727c1a4e.npz": "42f7e0bf1146fbb71673549a9d086b0c9176e48e557c7ea8005ee774354c6f79",
+    "dist\\data\\sequences2\\HELLO\\HELLO_8082d94135994195a2155aba4fd4c879.npz": "de56f0af6db6e118ddb596a74c110315431bb76dd3fe0105fa1fa8e4651a67f5",
+    "dist\\data\\sequences2\\HELLO\\HELLO_838ca8f6eb784776b06d7140ef5d3a68.npz": "289b323224ee2fbde1986cf8f2d0ac2f745d53a5aff72e7a29f3ced91300821e",
+    "dist\\data\\sequences2\\HELLO\\HELLO_85fce07303d046e99110c629744002c2.npz": "a76146b59748995406bb87212b24fad9b19492974d0ccc1b45018b604e256857",
+    "dist\\data\\sequences2\\HELLO\\HELLO_ee598017c807441bbebcbce067bafdd8.npz": "dbf704b22ab609e42aa9d96caef8e89987ac320807e88b4980ed72f8dfbe10d3",
+    "dist\\data\\sequences2\\HELLO\\HELLO_eec4b8a6169a473abda2d161e574d4d2.npz": "a63de5160ab0d5c53a5eb5b96f18a7ed6d5700e1933092306502b3c9c42b0fbe",
+    "dist\\data\\sequences2\\HELLO\\HELLO_ef64aba2d2174a2989495e5b9fcd090b.npz": "3314c2b2511541ffe12a74cd76838a77121f28454e25eabf5d14520b5e9e34c7",
+    "dist\\data\\sequences2\\HELLO\\HELLO_f54f639071de4dffaab7fef7490637dc.npz": "46d206dee1a26404a890f1780931d9911381226fd47c3ec9da240b78f19c2d5b",
+    "dist\\data\\sequences2\\J\\J_0854170a8fe6436fb23fa103ecc2033a.npz": "657a5fb51ea8667433d54fb90b8cb540245680a06077f21f2666ee2f32258f9f",
+    "dist\\data\\sequences2\\J\\J_0bfbaa9e535c450a8d2c28cfe159605b.npz": "3ed22b08310173369b3bb85aebb6ee74037a8a42f9b5ca24ba0af3eb0d4d6ad1",
+    "dist\\data\\sequences2\\J\\J_1f83e03bf5bc43edb1a1647f848f88b6.npz": "e77b7ba58203d08a9eaa8485b2701b889fdefbacc9c107162ccfb8dd9afa4858",
+    "dist\\data\\sequences2\\J\\J_581f6da521b849afbf1143691e7632ba.npz": "75c5718702169074bf6e1024df9a154cd0519eadffcecabb2c3235d0a89673ea",
+    "dist\\data\\sequences2\\J\\J_66fceb7f0077489e85935e810b582312.npz": "fed324ce039721cf2e56678d12e2a7fa8c10ab6396175c3a04732d41e5dab2fc",
+    "dist\\data\\sequences2\\J\\J_70be26dd59d74914b2df2d2c94bbd4ee.npz": "cbba29571b99a407fc1c7ef79a365c18c9eda56360cf40cfbb15776011fd41db",
+    "dist\\data\\sequences2\\J\\J_7545ce4112a246578b8f82d12e70f9a1.npz": "ce87bc193ae9e608ee1c73548a70927719c8d1882a7c3b1124c8660df67e8848",
+    "dist\\data\\sequences2\\J\\J_c60da094e17748e196d19f9aeb5db725.npz": "d1309cbada14a70eb0ac67314a10d83c3ac6b6c352d342e7b91abe4f0cabebe5",
+    "dist\\data\\sequences2\\J\\J_ca45af9c901a4f1090a085a01471d5ae.npz": "7db604eddb2955b8bd6ae6de4c61f1886fa9114b64aba5d45e14b330823a912e",
+    "dist\\data\\sequences2\\J\\J_d4fe68be2b3a48c184da22fad72bcc5f.npz": "77d2a877931f6ede5fe91a6ad17ed44185bc77afb38ba459d85cba1f1b87f25e",
+    "dist\\data\\sequences2\\Z\\Z_051ffe1c454845d7a935e976e1d305bc.npz": "730b4a0f91639a77d01a2d5b4588cc3275ad73b4401d2cd8f46e7f6e0a4c1f6a",
+    "dist\\data\\sequences2\\Z\\Z_06c0ae65fc454f499ac58f9fd4840a3e.npz": "9b0533c2a5f196980d1cfdadd334ec2433a554d351041b87057fba4bf6a5ed37",
+    "dist\\data\\sequences2\\Z\\Z_0af2afc6032242568be63487cc5423d0.npz": "d0cbe1925e04dbfe84df47e883346b98365ec13ce17c0b4c1fb842b8539bb585",
+    "dist\\data\\sequences2\\Z\\Z_701586dbb02f4af49d3783ac365ca48e.npz": "f3293c717e4a51801618a5f5c15b62d67774415ac8b781bb3f6ed21a93366705",
+    "dist\\data\\sequences2\\Z\\Z_7f3844216b0e43068d0de5d2d44eaf87.npz": "c01ef1d80ac85a6a17dfd65ef4a6e0340c2c14b0adef79c89e648c2797472aa7",
+    "dist\\data\\sequences2\\Z\\Z_80c12e592ea649fe859d7c2a635a2087.npz": "6e5720708811f22e3ae8e1b90615fd99e7e804ecd7edc40861b01b93451ba7e8",
+    "dist\\data\\sequences2\\Z\\Z_c8d51f5c4566473caebaeb04fd0cafa2.npz": "838329fd1ff6e7f1a8063727623738757bb532b3bcaaf6a1955b82e3fb0bc7c1",
+    "dist\\data\\sequences2\\Z\\Z_cf185e82dd854afbac9c96993d93173a.npz": "753ba930fdc6f35561775923c1c60b0765451804cc3c13ca1586c4287b385c2f",
+    "dist\\data\\sequences2\\Z\\Z_f0f9823bc7fc4b858150bd1ad70d6c90.npz": "89bade66a0e5712d568907280f985e22851b73bbc1ffaff95338f9f62fb431de",
+    "dist\\data\\sequences2\\Z\\Z_f4f7d10d9d0e476e9485cecc185178d7.npz": "1a71163477460482edb51a302487021c02a0fb26f1bbc0b3cbf08e72f3b3c858",
+    "dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_00481cd743c84745b3a0a2aafe0fe363.npz": "ef0a8e4f02020fadbb25b0b8058311097acc4e6e85b7631758efa45d935f0da8",
+    "dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_01ead69f2ff34a84afa134188940c244.npz": "cce530cf05e8ee425164760a1deba356543c6d061750a741d7ad493413a148d0",
+    "dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_25f1ec813f5a404e81466c57f4979fdd.npz": "ec3955a652b5c9d3b2336defe0d95c45aaae8377a839176ef5b8c95c866e714c",
+    "dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_3d8fadbb670d4d5e81dce156de42404e.npz": "a8ea71f72ae5d3e7a4bf045fb9039095616e06f91e7f8fda91114e693efe90a4",
+    "dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_3fa39dab8bcd40568b375b0563b576bb.npz": "aad543451e16224b97d0fa75e99c3d52fe0bc1d49e1b0f8358bf6b0c2f340082",
+    "dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_475ce8e9b7554d81b907aebeef2c167c.npz": "0bdb4d61ae3dc0e390a1c281c5ed16739acccdd1aceae81a9b699cdd50969276",
+    "dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_869e0675da4341b8b1d9bc598c7a0778.npz": "ed23c496b359b1c8bf2a12a5ed02580e8aaf3db39b273863bdb081fa855068a2",
+    "dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_b790d667e2da4391887e4bc1d4b2a63c.npz": "9531ce827745d6ecd4673833b6f8c9a935301e9ce8463dd274d1071c34d61912",
+    "dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_d55619de923849c39918264b6437d0d4.npz": "ef15a3835de60832d8fbeb88ebb17f0d337a5e83c171ebfb33ef50f9836cb70e",
+    "dist\\data\\vocabulary_v1\\negative_pilot\\BACKGROUND\\BACKGROUND_da0e8e7a99094392935dd8ac05d81bf2.npz": "7f2e71b9424452f759fc9ef6c373b967c3c2ec6a6bbf0c6da82cbc00afb05423",
+    "ml\\models\\sequence_body_v1.pth": "d8b949258eaaa83002901b8e9ee27492b57079f6f3ae8953c596ca96c8776ad5",
+    "ml\\models\\sequence_body_v2.pth": "8cb2cc59d2cef59bb3b2f488a70d6abf594e4b1922894f2ef621e5c16cd73fa4",
+    "ml\\models\\sequence_body_v3.pth": "e5e249eaba621b0aa566e92682004613dd5072352dbe3ded8201b38449347400",
+    "ml\\models\\sequence_both_hands_v1.pth": "e64b55ef4efe0698dcd09d2c1196a9fab332a7102bd4c54566aaf5185bc55ba0",
+    "ml\\models\\sequence_classifier.pth": "1e2228a5970d18b19a25f62cb76fc560aa4c5e33962a8bc2a362a87309db2ec9",
+    "ml\\models\\sign_classifier_canonical.pth": "98559a10c553c23d2c6aad227f52416b59ad92483bf4f079cfca5eb512bf5b66",
+    "output\\pilot-training\\20261026T114120Z-hello-retake-9007e3\\sequence_left_pilot.pth": "22c1db67615344f8cfac1c7621ac0a2bcefbca2a788c1331456d7563fa0939a8"
+  },
+  "previous_checkpoint": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T114120Z-hello-retake-9007e3\\sequence_left_pilot.pth",
+  "positive_partitions_preserved": true,
+  "negative_partition_policy": "Seeded take-level 7 train / 1 validation / 1 test; same signer, not independent people",
+  "human_signing_correctness_reviewed": false,
+  "negative_subcategories": "Not recorded in metadata; class labels supplied by user"
+}

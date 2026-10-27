@@ -1,0 +1,129 @@
+{
+  "purpose": "Human label review; original inputs unchanged; not applied to training",
+  "accepted_hello_forms": [
+    "forehead-salute",
+    "ordinary greeting wave"
+  ],
+  "decisions": {
+    "BACKGROUND_02a8257020a24b2baaf68c7463f3083a.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_02a8257020a24b2baaf68c7463f3083a.npz",
+      "sha256": "559e81fcec194f1f8bbe1692d9071e839a4ac01381a4034c5b694bf3f38c9035",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_2ab0244e4f9c47c8aff3d3251b9f98bf.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_2ab0244e4f9c47c8aff3d3251b9f98bf.npz",
+      "sha256": "97613dd7b68a6f384599c455af4bae3c26dd7af2c516b437c9b5e7b28096395e",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_346a49c52a9e43f09f8162defc2468f8.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_346a49c52a9e43f09f8162defc2468f8.npz",
+      "sha256": "1288980bc46662ecc6edc97da8836bf7ef7e6de1c088d4c40b0a15379c3a1c7c",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_3985013baa1548e38a54d54ea506b5c5.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_3985013baa1548e38a54d54ea506b5c5.npz",
+      "sha256": "f17c154271b7baefa54aa6f41f7b123acbc311fbfa85a2aa64f5824c8c48aed6",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_3d311718565c4162a53fb15040bd6443.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_3d311718565c4162a53fb15040bd6443.npz",
+      "sha256": "53ef961903adad9070c5f253076c52d6ed116a2db44d1bb6b46cbd3d565d926a",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_474dff82b1b040e8ae0f4bee0259a49f.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_474dff82b1b040e8ae0f4bee0259a49f.npz",
+      "sha256": "6c6bf68c9d7bde80f232be6386b41ecfd8d23f2c2d404bb4644f85f93acd0aa2",
+      "review_label": "HELLO",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_4ef370f689234b71aa35f2f37496588f.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_4ef370f689234b71aa35f2f37496588f.npz",
+      "sha256": "95610db0c7a8996d2aabf3d54f42aedf72ba810eff92e5e4982de290012af40f",
+      "review_label": "HELLO",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_575eca42eab5482bbd8b99bc64b59939.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_575eca42eab5482bbd8b99bc64b59939.npz",
+      "sha256": "9ba3d2b1eaba369d7384e853c6e2465eaab28ee8644dfe9e47d63169bc06b564",
+      "review_label": "HELLO",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_81811ab95e2845e5a6d940ee3fe1a427.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_81811ab95e2845e5a6d940ee3fe1a427.npz",
+      "sha256": "bb38695662fcc7bfedf127ed395a8a7616f419e036c9b3955c333873b151e8bb",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_82457510bc1a485e8b0ca4247f7ee6a0.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_82457510bc1a485e8b0ca4247f7ee6a0.npz",
+      "sha256": "f9fbba7cf4660fe55475b441e78939c37c1bb698cc3e060e1624241c381d89ab",
+      "review_label": "HELLO",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_85d938d4b1cf49c3a4205fca8eb7b521.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_85d938d4b1cf49c3a4205fca8eb7b521.npz",
+      "sha256": "60ba438632734eb039a0dfc8e623f9439c14cf0967511996b44ecd17b46da8f8",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_9d755bf98bac4924b28d997cef0fbef0.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_9d755bf98bac4924b28d997cef0fbef0.npz",
+      "sha256": "177ed932806013b085670b8b6e75772799e0bdc9d8706350012e9922c999bc32",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_acc0f1560b254e0babf0af5293898217.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_acc0f1560b254e0babf0af5293898217.npz",
+      "sha256": "3f9f35dcd5f5e6cfbc925822742836e580c514efa943924265f78b32b33846f7",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_bdaf7dc01e844a0693e6b579edaba183.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_bdaf7dc01e844a0693e6b579edaba183.npz",
+      "sha256": "19493b6684ec0916d1f7f16394617908fe5ddf254ae2e2bfd1e32eefacac69ac",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_e725953ca0b34193b14c4dc76a0c07d7.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_e725953ca0b34193b14c4dc76a0c07d7.npz",
+      "sha256": "27afb2de9735d47a1cd684c717d821e2042fb0257d57e8f97be267fdae82ce25",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    }
+  }
+}

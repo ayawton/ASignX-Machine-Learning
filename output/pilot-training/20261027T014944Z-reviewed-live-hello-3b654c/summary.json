@@ -1,0 +1,1016 @@
+{
+  "run": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c",
+  "candidate": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequence_reviewed_live_hello.pth",
+  "candidate_sha256": "438615e25dea1bee158f21b38d40cac7ff25cc7b040dd5c3bcdcaa6c9b843691",
+  "best_epoch": 10,
+  "results": {
+    "active": {
+      "reviewed_development": [
+        {
+          "file": "BACKGROUND_02a8257020a24b2baaf68c7463f3083a.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9587276577949524,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_2ab0244e4f9c47c8aff3d3251b9f98bf.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9924554824829102,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_346a49c52a9e43f09f8162defc2468f8.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9827102422714233,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_3985013baa1548e38a54d54ea506b5c5.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9949028491973877,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_3d311718565c4162a53fb15040bd6443.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9953906536102295,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_474dff82b1b040e8ae0f4bee0259a49f.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9779548048973083,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_4ef370f689234b71aa35f2f37496588f.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9731271266937256,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_575eca42eab5482bbd8b99bc64b59939.npz",
+          "truth": "HELLO",
+          "accepted": null,
+          "raw": "Z",
+          "confidence": 0.7124360799789429,
+          "correct": false
+        },
+        {
+          "file": "BACKGROUND_81811ab95e2845e5a6d940ee3fe1a427.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9928901195526123,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_82457510bc1a485e8b0ca4247f7ee6a0.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9730614423751831,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_85d938d4b1cf49c3a4205fca8eb7b521.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9949336647987366,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_9d755bf98bac4924b28d997cef0fbef0.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9910485744476318,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_acc0f1560b254e0babf0af5293898217.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9950605034828186,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_bdaf7dc01e844a0693e6b579edaba183.npz",
+          "truth": "BACKGROUND",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9596938490867615,
+          "correct": false
+        },
+        {
+          "file": "BACKGROUND_e725953ca0b34193b14c4dc76a0c07d7.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9946796298027039,
+          "correct": true
+        },
+        {
+          "file": "HELLO_1876963861834decbff911f5f73af3f8.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9750598073005676,
+          "correct": true
+        },
+        {
+          "file": "HELLO_3622f2f8b841444780e0fd5e5defbb20.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9621669054031372,
+          "correct": true
+        },
+        {
+          "file": "HELLO_3a76284ce6924637956f6533f42a25b2.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.8584415912628174,
+          "correct": true
+        },
+        {
+          "file": "HELLO_629b42fc331347839fdf9ebc0820c389.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9673595428466797,
+          "correct": true
+        },
+        {
+          "file": "HELLO_dbe990a1d9c14320bce2abc5f8d0d5df.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9634899497032166,
+          "correct": true
+        }
+      ],
+      "training_fit_only": [
+        {
+          "file": "take_003210.npz",
+          "truth": "HELLO",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.5010245442390442,
+          "correct": false
+        },
+        {
+          "file": "take_003328.npz",
+          "truth": "HELLO",
+          "accepted": null,
+          "raw": "HELLO",
+          "confidence": 0.7989647388458252,
+          "correct": false
+        },
+        {
+          "file": "take_003443.npz",
+          "truth": "HELLO",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.6361731886863708,
+          "correct": false
+        },
+        {
+          "file": "take_003559.npz",
+          "truth": "HELLO",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.4660745859146118,
+          "correct": false
+        },
+        {
+          "file": "take_003610.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9954634308815002,
+          "correct": true
+        },
+        {
+          "file": "take_003667.npz",
+          "truth": "HELLO",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.8312244415283203,
+          "correct": false
+        },
+        {
+          "file": "take_003715.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9948150515556335,
+          "correct": true
+        },
+        {
+          "file": "take_003754.npz",
+          "truth": "HELLO",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.589047908782959,
+          "correct": false
+        },
+        {
+          "file": "take_003838.npz",
+          "truth": "HELLO",
+          "accepted": null,
+          "raw": "HELLO",
+          "confidence": 0.7125672101974487,
+          "correct": false
+        },
+        {
+          "file": "take_003935.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.8665956854820251,
+          "correct": true
+        },
+        {
+          "file": "take_004040.npz",
+          "truth": "HELLO",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.7731993198394775,
+          "correct": false
+        },
+        {
+          "file": "take_004131.npz",
+          "truth": "HELLO",
+          "accepted": null,
+          "raw": "HELLO",
+          "confidence": 0.6913758516311646,
+          "correct": false
+        },
+        {
+          "file": "take_004179.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9948654770851135,
+          "correct": true
+        },
+        {
+          "file": "take_004222.npz",
+          "truth": "HELLO",
+          "accepted": null,
+          "raw": "HELLO",
+          "confidence": 0.7647787928581238,
+          "correct": false
+        },
+        {
+          "file": "take_004274.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.994911253452301,
+          "correct": true
+        },
+        {
+          "file": "take_004308.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.8945868611335754,
+          "correct": true
+        },
+        {
+          "file": "take_004452.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9949001669883728,
+          "correct": true
+        },
+        {
+          "file": "take_004483.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.8854021430015564,
+          "correct": true
+        }
+      ],
+      "jz_untrained_replay": [
+        {
+          "file": "take_001219.npz",
+          "truth": null,
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.8196869492530823,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": null
+        },
+        {
+          "file": "take_001259.npz",
+          "truth": null,
+          "accepted": "J",
+          "raw": "J",
+          "confidence": 0.9977715015411377,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": "J"
+        },
+        {
+          "file": "take_001297.npz",
+          "truth": null,
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9921143054962158,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": null
+        },
+        {
+          "file": "take_001341.npz",
+          "truth": null,
+          "accepted": "J",
+          "raw": "J",
+          "confidence": 0.997775137424469,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": "J"
+        },
+        {
+          "file": "take_001389.npz",
+          "truth": null,
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9920978546142578,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": null
+        },
+        {
+          "file": "take_001429.npz",
+          "truth": null,
+          "accepted": "J",
+          "raw": "J",
+          "confidence": 0.9973210692405701,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": "J"
+        },
+        {
+          "file": "take_001474.npz",
+          "truth": null,
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9919366836547852,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": null
+        },
+        {
+          "file": "take_001521.npz",
+          "truth": null,
+          "accepted": "J",
+          "raw": "J",
+          "confidence": 0.9986546039581299,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": "J"
+        },
+        {
+          "file": "take_001563.npz",
+          "truth": null,
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9914974570274353,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": null
+        },
+        {
+          "file": "take_001604.npz",
+          "truth": null,
+          "accepted": "J",
+          "raw": "J",
+          "confidence": 0.998244047164917,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": "J"
+        },
+        {
+          "file": "take_001674.npz",
+          "truth": null,
+          "accepted": null,
+          "error": "Insufficient visible hands and shoulders (hand 40%, shoulders 100%, face references 100%)",
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": null
+        },
+        {
+          "file": "take_002368.npz",
+          "truth": null,
+          "accepted": "Z",
+          "raw": "Z",
+          "confidence": 0.9993889331817627,
+          "correct": null,
+          "target": "Z",
+          "recorded_emitted": "Z"
+        },
+        {
+          "file": "take_002476.npz",
+          "truth": null,
+          "accepted": "Z",
+          "raw": "Z",
+          "confidence": 0.9993876218795776,
+          "correct": null,
+          "target": "Z",
+          "recorded_emitted": "Z"
+        },
+        {
+          "file": "take_002534.npz",
+          "truth": null,
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.6173637509346008,
+          "correct": null,
+          "target": "Z",
+          "recorded_emitted": null
+        },
+        {
+          "file": "take_002575.npz",
+          "truth": null,
+          "accepted": "Z",
+          "raw": "Z",
+          "confidence": 0.998877227306366,
+          "correct": null,
+          "target": "Z",
+          "recorded_emitted": "Z"
+        },
+        {
+          "file": "take_002643.npz",
+          "truth": null,
+          "accepted": null,
+          "raw": "Z",
+          "confidence": 0.5548921823501587,
+          "correct": null,
+          "target": "Z",
+          "recorded_emitted": null
+        },
+        {
+          "file": "take_002685.npz",
+          "truth": null,
+          "accepted": "Z",
+          "raw": "Z",
+          "confidence": 0.9981716871261597,
+          "correct": null,
+          "target": "Z",
+          "recorded_emitted": "Z"
+        },
+        {
+          "file": "take_002786.npz",
+          "truth": null,
+          "accepted": "Z",
+          "raw": "Z",
+          "confidence": 0.999081015586853,
+          "correct": null,
+          "target": "Z",
+          "recorded_emitted": "Z"
+        }
+      ],
+      "development_hello_correct": 8,
+      "development_background_correct": 10,
+      "fit_hello_correct": 3,
+      "fit_background_correct": 5,
+      "jz_previous_accepted_retained": 10,
+      "jz_emissions": {
+        "J": 5,
+        "Z": 5
+      }
+    },
+    "candidate": {
+      "reviewed_development": [
+        {
+          "file": "BACKGROUND_02a8257020a24b2baaf68c7463f3083a.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9065722227096558,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_2ab0244e4f9c47c8aff3d3251b9f98bf.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9737822413444519,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_346a49c52a9e43f09f8162defc2468f8.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9493659734725952,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_3985013baa1548e38a54d54ea506b5c5.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9785578846931458,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_3d311718565c4162a53fb15040bd6443.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.980987548828125,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_474dff82b1b040e8ae0f4bee0259a49f.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9744747281074524,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_4ef370f689234b71aa35f2f37496588f.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9586501717567444,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_575eca42eab5482bbd8b99bc64b59939.npz",
+          "truth": "HELLO",
+          "accepted": null,
+          "raw": "HELLO",
+          "confidence": 0.6892053484916687,
+          "correct": false
+        },
+        {
+          "file": "BACKGROUND_81811ab95e2845e5a6d940ee3fe1a427.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9699118733406067,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_82457510bc1a485e8b0ca4247f7ee6a0.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9726114869117737,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_85d938d4b1cf49c3a4205fca8eb7b521.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9797360897064209,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_9d755bf98bac4924b28d997cef0fbef0.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9643563628196716,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_acc0f1560b254e0babf0af5293898217.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9801417589187622,
+          "correct": true
+        },
+        {
+          "file": "BACKGROUND_bdaf7dc01e844a0693e6b579edaba183.npz",
+          "truth": "BACKGROUND",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9399406909942627,
+          "correct": false
+        },
+        {
+          "file": "BACKGROUND_e725953ca0b34193b14c4dc76a0c07d7.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9779403209686279,
+          "correct": true
+        },
+        {
+          "file": "HELLO_1876963861834decbff911f5f73af3f8.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9679179191589355,
+          "correct": true
+        },
+        {
+          "file": "HELLO_3622f2f8b841444780e0fd5e5defbb20.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9759324789047241,
+          "correct": true
+        },
+        {
+          "file": "HELLO_3a76284ce6924637956f6533f42a25b2.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.8613855838775635,
+          "correct": true
+        },
+        {
+          "file": "HELLO_629b42fc331347839fdf9ebc0820c389.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9659101366996765,
+          "correct": true
+        },
+        {
+          "file": "HELLO_dbe990a1d9c14320bce2abc5f8d0d5df.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9693294167518616,
+          "correct": true
+        }
+      ],
+      "training_fit_only": [
+        {
+          "file": "take_003210.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9373869895935059,
+          "correct": true
+        },
+        {
+          "file": "take_003328.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9551306962966919,
+          "correct": true
+        },
+        {
+          "file": "take_003443.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9474365711212158,
+          "correct": true
+        },
+        {
+          "file": "take_003559.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9425734877586365,
+          "correct": true
+        },
+        {
+          "file": "take_003610.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9856744408607483,
+          "correct": true
+        },
+        {
+          "file": "take_003667.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.8891993761062622,
+          "correct": true
+        },
+        {
+          "file": "take_003715.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9837295413017273,
+          "correct": true
+        },
+        {
+          "file": "take_003754.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9486929774284363,
+          "correct": true
+        },
+        {
+          "file": "take_003838.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9629482626914978,
+          "correct": true
+        },
+        {
+          "file": "take_003935.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9628180265426636,
+          "correct": true
+        },
+        {
+          "file": "take_004040.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9377624988555908,
+          "correct": true
+        },
+        {
+          "file": "take_004131.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9597457647323608,
+          "correct": true
+        },
+        {
+          "file": "take_004179.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9866124391555786,
+          "correct": true
+        },
+        {
+          "file": "take_004222.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9669317603111267,
+          "correct": true
+        },
+        {
+          "file": "take_004274.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9859364032745361,
+          "correct": true
+        },
+        {
+          "file": "take_004308.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9745439291000366,
+          "correct": true
+        },
+        {
+          "file": "take_004452.npz",
+          "truth": "BACKGROUND",
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9805010557174683,
+          "correct": true
+        },
+        {
+          "file": "take_004483.npz",
+          "truth": "HELLO",
+          "accepted": "HELLO",
+          "raw": "HELLO",
+          "confidence": 0.9586106538772583,
+          "correct": true
+        }
+      ],
+      "jz_untrained_replay": [
+        {
+          "file": "take_001219.npz",
+          "truth": null,
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.6907301545143127,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": null
+        },
+        {
+          "file": "take_001259.npz",
+          "truth": null,
+          "accepted": "J",
+          "raw": "J",
+          "confidence": 0.9536408185958862,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": "J"
+        },
+        {
+          "file": "take_001297.npz",
+          "truth": null,
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9605910181999207,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": null
+        },
+        {
+          "file": "take_001341.npz",
+          "truth": null,
+          "accepted": "J",
+          "raw": "J",
+          "confidence": 0.9926937818527222,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": "J"
+        },
+        {
+          "file": "take_001389.npz",
+          "truth": null,
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9238859415054321,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": null
+        },
+        {
+          "file": "take_001429.npz",
+          "truth": null,
+          "accepted": "J",
+          "raw": "J",
+          "confidence": 0.9612244963645935,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": "J"
+        },
+        {
+          "file": "take_001474.npz",
+          "truth": null,
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9524653553962708,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": null
+        },
+        {
+          "file": "take_001521.npz",
+          "truth": null,
+          "accepted": "J",
+          "raw": "J",
+          "confidence": 0.9921973347663879,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": "J"
+        },
+        {
+          "file": "take_001563.npz",
+          "truth": null,
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.9417566657066345,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": null
+        },
+        {
+          "file": "take_001604.npz",
+          "truth": null,
+          "accepted": "J",
+          "raw": "J",
+          "confidence": 0.9932252764701843,
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": "J"
+        },
+        {
+          "file": "take_001674.npz",
+          "truth": null,
+          "accepted": null,
+          "error": "Insufficient visible hands and shoulders (hand 40%, shoulders 100%, face references 100%)",
+          "correct": null,
+          "target": "J",
+          "recorded_emitted": null
+        },
+        {
+          "file": "take_002368.npz",
+          "truth": null,
+          "accepted": "Z",
+          "raw": "Z",
+          "confidence": 0.9969435334205627,
+          "correct": null,
+          "target": "Z",
+          "recorded_emitted": "Z"
+        },
+        {
+          "file": "take_002476.npz",
+          "truth": null,
+          "accepted": "Z",
+          "raw": "Z",
+          "confidence": 0.990546703338623,
+          "correct": null,
+          "target": "Z",
+          "recorded_emitted": "Z"
+        },
+        {
+          "file": "take_002534.npz",
+          "truth": null,
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.7360668778419495,
+          "correct": null,
+          "target": "Z",
+          "recorded_emitted": null
+        },
+        {
+          "file": "take_002575.npz",
+          "truth": null,
+          "accepted": "Z",
+          "raw": "Z",
+          "confidence": 0.9917110204696655,
+          "correct": null,
+          "target": "Z",
+          "recorded_emitted": "Z"
+        },
+        {
+          "file": "take_002643.npz",
+          "truth": null,
+          "accepted": null,
+          "raw": "BACKGROUND",
+          "confidence": 0.5303099751472473,
+          "correct": null,
+          "target": "Z",
+          "recorded_emitted": null
+        },
+        {
+          "file": "take_002685.npz",
+          "truth": null,
+          "accepted": "Z",
+          "raw": "Z",
+          "confidence": 0.9874489307403564,
+          "correct": null,
+          "target": "Z",
+          "recorded_emitted": "Z"
+        },
+        {
+          "file": "take_002786.npz",
+          "truth": null,
+          "accepted": "Z",
+          "raw": "Z",
+          "confidence": 0.9751054644584656,
+          "correct": null,
+          "target": "Z",
+          "recorded_emitted": "Z"
+        }
+      ],
+      "development_hello_correct": 8,
+      "development_background_correct": 10,
+      "fit_hello_correct": 13,
+      "fit_background_correct": 5,
+      "jz_previous_accepted_retained": 10,
+      "jz_emissions": {
+        "J": 5,
+        "Z": 5
+      }
+    }
+  },
+  "sources_unchanged": true,
+  "launchers_unchanged": true,
+  "limitations": [
+    "Reviewed live session now belongs to training; fit counts are not accuracy.",
+    "Older external clips are reused development data, not a fresh final test.",
+    "All data is same signer; a new live session remains necessary.",
+    "No original test split was evaluated."
+  ]
+}

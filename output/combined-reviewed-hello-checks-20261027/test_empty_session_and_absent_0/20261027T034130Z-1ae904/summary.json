@@ -1,0 +1,14 @@
+{
+  "metadata": {},
+  "overall": {
+    "frames": 0
+  },
+  "by_target": {},
+  "events": [],
+  "limitations": [
+    "Key labels describe the intended test block, not verified ASL annotations.",
+    "Frame visibility includes rest between gestures; gesture-specific rejection checks use sampled takes.",
+    "Processed FPS describes observed pipeline throughput, not the camera advertised FPS.",
+    "Timing cannot by itself establish motion blur or ASL correctness."
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "b_soon_after_hello": [
+    {
+      "hello_frame": 1649,
+      "b_frame": 1654,
+      "delay_seconds": 0.27161110000452027
+    },
+    {
+      "hello_frame": 1681,
+      "b_frame": 1686,
+      "delay_seconds": 0.27172800002153963
+    },
+    {
+      "hello_frame": 1716,
+      "b_frame": 1721,
+      "delay_seconds": 0.30587619997095317
+    },
+    {
+      "hello_frame": 1784,
+      "b_frame": 1789,
+      "delay_seconds": 0.3535273000015877
+    },
+    {
+      "hello_frame": 1843,
+      "b_frame": 1848,
+      "delay_seconds": 0.30483390000881627
+    },
+    {
+      "hello_frame": 1871,
+      "b_frame": 1876,
+      "delay_seconds": 0.3037118000211194
+    },
+    {
+      "hello_frame": 1899,
+      "b_frame": 1904,
+      "delay_seconds": 0.30524590000277385
+    },
+    {
+      "hello_frame": 1925,
+      "b_frame": 1930,
+      "delay_seconds": 0.334051699959673
+    },
+    {
+      "hello_frame": 1951,
+      "b_frame": 1956,
+      "delay_seconds": 0.27238119998946786
+    },
+    {
+      "hello_frame": 1976,
+      "b_frame": 1981,
+      "delay_seconds": 0.30336939997505397
+    },
+    {
+      "hello_frame": 1999,
+      "b_frame": 2004,
+      "delay_seconds": 0.30414289998589084
+    },
+    {
+      "hello_frame": 2059,
+      "b_frame": 2064,
+      "delay_seconds": 0.3043745000031777
+    },
+    {
+      "hello_frame": 2086,
+      "b_frame": 2091,
+      "delay_seconds": 0.27265570004237816
+    }
+  ],
+  "count": 13,
+  "fix": "Opt-in hold-static-after-gesture ending-label consumption.",
+  "weights_unchanged": true,
+  "tests": "77 passed",
+  "limitations": [
+    "The test blocks were unmarked, so intended signs are not verified.",
+    "Existing logs cannot replay all static frames because only completed motion inputs were retained.",
+    "Live combined handoff behavior requires a fresh check.",
+    "A folded-thumb-only B rule was not introduced; relaxed-thumb B variants can be valid."
+  ]
+}

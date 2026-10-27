@@ -1,0 +1,83 @@
+{
+  "run": "output\\live-diagnostics\\20261027T040111Z-42c6d0",
+  "sources": {
+    "take_000062.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_000062.npz",
+      "sha256": "643b0475eecb137e29e7c25f74f362734a0cdbf352b686e8f87d6c58e26d479c"
+    },
+    "take_000129.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_000129.npz",
+      "sha256": "d81dc0fa0bbc74fbc9e50291f552d49e391034264ed3ae79e3f2e99d3fa7e8cc"
+    },
+    "take_000164.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_000164.npz",
+      "sha256": "00e86506e2b546bfdf976232d3515b1f4da0a8156625587bc177632da265d0f1"
+    },
+    "take_000296.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_000296.npz",
+      "sha256": "306c445fd941b7016b57548f169c8cff425340d0b7e0c1c191bb4de90bea710c"
+    },
+    "take_000369.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_000369.npz",
+      "sha256": "109e0d57f6fd77f918d5bf0f4648f1d5ace321c46718a2a680938a9cc2e1a2a0"
+    },
+    "take_000398.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_000398.npz",
+      "sha256": "0d84f494ddc63a2853d01626efe960bbbd116a3f6ac30a12ff790ce5fb13f883"
+    },
+    "take_000432.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_000432.npz",
+      "sha256": "b4b37cba75ec80341ce60d9c5f981aa92daa87ebd015475fed0b65f3074168fb"
+    },
+    "take_000642.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_000642.npz",
+      "sha256": "9898142a534666dd450d507fcb0c98a9f833448661d5aa28e91f9065c96f45e3"
+    },
+    "take_000709.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_000709.npz",
+      "sha256": "f1eda56b09e849ba4fab03d126303efbbf4e4a5fac8d1b02d2406aaf356137d7"
+    },
+    "take_000777.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_000777.npz",
+      "sha256": "10272d326c08f33a322bfacaabf313cb436567fa1282c1ad371b24a161c81eb9"
+    },
+    "take_000936.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_000936.npz",
+      "sha256": "c898bec4b64ca7cffde22222ab661971ebdf2c8168b7d119002cc01b888981c7"
+    },
+    "take_001078.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_001078.npz",
+      "sha256": "20ebea88b34f23bed0adb58051b462ebae9dde7df1328231b0988513d6c5b9b5"
+    },
+    "take_001114.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_001114.npz",
+      "sha256": "118517d735d23fb1844547e6b310311fc99bdbb1f03808ae27afd5757cab64d6"
+    },
+    "take_001153.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_001153.npz",
+      "sha256": "91e179b5af10d33ef43eec2c4cbcb7158114aa2246a18b865adff95f48e5fe42"
+    },
+    "take_001193.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_001193.npz",
+      "sha256": "c2260ccc9adfa6c26e111f3b7ac247f4771bc42e02307d8c6822c0c5a834fd35"
+    },
+    "take_001241.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_001241.npz",
+      "sha256": "81f63635efeffc76a658a87a9e81a6f10682b61ffb0ec8d5c244f56ade1b3c81"
+    },
+    "take_001317.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_001317.npz",
+      "sha256": "9d5a6046edfe89de80f9e703e628801b5ea308fd646c570c1b73604dd377015f"
+    },
+    "take_001437.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_001437.npz",
+      "sha256": "3ee4cd924daf9105c58255db43f2321185b500e538c48ec4997dee3328d8ccd3"
+    },
+    "take_001475.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T040111Z-42c6d0\\gesture_inputs\\take_001475.npz",
+      "sha256": "38531779f00d6c14fbaae68cb4f04491a325f7725d34d20aa57161aa010fd061"
+    }
+  },
+  "selection_policy": "All accepted J/Z and J/Z handshape-rejected captures from one unmarked combined session. No suggested review labels.",
+  "usage": "Development data only; review before training. Never use UNSURE for supervised training."
+}

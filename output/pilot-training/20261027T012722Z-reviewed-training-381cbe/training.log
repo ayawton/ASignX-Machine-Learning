@@ -1,0 +1,29 @@
+Training output: output\pilot-training\20261027T012722Z-reviewed-training-381cbe\sequence_reviewed_training.pth
+Reusing fixed split manifest: C:\Users\Xyan\Desktop\Applications\ASignX ML\output\pilot-training\20261027T012722Z-reviewed-training-381cbe\.sequence_reviewed_training-training-kos1x6js\sequence_reviewed_training.splits.json
+Class counts by split: {'train': {'HELLO': 22, 'J': 7, 'Z': 6, 'BACKGROUND': 19}, 'validation': {'HELLO': 4, 'J': 1, 'Z': 2, 'BACKGROUND': 4}, 'test': {'HELLO': 4, 'J': 1, 'Z': 2, 'BACKGROUND': 4}}
+Epoch 1/50 train_loss=2.9562 validation_loss=1.2328 validation_accuracy=0.455
+Epoch 2/50 train_loss=1.2328 validation_loss=1.0979 validation_accuracy=0.364
+Epoch 3/50 train_loss=1.3729 validation_loss=0.7080 validation_accuracy=0.636
+Epoch 4/50 train_loss=1.3960 validation_loss=0.6586 validation_accuracy=0.818
+Epoch 5/50 train_loss=1.1538 validation_loss=0.4101 validation_accuracy=0.818
+Epoch 6/50 train_loss=0.7984 validation_loss=0.2032 validation_accuracy=0.909
+Epoch 7/50 train_loss=0.6945 validation_loss=0.0659 validation_accuracy=1.000
+Epoch 8/50 train_loss=0.5648 validation_loss=0.0290 validation_accuracy=1.000
+Epoch 9/50 train_loss=0.4469 validation_loss=0.0386 validation_accuracy=1.000
+Epoch 10/50 train_loss=0.3462 validation_loss=0.0189 validation_accuracy=1.000
+Epoch 11/50 train_loss=0.3456 validation_loss=0.0198 validation_accuracy=1.000
+Epoch 12/50 train_loss=0.3420 validation_loss=0.0191 validation_accuracy=1.000
+Epoch 13/50 train_loss=0.3054 validation_loss=0.0237 validation_accuracy=1.000
+Epoch 14/50 train_loss=0.3162 validation_loss=0.0365 validation_accuracy=1.000
+Epoch 15/50 train_loss=0.3321 validation_loss=0.0271 validation_accuracy=1.000
+Epoch 16/50 train_loss=0.3132 validation_loss=0.0215 validation_accuracy=1.000
+Epoch 17/50 train_loss=0.3288 validation_loss=0.0295 validation_accuracy=1.000
+Epoch 18/50 train_loss=0.3006 validation_loss=0.0450 validation_accuracy=1.000
+Epoch 19/50 train_loss=0.3028 validation_loss=0.0428 validation_accuracy=1.000
+Epoch 20/50 train_loss=0.3150 validation_loss=0.0449 validation_accuracy=1.000
+Early stopping after 10 epochs without validation improvement
+{
+  "test": null
+}
+Previous model and reports backed up to: output\pilot-training\20261027T012722Z-reviewed-training-381cbe\backups\sequence_reviewed_training\20261027T012728826229Z-f6ed9fa1
+Model ready: output\pilot-training\20261027T012722Z-reviewed-training-381cbe\sequence_reviewed_training.pth; restart recognition to load the updated model

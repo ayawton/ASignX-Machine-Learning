@@ -1,0 +1,38 @@
+{
+  "rest_seconds": 9.93758919998072,
+  "captures": [
+    {
+      "file": "take_000090.npz",
+      "source_sha256": "2d32e4d5e439c6d7f4dfb048bb9d4391e18f455183f3f98ae38713aa7154f6c7",
+      "live_output": "Z",
+      "live_confidence": 0.9809385538101196,
+      "left_feature_visibility": 0.0,
+      "right_feature_visibility": 0.8181818181818182,
+      "duration": 0.8007566999876872,
+      "baseline": {
+        "raw": "Z",
+        "accepted": "Z",
+        "confidence": 0.9938814640045166
+      }
+    },
+    {
+      "file": "take_000166.npz",
+      "source_sha256": "7bc63fa4534769a5459e381d38bb197378cd47fb6c15a2ed3b7d3c3c38242570",
+      "live_output": "Z",
+      "live_confidence": 0.9515256285667419,
+      "left_feature_visibility": 0.4264705882352941,
+      "right_feature_visibility": 0.6323529411764706,
+      "duration": 5.200930499995593,
+      "baseline": {
+        "raw": "J",
+        "accepted": null,
+        "confidence": 0.6492560505867004
+      }
+    }
+  ],
+  "limitations": [
+    "REST target records user intent; movement content requires human review.",
+    "MediaPipe handedness is tracker evidence, not confirmed physical handedness.",
+    "No source labels or training membership changed."
+  ]
+}

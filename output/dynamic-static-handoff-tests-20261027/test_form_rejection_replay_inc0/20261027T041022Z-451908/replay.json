@@ -1,0 +1,25 @@
+{
+  "model": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\dynamic-static-handoff-tests-20261027\\test_form_rejection_replay_inc0\\model.pth",
+  "model_sha256": "448d487f759348fcd126a444c6a8adf6d7646d09699ce7ce08a59034aa694e14",
+  "takes": [
+    {
+      "file": "take_000000.npz",
+      "target": "UNMARKED",
+      "input_observations": 30,
+      "duration_seconds": 1.9333333333333333,
+      "raw_prediction": "J",
+      "confidence": 0.8434891700744629,
+      "accepted_label": null,
+      "tracking_or_background_reason": "J requires sustained extended pinky with the other fingers folded",
+      "recorded_raw_prediction": null,
+      "reproduces_recorded_prediction": null,
+      "reproduces_recorded_emission": true,
+      "recorded_rejection": "form rejected"
+    }
+  ],
+  "limitations": [
+    "Replays model preparation/classification, not the motion guard.",
+    "Target labels describe user intent, not verified ASL correctness.",
+    "Diagnostic inputs are not automatically training examples."
+  ]
+}

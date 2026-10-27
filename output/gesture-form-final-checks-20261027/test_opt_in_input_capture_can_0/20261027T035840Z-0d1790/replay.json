@@ -1,0 +1,25 @@
+{
+  "model": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\gesture-form-final-checks-20261027\\test_opt_in_input_capture_can_0\\model.pth",
+  "model_sha256": "7e98dfb3abedd6939ebbd843876f004c0c3b8092c15b540f5828b9b863d1bfb3",
+  "takes": [
+    {
+      "file": "take_000000.npz",
+      "target": "HELLO",
+      "input_observations": 30,
+      "duration_seconds": 1.9333333333333333,
+      "raw_prediction": "HELLO",
+      "confidence": 0.5163004398345947,
+      "accepted_label": null,
+      "tracking_or_background_reason": null,
+      "recorded_raw_prediction": "HELLO",
+      "reproduces_recorded_prediction": true,
+      "reproduces_recorded_emission": true,
+      "recorded_rejection": null
+    }
+  ],
+  "limitations": [
+    "Replays model preparation/classification, not the motion guard.",
+    "Target labels describe user intent, not verified ASL correctness.",
+    "Diagnostic inputs are not automatically training examples."
+  ]
+}

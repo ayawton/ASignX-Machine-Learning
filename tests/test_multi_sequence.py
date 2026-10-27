@@ -44,6 +44,21 @@ def test_tracking_failure_is_isolated_to_one_model():
     assert group.last_predictions['words'] is None
 
 
+def test_router_reports_rejected_gesture_instead_of_silence():
+    router = UnifiedSignRecognizer(
+        sequence_predictor=Predictor(150, None, fail=True), velocity_threshold=.004)
+    rejected = []
+    for i in range(100):
+        t = i/30
+        result = router.update([hand(min(max(t-.3, 0), 1.5)*.3)], timestamp=t)
+        if result['dynamic_rejected']:
+            rejected.append(result)
+    assert len(rejected) == 1
+    assert rejected[0]['dynamic_rejected'] == 'lost tracking'
+    assert rejected[0]['dynamic_error'] == 'lost tracking'
+    assert rejected[0]['dynamic_emitted'] is None
+
+
 def test_models_share_capture_and_settling_without_double_emission():
     group=SequencePredictorGroup({'letters':Predictor(126,Prediction('J',.9,'J')),
                                   'words':Predictor(150,Prediction(None,.5,'Hello'))})

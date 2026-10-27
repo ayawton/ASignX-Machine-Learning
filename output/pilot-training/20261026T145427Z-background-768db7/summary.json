@@ -1,0 +1,163 @@
+{
+  "checkpoint": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T145427Z-background-768db7\\sequence_left_background_pilot.pth",
+  "counts": {
+    "HELLO": 8,
+    "J": 9,
+    "Z": 10,
+    "BACKGROUND": 9
+  },
+  "labels": [
+    "BACKGROUND",
+    "HELLO",
+    "J",
+    "Z"
+  ],
+  "split_counts": {
+    "train": {
+      "HELLO": 6,
+      "J": 7,
+      "Z": 6,
+      "BACKGROUND": 7
+    },
+    "validation": {
+      "HELLO": 1,
+      "J": 1,
+      "Z": 2,
+      "BACKGROUND": 1
+    },
+    "test": {
+      "HELLO": 1,
+      "J": 1,
+      "Z": 2,
+      "BACKGROUND": 1
+    }
+  },
+  "best_epoch": 15,
+  "epochs_completed": 25,
+  "validation": {
+    "accuracy": 0.8,
+    "macro_precision": 0.625,
+    "macro_recall": 0.75,
+    "macro_f1": 0.6666666666666666,
+    "weighted_f1": 0.7333333333333333,
+    "per_class": {
+      "BACKGROUND": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1
+      },
+      "HELLO": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "support": 1
+      },
+      "J": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "Z": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2
+      }
+    },
+    "labels": [
+      "BACKGROUND",
+      "HELLO",
+      "J",
+      "Z"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "loss": 0.3372194766998291
+  },
+  "validation_prediction_comparison": [
+    {
+      "session_id": "8082d94135994195a2155aba4fd4c879",
+      "label": "HELLO",
+      "previous_raw_label": "HELLO",
+      "previous_confidence": 0.9970376491546631,
+      "candidate_raw_label": "HELLO",
+      "candidate_confidence": 0.6699281930923462,
+      "candidate_live_label": null,
+      "candidate_live_raw_label": "HELLO"
+    },
+    {
+      "session_id": "7545ce4112a246578b8f82d12e70f9a1",
+      "label": "J",
+      "previous_raw_label": "J",
+      "previous_confidence": 0.9858662486076355,
+      "candidate_raw_label": "J",
+      "candidate_confidence": 0.9650391936302185,
+      "candidate_live_label": "J",
+      "candidate_live_raw_label": "J"
+    },
+    {
+      "session_id": "051ffe1c454845d7a935e976e1d305bc",
+      "label": "Z",
+      "previous_raw_label": "Z",
+      "previous_confidence": 0.9998093247413635,
+      "candidate_raw_label": "Z",
+      "candidate_confidence": 0.987173318862915,
+      "candidate_live_label": "Z",
+      "candidate_live_raw_label": "Z"
+    },
+    {
+      "session_id": "cf185e82dd854afbac9c96993d93173a",
+      "label": "Z",
+      "previous_raw_label": "Z",
+      "previous_confidence": 0.9998277425765991,
+      "candidate_raw_label": "Z",
+      "candidate_confidence": 0.9839146137237549,
+      "candidate_live_label": "Z",
+      "candidate_live_raw_label": "Z"
+    },
+    {
+      "session_id": "3d8fadbb670d4d5e81dce156de42404e",
+      "label": "BACKGROUND",
+      "previous_raw_label": "HELLO",
+      "previous_confidence": 0.9959084987640381,
+      "candidate_raw_label": "HELLO",
+      "candidate_confidence": 0.6996430158615112,
+      "candidate_live_label": null,
+      "candidate_live_raw_label": "HELLO"
+    }
+  ],
+  "test": null,
+  "originals_and_existing_checkpoints_unchanged": true,
+  "limitations": [
+    "One signer, left-hand pilot; not signer-independent",
+    "Only one BACKGROUND validation take; correctness/subcategory not visually verified",
+    "Same positive partitions retained; prior validation already development-known",
+    "No saved test inference or live camera test performed"
+  ]
+}

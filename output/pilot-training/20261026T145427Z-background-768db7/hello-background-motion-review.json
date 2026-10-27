@@ -1,0 +1,587 @@
+[
+  {
+    "split": "train",
+    "label": "HELLO",
+    "session_id": "0d04ab71c06342db9602d55a2a58987e",
+    "wrist_path_shoulder_units": 0.224,
+    "hand_shape_change_mean": 0.254,
+    "probes": {
+      "original": {
+        "raw": "HELLO",
+        "hello": 0.611,
+        "background": 0.384
+      },
+      "frozen_first": {
+        "raw": "HELLO",
+        "hello": 0.757,
+        "background": 0.238
+      },
+      "frozen_middle": {
+        "raw": "HELLO",
+        "hello": 0.748,
+        "background": 0.248
+      },
+      "reversed": {
+        "raw": "HELLO",
+        "hello": 0.613,
+        "background": 0.382
+      },
+      "first_half_stretched": {
+        "raw": "HELLO",
+        "hello": 0.756,
+        "background": 0.24
+      },
+      "shuffled": {
+        "raw": "HELLO",
+        "hello": 0.63,
+        "background": 0.365
+      }
+    }
+  },
+  {
+    "split": "train",
+    "label": "HELLO",
+    "session_id": "470ec1f142d24efb82576eff4e682308",
+    "wrist_path_shoulder_units": 0.498,
+    "hand_shape_change_mean": 0.049,
+    "probes": {
+      "original": {
+        "raw": "HELLO",
+        "hello": 0.736,
+        "background": 0.259
+      },
+      "frozen_first": {
+        "raw": "HELLO",
+        "hello": 0.755,
+        "background": 0.24
+      },
+      "frozen_middle": {
+        "raw": "HELLO",
+        "hello": 0.734,
+        "background": 0.262
+      },
+      "reversed": {
+        "raw": "HELLO",
+        "hello": 0.735,
+        "background": 0.26
+      },
+      "first_half_stretched": {
+        "raw": "HELLO",
+        "hello": 0.75,
+        "background": 0.245
+      },
+      "shuffled": {
+        "raw": "HELLO",
+        "hello": 0.736,
+        "background": 0.259
+      }
+    }
+  },
+  {
+    "split": "train",
+    "label": "HELLO",
+    "session_id": "5a76ecb584fd42e98c9ebbb0727c1a4e",
+    "wrist_path_shoulder_units": 0.538,
+    "hand_shape_change_mean": 0.063,
+    "probes": {
+      "original": {
+        "raw": "HELLO",
+        "hello": 0.662,
+        "background": 0.334
+      },
+      "frozen_first": {
+        "raw": "HELLO",
+        "hello": 0.76,
+        "background": 0.235
+      },
+      "frozen_middle": {
+        "raw": "HELLO",
+        "hello": 0.652,
+        "background": 0.344
+      },
+      "reversed": {
+        "raw": "HELLO",
+        "hello": 0.66,
+        "background": 0.335
+      },
+      "first_half_stretched": {
+        "raw": "HELLO",
+        "hello": 0.765,
+        "background": 0.23
+      },
+      "shuffled": {
+        "raw": "HELLO",
+        "hello": 0.667,
+        "background": 0.328
+      }
+    }
+  },
+  {
+    "split": "train",
+    "label": "HELLO",
+    "session_id": "eec4b8a6169a473abda2d161e574d4d2",
+    "wrist_path_shoulder_units": 0.457,
+    "hand_shape_change_mean": 0.061,
+    "probes": {
+      "original": {
+        "raw": "HELLO",
+        "hello": 0.688,
+        "background": 0.307
+      },
+      "frozen_first": {
+        "raw": "HELLO",
+        "hello": 0.748,
+        "background": 0.247
+      },
+      "frozen_middle": {
+        "raw": "HELLO",
+        "hello": 0.635,
+        "background": 0.36
+      },
+      "reversed": {
+        "raw": "HELLO",
+        "hello": 0.687,
+        "background": 0.309
+      },
+      "first_half_stretched": {
+        "raw": "HELLO",
+        "hello": 0.745,
+        "background": 0.25
+      },
+      "shuffled": {
+        "raw": "HELLO",
+        "hello": 0.69,
+        "background": 0.305
+      }
+    }
+  },
+  {
+    "split": "train",
+    "label": "HELLO",
+    "session_id": "ef64aba2d2174a2989495e5b9fcd090b",
+    "wrist_path_shoulder_units": 0.413,
+    "hand_shape_change_mean": 0.047,
+    "probes": {
+      "original": {
+        "raw": "HELLO",
+        "hello": 0.75,
+        "background": 0.246
+      },
+      "frozen_first": {
+        "raw": "HELLO",
+        "hello": 0.759,
+        "background": 0.236
+      },
+      "frozen_middle": {
+        "raw": "HELLO",
+        "hello": 0.743,
+        "background": 0.253
+      },
+      "reversed": {
+        "raw": "HELLO",
+        "hello": 0.749,
+        "background": 0.247
+      },
+      "first_half_stretched": {
+        "raw": "HELLO",
+        "hello": 0.747,
+        "background": 0.249
+      },
+      "shuffled": {
+        "raw": "HELLO",
+        "hello": 0.751,
+        "background": 0.245
+      }
+    }
+  },
+  {
+    "split": "train",
+    "label": "HELLO",
+    "session_id": "f54f639071de4dffaab7fef7490637dc",
+    "wrist_path_shoulder_units": 0.467,
+    "hand_shape_change_mean": 0.061,
+    "probes": {
+      "original": {
+        "raw": "HELLO",
+        "hello": 0.659,
+        "background": 0.337
+      },
+      "frozen_first": {
+        "raw": "HELLO",
+        "hello": 0.76,
+        "background": 0.235
+      },
+      "frozen_middle": {
+        "raw": "HELLO",
+        "hello": 0.72,
+        "background": 0.276
+      },
+      "reversed": {
+        "raw": "HELLO",
+        "hello": 0.658,
+        "background": 0.337
+      },
+      "first_half_stretched": {
+        "raw": "HELLO",
+        "hello": 0.756,
+        "background": 0.239
+      },
+      "shuffled": {
+        "raw": "HELLO",
+        "hello": 0.667,
+        "background": 0.329
+      }
+    }
+  },
+  {
+    "split": "train",
+    "label": "BACKGROUND",
+    "session_id": "01ead69f2ff34a84afa134188940c244",
+    "wrist_path_shoulder_units": 0.321,
+    "hand_shape_change_mean": 0.097,
+    "probes": {
+      "original": {
+        "raw": "BACKGROUND",
+        "hello": 0.066,
+        "background": 0.92
+      },
+      "frozen_first": {
+        "raw": "BACKGROUND",
+        "hello": 0.029,
+        "background": 0.936
+      },
+      "frozen_middle": {
+        "raw": "BACKGROUND",
+        "hello": 0.092,
+        "background": 0.894
+      },
+      "reversed": {
+        "raw": "BACKGROUND",
+        "hello": 0.059,
+        "background": 0.927
+      },
+      "first_half_stretched": {
+        "raw": "BACKGROUND",
+        "hello": 0.034,
+        "background": 0.915
+      },
+      "shuffled": {
+        "raw": "BACKGROUND",
+        "hello": 0.075,
+        "background": 0.914
+      }
+    }
+  },
+  {
+    "split": "train",
+    "label": "BACKGROUND",
+    "session_id": "25f1ec813f5a404e81466c57f4979fdd",
+    "wrist_path_shoulder_units": 0.503,
+    "hand_shape_change_mean": 0.074,
+    "probes": {
+      "original": {
+        "raw": "BACKGROUND",
+        "hello": 0.421,
+        "background": 0.573
+      },
+      "frozen_first": {
+        "raw": "HELLO",
+        "hello": 0.723,
+        "background": 0.272
+      },
+      "frozen_middle": {
+        "raw": "HELLO",
+        "hello": 0.577,
+        "background": 0.418
+      },
+      "reversed": {
+        "raw": "BACKGROUND",
+        "hello": 0.422,
+        "background": 0.572
+      },
+      "first_half_stretched": {
+        "raw": "HELLO",
+        "hello": 0.721,
+        "background": 0.274
+      },
+      "shuffled": {
+        "raw": "BACKGROUND",
+        "hello": 0.475,
+        "background": 0.519
+      }
+    }
+  },
+  {
+    "split": "train",
+    "label": "BACKGROUND",
+    "session_id": "3fa39dab8bcd40568b375b0563b576bb",
+    "wrist_path_shoulder_units": 0.193,
+    "hand_shape_change_mean": 0.087,
+    "probes": {
+      "original": {
+        "raw": "BACKGROUND",
+        "hello": 0.038,
+        "background": 0.943
+      },
+      "frozen_first": {
+        "raw": "BACKGROUND",
+        "hello": 0.313,
+        "background": 0.68
+      },
+      "frozen_middle": {
+        "raw": "BACKGROUND",
+        "hello": 0.02,
+        "background": 0.936
+      },
+      "reversed": {
+        "raw": "BACKGROUND",
+        "hello": 0.04,
+        "background": 0.94
+      },
+      "first_half_stretched": {
+        "raw": "BACKGROUND",
+        "hello": 0.073,
+        "background": 0.916
+      },
+      "shuffled": {
+        "raw": "BACKGROUND",
+        "hello": 0.052,
+        "background": 0.934
+      }
+    }
+  },
+  {
+    "split": "train",
+    "label": "BACKGROUND",
+    "session_id": "475ce8e9b7554d81b907aebeef2c167c",
+    "wrist_path_shoulder_units": 0.417,
+    "hand_shape_change_mean": 0.095,
+    "probes": {
+      "original": {
+        "raw": "BACKGROUND",
+        "hello": 0.048,
+        "background": 0.937
+      },
+      "frozen_first": {
+        "raw": "BACKGROUND",
+        "hello": 0.025,
+        "background": 0.957
+      },
+      "frozen_middle": {
+        "raw": "BACKGROUND",
+        "hello": 0.137,
+        "background": 0.855
+      },
+      "reversed": {
+        "raw": "BACKGROUND",
+        "hello": 0.046,
+        "background": 0.939
+      },
+      "first_half_stretched": {
+        "raw": "BACKGROUND",
+        "hello": 0.012,
+        "background": 0.941
+      },
+      "shuffled": {
+        "raw": "BACKGROUND",
+        "hello": 0.058,
+        "background": 0.929
+      }
+    }
+  },
+  {
+    "split": "train",
+    "label": "BACKGROUND",
+    "session_id": "869e0675da4341b8b1d9bc598c7a0778",
+    "wrist_path_shoulder_units": 0.194,
+    "hand_shape_change_mean": 0.077,
+    "probes": {
+      "original": {
+        "raw": "BACKGROUND",
+        "hello": 0.077,
+        "background": 0.912
+      },
+      "frozen_first": {
+        "raw": "BACKGROUND",
+        "hello": 0.116,
+        "background": 0.874
+      },
+      "frozen_middle": {
+        "raw": "BACKGROUND",
+        "hello": 0.067,
+        "background": 0.922
+      },
+      "reversed": {
+        "raw": "BACKGROUND",
+        "hello": 0.078,
+        "background": 0.912
+      },
+      "first_half_stretched": {
+        "raw": "BACKGROUND",
+        "hello": 0.091,
+        "background": 0.899
+      },
+      "shuffled": {
+        "raw": "BACKGROUND",
+        "hello": 0.079,
+        "background": 0.911
+      }
+    }
+  },
+  {
+    "split": "train",
+    "label": "BACKGROUND",
+    "session_id": "b790d667e2da4391887e4bc1d4b2a63c",
+    "wrist_path_shoulder_units": 0.118,
+    "hand_shape_change_mean": 0.017,
+    "probes": {
+      "original": {
+        "raw": "BACKGROUND",
+        "hello": 0.079,
+        "background": 0.902
+      },
+      "frozen_first": {
+        "raw": "BACKGROUND",
+        "hello": 0.08,
+        "background": 0.901
+      },
+      "frozen_middle": {
+        "raw": "BACKGROUND",
+        "hello": 0.081,
+        "background": 0.901
+      },
+      "reversed": {
+        "raw": "BACKGROUND",
+        "hello": 0.079,
+        "background": 0.902
+      },
+      "first_half_stretched": {
+        "raw": "BACKGROUND",
+        "hello": 0.079,
+        "background": 0.902
+      },
+      "shuffled": {
+        "raw": "BACKGROUND",
+        "hello": 0.079,
+        "background": 0.902
+      }
+    }
+  },
+  {
+    "split": "train",
+    "label": "BACKGROUND",
+    "session_id": "d55619de923849c39918264b6437d0d4",
+    "wrist_path_shoulder_units": 0.487,
+    "hand_shape_change_mean": 0.08,
+    "probes": {
+      "original": {
+        "raw": "HELLO",
+        "hello": 0.498,
+        "background": 0.496
+      },
+      "frozen_first": {
+        "raw": "BACKGROUND",
+        "hello": 0.175,
+        "background": 0.817
+      },
+      "frozen_middle": {
+        "raw": "HELLO",
+        "hello": 0.749,
+        "background": 0.246
+      },
+      "reversed": {
+        "raw": "HELLO",
+        "hello": 0.499,
+        "background": 0.495
+      },
+      "first_half_stretched": {
+        "raw": "BACKGROUND",
+        "hello": 0.3,
+        "background": 0.693
+      },
+      "shuffled": {
+        "raw": "HELLO",
+        "hello": 0.543,
+        "background": 0.451
+      }
+    }
+  },
+  {
+    "split": "validation",
+    "label": "HELLO",
+    "session_id": "8082d94135994195a2155aba4fd4c879",
+    "wrist_path_shoulder_units": 0.491,
+    "hand_shape_change_mean": 0.055,
+    "probes": {
+      "original": {
+        "raw": "HELLO",
+        "hello": 0.67,
+        "background": 0.325
+      },
+      "frozen_first": {
+        "raw": "HELLO",
+        "hello": 0.746,
+        "background": 0.249
+      },
+      "frozen_middle": {
+        "raw": "HELLO",
+        "hello": 0.686,
+        "background": 0.31
+      },
+      "reversed": {
+        "raw": "HELLO",
+        "hello": 0.669,
+        "background": 0.326
+      },
+      "first_half_stretched": {
+        "raw": "HELLO",
+        "hello": 0.742,
+        "background": 0.253
+      },
+      "shuffled": {
+        "raw": "HELLO",
+        "hello": 0.674,
+        "background": 0.322
+      }
+    }
+  },
+  {
+    "split": "validation",
+    "label": "BACKGROUND",
+    "session_id": "3d8fadbb670d4d5e81dce156de42404e",
+    "wrist_path_shoulder_units": 0.167,
+    "hand_shape_change_mean": 0.024,
+    "probes": {
+      "original": {
+        "raw": "HELLO",
+        "hello": 0.7,
+        "background": 0.295
+      },
+      "frozen_first": {
+        "raw": "HELLO",
+        "hello": 0.699,
+        "background": 0.296
+      },
+      "frozen_middle": {
+        "raw": "HELLO",
+        "hello": 0.696,
+        "background": 0.299
+      },
+      "reversed": {
+        "raw": "HELLO",
+        "hello": 0.7,
+        "background": 0.295
+      },
+      "first_half_stretched": {
+        "raw": "HELLO",
+        "hello": 0.699,
+        "background": 0.295
+      },
+      "shuffled": {
+        "raw": "HELLO",
+        "hello": 0.7,
+        "background": 0.295
+      }
+    }
+  }
+]
