@@ -1,0 +1,63 @@
+{
+  "model": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequence_reviewed_live_hello.pth",
+  "model_sha256": "438615e25dea1bee158f21b38d40cac7ff25cc7b040dd5c3bcdcaa6c9b843691",
+  "takes": [
+    {
+      "file": "take_000090.npz",
+      "target": "REST",
+      "input_observations": 11,
+      "duration_seconds": 0.8007566999876872,
+      "raw_prediction": "Z",
+      "confidence": 0.9809385538101196,
+      "accepted_label": "Z",
+      "tracking_or_background_reason": null,
+      "recorded_raw_prediction": "Z",
+      "reproduces_recorded_prediction": true,
+      "recorded_rejection": null
+    },
+    {
+      "file": "take_000098.npz",
+      "target": "REST",
+      "input_observations": 9,
+      "duration_seconds": 0.607850500033237,
+      "raw_prediction": null,
+      "confidence": null,
+      "accepted_label": null,
+      "tracking_or_background_reason": "Insufficient visible hands and shoulders (hand 30%, shoulders 100%, face references 100%)",
+      "recorded_raw_prediction": null,
+      "reproduces_recorded_prediction": null,
+      "recorded_rejection": "Insufficient sustained motion (0.00 palm widths, 0.00s moving)"
+    },
+    {
+      "file": "take_000166.npz",
+      "target": "REST",
+      "input_observations": 68,
+      "duration_seconds": 5.200930499995593,
+      "raw_prediction": "Z",
+      "confidence": 0.9515256285667419,
+      "accepted_label": "Z",
+      "tracking_or_background_reason": null,
+      "recorded_raw_prediction": "Z",
+      "reproduces_recorded_prediction": true,
+      "recorded_rejection": null
+    },
+    {
+      "file": "take_000192.npz",
+      "target": "REST",
+      "input_observations": 27,
+      "duration_seconds": 1.9349187999614514,
+      "raw_prediction": null,
+      "confidence": null,
+      "accepted_label": null,
+      "tracking_or_background_reason": "Insufficient visible hands and shoulders (hand 43%, shoulders 100%, face references 100%)",
+      "recorded_raw_prediction": null,
+      "reproduces_recorded_prediction": null,
+      "recorded_rejection": "Insufficient visible hands and shoulders (hand 43%, shoulders 100%, face references 100%)"
+    }
+  ],
+  "limitations": [
+    "Replays model preparation/classification, not the motion guard.",
+    "Target labels describe user intent, not verified ASL correctness.",
+    "Diagnostic inputs are not automatically training examples."
+  ]
+}

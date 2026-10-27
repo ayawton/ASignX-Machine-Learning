@@ -253,6 +253,11 @@ class VisualDebugger:
         card_x = max(16, width - card_w - 16)
         card_y = 82
 
+        if dynamic_info and dynamic_info.get("dynamic_error"):
+            cv2.putText(canvas, f"Motion rejected: {dynamic_info['dynamic_error']}",
+                        (16, max(20, height - 65)), self.font, 0.45,
+                        (100, 180, 255), 1, cv2.LINE_AA)
+
         if not recognitions and not (dynamic_info and dynamic_info.get("dynamic_prediction")):
             card_h = 74
             overlay = canvas.copy()
@@ -275,7 +280,7 @@ class VisualDebugger:
             )
             cv2.putText(
                 canvas,
-                "Waiting for hand...",
+                ("Waiting for motion..." if dynamic_info is not None else "Waiting for hand..."),
                 (card_x + 12, card_y + 52),
                 self.font,
                 0.55,
@@ -294,10 +299,18 @@ class VisualDebugger:
 
             pred = rec.prediction
             stable = rec.stable_label
+            suppressed = getattr(rec, 'suppressed', False)
             display_sign = stable or pred.label or pred.raw_label or "?"
             conf = float(pred.confidence)
 
-            if stable is not None:
+            if suppressed:
+                awaiting_release = getattr(rec,'awaiting_release',False)
+                display_sign = 'Release pose' if awaiting_release else 'Static paused'
+                stable = None
+                conf = 0.
+                badge_color = (255, 180, 0)
+                state_str = 'GESTURE COMPLETE' if awaiting_release else 'DYNAMIC ACTIVE'
+            elif stable is not None:
                 badge_color = (0, 230, 118)  # Bright green for confirmed stable sign
                 state_str = "CONFIRMED"
             elif getattr(rec, "is_moving", False):
@@ -336,7 +349,7 @@ class VisualDebugger:
             font_scale = 1.45 if len(str(display_sign)) <= 2 else 0.95
             cv2.putText(
                 canvas,
-                f"SIGN: {display_sign}",
+                display_sign if suppressed else f"SIGN: {display_sign}",
                 (card_x + 12, y0 + 68),
                 self.font,
                 font_scale,
@@ -386,10 +399,15 @@ class VisualDebugger:
                 cv2.rectangle(
                     canvas, (card_x, y_dyn), (card_x + card_w, y_dyn + 56), dyn_color, 2
                 )
+                if dyn_stable or dyn_pred.label is not None:
+                    dynamic_text = f"MOTION: {dyn_label} ({dyn_conf * 100:.0f}%)"
+                elif dyn_pred.raw_label in ("AMBIGUOUS", "UNKNOWN"):
+                    dynamic_text = 'No accepted gesture'
+                else:
+                    dynamic_text = f"Uncertain: {dyn_pred.raw_label} ({dyn_conf * 100:.0f}%)"
                 cv2.putText(
                     canvas,
-                    (f"MOTION: {dyn_label}" if dyn_pred.raw_label in ("AMBIGUOUS", "UNKNOWN")
-                     else f"MOTION: {dyn_label} ({dyn_conf * 100:.0f}%)"),
+                    dynamic_text,
                     (card_x + 12, y_dyn + 36),
                     self.font,
                     0.6,

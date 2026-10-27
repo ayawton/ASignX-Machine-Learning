@@ -13,6 +13,7 @@ import torch
 
 from ml.model import load_checkpoint, save_checkpoint
 from ml.preprocessing import canonicalize_static_features, normalize_landmarks
+from ml.gesture_acceptance import MotionAcceptance, is_negative_label
 
 
 @dataclass(frozen=True)
@@ -126,7 +127,7 @@ class MotionGate:
     """Sliding-window hand velocity tracker to route static vs. dynamic signs and suppress transition blur."""
 
     def __init__(self, window_size: int = 8, velocity_threshold: float = 0.025) -> None:
-        if window_size < 2 or velocity_threshold < 0:
+        if window_size < 2 or not np.isfinite(velocity_threshold) or velocity_threshold < 0:
             raise ValueError("window_size must be >= 2 and velocity_threshold >= 0")
         self.window_size = window_size
         self.velocity_threshold = velocity_threshold
@@ -209,6 +210,8 @@ class Recognition:
     emitted_label: str | None
     velocity: float = 0.0
     is_moving: bool = False
+    suppressed: bool = False
+    awaiting_release: bool = False
 
 
 class SignRecognizer:
@@ -228,9 +231,12 @@ class SignRecognizer:
         self.motion_gate_threshold = motion_gate_threshold
         self.states: dict[str, PredictionStabilizer] = {}
         self.motion_gates: dict[str, MotionGate] = {}
+        self.consumed_labels: dict[str, str] = {}
+        self.absent_frames: dict[str, int] = {}
         self._last_timestamp: float | None = None
 
-    def update(self, hands: list[Any], timestamp: float | None = None, *, suppress: bool = False) -> list[Recognition]:
+    def update(self, hands: list[Any], timestamp: float | None = None, *, suppress: bool = False,
+               consume_hands=()) -> list[Recognition]:
         hands = _unique_hands(hands)
         if timestamp is not None:
             if not np.isfinite(timestamp) or (self._last_timestamp is not None and timestamp <= self._last_timestamp):
@@ -238,12 +244,15 @@ class SignRecognizer:
             if self._last_timestamp is not None and timestamp - self._last_timestamp > 0.5:
                 self.states.clear()
                 self.motion_gates.clear()
+                self.consumed_labels.clear()
+                self.absent_frames.clear()
             self._last_timestamp = timestamp
         results: list[Recognition] = []
         present: set[str] = set()
         for index, hand in enumerate(hands):
             key = hand.handedness or f"Hand_{index + 1}"
             present.add(key)
+            self.absent_frames[key] = 0
             state = self.states.setdefault(
                 key, PredictionStabilizer(self.stable_frames, self.release_frames)
             )
@@ -261,9 +270,18 @@ class SignRecognizer:
                 state.update(None)
                 continue
 
-            # Suppress static confirmation when hand is mid-sweep if motion gate is active
-            effective_label = None if is_moving or suppress else prediction.label
+            if key in consume_hands:
+                self.consumed_labels[key] = prediction.raw_label
+            consumed = self.consumed_labels.get(key)
+            # A dynamic sign has already consumed this ending handshape. A new
+            # static label must stabilize, or the hand must be released, before
+            # the same ending label can be emitted as an intentional letter.
+            effective_label = (None if is_moving or suppress or prediction.raw_label == consumed
+                               else prediction.label)
             stable, emitted = state.update(effective_label)
+            if consumed is not None and stable is not None and stable != consumed:
+                self.consumed_labels.pop(key,None)
+                consumed = None
             results.append(
                 Recognition(
                     hand=key,
@@ -272,10 +290,15 @@ class SignRecognizer:
                     emitted_label=emitted,
                     velocity=velocity,
                     is_moving=is_moving,
+                    suppressed=bool(is_moving or suppress or consumed is not None),
+                    awaiting_release=consumed is not None and not (is_moving or suppress),
                 )
             )
         for key in list(self.states):
             if key not in present:
+                self.absent_frames[key] = self.absent_frames.get(key,0) + 1
+                if self.absent_frames[key] >= self.release_frames:
+                    self.consumed_labels.pop(key,None)
                 self.states[key].update(None)
                 if key in self.motion_gates:
                     self.motion_gates[key].reset()
@@ -293,6 +316,9 @@ class UnifiedSignRecognizer:
         velocity_threshold: float = 0.022,
         stable_frames: int = 5,
         release_frames: int = 10,
+        motion_acceptance: MotionAcceptance | None = None,
+        form_acceptance: Any | None = None,
+        hold_static_after_gesture: bool = False,
     ) -> None:
         self.static_recognizer = (
             SignRecognizer(
@@ -319,6 +345,14 @@ class UnifiedSignRecognizer:
         self._result = None
         self._result_at: float | None = None
         self._discard_gesture = False
+        self._dynamic_error = None
+        self._dynamic_error_at = None
+        self.motion_acceptance = motion_acceptance or MotionAcceptance()
+        self.form_acceptance = form_acceptance
+        self.hold_static_after_gesture = hold_static_after_gesture
+        self._gesture_moving_hands: set[str] = set()
+        self._motion_history = deque(maxlen=1600)
+        self.trace_completed_takes = False
 
     def update(self, hands: list[Any], timestamp: float | None = None, *, body_context=None) -> dict[str, Any]:
         hands = _unique_hands(hands)
@@ -330,15 +364,28 @@ class UnifiedSignRecognizer:
             self.last_motion_at = None
             self._history.clear()
             self._gesture.clear()
+            self._motion_history.clear()
             self._result = None
             self._discard_gesture = False
+            self._gesture_moving_hands.clear()
             for gate in self.hand_motion_gates.values():
                 gate.reset()
             if self.sequence_predictor is not None:
                 self.sequence_predictor.reset()
         self._last_timestamp = timestamp
+        motion_hands = {}
+        for index, hand in enumerate(hands):
+            points = np.asarray(hand.to_numpy(), dtype=np.float32)
+            if points.shape == (21, 3) and np.isfinite(points).all():
+                motion_hands[hand.handedness or f'Hand_{index}'] = points.copy()
+        self._motion_history.append((timestamp, motion_hands))
+        cutoff = (timestamp-self.pre_roll_seconds if self.state == 'static'
+                  else self._started_at-self.pre_roll_seconds)
+        while self._motion_history and self._motion_history[0][0] < cutoff:
+            self._motion_history.popleft()
         present = set()
         velocity = 0.0
+        moving_hands = set()
         # Lower exit threshold prevents switching routes around the entry threshold.
         threshold = self.velocity_threshold * (0.6 if self.state != "static" else 1.0)
         for index, hand in enumerate(hands):
@@ -347,6 +394,8 @@ class UnifiedSignRecognizer:
             gate = self.hand_motion_gates.setdefault(key, MotionGate(velocity_threshold=self.velocity_threshold))
             speed, _ = gate.update(hand.to_numpy(), timestamp)
             velocity = max(velocity, speed)
+            if speed >= threshold:
+                moving_hands.add(key)
         for key, gate in self.hand_motion_gates.items():
             if key not in present:
                 gate.reset()
@@ -356,7 +405,10 @@ class UnifiedSignRecognizer:
 
         dynamic_emitted = None
         dynamic_stable = None
+        dynamic_rejected = None
         finalized = False
+        completed_take = None
+        completed_motion_take = None
         if self.sequence_predictor is not None:
             from ml.predict_sequence import _canonical_hands
             from ml.preprocessing import DUAL_NUM_FEATURES
@@ -373,13 +425,16 @@ class UnifiedSignRecognizer:
             while self._history and timestamp - self._history[0][0] > self.pre_roll_seconds:
                 self._history.popleft()
             if self.state == "static" and is_moving:
+                self._gesture_moving_hands = set(moving_hands)
                 self.state = "gesture"
                 self._started_at = timestamp
                 self._gesture = list(self._history)
                 self._result = None
                 self._discard_gesture = False
+                self._dynamic_error = None
             elif self.state != "static":
                 self._gesture.append((timestamp, raw))
+                self._gesture_moving_hands.update(moving_hands)
 
             if self.state != "static":
                 self.state = "gesture" if is_moving else "settling"
@@ -387,18 +442,31 @@ class UnifiedSignRecognizer:
                 timed_out = timestamp - self._started_at >= self.max_gesture_seconds
                 if quiet or timed_out:
                     finalized = True
+                    if self.trace_completed_takes:
+                        completed_take = list(self._gesture)
+                        completed_motion_take = [(t,{name:points.copy() for name,points in hands.items()})
+                                                 for t,hands in self._motion_history]
                     # Replay the completed take at the checkpoint sampling rate, then
                     # resample it to the training sequence length. Missing samples
                     # still pass through the predictor's visibility/gap checks.
                     predictor = self.sequence_predictor
                     try:
                         if quiet and not self._discard_gesture:
+                            self.motion_acceptance.validate(self._motion_history)
                             self._result = predictor.predict_take(self._gesture)
+                            if is_negative_label(self._result.raw_label):
+                                raise ValueError('Background / no gesture')
+                            if self.form_acceptance is not None and self._result.label is not None:
+                                self.form_acceptance.validate(self._result.label,self._gesture,
+                                                              motion_frames=self._motion_history)
                             self._result_at = timestamp
                             dynamic_stable = self._result.label
                             dynamic_emitted = self._result.label
-                    except ValueError:
+                    except ValueError as error:
                         self._result = None
+                        dynamic_rejected = str(error)
+                        self._dynamic_error = dynamic_rejected
+                        self._dynamic_error_at = timestamp
                     self._gesture.clear()
                     self.state = "static" if quiet else "settling"
                     if timed_out and not quiet:
@@ -409,7 +477,9 @@ class UnifiedSignRecognizer:
         # Block static confirmation through settling and on the finalization frame.
         suppress = self.state != "static" or finalized
         static_results = (
-            self.static_recognizer.update(hands, timestamp, suppress=suppress)
+            self.static_recognizer.update(hands, timestamp, suppress=suppress,
+                consume_hands=(self._gesture_moving_hands
+                               if dynamic_emitted and self.hold_static_after_gesture else ()))
             if self.static_recognizer is not None else []
         )
         visible_result = self._result if self._result_at is not None and timestamp - self._result_at <= 0.6 else None
@@ -424,6 +494,11 @@ class UnifiedSignRecognizer:
             "dynamic_emitted": dynamic_emitted,
             "dynamic_evaluated": finalized and self._result is not None,
             "dynamic_candidates": getattr(self.sequence_predictor, "last_predictions", {}),
+            "dynamic_rejected": dynamic_rejected,
+            "completed_take": completed_take,
+            "completed_motion_take": completed_motion_take,
+            "dynamic_error": (self._dynamic_error if self._dynamic_error_at is not None
+                              and timestamp - self._dynamic_error_at <= 2.0 else None),
         }
 
 

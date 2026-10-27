@@ -123,6 +123,7 @@ def export_sequence_checkpoint(
 
     metadata: dict[str, Any] = {
         "model_type": "dynamic_sequence",
+        "use_motion_deltas": bool(cfg.get('use_motion_deltas', False)),
         "backbone": str(cfg.get("backbone", model.backbone)),
         "labels": list(labels),
         "sequence_length": seq_len,

@@ -1,0 +1,173 @@
+{
+  "train BACKGROUND": [
+    {
+      "raw": "BACKGROUND",
+      "accepted": null,
+      "confidence": 0.92
+    },
+    {
+      "raw": "BACKGROUND",
+      "accepted": null,
+      "confidence": 0.573
+    },
+    {
+      "raw": "BACKGROUND",
+      "accepted": null,
+      "confidence": 0.943
+    },
+    {
+      "raw": "BACKGROUND",
+      "accepted": null,
+      "confidence": 0.937
+    },
+    {
+      "raw": "BACKGROUND",
+      "accepted": null,
+      "confidence": 0.912
+    },
+    {
+      "raw": "BACKGROUND",
+      "accepted": null,
+      "confidence": 0.902
+    },
+    {
+      "raw": "HELLO",
+      "accepted": null,
+      "confidence": 0.498
+    }
+  ],
+  "train HELLO": [
+    {
+      "raw": "HELLO",
+      "accepted": null,
+      "confidence": 0.611
+    },
+    {
+      "raw": "HELLO",
+      "accepted": null,
+      "confidence": 0.736
+    },
+    {
+      "raw": "HELLO",
+      "accepted": null,
+      "confidence": 0.662
+    },
+    {
+      "raw": "HELLO",
+      "accepted": null,
+      "confidence": 0.688
+    },
+    {
+      "raw": "HELLO",
+      "accepted": null,
+      "confidence": 0.75
+    },
+    {
+      "raw": "HELLO",
+      "accepted": null,
+      "confidence": 0.659
+    }
+  ],
+  "train J": [
+    {
+      "raw": "J",
+      "accepted": "J",
+      "confidence": 0.986
+    },
+    {
+      "raw": "J",
+      "accepted": "J",
+      "confidence": 0.983
+    },
+    {
+      "raw": "J",
+      "accepted": "J",
+      "confidence": 0.974
+    },
+    {
+      "raw": "J",
+      "accepted": "J",
+      "confidence": 0.951
+    },
+    {
+      "raw": "J",
+      "accepted": "J",
+      "confidence": 0.982
+    },
+    {
+      "raw": "J",
+      "accepted": "J",
+      "confidence": 0.992
+    },
+    {
+      "raw": "J",
+      "accepted": "J",
+      "confidence": 0.977
+    }
+  ],
+  "train Z": [
+    {
+      "raw": "Z",
+      "accepted": "Z",
+      "confidence": 0.989
+    },
+    {
+      "raw": "Z",
+      "accepted": "Z",
+      "confidence": 0.988
+    },
+    {
+      "raw": "Z",
+      "accepted": "Z",
+      "confidence": 0.972
+    },
+    {
+      "raw": "Z",
+      "accepted": "Z",
+      "confidence": 0.976
+    },
+    {
+      "raw": "Z",
+      "accepted": "Z",
+      "confidence": 0.993
+    },
+    {
+      "raw": "Z",
+      "accepted": "Z",
+      "confidence": 0.99
+    }
+  ],
+  "validation BACKGROUND": [
+    {
+      "raw": "HELLO",
+      "accepted": null,
+      "confidence": 0.7
+    }
+  ],
+  "validation HELLO": [
+    {
+      "raw": "HELLO",
+      "accepted": null,
+      "confidence": 0.67
+    }
+  ],
+  "validation J": [
+    {
+      "raw": "J",
+      "accepted": "J",
+      "confidence": 0.965
+    }
+  ],
+  "validation Z": [
+    {
+      "raw": "Z",
+      "accepted": "Z",
+      "confidence": 0.987
+    },
+    {
+      "raw": "Z",
+      "accepted": "Z",
+      "confidence": 0.984
+    }
+  ]
+}

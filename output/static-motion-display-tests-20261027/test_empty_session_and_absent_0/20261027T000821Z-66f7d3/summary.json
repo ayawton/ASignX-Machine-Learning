@@ -1,0 +1,48 @@
+{
+  "metadata": {},
+  "overall": {
+    "frames": 1,
+    "processed_fps": null,
+    "detector_ms_median": 100.0,
+    "detector_ms_p95": 100.0,
+    "recognition_ms_p95": 0.0,
+    "frame_age_ms_p95": 100.00000000000009,
+    "capture_interval_ms_p95": null,
+    "capture_intervals_over_200ms": 0,
+    "hand_visibility": 0.0,
+    "left_visibility": 0.0,
+    "right_visibility": 0.0,
+    "shoulder_visibility": null,
+    "face_reference_visibility": null,
+    "emissions": {},
+    "static_emissions": {},
+    "rejections": {}
+  },
+  "by_target": {
+    "UNMARKED": {
+      "frames": 1,
+      "processed_fps": null,
+      "detector_ms_median": 100.0,
+      "detector_ms_p95": 100.0,
+      "recognition_ms_p95": 0.0,
+      "frame_age_ms_p95": 100.00000000000009,
+      "capture_interval_ms_p95": null,
+      "capture_intervals_over_200ms": 0,
+      "hand_visibility": 0.0,
+      "left_visibility": 0.0,
+      "right_visibility": 0.0,
+      "shoulder_visibility": null,
+      "face_reference_visibility": null,
+      "emissions": {},
+      "static_emissions": {},
+      "rejections": {}
+    }
+  },
+  "events": [],
+  "limitations": [
+    "Key labels describe the intended test block, not verified ASL annotations.",
+    "Frame visibility includes rest between gestures; gesture-specific rejection checks use sampled takes.",
+    "Processed FPS describes observed pipeline throughput, not the camera advertised FPS.",
+    "Timing cannot by itself establish motion blur or ASL correctness."
+  ]
+}

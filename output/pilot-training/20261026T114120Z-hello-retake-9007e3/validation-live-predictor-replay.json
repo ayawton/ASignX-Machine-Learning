@@ -1,0 +1,22 @@
+[
+  {
+    "expected": "HELLO",
+    "prediction": "HELLO",
+    "confidence": 0.9970376491546631
+  },
+  {
+    "expected": "J",
+    "prediction": "J",
+    "confidence": 0.9858662486076355
+  },
+  {
+    "expected": "Z",
+    "prediction": "Z",
+    "confidence": 0.9998093247413635
+  },
+  {
+    "expected": "Z",
+    "prediction": "Z",
+    "confidence": 0.9998277425765991
+  }
+]

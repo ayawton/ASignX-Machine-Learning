@@ -1,0 +1,124 @@
+{
+  "labels": [
+    "HELLO",
+    "HELP"
+  ],
+  "best_epoch": 1,
+  "validation": {
+    "accuracy": 0.5,
+    "macro_precision": 0.25,
+    "macro_recall": 0.5,
+    "macro_f1": 0.3333333333333333,
+    "weighted_f1": 0.3333333333333333,
+    "per_class": {
+      "HELLO": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "support": 1
+      },
+      "HELP": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1
+      }
+    },
+    "labels": [
+      "HELLO",
+      "HELP"
+    ],
+    "confusion_matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "loss": 0.693829357624054
+  },
+  "test": {
+    "accuracy": 0.5,
+    "macro_precision": 0.25,
+    "macro_recall": 0.5,
+    "macro_f1": 0.3333333333333333,
+    "weighted_f1": 0.3333333333333333,
+    "per_class": {
+      "HELLO": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "support": 1
+      },
+      "HELP": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1
+      }
+    },
+    "labels": [
+      "HELLO",
+      "HELP"
+    ],
+    "confusion_matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "loss": 0.6926431059837341
+  },
+  "selection_metric": "macro_f1",
+  "benchmark": "legacy_session_groups_not_signer_independent",
+  "history": [
+    {
+      "epoch": 1,
+      "lr": 1e-05,
+      "train_loss": 1.9108972549438477,
+      "validation": {
+        "accuracy": 0.5,
+        "macro_precision": 0.25,
+        "macro_recall": 0.5,
+        "macro_f1": 0.3333333333333333,
+        "weighted_f1": 0.3333333333333333,
+        "per_class": {
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "HELP": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "labels": [
+          "HELLO",
+          "HELP"
+        ],
+        "confusion_matrix": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "loss": 0.693829357624054
+      }
+    }
+  ]
+}

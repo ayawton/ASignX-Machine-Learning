@@ -1,0 +1,30 @@
+{
+  "purpose": "Human label review; original inputs unchanged; not applied to training",
+  "accepted_hello_forms": [
+    "forehead-salute",
+    "ordinary greeting wave"
+  ],
+  "decisions": {
+    "take_000470.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T004006Z-14300d\\gesture_inputs\\take_000470.npz",
+      "sha256": "68ad5a2079363ffe472e4cdb75bd211ea68cbb4499f667b9d52a95f42e63bdfe",
+      "review_label": "HELLO",
+      "original_target": "REST",
+      "model_output": "HELLO"
+    },
+    "take_000622.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T004006Z-14300d\\gesture_inputs\\take_000622.npz",
+      "sha256": "e66c8a5fc40c04fb55cd4daa170311ea9a64b49f04982c40c2645266575ff648",
+      "review_label": "HELLO",
+      "original_target": "REST",
+      "model_output": "HELLO"
+    },
+    "take_000672.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\live-diagnostics\\20261027T004006Z-14300d\\gesture_inputs\\take_000672.npz",
+      "sha256": "86f1a26cc7a8ea4db3a380fd5db880fe155f94d86e073e76061c135f8d8e07b3",
+      "review_label": "UNSURE",
+      "original_target": "REST",
+      "model_output": "HELLO"
+    }
+  }
+}

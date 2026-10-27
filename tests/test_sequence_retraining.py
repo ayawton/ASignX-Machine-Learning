@@ -95,3 +95,19 @@ def test_invalid_unchanged_manifest_is_not_silently_reset(tmp_path):
     with pytest.raises(ValueError,match='invalid for unchanged'):
         train_sequence(str(data),str(output),config())
     assert artifacts(output)==before
+
+
+def test_early_stopping_retains_best_validation_checkpoint(tmp_path, monkeypatch):
+    import ml.train_sequence as module
+    data=tmp_path/'data'; output=tmp_path/'model.pth'; dataset(data)
+    calls=[]
+    def evaluate(model, loader, labels, device):
+        calls.append(True)
+        return {'macro_f1':.5, 'accuracy':.5, 'loss':1.}
+    monkeypatch.setattr(module, 'evaluate_sequence_model', evaluate)
+    result=train_sequence(str(data), str(output), SequenceTrainConfig(
+        epochs=10, hidden_size=4, num_layers=1, backbone='lstm', augment=False,
+        early_stopping_patience=2, evaluate_test=False))
+    assert len(calls)==3
+    assert result['best_epoch']==1 and len(result['history'])==3
+    assert load_sequence_checkpoint(output)[2]['training']['best_epoch']==1

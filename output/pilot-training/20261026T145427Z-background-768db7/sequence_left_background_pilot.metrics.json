@@ -1,0 +1,1855 @@
+{
+  "labels": [
+    "BACKGROUND",
+    "HELLO",
+    "J",
+    "Z"
+  ],
+  "best_epoch": 15,
+  "validation": {
+    "accuracy": 0.8,
+    "macro_precision": 0.625,
+    "macro_recall": 0.75,
+    "macro_f1": 0.6666666666666666,
+    "weighted_f1": 0.7333333333333333,
+    "per_class": {
+      "BACKGROUND": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1
+      },
+      "HELLO": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "support": 1
+      },
+      "J": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "Z": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2
+      }
+    },
+    "labels": [
+      "BACKGROUND",
+      "HELLO",
+      "J",
+      "Z"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "loss": 0.3372194766998291
+  },
+  "test": null,
+  "selection_metric": "macro_f1",
+  "benchmark": "legacy_session_groups_not_signer_independent",
+  "history": [
+    {
+      "epoch": 1,
+      "lr": 0.0014985299126790623,
+      "train_loss": 2.744635215172401,
+      "validation": {
+        "accuracy": 0.2,
+        "macro_precision": 0.05,
+        "macro_recall": 0.25,
+        "macro_f1": 0.08333333333333334,
+        "weighted_f1": 0.06666666666666668,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.2,
+            "recall": 1.0,
+            "f1": 0.33333333333333337,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "J": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            0
+          ]
+        ],
+        "loss": 3.116714668273926
+      }
+    },
+    {
+      "epoch": 2,
+      "lr": 0.001494125452479286,
+      "train_loss": 2.4755045817448544,
+      "validation": {
+        "accuracy": 0.2,
+        "macro_precision": 0.08333333333333333,
+        "macro_recall": 0.25,
+        "macro_f1": 0.125,
+        "weighted_f1": 0.1,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1": 0.5,
+            "support": 1
+          },
+          "J": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            0
+          ]
+        ],
+        "loss": 1.7541923522949219
+      }
+    },
+    {
+      "epoch": 3,
+      "lr": 0.0014868040017928731,
+      "train_loss": 1.501361681864812,
+      "validation": {
+        "accuracy": 0.4,
+        "macro_precision": 0.1,
+        "macro_recall": 0.25,
+        "macro_f1": 0.14285714285714288,
+        "weighted_f1": 0.2285714285714286,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "J": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 0.4,
+            "recall": 1.0,
+            "f1": 0.5714285714285715,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 1.2020994186401368
+      }
+    },
+    {
+      "epoch": 4,
+      "lr": 0.00147659445504083,
+      "train_loss": 2.0229817628860474,
+      "validation": {
+        "accuracy": 0.4,
+        "macro_precision": 0.20833333333333331,
+        "macro_recall": 0.5,
+        "macro_f1": 0.29166666666666663,
+        "weighted_f1": 0.2333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1": 0.5,
+            "support": 1
+          },
+          "Z": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0
+          ]
+        ],
+        "loss": 1.1899770736694335
+      }
+    },
+    {
+      "epoch": 5,
+      "lr": 0.0014635371046398894,
+      "train_loss": 1.2023965762211726,
+      "validation": {
+        "accuracy": 0.4,
+        "macro_precision": 0.20833333333333331,
+        "macro_recall": 0.5,
+        "macro_f1": 0.29166666666666663,
+        "weighted_f1": 0.2333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1": 0.5,
+            "support": 1
+          },
+          "Z": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0
+          ]
+        ],
+        "loss": 1.5841872215270996
+      }
+    },
+    {
+      "epoch": 6,
+      "lr": 0.0014476834819867473,
+      "train_loss": 1.3358438840279212,
+      "validation": {
+        "accuracy": 0.2,
+        "macro_precision": 0.125,
+        "macro_recall": 0.25,
+        "macro_f1": 0.16666666666666666,
+        "weighted_f1": 0.13333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            0
+          ]
+        ],
+        "loss": 1.5492027282714844
+      }
+    },
+    {
+      "epoch": 7,
+      "lr": 0.0014290961540871848,
+      "train_loss": 1.1523966972644513,
+      "validation": {
+        "accuracy": 0.2,
+        "macro_precision": 0.125,
+        "macro_recall": 0.25,
+        "macro_f1": 0.16666666666666666,
+        "weighted_f1": 0.13333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0
+          ]
+        ],
+        "loss": 1.2092927932739257
+      }
+    },
+    {
+      "epoch": 8,
+      "lr": 0.0014078484766326784,
+      "train_loss": 1.413030771108774,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 0.7351398944854737
+      }
+    },
+    {
+      "epoch": 9,
+      "lr": 0.0013840243044990013,
+      "train_loss": 1.1961313577798696,
+      "validation": {
+        "accuracy": 0.6,
+        "macro_precision": 0.29166666666666663,
+        "macro_recall": 0.5,
+        "macro_f1": 0.3666666666666667,
+        "weighted_f1": 0.4533333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 0.6947292804718017
+      }
+    },
+    {
+      "epoch": 10,
+      "lr": 0.0013577176608093359,
+      "train_loss": 1.1342841570193951,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 0.9228721618652344
+      }
+    },
+    {
+      "epoch": 11,
+      "lr": 0.001329032365867963,
+      "train_loss": 0.8456005408213689,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 0.9223882675170898
+      }
+    },
+    {
+      "epoch": 12,
+      "lr": 0.0012980816274289517,
+      "train_loss": 0.9685054467274592,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 0.5909477233886719
+      }
+    },
+    {
+      "epoch": 13,
+      "lr": 0.0012649875939168731,
+      "train_loss": 0.5641278120187613,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 0.41214489936828613
+      }
+    },
+    {
+      "epoch": 14,
+      "lr": 0.0012298808723627739,
+      "train_loss": 0.4516514493868901,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 0.346933650970459
+      }
+    },
+    {
+      "epoch": 15,
+      "lr": 0.0011929000129578928,
+      "train_loss": 0.5933707631551303,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 0.3372194766998291
+      }
+    },
+    {
+      "epoch": 16,
+      "lr": 0.0011541909622593525,
+      "train_loss": 0.5433879127869239,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 0.4967756748199463
+      }
+    },
+    {
+      "epoch": 17,
+      "lr": 0.001113906487205778,
+      "train_loss": 0.4139972695937523,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 0.5238022327423095
+      }
+    },
+    {
+      "epoch": 18,
+      "lr": 0.0010722055722159791,
+      "train_loss": 0.5313636523026687,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 0.5776845455169678
+      }
+    },
+    {
+      "epoch": 19,
+      "lr": 0.0010292527917500852,
+      "train_loss": 0.4254213892496549,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 0.8155559539794922
+      }
+    },
+    {
+      "epoch": 20,
+      "lr": 0.0009852176608093359,
+      "train_loss": 0.3205578877375676,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 1.0985166549682617
+      }
+    },
+    {
+      "epoch": 21,
+      "lr": 0.0009402739659378168,
+      "train_loss": 0.27004849681487453,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 1.314644718170166
+      }
+    },
+    {
+      "epoch": 22,
+      "lr": 0.000894599079366365,
+      "train_loss": 0.28560038713308483,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 1.4043745040893554
+      }
+    },
+    {
+      "epoch": 23,
+      "lr": 0.0008483732590054069,
+      "train_loss": 0.31395337673333973,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 1.3889262199401855
+      }
+    },
+    {
+      "epoch": 24,
+      "lr": 0.0008017789370493386,
+      "train_loss": 0.27918335566153896,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 1.305116844177246
+      }
+    },
+    {
+      "epoch": 25,
+      "lr": 0.000755,
+      "train_loss": 0.27298697370749253,
+      "validation": {
+        "accuracy": 0.8,
+        "macro_precision": 0.625,
+        "macro_recall": 0.75,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.7333333333333333,
+        "per_class": {
+          "BACKGROUND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "HELLO": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          },
+          "J": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          }
+        },
+        "labels": [
+          "BACKGROUND",
+          "HELLO",
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "loss": 1.3539925575256349
+      }
+    }
+  ]
+}

@@ -1,0 +1,689 @@
+{
+  "metrics": [
+    {
+      "file": "HELLO_0d04ab71c06342db9602d55a2a58987e.npz",
+      "group": "training_HELLO",
+      "duration": 2.007,
+      "slot": 0,
+      "head_relative_start": [
+        1.6431889533996582,
+        0.9344936013221741
+      ],
+      "head_relative_end": [
+        2.5159053802490234,
+        1.2209666967391968
+      ],
+      "wrist_displacement": 0.5317031741142273,
+      "wrist_extent": 1.1579171419143677,
+      "head_relative_extent": 2.8599448204040527
+    },
+    {
+      "file": "HELLO_470ec1f142d24efb82576eff4e682308.npz",
+      "group": "training_HELLO",
+      "duration": 1.482,
+      "slot": 0,
+      "head_relative_start": [
+        1.6689285039901733,
+        0.9476847052574158
+      ],
+      "head_relative_end": [
+        2.12864089012146,
+        0.7577286958694458
+      ],
+      "wrist_displacement": 0.3433297276496887,
+      "wrist_extent": 0.3833673596382141,
+      "head_relative_extent": 0.5796632170677185
+    },
+    {
+      "file": "HELLO_5a76ecb584fd42e98c9ebbb0727c1a4e.npz",
+      "group": "training_HELLO",
+      "duration": 1.815,
+      "slot": 0,
+      "head_relative_start": [
+        1.6780519485473633,
+        0.897720456123352
+      ],
+      "head_relative_end": [
+        2.3737356662750244,
+        1.1011427640914917
+      ],
+      "wrist_displacement": 0.42236608266830444,
+      "wrist_extent": 0.4454050362110138,
+      "head_relative_extent": 0.7832244038581848
+    },
+    {
+      "file": "HELLO_eec4b8a6169a473abda2d161e574d4d2.npz",
+      "group": "training_HELLO",
+      "duration": 1.473,
+      "slot": 0,
+      "head_relative_start": [
+        1.6780115365982056,
+        0.9906657934188843
+      ],
+      "head_relative_end": [
+        2.2310280799865723,
+        1.0123904943466187
+      ],
+      "wrist_displacement": 0.36416345834732056,
+      "wrist_extent": 0.37222325801849365,
+      "head_relative_extent": 0.5926393866539001
+    },
+    {
+      "file": "HELLO_ef64aba2d2174a2989495e5b9fcd090b.npz",
+      "group": "training_HELLO",
+      "duration": 1.404,
+      "slot": 0,
+      "head_relative_start": [
+        1.7177388668060303,
+        0.9488033056259155
+      ],
+      "head_relative_end": [
+        2.062580108642578,
+        0.669150710105896
+      ],
+      "wrist_displacement": 0.3234032094478607,
+      "wrist_extent": 0.3511468768119812,
+      "head_relative_extent": 0.5376227498054504
+    },
+    {
+      "file": "HELLO_f54f639071de4dffaab7fef7490637dc.npz",
+      "group": "training_HELLO",
+      "duration": 1.575,
+      "slot": 0,
+      "head_relative_start": [
+        1.6493563652038574,
+        0.9422889947891235
+      ],
+      "head_relative_end": [
+        2.1865434646606445,
+        1.2413464784622192
+      ],
+      "wrist_displacement": 0.37516722083091736,
+      "wrist_extent": 0.3806134760379791,
+      "head_relative_extent": 0.6342953443527222
+    },
+    {
+      "file": "HELLO_12e77ca90919498f8146c3cf24b349a4.npz",
+      "group": "training_HELLO",
+      "duration": 1.722,
+      "slot": 0,
+      "head_relative_start": [
+        1.5555509328842163,
+        0.9186147451400757
+      ],
+      "head_relative_end": [
+        2.095113754272461,
+        0.5596572756767273
+      ],
+      "wrist_displacement": 0.2910492420196533,
+      "wrist_extent": 0.3224911093711853,
+      "head_relative_extent": 0.7087926864624023
+    },
+    {
+      "file": "HELLO_1b522ffbe63f4bc18b48973703a739c7.npz",
+      "group": "training_HELLO",
+      "duration": 2.225,
+      "slot": 0,
+      "head_relative_start": [
+        1.7202333211898804,
+        0.8581283092498779
+      ],
+      "head_relative_end": [
+        2.2858023643493652,
+        0.855091392993927
+      ],
+      "wrist_displacement": 0.24384768307209015,
+      "wrist_extent": 0.27539390325546265,
+      "head_relative_extent": 0.6013104915618896
+    },
+    {
+      "file": "HELLO_31ca96e066b1498096bbfd7fa2f431d7.npz",
+      "group": "training_HELLO",
+      "duration": 2.791,
+      "slot": 0,
+      "head_relative_start": [
+        1.584877848625183,
+        0.8419483304023743
+      ],
+      "head_relative_end": [
+        1.5858794450759888,
+        0.8789463639259338
+      ],
+      "wrist_displacement": 0.026284322142601013,
+      "wrist_extent": 0.3375750780105591,
+      "head_relative_extent": 0.6974935531616211
+    },
+    {
+      "file": "HELLO_3433c651d44a49d1a9fe62efd1a2a7b9.npz",
+      "group": "training_HELLO",
+      "duration": 1.692,
+      "slot": 0,
+      "head_relative_start": [
+        1.6993956565856934,
+        0.8637046217918396
+      ],
+      "head_relative_end": [
+        1.9098336696624756,
+        0.8319618701934814
+      ],
+      "wrist_displacement": 0.11246263980865479,
+      "wrist_extent": 0.1582980901002884,
+      "head_relative_extent": 0.31698012351989746
+    },
+    {
+      "file": "HELLO_521dd8dcfef247d2bd07877297b300ce.npz",
+      "group": "training_HELLO",
+      "duration": 1.499,
+      "slot": 0,
+      "head_relative_start": [
+        1.6290712356567383,
+        0.9117677211761475
+      ],
+      "head_relative_end": [
+        2.671698570251465,
+        1.0535985231399536
+      ],
+      "wrist_displacement": 0.4766540229320526,
+      "wrist_extent": 0.4969891905784607,
+      "head_relative_extent": 1.0882797241210938
+    },
+    {
+      "file": "HELLO_528095beb5474b1d91c389a9796a32b3.npz",
+      "group": "training_HELLO",
+      "duration": 1.447,
+      "slot": 0,
+      "head_relative_start": [
+        1.533624529838562,
+        0.9258227944374084
+      ],
+      "head_relative_end": [
+        2.1010842323303223,
+        0.7310589551925659
+      ],
+      "wrist_displacement": 0.25446343421936035,
+      "wrist_extent": 0.30646535754203796,
+      "head_relative_extent": 0.6779869794845581
+    },
+    {
+      "file": "HELLO_701ed271929340c49110ca41515d9139.npz",
+      "group": "training_HELLO",
+      "duration": 1.745,
+      "slot": 0,
+      "head_relative_start": [
+        1.52894127368927,
+        0.9944654703140259
+      ],
+      "head_relative_end": [
+        1.8653182983398438,
+        0.6091265678405762
+      ],
+      "wrist_displacement": 0.24053651094436646,
+      "wrist_extent": 0.2533186674118042,
+      "head_relative_extent": 0.5370748043060303
+    },
+    {
+      "file": "HELLO_9050b63e132e4f8a9e8219272aed3b9f.npz",
+      "group": "training_HELLO",
+      "duration": 1.463,
+      "slot": 0,
+      "head_relative_start": [
+        1.5782729387283325,
+        0.8547300696372986
+      ],
+      "head_relative_end": [
+        2.0438294410705566,
+        0.8350343108177185
+      ],
+      "wrist_displacement": 0.20781312882900238,
+      "wrist_extent": 0.2542484700679779,
+      "head_relative_extent": 0.5249593257904053
+    },
+    {
+      "file": "HELLO_aa7b58123b6d4f60a9f2c36e2876d64f.npz",
+      "group": "training_HELLO",
+      "duration": 3.104,
+      "slot": 0,
+      "head_relative_start": [
+        1.7356681823730469,
+        0.8580419421195984
+      ],
+      "head_relative_end": [
+        2.485196113586426,
+        0.7435118556022644
+      ],
+      "wrist_displacement": 0.35853371024131775,
+      "wrist_extent": 0.4356873333454132,
+      "head_relative_extent": 0.8620883226394653
+    },
+    {
+      "file": "HELLO_b3e403d94c97424590bc26b51ea4af8c.npz",
+      "group": "training_HELLO",
+      "duration": 1.547,
+      "slot": 0,
+      "head_relative_start": [
+        1.6526210308074951,
+        0.8349506855010986
+      ],
+      "head_relative_end": [
+        2.4011054039001465,
+        0.7804460525512695
+      ],
+      "wrist_displacement": 0.34628787636756897,
+      "wrist_extent": 0.36143389344215393,
+      "head_relative_extent": 0.8375726342201233
+    },
+    {
+      "file": "HELLO_ced746e06ab0467a9f435e6c00826347.npz",
+      "group": "training_HELLO",
+      "duration": 2.055,
+      "slot": 0,
+      "head_relative_start": [
+        1.6177539825439453,
+        0.9027314782142639
+      ],
+      "head_relative_end": [
+        2.4213109016418457,
+        0.6177974939346313
+      ],
+      "wrist_displacement": 0.37821030616760254,
+      "wrist_extent": 0.43224021792411804,
+      "head_relative_extent": 0.919722318649292
+    },
+    {
+      "file": "HELLO_d15e848a368b4ac8a5c2741f60200c54.npz",
+      "group": "training_HELLO",
+      "duration": 2.144,
+      "slot": 0,
+      "head_relative_start": [
+        1.56154465675354,
+        0.9608004093170166
+      ],
+      "head_relative_end": [
+        2.1466500759124756,
+        0.7348958849906921
+      ],
+      "wrist_displacement": 0.2687371075153351,
+      "wrist_extent": 0.3142856955528259,
+      "head_relative_extent": 0.694877028465271
+    },
+    {
+      "file": "HELLO_d3f3b90ed3934e848c3ab5f82e2bb653.npz",
+      "group": "training_HELLO",
+      "duration": 2.041,
+      "slot": 0,
+      "head_relative_start": [
+        1.6573071479797363,
+        0.8936277627944946
+      ],
+      "head_relative_end": [
+        2.2152817249298096,
+        0.5524585247039795
+      ],
+      "wrist_displacement": 0.289155513048172,
+      "wrist_extent": 0.3194419741630554,
+      "head_relative_extent": 0.7246063947677612
+    },
+    {
+      "file": "HELLO_db09d735bab548fe9fc72747df733639.npz",
+      "group": "training_HELLO",
+      "duration": 1.734,
+      "slot": 0,
+      "head_relative_start": [
+        1.5829561948776245,
+        0.8810067176818848
+      ],
+      "head_relative_end": [
+        2.3644909858703613,
+        0.7825028896331787
+      ],
+      "wrist_displacement": 0.3438073396682739,
+      "wrist_extent": 0.3722114861011505,
+      "head_relative_extent": 0.8132029175758362
+    },
+    {
+      "file": "HELLO_e594b55494af42c582e960c1b29aad9c.npz",
+      "group": "training_HELLO",
+      "duration": 1.849,
+      "slot": 0,
+      "head_relative_start": [
+        1.578119158744812,
+        0.9262659549713135
+      ],
+      "head_relative_end": [
+        2.2928671836853027,
+        0.7270483374595642
+      ],
+      "wrist_displacement": 0.3386850655078888,
+      "wrist_extent": 0.36763113737106323,
+      "head_relative_extent": 0.7923598289489746
+    },
+    {
+      "file": "HELLO_e739eed55d7f4ad2bbffd19068e90b48.npz",
+      "group": "training_HELLO",
+      "duration": 1.712,
+      "slot": 0,
+      "head_relative_start": [
+        1.5478236675262451,
+        0.9987468123435974
+      ],
+      "head_relative_end": [
+        2.504211187362671,
+        0.669492244720459
+      ],
+      "wrist_displacement": 0.4417001008987427,
+      "wrist_extent": 0.49253764748573303,
+      "head_relative_extent": 1.0866315364837646
+    },
+    {
+      "file": "take_003210.npz",
+      "group": "missed_HELLO",
+      "duration": 0.7671355999773368,
+      "slot": 0,
+      "head_relative_start": [
+        1.6380012035369873,
+        1.1620707511901855
+      ],
+      "head_relative_end": [
+        2.082792043685913,
+        1.3184064626693726
+      ],
+      "wrist_displacement": 0.2494238168001175,
+      "wrist_extent": 0.2626056969165802,
+      "head_relative_extent": 0.49252814054489136
+    },
+    {
+      "file": "take_003328.npz",
+      "group": "missed_HELLO",
+      "duration": 0.7359246999840252,
+      "slot": 0,
+      "head_relative_start": [
+        1.6510061025619507,
+        1.0850193500518799
+      ],
+      "head_relative_end": [
+        2.3440968990325928,
+        1.364062786102295
+      ],
+      "wrist_displacement": 0.35791581869125366,
+      "wrist_extent": 0.3809725046157837,
+      "head_relative_extent": 0.780065655708313
+    },
+    {
+      "file": "take_003443.npz",
+      "group": "missed_HELLO",
+      "duration": 0.7848356999456882,
+      "slot": 0,
+      "head_relative_start": [
+        1.6299316883087158,
+        1.1954243183135986
+      ],
+      "head_relative_end": [
+        2.201465368270874,
+        1.3645398616790771
+      ],
+      "wrist_displacement": 0.2829269766807556,
+      "wrist_extent": 0.2967803180217743,
+      "head_relative_extent": 0.6209307312965393
+    },
+    {
+      "file": "take_003559.npz",
+      "group": "missed_HELLO",
+      "duration": 0.7995248999795876,
+      "slot": 0,
+      "head_relative_start": [
+        1.5863656997680664,
+        1.143818736076355
+      ],
+      "head_relative_end": [
+        2.3293297290802,
+        1.4670019149780273
+      ],
+      "wrist_displacement": 0.37435242533683777,
+      "wrist_extent": 0.4139848053455353,
+      "head_relative_extent": 0.8562636375427246
+    },
+    {
+      "file": "take_003610.npz",
+      "group": "reviewed_BACKGROUND",
+      "duration": 0.7837610000278801,
+      "slot": 0,
+      "head_relative_start": [
+        2.0502853393554688,
+        1.5508445501327515
+      ],
+      "head_relative_end": [
+        1.624368667602539,
+        1.2986928224563599
+      ],
+      "wrist_displacement": 0.24524402618408203,
+      "wrist_extent": 0.273830771446228,
+      "head_relative_extent": 0.5246795415878296
+    },
+    {
+      "file": "take_003667.npz",
+      "group": "missed_HELLO",
+      "duration": 0.8158438999671489,
+      "slot": 0,
+      "head_relative_start": [
+        1.6474449634552002,
+        1.244073510169983
+      ],
+      "head_relative_end": [
+        2.1851694583892822,
+        1.5549968481063843
+      ],
+      "wrist_displacement": 0.31269970536231995,
+      "wrist_extent": 0.3285770118236542,
+      "head_relative_extent": 0.6928259134292603
+    },
+    {
+      "file": "take_003715.npz",
+      "group": "reviewed_BACKGROUND",
+      "duration": 0.831955699948594,
+      "slot": 0,
+      "head_relative_start": [
+        2.1695783138275146,
+        1.6054366827011108
+      ],
+      "head_relative_end": [
+        1.59070885181427,
+        1.2595629692077637
+      ],
+      "wrist_displacement": 0.35305947065353394,
+      "wrist_extent": 0.37881210446357727,
+      "head_relative_extent": 0.7272826433181763
+    },
+    {
+      "file": "take_003754.npz",
+      "group": "missed_HELLO",
+      "duration": 0.783922899980098,
+      "slot": 0,
+      "head_relative_start": [
+        1.5883320569992065,
+        1.273390293121338
+      ],
+      "head_relative_end": [
+        2.252078056335449,
+        1.5020818710327148
+      ],
+      "wrist_displacement": 0.3227868974208832,
+      "wrist_extent": 0.3517897129058838,
+      "head_relative_extent": 0.7356641292572021
+    },
+    {
+      "file": "take_003838.npz",
+      "group": "missed_HELLO",
+      "duration": 0.8157894999603741,
+      "slot": 0,
+      "head_relative_start": [
+        1.6569160223007202,
+        1.2199708223342896
+      ],
+      "head_relative_end": [
+        2.219087600708008,
+        1.2880194187164307
+      ],
+      "wrist_displacement": 0.25248822569847107,
+      "wrist_extent": 0.283750057220459,
+      "head_relative_extent": 0.5876392722129822
+    },
+    {
+      "file": "take_003935.npz",
+      "group": "accepted_HELLO",
+      "duration": 0.8307535999920219,
+      "slot": 0,
+      "head_relative_start": [
+        1.6561005115509033,
+        1.1036523580551147
+      ],
+      "head_relative_end": [
+        2.3796989917755127,
+        1.3585666418075562
+      ],
+      "wrist_displacement": 0.3422488868236542,
+      "wrist_extent": 0.3927989900112152,
+      "head_relative_extent": 0.8261234760284424
+    },
+    {
+      "file": "take_004040.npz",
+      "group": "missed_HELLO",
+      "duration": 0.7523015000042506,
+      "slot": 0,
+      "head_relative_start": [
+        1.6594833135604858,
+        1.1735825538635254
+      ],
+      "head_relative_end": [
+        2.3123393058776855,
+        1.5085852146148682
+      ],
+      "wrist_displacement": 0.34526973962783813,
+      "wrist_extent": 0.36420920491218567,
+      "head_relative_extent": 0.7656689286231995
+    },
+    {
+      "file": "take_004131.npz",
+      "group": "missed_HELLO",
+      "duration": 0.751789000001736,
+      "slot": 0,
+      "head_relative_start": [
+        1.6695280075073242,
+        1.1467437744140625
+      ],
+      "head_relative_end": [
+        2.243619441986084,
+        1.2383195161819458
+      ],
+      "wrist_displacement": 0.23284569382667542,
+      "wrist_extent": 0.2516506314277649,
+      "head_relative_extent": 0.6057068109512329
+    },
+    {
+      "file": "take_004179.npz",
+      "group": "reviewed_BACKGROUND",
+      "duration": 0.7363870000117458,
+      "slot": 0,
+      "head_relative_start": [
+        2.1515769958496094,
+        1.2738573551177979
+      ],
+      "head_relative_end": [
+        1.6759599447250366,
+        1.0916579961776733
+      ],
+      "wrist_displacement": 0.2308020293712616,
+      "wrist_extent": 0.23983430862426758,
+      "head_relative_extent": 0.5186229348182678
+    },
+    {
+      "file": "take_004222.npz",
+      "group": "missed_HELLO",
+      "duration": 0.7827243999927305,
+      "slot": 0,
+      "head_relative_start": [
+        1.6714986562728882,
+        1.1061071157455444
+      ],
+      "head_relative_end": [
+        2.343066453933716,
+        1.2530584335327148
+      ],
+      "wrist_displacement": 0.30225640535354614,
+      "wrist_extent": 0.3266370892524719,
+      "head_relative_extent": 0.7095212936401367
+    },
+    {
+      "file": "take_004274.npz",
+      "group": "reviewed_BACKGROUND",
+      "duration": 0.8002331999596208,
+      "slot": 0,
+      "head_relative_start": [
+        2.324847936630249,
+        1.2793118953704834
+      ],
+      "head_relative_end": [
+        1.7168289422988892,
+        1.1505035161972046
+      ],
+      "wrist_displacement": 0.2959407567977905,
+      "wrist_extent": 0.29963040351867676,
+      "head_relative_extent": 0.655066192150116
+    },
+    {
+      "file": "take_004308.npz",
+      "group": "accepted_HELLO",
+      "duration": 0.7688571000471711,
+      "slot": 0,
+      "head_relative_start": [
+        1.7292747497558594,
+        1.1505072116851807
+      ],
+      "head_relative_end": [
+        2.4178061485290527,
+        1.2173250913619995
+      ],
+      "wrist_displacement": 0.3015933334827423,
+      "wrist_extent": 0.34923458099365234,
+      "head_relative_extent": 0.7258468270301819
+    },
+    {
+      "file": "take_004452.npz",
+      "group": "reviewed_BACKGROUND",
+      "duration": 0.8464691999834031,
+      "slot": 0,
+      "head_relative_start": [
+        2.232278347015381,
+        1.0699564218521118
+      ],
+      "head_relative_end": [
+        1.8253129720687866,
+        0.9769177436828613
+      ],
+      "wrist_displacement": 0.2232978492975235,
+      "wrist_extent": 0.23406365513801575,
+      "head_relative_extent": 0.4407055377960205
+    },
+    {
+      "file": "take_004483.npz",
+      "group": "accepted_HELLO",
+      "duration": 0.8516046999720857,
+      "slot": 0,
+      "head_relative_start": [
+        1.8317841291427612,
+        1.0248655080795288
+      ],
+      "head_relative_end": [
+        2.3659725189208984,
+        1.0674413442611694
+      ],
+      "wrist_displacement": 0.26554784178733826,
+      "wrist_extent": 0.2934403121471405,
+      "head_relative_extent": 0.5824122428894043
+    }
+  ],
+  "limitations": [
+    "Geometry is reconstructed landmarks, not original camera video.",
+    "Durations include holds and cannot alone measure signing speed.",
+    "Human-reviewed captures are development data."
+  ]
+}

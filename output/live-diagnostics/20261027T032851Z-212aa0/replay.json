@@ -1,0 +1,141 @@
+{
+  "model": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequence_reviewed_live_hello.pth",
+  "model_sha256": "438615e25dea1bee158f21b38d40cac7ff25cc7b040dd5c3bcdcaa6c9b843691",
+  "takes": [
+    {
+      "file": "take_000144.npz",
+      "target": "HELLO",
+      "input_observations": 13,
+      "duration_seconds": 0.9446286999736913,
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9011818766593933,
+      "accepted_label": null,
+      "tracking_or_background_reason": "Background / no gesture",
+      "recorded_raw_prediction": null,
+      "reproduces_recorded_prediction": null,
+      "recorded_rejection": "Background / no gesture"
+    },
+    {
+      "file": "take_000170.npz",
+      "target": "HELLO",
+      "input_observations": 13,
+      "duration_seconds": 0.8813044999842532,
+      "raw_prediction": "HELLO",
+      "confidence": 0.9858279228210449,
+      "accepted_label": "HELLO",
+      "tracking_or_background_reason": null,
+      "recorded_raw_prediction": "HELLO",
+      "reproduces_recorded_prediction": true,
+      "recorded_rejection": null
+    },
+    {
+      "file": "take_000189.npz",
+      "target": "HELLO",
+      "input_observations": 13,
+      "duration_seconds": 0.7370318000321276,
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9835168719291687,
+      "accepted_label": null,
+      "tracking_or_background_reason": "Background / no gesture",
+      "recorded_raw_prediction": null,
+      "reproduces_recorded_prediction": null,
+      "recorded_rejection": "Background / no gesture"
+    },
+    {
+      "file": "take_000217.npz",
+      "target": "HELLO",
+      "input_observations": 16,
+      "duration_seconds": 0.9125431000138633,
+      "raw_prediction": "HELLO",
+      "confidence": 0.9794314503669739,
+      "accepted_label": "HELLO",
+      "tracking_or_background_reason": null,
+      "recorded_raw_prediction": "HELLO",
+      "reproduces_recorded_prediction": true,
+      "recorded_rejection": null
+    },
+    {
+      "file": "take_000234.npz",
+      "target": "HELLO",
+      "input_observations": 10,
+      "duration_seconds": 0.7535134000354446,
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9839789867401123,
+      "accepted_label": null,
+      "tracking_or_background_reason": "Background / no gesture",
+      "recorded_raw_prediction": null,
+      "reproduces_recorded_prediction": null,
+      "recorded_rejection": "Background / no gesture"
+    },
+    {
+      "file": "take_000253.npz",
+      "target": "HELLO",
+      "input_observations": 14,
+      "duration_seconds": 0.8796358000254259,
+      "raw_prediction": "HELLO",
+      "confidence": 0.9827967882156372,
+      "accepted_label": "HELLO",
+      "tracking_or_background_reason": null,
+      "recorded_raw_prediction": "HELLO",
+      "reproduces_recorded_prediction": true,
+      "recorded_rejection": null
+    },
+    {
+      "file": "take_000273.npz",
+      "target": "HELLO",
+      "input_observations": 12,
+      "duration_seconds": 0.7849913999671116,
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9838342666625977,
+      "accepted_label": null,
+      "tracking_or_background_reason": "Background / no gesture",
+      "recorded_raw_prediction": null,
+      "reproduces_recorded_prediction": null,
+      "recorded_rejection": "Background / no gesture"
+    },
+    {
+      "file": "take_000290.npz",
+      "target": "HELLO",
+      "input_observations": 10,
+      "duration_seconds": 0.6716314000077546,
+      "raw_prediction": "HELLO",
+      "confidence": 0.97682124376297,
+      "accepted_label": "HELLO",
+      "tracking_or_background_reason": null,
+      "recorded_raw_prediction": "HELLO",
+      "reproduces_recorded_prediction": true,
+      "recorded_rejection": null
+    },
+    {
+      "file": "take_000311.npz",
+      "target": "HELLO",
+      "input_observations": 13,
+      "duration_seconds": 0.8047293000272475,
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9852204322814941,
+      "accepted_label": null,
+      "tracking_or_background_reason": "Background / no gesture",
+      "recorded_raw_prediction": null,
+      "reproduces_recorded_prediction": null,
+      "recorded_rejection": "Background / no gesture"
+    },
+    {
+      "file": "take_000332.npz",
+      "target": "HELLO",
+      "input_observations": 13,
+      "duration_seconds": 0.9481948000029661,
+      "raw_prediction": "HELLO",
+      "confidence": 0.9782711863517761,
+      "accepted_label": "HELLO",
+      "tracking_or_background_reason": null,
+      "recorded_raw_prediction": "HELLO",
+      "reproduces_recorded_prediction": true,
+      "recorded_rejection": null
+    }
+  ],
+  "limitations": [
+    "Replays model preparation/classification, not the motion guard.",
+    "Target labels describe user intent, not verified ASL correctness.",
+    "Diagnostic inputs are not automatically training examples."
+  ]
+}

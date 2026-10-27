@@ -72,6 +72,92 @@ def test_missing_shoulders_reject_recording():
         capture.finish()
 
 
+@pytest.mark.parametrize('width', [150, 180])
+def test_completed_take_trims_only_boundary_tracking_gaps(tmp_path, width):
+    from ml.body_context import temple_features
+    path = tmp_path/'model.pth'
+    save_sequence_checkpoint(path, SignLSTM(2, input_size=width, hidden_size=8,
+                                          num_layers=1), ['HELLO', 'HELP'])
+    predictor = SequencePredictor(path, confidence_threshold=0)
+    extended_body = np.concatenate([body(), [[.4, .2], [.6, .2]]]).astype(np.float32)
+    valid = (temple_features(hands(), extended_body) if width == 180
+             else context_features(hands(), body()))
+    missing = np.zeros(width, dtype=np.float32)
+    # Pre-roll/settling can contain no tracked hand. Retain enough visible data.
+    take = [missing]*5 + [valid]*20 + [missing]*5
+    result = predictor.predict_take([(i/15, row) for i, row in enumerate(take)])
+    assert result.label in ('HELLO', 'HELP')
+    assert predictor.buffer.maxlen == 30 and not predictor.buffer
+    # Equal-sized loss during the actual sign must still fail.
+    interior_gap = [valid]*12 + [missing]*5 + [valid]*13
+    with pytest.raises(ValueError, match='gap is too long'):
+        predictor.predict_take([(i/15, row) for i, row in enumerate(interior_gap)])
+    # Boundary trimming must not turn a mostly missing take into a valid one.
+    mostly_missing = [missing]*20 + [valid]*10
+    with pytest.raises(ValueError, match='Insufficient visible'):
+        predictor.predict_take([(i/15, row) for i, row in enumerate(mostly_missing)])
+
+
+@pytest.mark.parametrize('width', [150, 180])
+def test_resampling_cannot_change_tracking_gap_duration(tmp_path, width):
+    from ml.body_context import temple_features
+    path=tmp_path/'model.pth'
+    save_sequence_checkpoint(path, SignLSTM(2, input_size=width, hidden_size=8,
+                                          num_layers=1), ['HELLO','HELP'])
+    predictor=SequencePredictor(path, confidence_threshold=0)
+    references=np.concatenate([body(), [[.4,.2],[.6,.2]]]).astype(np.float32)
+    valid=(temple_features(hands(),references) if width==180 else context_features(hands(),body()))
+    # 2 missing observations at 15 FPS are allowed. Stretching to 30 model
+    # timesteps previously made that same physical dropout exceed 3 steps.
+    short=np.stack([valid]*12); short[5:7]=0
+    prediction=predictor.predict_take([(i/15,row) for i,row in enumerate(short)])
+    assert prediction.label in ('HELLO','HELP')
+    assert not predictor.buffer and predictor.buffer.maxlen==30
+    # Downsampling cannot hide an actually excessive original tracking gap.
+    long=np.stack([valid]*60); long[28:33]=0
+    with pytest.raises(ValueError, match='gap is too long'):
+        predictor.predict_sequence(long)
+
+
+def test_tracking_rejection_identifies_missing_references(tmp_path):
+    from ml.body_context import temple_features
+    path=tmp_path/'model.pth'
+    save_sequence_checkpoint(path, SignLSTM(2,input_size=180,hidden_size=8,num_layers=1),['HELLO','HELP'])
+    predictor=SequencePredictor(path)
+    # Shoulders and hand exist; the head references do not.
+    points=np.concatenate([body(), [[np.nan,np.nan],[np.nan,np.nan]]]).astype(np.float32)
+    row=temple_features(hands(),points)
+    with pytest.raises(ValueError, match='face references 0%'):
+        predictor.predict_take([(i/15,row) for i in range(15)])
+
+
+def test_timestamp_interpolation_does_not_turn_slow_camera_into_missing_hands():
+    from ml.body_context import resample_context_timestamps
+    times=np.arange(15,dtype=np.float64)/12  # observed 12 FPS; checkpoint samples at 15
+    rows=np.stack([context_features(hands(float(t)*.02),body()) for t in times])
+    prepared=resample_context_timestamps(rows,times,15,.2)
+    assert prepared.shape==(18,150)
+    assert prepared[:,126:].reshape(len(prepared),-1,3)[:,7,2].all()
+    np.testing.assert_allclose(prepared[:,147],np.arange(len(prepared))/15*.02/.4+rows[0,147],atol=1e-6)
+    assert np.isfinite(prepared).all()
+
+
+def test_timestamp_resampling_preserves_actual_loss_and_rejects_camera_stalls():
+    from ml.body_context import resample_context_timestamps
+    times=np.arange(10)/15
+    rows=np.stack([context_features(hands(),body()) for _ in times])
+    rows[4]=context_features([],None)
+    source=rows.copy()
+    # Large monotonic clock values must not smear visibility into adjacent frames.
+    result=resample_context_timestamps(rows,380000+times,15,.2)
+    np.testing.assert_allclose(result,source,atol=1e-6)
+    np.testing.assert_array_equal(rows,source)
+    with pytest.raises(ValueError,match='Camera gap'):
+        resample_context_timestamps(rows,[0,.067,.134,.5,.567,.634,.701,.768,.835,.902],15,.2)
+    with pytest.raises(ValueError,match='timestamps must increase'):
+        resample_context_timestamps(rows,np.zeros(10),15,.2)
+
+
 def test_body_sequence_trains_without_hand_only_augmentation(tmp_path):
     from ml.train_sequence import train_sequence, SequenceTrainConfig
     for label in ('HELLO','HELP'):

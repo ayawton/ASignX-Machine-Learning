@@ -1,0 +1,124 @@
+{
+  "labels": [
+    "J",
+    "Z"
+  ],
+  "best_epoch": 1,
+  "validation": {
+    "accuracy": 0.5,
+    "macro_precision": 0.25,
+    "macro_recall": 0.5,
+    "macro_f1": 0.3333333333333333,
+    "weighted_f1": 0.3333333333333333,
+    "per_class": {
+      "J": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1
+      },
+      "Z": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "support": 1
+      }
+    },
+    "labels": [
+      "J",
+      "Z"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "loss": 0.9080565571784973
+  },
+  "test": {
+    "accuracy": 0.5,
+    "macro_precision": 0.25,
+    "macro_recall": 0.5,
+    "macro_f1": 0.3333333333333333,
+    "weighted_f1": 0.3333333333333333,
+    "per_class": {
+      "J": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1
+      },
+      "Z": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "support": 1
+      }
+    },
+    "labels": [
+      "J",
+      "Z"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "loss": 1.082848072052002
+  },
+  "selection_metric": "macro_f1",
+  "benchmark": "legacy_session_groups_not_signer_independent",
+  "history": [
+    {
+      "epoch": 1,
+      "lr": 1e-05,
+      "train_loss": 1.5282247066497803,
+      "validation": {
+        "accuracy": 0.5,
+        "macro_precision": 0.25,
+        "macro_recall": 0.5,
+        "macro_f1": 0.3333333333333333,
+        "weighted_f1": 0.3333333333333333,
+        "per_class": {
+          "J": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "Z": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          }
+        },
+        "labels": [
+          "J",
+          "Z"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "loss": 0.9080565571784973
+      }
+    }
+  ]
+}

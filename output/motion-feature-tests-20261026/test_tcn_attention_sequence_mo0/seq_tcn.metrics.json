@@ -1,0 +1,206 @@
+{
+  "labels": [
+    "HELLO",
+    "THANK_YOU"
+  ],
+  "best_epoch": 3,
+  "validation": {
+    "accuracy": 0.5,
+    "macro_precision": 0.25,
+    "macro_recall": 0.5,
+    "macro_f1": 0.3333333333333333,
+    "weighted_f1": 0.3333333333333333,
+    "per_class": {
+      "HELLO": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2
+      },
+      "THANK_YOU": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "support": 2
+      }
+    },
+    "labels": [
+      "HELLO",
+      "THANK_YOU"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "loss": 0.9609434604644775
+  },
+  "test": {
+    "accuracy": 0.5,
+    "macro_precision": 0.25,
+    "macro_recall": 0.5,
+    "macro_f1": 0.3333333333333333,
+    "weighted_f1": 0.3333333333333333,
+    "per_class": {
+      "HELLO": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2
+      },
+      "THANK_YOU": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "support": 2
+      }
+    },
+    "labels": [
+      "HELLO",
+      "THANK_YOU"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "loss": 0.8403787612915039
+  },
+  "selection_metric": "macro_f1",
+  "benchmark": "legacy_session_groups_not_signer_independent",
+  "history": [
+    {
+      "epoch": 1,
+      "lr": 0.0011275,
+      "train_loss": 1.2795424461364746,
+      "validation": {
+        "accuracy": 0.5,
+        "macro_precision": 0.25,
+        "macro_recall": 0.5,
+        "macro_f1": 0.3333333333333333,
+        "weighted_f1": 0.3333333333333333,
+        "per_class": {
+          "HELLO": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "THANK_YOU": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 2
+          }
+        },
+        "labels": [
+          "HELLO",
+          "THANK_YOU"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "loss": 1.8288381099700928
+      }
+    },
+    {
+      "epoch": 2,
+      "lr": 0.0003825000000000002,
+      "train_loss": 1.1801027059555054,
+      "validation": {
+        "accuracy": 0.5,
+        "macro_precision": 0.25,
+        "macro_recall": 0.5,
+        "macro_f1": 0.3333333333333333,
+        "weighted_f1": 0.3333333333333333,
+        "per_class": {
+          "HELLO": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "THANK_YOU": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 2
+          }
+        },
+        "labels": [
+          "HELLO",
+          "THANK_YOU"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "loss": 1.1860237121582031
+      }
+    },
+    {
+      "epoch": 3,
+      "lr": 1e-05,
+      "train_loss": 1.3941460847854614,
+      "validation": {
+        "accuracy": 0.5,
+        "macro_precision": 0.25,
+        "macro_recall": 0.5,
+        "macro_f1": 0.3333333333333333,
+        "weighted_f1": 0.3333333333333333,
+        "per_class": {
+          "HELLO": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "THANK_YOU": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 2
+          }
+        },
+        "labels": [
+          "HELLO",
+          "THANK_YOU"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "loss": 0.9609434604644775
+      }
+    }
+  ]
+}

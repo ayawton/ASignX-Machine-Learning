@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "sequence_model": null,
+    "static_model": null,
+    "sequence_model_sha256": null,
+    "sequence_confidence": 0.8,
+    "completed_take_sampling": "timestamp_interpolation_v1",
+    "sampling_fps": null,
+    "motion_threshold": 0.045,
+    "min_excursion": 0.35,
+    "min_motion_seconds": 0.12
+  },
+  "overall": {
+    "frames": 2,
+    "processed_fps": 2848.1914317526357,
+    "detector_ms_median": 0.014550023479387164,
+    "detector_ms_p95": 0.01666501339059323,
+    "recognition_ms_p95": 0.0025649613235145807,
+    "frame_age_ms_p95": 0.05285999795887619,
+    "capture_interval_ms_p95": 0.36390003515407443,
+    "capture_intervals_over_200ms": 0,
+    "hand_visibility": 0.0,
+    "left_visibility": 0.0,
+    "right_visibility": 0.0,
+    "shoulder_visibility": null,
+    "face_reference_visibility": null,
+    "emissions": {},
+    "static_emissions": {},
+    "rejections": {}
+  },
+  "by_target": {
+    "HELLO": {
+      "frames": 1,
+      "processed_fps": null,
+      "detector_ms_median": 0.012200034689158201,
+      "detector_ms_p95": 0.012200034689158201,
+      "recognition_ms_p95": 0.0018999562598764896,
+      "frame_age_ms_p95": 0.04069996066391468,
+      "capture_interval_ms_p95": null,
+      "capture_intervals_over_200ms": 0,
+      "hand_visibility": 0.0,
+      "left_visibility": 0.0,
+      "right_visibility": 0.0,
+      "shoulder_visibility": null,
+      "face_reference_visibility": null,
+      "emissions": {},
+      "static_emissions": {},
+      "rejections": {}
+    },
+    "UNMARKED": {
+      "frames": 1,
+      "processed_fps": null,
+      "detector_ms_median": 0.016900012269616127,
+      "detector_ms_p95": 0.016900012269616127,
+      "recognition_ms_p95": 0.0025999615900218487,
+      "frame_age_ms_p95": 0.053499999921768904,
+      "capture_interval_ms_p95": null,
+      "capture_intervals_over_200ms": 0,
+      "hand_visibility": 0.0,
+      "left_visibility": 0.0,
+      "right_visibility": 0.0,
+      "shoulder_visibility": null,
+      "face_reference_visibility": null,
+      "emissions": {},
+      "static_emissions": {},
+      "rejections": {}
+    }
+  },
+  "events": [],
+  "limitations": [
+    "Key labels describe the intended test block, not verified ASL annotations.",
+    "Frame visibility includes rest between gestures; gesture-specific rejection checks use sampled takes.",
+    "Processed FPS describes observed pipeline throughput, not the camera advertised FPS.",
+    "Timing cannot by itself establish motion blur or ASL correctness."
+  ]
+}

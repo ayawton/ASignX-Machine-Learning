@@ -1,0 +1,17 @@
+{
+  "purpose": "Human label review; original inputs unchanged; not applied to training",
+  "accepted_hello_forms": [
+    "forehead-salute",
+    "ordinary greeting wave"
+  ],
+  "decisions": {
+    "take.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\fresh-hello-review-tests-20261027\\test_saved_background_review_p0\\data\\BACKGROUND\\take.npz",
+      "sha256": "4defa6ea4acc760422b66268de5dc0e96c0aaa294c67c128eeb44f8bb90824d6",
+      "review_label": "HELLO",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    }
+  }
+}

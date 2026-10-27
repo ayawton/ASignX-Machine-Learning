@@ -1,0 +1,9 @@
+# Ordinary movement check: not passed
+
+User reports completing the requested non-greeting movement check. In the marked REST block, the candidate emitted Z twice, with softmax scores approximately 0.981 and 0.952. These are suspected false detections under the reported ordinary-movement intent, not confirmed ASL annotations. No HELLO or J outputs were recorded. REST lasted 9.9 seconds with hands detected in about 69% of frames, shoulders/face references 100%, and no capture interval over 200 ms.
+
+Two other completed captures were rejected for insufficient motion and insufficient hand visibility. Both accepted Z events had the detector reporting Right rather than Left. This may represent a different physical hand, a handedness assignment issue, or other variation; do not assume which without review. The captured feature visibility and baseline comparison are in rest_comparison.json. Capture content should be reviewed before assigning BACKGROUND training labels.
+
+This candidate cannot be considered to pass ordinary-movement rejection based on this run. Keep it experimental; no default recognition model or acceptance thresholds were changed. The five-salute success from the preceding run does not establish robust negative rejection. No clips from this run were added to training. Next step is human review of the two accepted REST captures using H for recognizable HELLO, B for ordinary unrelated movement, U for unclear/possibly another supported sign. The viewer is for content review, independent of whether the model emitted Z or HELLO.
+
+User clarification: they pointed a finger during ordinary movement. Pointing alone is not the supported dynamic Z movement; the full captured movement still needs content review before assigning a training label. ASignX_ReviewRestMovement.bat opens the two accepted REST captures.

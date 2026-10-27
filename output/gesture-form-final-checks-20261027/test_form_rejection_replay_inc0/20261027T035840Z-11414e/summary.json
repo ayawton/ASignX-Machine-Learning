@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "sequence_model_sha256": "2dadd7def03c63d00b11ea6845e1363a223f54ea20968182766e94d8a13797bf",
+    "sequence_confidence": 0.0,
+    "gesture_form_policy": "j_z_salute_form_v1"
+  },
+  "overall": {
+    "frames": 1,
+    "processed_fps": null,
+    "detector_ms_median": 35.0,
+    "detector_ms_p95": 35.0,
+    "recognition_ms_p95": 5.0,
+    "frame_age_ms_p95": 49.99999999999716,
+    "capture_interval_ms_p95": null,
+    "capture_intervals_over_200ms": 0,
+    "hand_visibility": 1.0,
+    "left_visibility": 1.0,
+    "right_visibility": 0.0,
+    "shoulder_visibility": 1.0,
+    "face_reference_visibility": 1.0,
+    "emissions": {},
+    "static_emissions": {},
+    "rejections": {
+      "form rejected": 1
+    }
+  },
+  "by_target": {
+    "UNMARKED": {
+      "frames": 1,
+      "processed_fps": null,
+      "detector_ms_median": 35.0,
+      "detector_ms_p95": 35.0,
+      "recognition_ms_p95": 5.0,
+      "frame_age_ms_p95": 49.99999999999716,
+      "capture_interval_ms_p95": null,
+      "capture_intervals_over_200ms": 0,
+      "hand_visibility": 1.0,
+      "left_visibility": 1.0,
+      "right_visibility": 0.0,
+      "shoulder_visibility": 1.0,
+      "face_reference_visibility": 1.0,
+      "emissions": {},
+      "static_emissions": {},
+      "rejections": {
+        "form rejected": 1
+      }
+    }
+  },
+  "events": [
+    {
+      "frame": 0,
+      "target": "UNMARKED",
+      "capture_time": 100.0,
+      "processed_time": 100.05,
+      "frame_age_ms": 49.99999999999716,
+      "detector_ms": 35.0,
+      "recognition_ms": 5.0,
+      "hand_visible": true,
+      "left_visible": true,
+      "right_visible": false,
+      "shoulders_visible": true,
+      "face_references_visible": true,
+      "state": null,
+      "velocity": 0.0,
+      "emitted": null,
+      "rejected": "form rejected",
+      "evaluated": false,
+      "raw_prediction": null,
+      "confidence": null,
+      "static_candidates": [],
+      "static_emitted": [],
+      "static_suppressed": false,
+      "gesture_input_file": "gesture_inputs/take_000000.npz"
+    }
+  ],
+  "limitations": [
+    "Key labels describe the intended test block, not verified ASL annotations.",
+    "Frame visibility includes rest between gestures; gesture-specific rejection checks use sampled takes.",
+    "Processed FPS describes observed pipeline throughput, not the camera advertised FPS.",
+    "Timing cannot by itself establish motion blur or ASL correctness."
+  ]
+}

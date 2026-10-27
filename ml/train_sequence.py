@@ -59,6 +59,8 @@ class SequenceTrainConfig:
     group_plan: str | None = None
     evaluate_test: bool = True
     strict_splits: bool = False
+    early_stopping_patience: int = 10
+    use_motion_deltas: bool = False
 
 
 @torch.inference_mode()
@@ -129,6 +131,7 @@ def _train_sequence(
     if (
         config.batch_size < 1
         or config.epochs < 1
+        or config.early_stopping_patience < 0
         or not math.isfinite(config.learning_rate)
         or config.learning_rate <= 0
     ):
@@ -229,6 +232,7 @@ def _train_sequence(
         backbone=config.backbone,
         use_kinematics=config.use_kinematics,
         cosine_head=config.cosine_head,
+        use_motion_deltas=config.use_motion_deltas,
     ).to(config.device)
 
     train_targets = datasets["train"].targets
@@ -251,6 +255,7 @@ def _train_sequence(
 
     best_loss = math.inf
     best_score = -math.inf
+    best_epoch = 0
     history: list[dict[str, Any]] = []
     dataset_hash = dataset_sequence_digest(samples)
     for epoch in range(1, config.epochs + 1):
@@ -287,6 +292,7 @@ def _train_sequence(
         if score > best_score or (score == best_score and validation["loss"] < best_loss):
             best_score = score
             best_loss = validation["loss"]
+            best_epoch = epoch
             save_sequence_checkpoint(
                 output_path,
                 model,
@@ -297,6 +303,10 @@ def _train_sequence(
                 dataset_sha256=dataset_hash,
                 splits=splits,
             )
+
+        if config.early_stopping_patience and epoch-best_epoch >= config.early_stopping_patience:
+            print(f'Early stopping after {config.early_stopping_patience} epochs without validation improvement')
+            break
 
     best_model, _, checkpoint = load_sequence_checkpoint(output_path, config.device)
     test_metrics = evaluate_sequence_model(best_model, loaders["test"], labels, config.device) if config.evaluate_test else None
@@ -325,12 +335,16 @@ def main() -> None:
     parser.add_argument("--weight-decay", type=float, default=1e-4)
     parser.add_argument("--label-smoothing", type=float, default=0.05)
     parser.add_argument("--epochs", type=int, default=50)
+    parser.add_argument("--early-stopping-patience", type=int, default=10,
+                        help="Stop after this many epochs without validation improvement; 0 disables")
     parser.add_argument("--hidden-size", type=int, default=128)
     parser.add_argument("--num-layers", type=int, default=2)
     parser.add_argument("--dropout", type=float, default=0.2)
     parser.add_argument("--bidirectional", action="store_true")
     parser.add_argument("--pooling", choices=("mean", "last"), default="mean")
     parser.add_argument("--backbone", choices=("tcn_attention", "lstm"), default="tcn_attention")
+    parser.add_argument('--motion-deltas', dest='use_motion_deltas', action='store_true',
+                        help='Append signed temporal changes; experimental, creates a new model configuration')
     parser.add_argument("--no-augment", action="store_false", dest="augment")
     parser.add_argument("--validation-fraction", type=float, default=0.15)
     parser.add_argument("--test-fraction", type=float, default=0.15)

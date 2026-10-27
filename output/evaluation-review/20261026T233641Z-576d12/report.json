@@ -1,0 +1,941 @@
+{
+  "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation",
+  "counts": {
+    "BACKGROUND": 15,
+    "HELLO": 5
+  },
+  "threshold": 0.8,
+  "model_checkpoints": {
+    "positive_only": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T114120Z-hello-retake-9007e3\\sequence_left_pilot.pth",
+    "background_baseline": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T145427Z-background-768db7\\sequence_left_background_pilot.pth",
+    "motion_features": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequence_motion_pilot.pth"
+  },
+  "checkpoint_and_input_sha256": {
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_02a8257020a24b2baaf68c7463f3083a.npz": "559e81fcec194f1f8bbe1692d9071e839a4ac01381a4034c5b694bf3f38c9035",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_2ab0244e4f9c47c8aff3d3251b9f98bf.npz": "97613dd7b68a6f384599c455af4bae3c26dd7af2c516b437c9b5e7b28096395e",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_346a49c52a9e43f09f8162defc2468f8.npz": "1288980bc46662ecc6edc97da8836bf7ef7e6de1c088d4c40b0a15379c3a1c7c",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_3985013baa1548e38a54d54ea506b5c5.npz": "f17c154271b7baefa54aa6f41f7b123acbc311fbfa85a2aa64f5824c8c48aed6",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_3d311718565c4162a53fb15040bd6443.npz": "53ef961903adad9070c5f253076c52d6ed116a2db44d1bb6b46cbd3d565d926a",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_474dff82b1b040e8ae0f4bee0259a49f.npz": "6c6bf68c9d7bde80f232be6386b41ecfd8d23f2c2d404bb4644f85f93acd0aa2",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_4ef370f689234b71aa35f2f37496588f.npz": "95610db0c7a8996d2aabf3d54f42aedf72ba810eff92e5e4982de290012af40f",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_575eca42eab5482bbd8b99bc64b59939.npz": "9ba3d2b1eaba369d7384e853c6e2465eaab28ee8644dfe9e47d63169bc06b564",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_81811ab95e2845e5a6d940ee3fe1a427.npz": "bb38695662fcc7bfedf127ed395a8a7616f419e036c9b3955c333873b151e8bb",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_82457510bc1a485e8b0ca4247f7ee6a0.npz": "f9fbba7cf4660fe55475b441e78939c37c1bb698cc3e060e1624241c381d89ab",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_85d938d4b1cf49c3a4205fca8eb7b521.npz": "60ba438632734eb039a0dfc8e623f9439c14cf0967511996b44ecd17b46da8f8",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_9d755bf98bac4924b28d997cef0fbef0.npz": "177ed932806013b085670b8b6e75772799e0bdc9d8706350012e9922c999bc32",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_acc0f1560b254e0babf0af5293898217.npz": "3f9f35dcd5f5e6cfbc925822742836e580c514efa943924265f78b32b33846f7",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_bdaf7dc01e844a0693e6b579edaba183.npz": "19493b6684ec0916d1f7f16394617908fe5ddf254ae2e2bfd1e32eefacac69ac",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_e725953ca0b34193b14c4dc76a0c07d7.npz": "27afb2de9735d47a1cd684c717d821e2042fb0257d57e8f97be267fdae82ce25",
+    "dist\\data\\vocabulary_v1\\evaluation\\HELLO\\HELLO_1876963861834decbff911f5f73af3f8.npz": "ec0bdeb797358e0b0e836792871ebb9c022018d88a1bfdd3acbd0a700c129bc6",
+    "dist\\data\\vocabulary_v1\\evaluation\\HELLO\\HELLO_3622f2f8b841444780e0fd5e5defbb20.npz": "1b3acd4834b3167c1b6a09cd112dedf3e22813d511b338f2c8a35678c9b9fcb1",
+    "dist\\data\\vocabulary_v1\\evaluation\\HELLO\\HELLO_3a76284ce6924637956f6533f42a25b2.npz": "262896f401fc859d4889daf990362b099939fc49786f87af01a25ff65dfa3509",
+    "dist\\data\\vocabulary_v1\\evaluation\\HELLO\\HELLO_629b42fc331347839fdf9ebc0820c389.npz": "be75569f2f41c967d3566afcd48b0f3d89df73bfdbff08deb86ed6127b49137a",
+    "dist\\data\\vocabulary_v1\\evaluation\\HELLO\\HELLO_dbe990a1d9c14320bce2abc5f8d0d5df.npz": "aec72c5024ec46492908d482388db6178ceb17ee2851c93fc127cb8dc989853d",
+    "output\\pilot-training\\20261026T114120Z-hello-retake-9007e3\\sequence_left_pilot.pth": "22c1db67615344f8cfac1c7621ac0a2bcefbca2a788c1331456d7563fa0939a8",
+    "output\\pilot-training\\20261026T145427Z-background-768db7\\sequence_left_background_pilot.pth": "7ed4f19398652076ee9e54badfad448582fe0e982486fb83df30b50979f78b75",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequence_motion_pilot.pth": "6f1c1b81a3785719dcecaa449d91b78cbeb916f15f27f993684aec36c23d6d4b"
+  },
+  "exact_overlap_with_previous_pilot_datasets": 0,
+  "summaries": {
+    "positive_only": {
+      "HELLO": {
+        "takes": 5,
+        "raw_top_labels": {
+          "HELLO": 5
+        },
+        "accepted_outputs": {
+          "HELLO": 5
+        },
+        "rejected": 0,
+        "tracking_rejected": 0,
+        "correct_hello_accepted": 5,
+        "false_sign_emissions": null
+      },
+      "BACKGROUND": {
+        "takes": 15,
+        "raw_top_labels": {
+          "Z": 5,
+          "HELLO": 10
+        },
+        "accepted_outputs": {
+          "Z": 5,
+          "HELLO": 10
+        },
+        "rejected": 0,
+        "tracking_rejected": 0,
+        "correct_hello_accepted": null,
+        "false_sign_emissions": 15
+      }
+    },
+    "background_baseline": {
+      "HELLO": {
+        "takes": 5,
+        "raw_top_labels": {
+          "HELLO": 5
+        },
+        "accepted_outputs": {},
+        "rejected": 5,
+        "tracking_rejected": 0,
+        "correct_hello_accepted": 0,
+        "false_sign_emissions": null
+      },
+      "BACKGROUND": {
+        "takes": 15,
+        "raw_top_labels": {
+          "Z": 3,
+          "BACKGROUND": 2,
+          "HELLO": 10
+        },
+        "accepted_outputs": {
+          "Z": 3
+        },
+        "rejected": 12,
+        "tracking_rejected": 0,
+        "correct_hello_accepted": null,
+        "false_sign_emissions": 3
+      }
+    },
+    "motion_features": {
+      "HELLO": {
+        "takes": 5,
+        "raw_top_labels": {
+          "HELLO": 2,
+          "BACKGROUND": 3
+        },
+        "accepted_outputs": {},
+        "rejected": 5,
+        "tracking_rejected": 0,
+        "correct_hello_accepted": 0,
+        "false_sign_emissions": null
+      },
+      "BACKGROUND": {
+        "takes": 15,
+        "raw_top_labels": {
+          "Z": 5,
+          "BACKGROUND": 9,
+          "HELLO": 1
+        },
+        "accepted_outputs": {
+          "Z": 5
+        },
+        "rejected": 10,
+        "tracking_rejected": 0,
+        "correct_hello_accepted": null,
+        "false_sign_emissions": 5
+      }
+    }
+  },
+  "input_quality": [
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_02a8257020a24b2baaf68c7463f3083a.npz",
+      "label": "BACKGROUND",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 2.413,
+      "sha256": "559e81fcec194f1f8bbe1692d9071e839a4ac01381a4034c5b694bf3f38c9035"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_2ab0244e4f9c47c8aff3d3251b9f98bf.npz",
+      "label": "BACKGROUND",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 2.624,
+      "sha256": "97613dd7b68a6f384599c455af4bae3c26dd7af2c516b437c9b5e7b28096395e"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_346a49c52a9e43f09f8162defc2468f8.npz",
+      "label": "BACKGROUND",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 2.606,
+      "sha256": "1288980bc46662ecc6edc97da8836bf7ef7e6de1c088d4c40b0a15379c3a1c7c"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_3985013baa1548e38a54d54ea506b5c5.npz",
+      "label": "BACKGROUND",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 3.137,
+      "sha256": "f17c154271b7baefa54aa6f41f7b123acbc311fbfa85a2aa64f5824c8c48aed6"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_3d311718565c4162a53fb15040bd6443.npz",
+      "label": "BACKGROUND",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 3.736,
+      "sha256": "53ef961903adad9070c5f253076c52d6ed116a2db44d1bb6b46cbd3d565d926a"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_474dff82b1b040e8ae0f4bee0259a49f.npz",
+      "label": "BACKGROUND",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 1.453,
+      "sha256": "6c6bf68c9d7bde80f232be6386b41ecfd8d23f2c2d404bb4644f85f93acd0aa2"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_4ef370f689234b71aa35f2f37496588f.npz",
+      "label": "BACKGROUND",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 0.981,
+      "sha256": "95610db0c7a8996d2aabf3d54f42aedf72ba810eff92e5e4982de290012af40f"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_575eca42eab5482bbd8b99bc64b59939.npz",
+      "label": "BACKGROUND",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 3.019,
+      "sha256": "9ba3d2b1eaba369d7384e853c6e2465eaab28ee8644dfe9e47d63169bc06b564"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_81811ab95e2845e5a6d940ee3fe1a427.npz",
+      "label": "BACKGROUND",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 3.369,
+      "sha256": "bb38695662fcc7bfedf127ed395a8a7616f419e036c9b3955c333873b151e8bb"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_82457510bc1a485e8b0ca4247f7ee6a0.npz",
+      "label": "BACKGROUND",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 1.092,
+      "sha256": "f9fbba7cf4660fe55475b441e78939c37c1bb698cc3e060e1624241c381d89ab"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_85d938d4b1cf49c3a4205fca8eb7b521.npz",
+      "label": "BACKGROUND",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 1.073,
+      "sha256": "60ba438632734eb039a0dfc8e623f9439c14cf0967511996b44ecd17b46da8f8"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_9d755bf98bac4924b28d997cef0fbef0.npz",
+      "label": "BACKGROUND",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 2.492,
+      "sha256": "177ed932806013b085670b8b6e75772799e0bdc9d8706350012e9922c999bc32"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_acc0f1560b254e0babf0af5293898217.npz",
+      "label": "BACKGROUND",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 3.595,
+      "sha256": "3f9f35dcd5f5e6cfbc925822742836e580c514efa943924265f78b32b33846f7"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_bdaf7dc01e844a0693e6b579edaba183.npz",
+      "label": "BACKGROUND",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 1.519,
+      "sha256": "19493b6684ec0916d1f7f16394617908fe5ddf254ae2e2bfd1e32eefacac69ac"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_e725953ca0b34193b14c4dc76a0c07d7.npz",
+      "label": "BACKGROUND",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 2.777,
+      "sha256": "27afb2de9735d47a1cd684c717d821e2042fb0257d57e8f97be267fdae82ce25"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\HELLO\\HELLO_1876963861834decbff911f5f73af3f8.npz",
+      "label": "HELLO",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 1.946,
+      "sha256": "ec0bdeb797358e0b0e836792871ebb9c022018d88a1bfdd3acbd0a700c129bc6"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\HELLO\\HELLO_3622f2f8b841444780e0fd5e5defbb20.npz",
+      "label": "HELLO",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 1.248,
+      "sha256": "1b3acd4834b3167c1b6a09cd112dedf3e22813d511b338f2c8a35678c9b9fcb1"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\HELLO\\HELLO_3a76284ce6924637956f6533f42a25b2.npz",
+      "label": "HELLO",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 1.9,
+      "sha256": "262896f401fc859d4889daf990362b099939fc49786f87af01a25ff65dfa3509"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\HELLO\\HELLO_629b42fc331347839fdf9ebc0820c389.npz",
+      "label": "HELLO",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 2.383,
+      "sha256": "be75569f2f41c967d3566afcd48b0f3d89df73bfdbff08deb86ed6127b49137a"
+    },
+    {
+      "file": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation\\HELLO\\HELLO_dbe990a1d9c14320bce2abc5f8d0d5df.npz",
+      "label": "HELLO",
+      "handedness": "Left",
+      "signer_metadata": null,
+      "prepared_step_visibility": 1.0,
+      "longest_missing_prepared_steps": 0,
+      "duration_seconds": 1.626,
+      "sha256": "aec72c5024ec46492908d482388db6178ceb17ee2851c93fc127cb8dc989853d"
+    }
+  ],
+  "predictions": [
+    {
+      "model": "positive_only",
+      "file": "BACKGROUND_02a8257020a24b2baaf68c7463f3083a.npz",
+      "session_id": "02a8257020a24b2baaf68c7463f3083a",
+      "label": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.9995855689048767,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "BACKGROUND_2ab0244e4f9c47c8aff3d3251b9f98bf.npz",
+      "session_id": "2ab0244e4f9c47c8aff3d3251b9f98bf",
+      "label": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.9805569648742676,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "BACKGROUND_346a49c52a9e43f09f8162defc2468f8.npz",
+      "session_id": "346a49c52a9e43f09f8162defc2468f8",
+      "label": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.9991845488548279,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "BACKGROUND_3985013baa1548e38a54d54ea506b5c5.npz",
+      "session_id": "3985013baa1548e38a54d54ea506b5c5",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9926950931549072,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "BACKGROUND_3d311718565c4162a53fb15040bd6443.npz",
+      "session_id": "3d311718565c4162a53fb15040bd6443",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9899292588233948,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "BACKGROUND_474dff82b1b040e8ae0f4bee0259a49f.npz",
+      "session_id": "474dff82b1b040e8ae0f4bee0259a49f",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9935146570205688,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "BACKGROUND_4ef370f689234b71aa35f2f37496588f.npz",
+      "session_id": "4ef370f689234b71aa35f2f37496588f",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9913510084152222,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "BACKGROUND_575eca42eab5482bbd8b99bc64b59939.npz",
+      "session_id": "575eca42eab5482bbd8b99bc64b59939",
+      "label": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.9975007176399231,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "BACKGROUND_81811ab95e2845e5a6d940ee3fe1a427.npz",
+      "session_id": "81811ab95e2845e5a6d940ee3fe1a427",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9943099021911621,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "BACKGROUND_82457510bc1a485e8b0ca4247f7ee6a0.npz",
+      "session_id": "82457510bc1a485e8b0ca4247f7ee6a0",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9904097318649292,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "BACKGROUND_85d938d4b1cf49c3a4205fca8eb7b521.npz",
+      "session_id": "85d938d4b1cf49c3a4205fca8eb7b521",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9898790121078491,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "BACKGROUND_9d755bf98bac4924b28d997cef0fbef0.npz",
+      "session_id": "9d755bf98bac4924b28d997cef0fbef0",
+      "label": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.9989544153213501,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "BACKGROUND_acc0f1560b254e0babf0af5293898217.npz",
+      "session_id": "acc0f1560b254e0babf0af5293898217",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9916664958000183,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "BACKGROUND_bdaf7dc01e844a0693e6b579edaba183.npz",
+      "session_id": "bdaf7dc01e844a0693e6b579edaba183",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9904505610466003,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "BACKGROUND_e725953ca0b34193b14c4dc76a0c07d7.npz",
+      "session_id": "e725953ca0b34193b14c4dc76a0c07d7",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9925273656845093,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "HELLO_1876963861834decbff911f5f73af3f8.npz",
+      "session_id": "1876963861834decbff911f5f73af3f8",
+      "label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.995387613773346,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "HELLO_3622f2f8b841444780e0fd5e5defbb20.npz",
+      "session_id": "3622f2f8b841444780e0fd5e5defbb20",
+      "label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9898537993431091,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "HELLO_3a76284ce6924637956f6533f42a25b2.npz",
+      "session_id": "3a76284ce6924637956f6533f42a25b2",
+      "label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9915691018104553,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "HELLO_629b42fc331347839fdf9ebc0820c389.npz",
+      "session_id": "629b42fc331347839fdf9ebc0820c389",
+      "label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9954865574836731,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "positive_only",
+      "file": "HELLO_dbe990a1d9c14320bce2abc5f8d0d5df.npz",
+      "session_id": "dbe990a1d9c14320bce2abc5f8d0d5df",
+      "label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9911732077598572,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "background_baseline",
+      "file": "BACKGROUND_02a8257020a24b2baaf68c7463f3083a.npz",
+      "session_id": "02a8257020a24b2baaf68c7463f3083a",
+      "label": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.95530766248703,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "background_baseline",
+      "file": "BACKGROUND_2ab0244e4f9c47c8aff3d3251b9f98bf.npz",
+      "session_id": "2ab0244e4f9c47c8aff3d3251b9f98bf",
+      "label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.8323934078216553,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "background_baseline",
+      "file": "BACKGROUND_346a49c52a9e43f09f8162defc2468f8.npz",
+      "session_id": "346a49c52a9e43f09f8162defc2468f8",
+      "label": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.8192723989486694,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "background_baseline",
+      "file": "BACKGROUND_3985013baa1548e38a54d54ea506b5c5.npz",
+      "session_id": "3985013baa1548e38a54d54ea506b5c5",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.7829264402389526,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "background_baseline",
+      "file": "BACKGROUND_3d311718565c4162a53fb15040bd6443.npz",
+      "session_id": "3d311718565c4162a53fb15040bd6443",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.7631542086601257,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "background_baseline",
+      "file": "BACKGROUND_474dff82b1b040e8ae0f4bee0259a49f.npz",
+      "session_id": "474dff82b1b040e8ae0f4bee0259a49f",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.7509569525718689,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "background_baseline",
+      "file": "BACKGROUND_4ef370f689234b71aa35f2f37496588f.npz",
+      "session_id": "4ef370f689234b71aa35f2f37496588f",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.7642364501953125,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "background_baseline",
+      "file": "BACKGROUND_575eca42eab5482bbd8b99bc64b59939.npz",
+      "session_id": "575eca42eab5482bbd8b99bc64b59939",
+      "label": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.8166822195053101,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "background_baseline",
+      "file": "BACKGROUND_81811ab95e2845e5a6d940ee3fe1a427.npz",
+      "session_id": "81811ab95e2845e5a6d940ee3fe1a427",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.7900023460388184,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "background_baseline",
+      "file": "BACKGROUND_82457510bc1a485e8b0ca4247f7ee6a0.npz",
+      "session_id": "82457510bc1a485e8b0ca4247f7ee6a0",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.7732782363891602,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "background_baseline",
+      "file": "BACKGROUND_85d938d4b1cf49c3a4205fca8eb7b521.npz",
+      "session_id": "85d938d4b1cf49c3a4205fca8eb7b521",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.7860808372497559,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "background_baseline",
+      "file": "BACKGROUND_9d755bf98bac4924b28d997cef0fbef0.npz",
+      "session_id": "9d755bf98bac4924b28d997cef0fbef0",
+      "label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.7824360728263855,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "background_baseline",
+      "file": "BACKGROUND_acc0f1560b254e0babf0af5293898217.npz",
+      "session_id": "acc0f1560b254e0babf0af5293898217",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.7476959228515625,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "background_baseline",
+      "file": "BACKGROUND_bdaf7dc01e844a0693e6b579edaba183.npz",
+      "session_id": "bdaf7dc01e844a0693e6b579edaba183",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.7923091053962708,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "background_baseline",
+      "file": "BACKGROUND_e725953ca0b34193b14c4dc76a0c07d7.npz",
+      "session_id": "e725953ca0b34193b14c4dc76a0c07d7",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.7847539186477661,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "background_baseline",
+      "file": "HELLO_1876963861834decbff911f5f73af3f8.npz",
+      "session_id": "1876963861834decbff911f5f73af3f8",
+      "label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.7820671796798706,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "background_baseline",
+      "file": "HELLO_3622f2f8b841444780e0fd5e5defbb20.npz",
+      "session_id": "3622f2f8b841444780e0fd5e5defbb20",
+      "label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.6277714967727661,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "background_baseline",
+      "file": "HELLO_3a76284ce6924637956f6533f42a25b2.npz",
+      "session_id": "3a76284ce6924637956f6533f42a25b2",
+      "label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.6093645691871643,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "background_baseline",
+      "file": "HELLO_629b42fc331347839fdf9ebc0820c389.npz",
+      "session_id": "629b42fc331347839fdf9ebc0820c389",
+      "label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.716302216053009,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "background_baseline",
+      "file": "HELLO_dbe990a1d9c14320bce2abc5f8d0d5df.npz",
+      "session_id": "dbe990a1d9c14320bce2abc5f8d0d5df",
+      "label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.6751821041107178,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "motion_features",
+      "file": "BACKGROUND_02a8257020a24b2baaf68c7463f3083a.npz",
+      "session_id": "02a8257020a24b2baaf68c7463f3083a",
+      "label": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.9908328652381897,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "motion_features",
+      "file": "BACKGROUND_2ab0244e4f9c47c8aff3d3251b9f98bf.npz",
+      "session_id": "2ab0244e4f9c47c8aff3d3251b9f98bf",
+      "label": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.9146480560302734,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "motion_features",
+      "file": "BACKGROUND_346a49c52a9e43f09f8162defc2468f8.npz",
+      "session_id": "346a49c52a9e43f09f8162defc2468f8",
+      "label": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.9820696115493774,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "motion_features",
+      "file": "BACKGROUND_3985013baa1548e38a54d54ea506b5c5.npz",
+      "session_id": "3985013baa1548e38a54d54ea506b5c5",
+      "label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.8977982997894287,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "motion_features",
+      "file": "BACKGROUND_3d311718565c4162a53fb15040bd6443.npz",
+      "session_id": "3d311718565c4162a53fb15040bd6443",
+      "label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.8632601499557495,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "motion_features",
+      "file": "BACKGROUND_474dff82b1b040e8ae0f4bee0259a49f.npz",
+      "session_id": "474dff82b1b040e8ae0f4bee0259a49f",
+      "label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.7009604573249817,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "motion_features",
+      "file": "BACKGROUND_4ef370f689234b71aa35f2f37496588f.npz",
+      "session_id": "4ef370f689234b71aa35f2f37496588f",
+      "label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.7100688219070435,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "motion_features",
+      "file": "BACKGROUND_575eca42eab5482bbd8b99bc64b59939.npz",
+      "session_id": "575eca42eab5482bbd8b99bc64b59939",
+      "label": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.982071578502655,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "motion_features",
+      "file": "BACKGROUND_81811ab95e2845e5a6d940ee3fe1a427.npz",
+      "session_id": "81811ab95e2845e5a6d940ee3fe1a427",
+      "label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.6123383641242981,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "motion_features",
+      "file": "BACKGROUND_82457510bc1a485e8b0ca4247f7ee6a0.npz",
+      "session_id": "82457510bc1a485e8b0ca4247f7ee6a0",
+      "label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.5021070837974548,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "motion_features",
+      "file": "BACKGROUND_85d938d4b1cf49c3a4205fca8eb7b521.npz",
+      "session_id": "85d938d4b1cf49c3a4205fca8eb7b521",
+      "label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.7877997756004333,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "motion_features",
+      "file": "BACKGROUND_9d755bf98bac4924b28d997cef0fbef0.npz",
+      "session_id": "9d755bf98bac4924b28d997cef0fbef0",
+      "label": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.9736635684967041,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "motion_features",
+      "file": "BACKGROUND_acc0f1560b254e0babf0af5293898217.npz",
+      "session_id": "acc0f1560b254e0babf0af5293898217",
+      "label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9418054223060608,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "motion_features",
+      "file": "BACKGROUND_bdaf7dc01e844a0693e6b579edaba183.npz",
+      "session_id": "bdaf7dc01e844a0693e6b579edaba183",
+      "label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.48598524928092957,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "motion_features",
+      "file": "BACKGROUND_e725953ca0b34193b14c4dc76a0c07d7.npz",
+      "session_id": "e725953ca0b34193b14c4dc76a0c07d7",
+      "label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.8856863975524902,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "motion_features",
+      "file": "HELLO_1876963861834decbff911f5f73af3f8.npz",
+      "session_id": "1876963861834decbff911f5f73af3f8",
+      "label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.7606673836708069,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "motion_features",
+      "file": "HELLO_3622f2f8b841444780e0fd5e5defbb20.npz",
+      "session_id": "3622f2f8b841444780e0fd5e5defbb20",
+      "label": "HELLO",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.5472494959831238,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "motion_features",
+      "file": "HELLO_3a76284ce6924637956f6533f42a25b2.npz",
+      "session_id": "3a76284ce6924637956f6533f42a25b2",
+      "label": "HELLO",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.8514533042907715,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "motion_features",
+      "file": "HELLO_629b42fc331347839fdf9ebc0820c389.npz",
+      "session_id": "629b42fc331347839fdf9ebc0820c389",
+      "label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.6054176688194275,
+      "accepted_label": null,
+      "decision": "below confidence threshold"
+    },
+    {
+      "model": "motion_features",
+      "file": "HELLO_dbe990a1d9c14320bce2abc5f8d0d5df.npz",
+      "session_id": "dbe990a1d9c14320bce2abc5f8d0d5df",
+      "label": "HELLO",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.6291080117225647,
+      "accepted_label": null,
+      "decision": "background class"
+    }
+  ],
+  "source_and_checkpoints_unchanged": true,
+  "limitations": [
+    "Same user-reported signer; not independent people",
+    "Labels supplied by user; original footage unavailable for ASL correctness review",
+    "All negative subcategories combined; cannot report held-pose/partial/reset performance separately",
+    "Inference on prepared landmark clips; does not replay live motion gate, camera timing or complete acceptance guard",
+    "No thresholds fitted, no retraining and no previous saved test split evaluated",
+    "These new evaluation results become development-known after this review"
+  ]
+}

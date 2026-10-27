@@ -1,0 +1,230 @@
+{
+  "counts": {
+    "J": 9,
+    "Z": 10,
+    "HELLO": 8
+  },
+  "tracking_audit": [
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_0854170a8fe6436fb23fa103ecc2033a.npz",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "f28c511d0482100ffbb658cfc33b9a292ca31576987d54fe17ac319a75851bec"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_0bfbaa9e535c450a8d2c28cfe159605b.npz",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "151fcd394c55ce38b67cbf33aa45c45a7444f9d104ded7c2a40777efb1666dc8"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_1f83e03bf5bc43edb1a1647f848f88b6.npz",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "2011b09ee0a4a37714dcc2e3d88466696c8ac64c6ed76acacb2339752d308af7"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_581f6da521b849afbf1143691e7632ba.npz",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "a8ef4c23bb19f5f568a25a26c1814d22e9c4f9a8bb00c0bae2d91b87314e6752"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_66fceb7f0077489e85935e810b582312.npz",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "e0e7e43e907f1c9b3077f9855ad11e1eda1652b7651bf3a3371601e29872630d"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_70be26dd59d74914b2df2d2c94bbd4ee.npz",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "204d342b1f6fe05ac7dcabeb365f29e757bce7ed3d1148ffd2fcad95d4520ceb"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_7545ce4112a246578b8f82d12e70f9a1.npz",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "b739576d70ed760b5aee54631d1b995e522c6ae31dcf6b65c803ace0d2cbb814"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_c60da094e17748e196d19f9aeb5db725.npz",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "8a4218e9fa4dae9cd8d5d55e9b348deaf5d8307e9f3da45ec1a3ef508b28b2e3"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_ca45af9c901a4f1090a085a01471d5ae.npz",
+      "label": "J",
+      "status": "Body/hand tracking gap is too long",
+      "sha256": "f7c35cfcce0bba2f750be9f08b1f95e761785bb39c50f18ae035f4c0e37f08d0"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_d4fe68be2b3a48c184da22fad72bcc5f.npz",
+      "label": "J",
+      "status": "accepted",
+      "sha256": "16c21ed6ff1dfd303c08d2240f4fb84d7b5564b56a3e3546a2938d0c0575407e"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_051ffe1c454845d7a935e976e1d305bc.npz",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "3f38c562e74e7c02526acc229b4944a5322023f68aad5d1855a865c88e565990"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_06c0ae65fc454f499ac58f9fd4840a3e.npz",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "ebb1186541f5330e9bac2cad414a061b199fa7de23a23b927a6c50cb2f0e81f7"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_0af2afc6032242568be63487cc5423d0.npz",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "30e8c6f69bc962933e6bc8861e1cfd9fcfa7717bf147b2e7a14f8a298ed569aa"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_701586dbb02f4af49d3783ac365ca48e.npz",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "735c3f2e9ab9afad6bd7442be7d079886158b8f396ca457c1236b7525ee2cc06"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_7f3844216b0e43068d0de5d2d44eaf87.npz",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "6522beb8decd321f9d595e83ef7214ef38ec124a91814df128c62c31bc0a7244"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_80c12e592ea649fe859d7c2a635a2087.npz",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "ebb22b09b313224d1783d20b9308eb7856fe6a7cb109f119efc9994a52ef1a90"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_c8d51f5c4566473caebaeb04fd0cafa2.npz",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "00f532aa4231d069005052dba709a8e3da4841a418687bac68357f9a508fd74f"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_cf185e82dd854afbac9c96993d93173a.npz",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "47db074957a7a9ceb8373a3c35013a9d6e25fec75663199bf80f774945260755"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_f0f9823bc7fc4b858150bd1ad70d6c90.npz",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "95a8b2da883ab662ac0c08898cbb861822a489cd4f3930850065ab48de2cb6e1"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_f4f7d10d9d0e476e9485cecc185178d7.npz",
+      "label": "Z",
+      "status": "accepted",
+      "sha256": "e82c72d2f8987ff9b4da554174848e8ff4e054209e1300bb65619b48f0ade554"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_0d04ab71c06342db9602d55a2a58987e.npz",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "99e0aeb58aff9379b443df8c9d46a000d3d39109b65841d2a458cf6a9466da2a"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_470ec1f142d24efb82576eff4e682308.npz",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "66381ed74ed2e429f30f6edf2964a5f3a309182cb8d70dbc4adf1c6c673681b4"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_5a76ecb584fd42e98c9ebbb0727c1a4e.npz",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "42f7e0bf1146fbb71673549a9d086b0c9176e48e557c7ea8005ee774354c6f79"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_8082d94135994195a2155aba4fd4c879.npz",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "de56f0af6db6e118ddb596a74c110315431bb76dd3fe0105fa1fa8e4651a67f5"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_838ca8f6eb784776b06d7140ef5d3a68.npz",
+      "label": "HELLO",
+      "status": "Body/hand tracking gap is too long",
+      "sha256": "289b323224ee2fbde1986cf8f2d0ac2f745d53a5aff72e7a29f3ced91300821e"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_85fce07303d046e99110c629744002c2.npz",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "a76146b59748995406bb87212b24fad9b19492974d0ccc1b45018b604e256857"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_ee598017c807441bbebcbce067bafdd8.npz",
+      "label": "HELLO",
+      "status": "Body/hand tracking gap is too long",
+      "sha256": "dbf704b22ab609e42aa9d96caef8e89987ac320807e88b4980ed72f8dfbe10d3"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_eec4b8a6169a473abda2d161e574d4d2.npz",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "a63de5160ab0d5c53a5eb5b96f18a7ed6d5700e1933092306502b3c9c42b0fbe"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_ef64aba2d2174a2989495e5b9fcd090b.npz",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "3314c2b2511541ffe12a74cd76838a77121f28454e25eabf5d14520b5e9e34c7"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\sequences2\\HELLO\\HELLO_f54f639071de4dffaab7fef7490637dc.npz",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "46d206dee1a26404a890f1780931d9911381226fd47c3ec9da240b78f19c2d5b"
+    }
+  ],
+  "protected_sha256": {
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_0854170a8fe6436fb23fa103ecc2033a.npz": "f28c511d0482100ffbb658cfc33b9a292ca31576987d54fe17ac319a75851bec",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_0bfbaa9e535c450a8d2c28cfe159605b.npz": "151fcd394c55ce38b67cbf33aa45c45a7444f9d104ded7c2a40777efb1666dc8",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_1f83e03bf5bc43edb1a1647f848f88b6.npz": "2011b09ee0a4a37714dcc2e3d88466696c8ac64c6ed76acacb2339752d308af7",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_581f6da521b849afbf1143691e7632ba.npz": "a8ef4c23bb19f5f568a25a26c1814d22e9c4f9a8bb00c0bae2d91b87314e6752",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_66fceb7f0077489e85935e810b582312.npz": "e0e7e43e907f1c9b3077f9855ad11e1eda1652b7651bf3a3371601e29872630d",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_70be26dd59d74914b2df2d2c94bbd4ee.npz": "204d342b1f6fe05ac7dcabeb365f29e757bce7ed3d1148ffd2fcad95d4520ceb",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_7545ce4112a246578b8f82d12e70f9a1.npz": "b739576d70ed760b5aee54631d1b995e522c6ae31dcf6b65c803ace0d2cbb814",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_c60da094e17748e196d19f9aeb5db725.npz": "8a4218e9fa4dae9cd8d5d55e9b348deaf5d8307e9f3da45ec1a3ef508b28b2e3",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_ca45af9c901a4f1090a085a01471d5ae.npz": "f7c35cfcce0bba2f750be9f08b1f95e761785bb39c50f18ae035f4c0e37f08d0",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\J\\J_d4fe68be2b3a48c184da22fad72bcc5f.npz": "16c21ed6ff1dfd303c08d2240f4fb84d7b5564b56a3e3546a2938d0c0575407e",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_051ffe1c454845d7a935e976e1d305bc.npz": "3f38c562e74e7c02526acc229b4944a5322023f68aad5d1855a865c88e565990",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_06c0ae65fc454f499ac58f9fd4840a3e.npz": "ebb1186541f5330e9bac2cad414a061b199fa7de23a23b927a6c50cb2f0e81f7",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_0af2afc6032242568be63487cc5423d0.npz": "30e8c6f69bc962933e6bc8861e1cfd9fcfa7717bf147b2e7a14f8a298ed569aa",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_701586dbb02f4af49d3783ac365ca48e.npz": "735c3f2e9ab9afad6bd7442be7d079886158b8f396ca457c1236b7525ee2cc06",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_7f3844216b0e43068d0de5d2d44eaf87.npz": "6522beb8decd321f9d595e83ef7214ef38ec124a91814df128c62c31bc0a7244",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_80c12e592ea649fe859d7c2a635a2087.npz": "ebb22b09b313224d1783d20b9308eb7856fe6a7cb109f119efc9994a52ef1a90",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_c8d51f5c4566473caebaeb04fd0cafa2.npz": "00f532aa4231d069005052dba709a8e3da4841a418687bac68357f9a508fd74f",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_cf185e82dd854afbac9c96993d93173a.npz": "47db074957a7a9ceb8373a3c35013a9d6e25fec75663199bf80f774945260755",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_f0f9823bc7fc4b858150bd1ad70d6c90.npz": "95a8b2da883ab662ac0c08898cbb861822a489cd4f3930850065ab48de2cb6e1",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequences\\Z\\Z_f4f7d10d9d0e476e9485cecc185178d7.npz": "e82c72d2f8987ff9b4da554174848e8ff4e054209e1300bb65619b48f0ade554",
+    "dist\\data\\sequences2\\HELLO\\HELLO_0d04ab71c06342db9602d55a2a58987e.npz": "99e0aeb58aff9379b443df8c9d46a000d3d39109b65841d2a458cf6a9466da2a",
+    "dist\\data\\sequences2\\HELLO\\HELLO_470ec1f142d24efb82576eff4e682308.npz": "66381ed74ed2e429f30f6edf2964a5f3a309182cb8d70dbc4adf1c6c673681b4",
+    "dist\\data\\sequences2\\HELLO\\HELLO_5a76ecb584fd42e98c9ebbb0727c1a4e.npz": "42f7e0bf1146fbb71673549a9d086b0c9176e48e557c7ea8005ee774354c6f79",
+    "dist\\data\\sequences2\\HELLO\\HELLO_8082d94135994195a2155aba4fd4c879.npz": "de56f0af6db6e118ddb596a74c110315431bb76dd3fe0105fa1fa8e4651a67f5",
+    "dist\\data\\sequences2\\HELLO\\HELLO_838ca8f6eb784776b06d7140ef5d3a68.npz": "289b323224ee2fbde1986cf8f2d0ac2f745d53a5aff72e7a29f3ced91300821e",
+    "dist\\data\\sequences2\\HELLO\\HELLO_85fce07303d046e99110c629744002c2.npz": "a76146b59748995406bb87212b24fad9b19492974d0ccc1b45018b604e256857",
+    "dist\\data\\sequences2\\HELLO\\HELLO_ee598017c807441bbebcbce067bafdd8.npz": "dbf704b22ab609e42aa9d96caef8e89987ac320807e88b4980ed72f8dfbe10d3",
+    "dist\\data\\sequences2\\HELLO\\HELLO_eec4b8a6169a473abda2d161e574d4d2.npz": "a63de5160ab0d5c53a5eb5b96f18a7ed6d5700e1933092306502b3c9c42b0fbe",
+    "dist\\data\\sequences2\\HELLO\\HELLO_ef64aba2d2174a2989495e5b9fcd090b.npz": "3314c2b2511541ffe12a74cd76838a77121f28454e25eabf5d14520b5e9e34c7",
+    "dist\\data\\sequences2\\HELLO\\HELLO_f54f639071de4dffaab7fef7490637dc.npz": "46d206dee1a26404a890f1780931d9911381226fd47c3ec9da240b78f19c2d5b",
+    "ml\\models\\sequence_body_v1.pth": "d8b949258eaaa83002901b8e9ee27492b57079f6f3ae8953c596ca96c8776ad5",
+    "ml\\models\\sequence_body_v2.pth": "8cb2cc59d2cef59bb3b2f488a70d6abf594e4b1922894f2ef621e5c16cd73fa4",
+    "ml\\models\\sequence_body_v3.pth": "e5e249eaba621b0aa566e92682004613dd5072352dbe3ded8201b38449347400",
+    "ml\\models\\sequence_both_hands_v1.pth": "e64b55ef4efe0698dcd09d2c1196a9fab332a7102bd4c54566aaf5185bc55ba0",
+    "ml\\models\\sequence_classifier.pth": "1e2228a5970d18b19a25f62cb76fc560aa4c5e33962a8bc2a362a87309db2ec9",
+    "ml\\models\\sign_classifier_canonical.pth": "98559a10c553c23d2c6aad227f52416b59ad92483bf4f079cfca5eb512bf5b66",
+    "output\\pilot-training\\20261026T112630Z-d666af\\sequence_left_pilot.pth": "be1e4168629e46dbcc2d1da64a31c26f49d7541c9ad9c49bf4dd70ca2f805868"
+  },
+  "selection": "Tracking validity only; no classification scores used to select takes",
+  "signer_independent": false
+}

@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "person_id": "pilot_user_001",
+    "sequence_model": null,
+    "static_model": null,
+    "static_model_sha256": null,
+    "static_confidence": 0.8,
+    "static_stable_frames": 5,
+    "static_release_frames": 10,
+    "sequence_model_sha256": null,
+    "sequence_confidence": 0.8,
+    "completed_take_sampling": "timestamp_interpolation_v1",
+    "sampling_fps": null,
+    "motion_threshold": 0.045,
+    "min_excursion": 0.35,
+    "min_motion_seconds": 0.12,
+    "gesture_form_policy": null
+  },
+  "overall": {
+    "frames": 2,
+    "processed_fps": 10256.405636170643,
+    "detector_ms_median": 0.005900015821680427,
+    "detector_ms_p95": 0.008060006075538695,
+    "recognition_ms_p95": 0.0016649573808535933,
+    "frame_age_ms_p95": 0.03357997629791498,
+    "capture_interval_ms_p95": 0.1218999968841672,
+    "capture_intervals_over_200ms": 0,
+    "hand_visibility": 0.0,
+    "left_visibility": 0.0,
+    "right_visibility": 0.0,
+    "shoulder_visibility": null,
+    "face_reference_visibility": null,
+    "emissions": {},
+    "static_emissions": {},
+    "rejections": {}
+  },
+  "by_target": {
+    "HELLO": {
+      "frames": 1,
+      "processed_fps": null,
+      "detector_ms_median": 0.003500026650726795,
+      "detector_ms_p95": 0.003500026650726795,
+      "recognition_ms_p95": 0.00100000761449337,
+      "frame_age_ms_p95": 0.010400020983070135,
+      "capture_interval_ms_p95": null,
+      "capture_intervals_over_200ms": 0,
+      "hand_visibility": 0.0,
+      "left_visibility": 0.0,
+      "right_visibility": 0.0,
+      "shoulder_visibility": null,
+      "face_reference_visibility": null,
+      "emissions": {},
+      "static_emissions": {},
+      "rejections": {}
+    },
+    "UNMARKED": {
+      "frames": 1,
+      "processed_fps": null,
+      "detector_ms_median": 0.008300004992634058,
+      "detector_ms_p95": 0.008300004992634058,
+      "recognition_ms_p95": 0.0016999547369778156,
+      "frame_age_ms_p95": 0.03479997394606471,
+      "capture_interval_ms_p95": null,
+      "capture_intervals_over_200ms": 0,
+      "hand_visibility": 0.0,
+      "left_visibility": 0.0,
+      "right_visibility": 0.0,
+      "shoulder_visibility": null,
+      "face_reference_visibility": null,
+      "emissions": {},
+      "static_emissions": {},
+      "rejections": {}
+    }
+  },
+  "events": [],
+  "limitations": [
+    "Key labels describe the intended test block, not verified ASL annotations.",
+    "Frame visibility includes rest between gestures; gesture-specific rejection checks use sampled takes.",
+    "Processed FPS describes observed pipeline throughput, not the camera advertised FPS.",
+    "Timing cannot by itself establish motion blur or ASL correctness."
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "policy": "j_z_salute_form_v1",
+  "rows": [
+    {
+      "file": "take_000074.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": null
+    },
+    {
+      "file": "take_000108.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": null
+    },
+    {
+      "file": "take_000209.npz",
+      "recorded_emitted": "J",
+      "form_rejected": null
+    },
+    {
+      "file": "take_000240.npz",
+      "recorded_emitted": "J",
+      "form_rejected": null
+    },
+    {
+      "file": "take_000293.npz",
+      "recorded_emitted": "J",
+      "form_rejected": null
+    },
+    {
+      "file": "take_000467.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": null
+    },
+    {
+      "file": "take_000571.npz",
+      "recorded_emitted": "Z",
+      "form_rejected": null
+    },
+    {
+      "file": "take_001120.npz",
+      "recorded_emitted": "Z",
+      "form_rejected": "Z requires sustained extended index finger with the other fingers folded"
+    },
+    {
+      "file": "take_001173.npz",
+      "recorded_emitted": "Z",
+      "form_rejected": "Z requires sustained extended index finger with the other fingers folded"
+    },
+    {
+      "file": "take_001227.npz",
+      "recorded_emitted": "Z",
+      "form_rejected": "Z requires sustained extended index finger with the other fingers folded"
+    },
+    {
+      "file": "take_001275.npz",
+      "recorded_emitted": "Z",
+      "form_rejected": "Z requires sustained extended index finger with the other fingers folded"
+    },
+    {
+      "file": "take_001389.npz",
+      "recorded_emitted": "J",
+      "form_rejected": null
+    },
+    {
+      "file": "take_001508.npz",
+      "recorded_emitted": "Z",
+      "form_rejected": null
+    },
+    {
+      "file": "take_001654.npz",
+      "recorded_emitted": "Z",
+      "form_rejected": null
+    },
+    {
+      "file": "take_002102.npz",
+      "recorded_emitted": "Z",
+      "form_rejected": null
+    },
+    {
+      "file": "take_002762.npz",
+      "recorded_emitted": "Z",
+      "form_rejected": "Z requires sustained extended index finger with the other fingers folded"
+    },
+    {
+      "file": "take_002837.npz",
+      "recorded_emitted": "Z",
+      "form_rejected": "Z requires sustained extended index finger with the other fingers folded"
+    },
+    {
+      "file": "take_003118.npz",
+      "recorded_emitted": "J",
+      "form_rejected": null
+    },
+    {
+      "file": "take_003287.npz",
+      "recorded_emitted": "J",
+      "form_rejected": null
+    },
+    {
+      "file": "take_003338.npz",
+      "recorded_emitted": "J",
+      "form_rejected": "J requires sustained extended pinky with the other fingers folded"
+    },
+    {
+      "file": "take_004919.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": null
+    },
+    {
+      "file": "take_004996.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": "Salute HELLO must start with an open hand near the forehead"
+    },
+    {
+      "file": "take_005101.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": "Salute HELLO must start with an open hand near the forehead"
+    },
+    {
+      "file": "take_005151.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": "Salute HELLO must start with an open hand near the forehead"
+    },
+    {
+      "file": "take_005315.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": "Salute HELLO must start with an open hand near the forehead"
+    },
+    {
+      "file": "take_005381.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": "Salute HELLO must start with an open hand near the forehead"
+    },
+    {
+      "file": "take_005423.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": "Salute HELLO must start with an open hand near the forehead"
+    },
+    {
+      "file": "take_005629.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": null
+    },
+    {
+      "file": "take_005701.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": null
+    },
+    {
+      "file": "take_005784.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": null
+    },
+    {
+      "file": "take_005830.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": null
+    },
+    {
+      "file": "take_005890.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": "Salute HELLO must start with an open hand near the forehead"
+    },
+    {
+      "file": "take_005966.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": "Salute HELLO must start with an open hand near the forehead"
+    },
+    {
+      "file": "take_006023.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": "Salute HELLO must start with an open hand near the forehead"
+    },
+    {
+      "file": "take_006080.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": "Salute HELLO must start with an open hand near the forehead"
+    },
+    {
+      "file": "take_006214.npz",
+      "recorded_emitted": "HELLO",
+      "form_rejected": "HELLO requires sustained an open hand"
+    },
+    {
+      "file": "take_006373.npz",
+      "recorded_emitted": "Z",
+      "form_rejected": "Z requires sustained extended index finger with the other fingers folded"
+    }
+  ],
+  "limitations": [
+    "Proposed feature-only form check, not exact live replay of the new moving-hand restriction.",
+    "No intended target labels or human correctness annotations for this run.",
+    "Reject counts are not accuracy gains.",
+    "Form checks do not verify complete J/Z trajectories or physical forehead contact."
+  ]
+}

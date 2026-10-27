@@ -1,0 +1,39 @@
+{
+  "review_counts": {
+    "HELLO": 2,
+    "UNSURE": 1
+  },
+  "confirmed_matches": 2,
+  "confirmed_false_detections": 0,
+  "unresolved": 1,
+  "decisions": [
+    {
+      "file": "take_000470.npz",
+      "human_label": "HELLO",
+      "model_output": "HELLO",
+      "source_hash_verified": true,
+      "status": "matches_review"
+    },
+    {
+      "file": "take_000622.npz",
+      "human_label": "HELLO",
+      "model_output": "HELLO",
+      "source_hash_verified": true,
+      "status": "matches_review"
+    },
+    {
+      "file": "take_000672.npz",
+      "human_label": "UNSURE",
+      "model_output": "HELLO",
+      "source_hash_verified": true,
+      "status": "excluded_pending_review"
+    }
+  ],
+  "source_files_unchanged": true,
+  "used_for_training": false,
+  "limitations": [
+    "User review of reconstructed landmarks, not original video or an independent ASL assessment",
+    "Three selected disputed outputs only; not an overall accuracy benchmark",
+    "UNSURE excluded from correctness claims and supervised labels"
+  ]
+}
