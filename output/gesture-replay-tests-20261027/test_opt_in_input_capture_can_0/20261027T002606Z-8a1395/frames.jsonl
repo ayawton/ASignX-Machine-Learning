@@ -1,1 +1,3 @@
-{"frame": 0, "target": "HELLO", "capture_time": 100.0, "processed_time": 100.05, "frame_age_ms": 49.99999999999716, "detector_ms": 35.0, "recognition_ms": 5.0, "hand_visible": true, "left_visible": true, "right_visible": false, "shoulders_visible": true, "face_references_visible": true, "state": null, "velocity": 0.0, "emitted": null, "rejected": null, "evaluated": true, "raw_prediction": "J", "confidence": 0.5425140857696533, "static_candidates": [], "static_emitted": [], "static_suppressed": false, "gesture_input_file": "gesture_inputs/take_000000.npz"}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b2ad6b38c66be6b7b1e88dd87b30df37a5ef29ca33bce18ccd8069ad328322e7
+size 563

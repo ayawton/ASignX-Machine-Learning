@@ -1,5 +1,8 @@
 # ASignX Dynamic Sign Studio
 
+For THANK_YOU, PLEASE and HELP, use `ASignX_RecordWordSigns.bat` and follow
+the [word-sign recording guide](adding-word-signs.md).
+
 Launch `ASignX_DynamicStudio.exe` on a Windows x64 PC. Python, PyTorch, and an internet
 connection are not needed on the recording PC. The hand detection model is bundled.
 The executable extracts its runtime to a temporary folder at startup, so the first

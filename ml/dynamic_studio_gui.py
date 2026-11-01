@@ -31,7 +31,7 @@ def default_output(name: str) -> Path:
 
 
 class DynamicStudio:
-    def __init__(self, root: tk.Tk):
+    def __init__(self, root: tk.Tk, *, word_signs: bool = False):
         self.root = root
         self.events = queue.Queue()
         self.commands = queue.Queue()
@@ -43,9 +43,9 @@ class DynamicStudio:
         self.photo = None
         self.capture_state = "Ready"
         self.config_widgets = []
-        self.label = tk.StringVar(value="J")
+        self.label = tk.StringVar(value="THANK_YOU" if word_signs else "J")
         self.hand = tk.StringVar(value="both")
-        self.body_mode = tk.StringVar(value="hands")
+        self.body_mode = tk.StringVar(value="hands + body" if word_signs else "hands")
         self.length = tk.StringVar(value="30")
         self.fps = tk.StringVar(value="15")
         self.minimum = tk.StringVar(value="10")
@@ -58,7 +58,7 @@ class DynamicStudio:
         self.source_id = tk.StringVar()
         self.device_id = tk.StringVar()
         self.benchmark_split = tk.StringVar()
-        self.output = tk.StringVar(value=str(default_output("sequences")))
+        self.output = tk.StringVar(value=str(default_output("sequences_words" if word_signs else "sequences")))
         self.input = tk.StringVar()
         self.import_output = tk.StringVar(value=str(default_output("video_sequences")))
         self.skip_invalid = tk.BooleanVar(value=False)
@@ -73,10 +73,11 @@ class DynamicStudio:
 
     def field(self, parent, row, title, variable, choices=None):
         ttk.Label(parent, text=title).grid(row=row, column=0, sticky="w", padx=(0, 12), pady=4)
-        widget = (ttk.Combobox(parent, textvariable=variable, values=choices, state="readonly", width=24 if variable is self.body_mode else 18)
+        state = "normal" if variable is self.label else "readonly"
+        widget = (ttk.Combobox(parent, textvariable=variable, values=choices, state=state, width=24 if variable is self.body_mode else 18)
                   if choices else ttk.Entry(parent, textvariable=variable, width=21))
         widget.grid(row=row, column=1, sticky="ew", pady=4)
-        self.config_widgets.append((widget, "readonly" if choices else "normal"))
+        self.config_widgets.append((widget, state if choices else "normal"))
 
     def folder(self, parent, variable, title):
         row = ttk.Frame(parent)
@@ -122,7 +123,7 @@ class DynamicStudio:
         settings = ttk.LabelFrame(body, text="Recording settings", padding=10)
         settings.pack(side="left", fill="y", padx=(0, 12))
         for row, (title, variable, choices) in enumerate([
-            ("Sign label", self.label, None), ("Hand mode", self.hand, HAND_SELECTIONS),
+            ("Sign label", self.label, ("J", "Z", "HELLO", "THANK_YOU", "PLEASE", "HELP", "BACKGROUND")), ("Hand mode", self.hand, HAND_SELECTIONS),
             ("Camera index", self.camera, None), ("Sequence steps", self.length, None),
             ("Sampling FPS", self.fps, None), ("Minimum frames", self.minimum, None),
             ("Min. detection ratio", self.ratio, None), ("Max. take seconds", self.maximum, None),
@@ -403,6 +404,7 @@ def main():
             setattr(sys, stream, open(os.devnull, "w", encoding="utf-8"))
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--self-test", type=Path, help=argparse.SUPPRESS)
+    parser.add_argument("--word-signs", action="store_true", help="Start with THANK_YOU, both hands, body landmarks and a separate word dataset")
     args = parser.parse_args()
     if args.self_test:
         try:
@@ -412,7 +414,7 @@ def main():
             raise
         return
     root = tk.Tk()
-    DynamicStudio(root)
+    DynamicStudio(root, word_signs=args.word_signs)
     root.mainloop()
 
 

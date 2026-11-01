@@ -1,0 +1,785 @@
+{
+  "counts": {
+    "BACKGROUND": 32,
+    "HELLO": 43,
+    "HELP": 10,
+    "J": 9,
+    "PLEASE": 10,
+    "THANK_YOU": 10,
+    "Z": 10
+  },
+  "sources": [
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_01ead69f2ff34a84afa134188940c244.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_01ead69f2ff34a84afa134188940c244.npz",
+      "sha256": "22806b95703acea05ab14f4e488d88abc22da6679baa1fc74ff4ede71425923a",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_05d16feaa2e548a38c0c77f6adaa5b83.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_05d16feaa2e548a38c0c77f6adaa5b83.npz",
+      "sha256": "44ff8b6276ca8c675bacbc5aa00fd2c35069978f59464f80daee80b7daaea1e2",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_0b1c4a266c5c4286bd2e05b4cedd133c.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_0b1c4a266c5c4286bd2e05b4cedd133c.npz",
+      "sha256": "4dfe726c933f607156a589c34860e3e70eb16528476eb927d06d76f44e13c744",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_28137e33fff944ca9f1dcd70e51de195.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_28137e33fff944ca9f1dcd70e51de195.npz",
+      "sha256": "b2a93ab91d71dff5f80f52f02d750e5366c22ef404f9f303b40bf15608690657",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_3fa39dab8bcd40568b375b0563b576bb.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_3fa39dab8bcd40568b375b0563b576bb.npz",
+      "sha256": "3e59275083868442fc1da8814c37b584232a684c61adfd5e3a2d625dae140547",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_475ce8e9b7554d81b907aebeef2c167c.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_475ce8e9b7554d81b907aebeef2c167c.npz",
+      "sha256": "60d5ff14142a71ab00c0088eba5bcaa734d2d064c7f772662487a0d94e84f207",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_542d0daf62ea4638b9cfba62913b6eeb.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_542d0daf62ea4638b9cfba62913b6eeb.npz",
+      "sha256": "bbe97fe79fffaf1045561e2259dafb4ad111de27644dd64f10a693dc7579b653",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_5a6c7cf689764104aab0218030ec1189.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_5a6c7cf689764104aab0218030ec1189.npz",
+      "sha256": "f427f83313cef9ca4090c8ee6054545943ed255fecd0fc25b3f07e5a50a01aae",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_6e6b1e9510f84ca6aa104e3b0e7c7147.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_6e6b1e9510f84ca6aa104e3b0e7c7147.npz",
+      "sha256": "40b2ac673be87dc64e9e08840bdba0c75198e14ea6681b5754fbe3690c35ca4a",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_6f4adc327bd64a8eaa0c39d670b3e6fa.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_6f4adc327bd64a8eaa0c39d670b3e6fa.npz",
+      "sha256": "8362fcf376047825079dd6f7841a19f2f26e1ffb12af3219613739ba3e35ad33",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_869e0675da4341b8b1d9bc598c7a0778.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_869e0675da4341b8b1d9bc598c7a0778.npz",
+      "sha256": "4f66852f1ea7b01cf15867eb72375e5e6b8b721b3a7e96ca97ffac501f837a3c",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_9bfd18caae6d4a4eb7bc193d970fcb46.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_9bfd18caae6d4a4eb7bc193d970fcb46.npz",
+      "sha256": "743b41109ba5ada7d29c44f57e2c769dc9c0611f620b1fea1432f25fb6126905",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_a6742a634aff4078803dd0e4c695d59d.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_a6742a634aff4078803dd0e4c695d59d.npz",
+      "sha256": "11e2ea836962ffb1a1d8ca28bd8ed88324fbe9409d53c17c824790036597c725",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_b790d667e2da4391887e4bc1d4b2a63c.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_b790d667e2da4391887e4bc1d4b2a63c.npz",
+      "sha256": "374146fe26c5cc877e5cd933b540925aa4f2c25b3791cb504750ea79588ded86",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_c6fcd6efc5d64eb2a6adec02069520cf.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_c6fcd6efc5d64eb2a6adec02069520cf.npz",
+      "sha256": "1a38740046cd761131637999cb901858adb41ed4d7dcb7223bd5c0413cb113c3",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_d55619de923849c39918264b6437d0d4.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_d55619de923849c39918264b6437d0d4.npz",
+      "sha256": "88e0a4a0b23521486d2932ccd9b55b3416c738906b120aecf8b12e3dc6b77796",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_d9a101fc009e4f2aa92513adcbbdda41.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_d9a101fc009e4f2aa92513adcbbdda41.npz",
+      "sha256": "d260b586b9eaecd330760740c2d749123bc4d21697a48ce54ddfb93707bf1be5",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_e1b9e31b2ac84a8e97fb4676cbd2a30a.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_e1b9e31b2ac84a8e97fb4676cbd2a30a.npz",
+      "sha256": "2efdba9337ea640e34e98bf23407f4433c1f748efd75d7d1a639cea2fbb01225",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_f876b36be8c04af78cf93480b567d431.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_f876b36be8c04af78cf93480b567d431.npz",
+      "sha256": "9c6c40b03c2410d55b7b2163e67453c5de1714e16a5c24804d43acccafd02d1b",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\LIVE_take_003610.npz",
+      "destination": "BACKGROUND\\existing_LIVE_take_003610.npz",
+      "sha256": "c569f7f9fce2aaf7c6d40e2d9e4045d13df5a99606b2892b05a2f37de412e427",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\LIVE_take_003715.npz",
+      "destination": "BACKGROUND\\existing_LIVE_take_003715.npz",
+      "sha256": "2b818a9a8f484f9770a240fcecc847a9584f3be4d4bf9636b97160a31f9b37c1",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\LIVE_take_004179.npz",
+      "destination": "BACKGROUND\\existing_LIVE_take_004179.npz",
+      "sha256": "f94379adb7105bd1ced2c3f4e7d0d6bfd0ff1fbcf3e7af28298e17225e704fbc",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\LIVE_take_004274.npz",
+      "destination": "BACKGROUND\\existing_LIVE_take_004274.npz",
+      "sha256": "ac0e58a5875f3700ddf3bfeb3b572dfe6c5b720c41d306e59f75a6f56da135b0",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\LIVE_take_004452.npz",
+      "destination": "BACKGROUND\\existing_LIVE_take_004452.npz",
+      "sha256": "676be8fa357342773f98c88a0a414ba9b62b72feb9dcc46de90a64a9db539d15",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_0d04ab71c06342db9602d55a2a58987e.npz",
+      "destination": "HELLO\\existing_HELLO_0d04ab71c06342db9602d55a2a58987e.npz",
+      "sha256": "80a62a15558ee8632d530bddc76f391b47e8c75ee169b80ddba3b682ae117290",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_12e77ca90919498f8146c3cf24b349a4.npz",
+      "destination": "HELLO\\existing_HELLO_12e77ca90919498f8146c3cf24b349a4.npz",
+      "sha256": "f780f5aff823f4c1e2d4866011f962218e3b8103ee4248a0abd7c8d596c3620a",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_1b522ffbe63f4bc18b48973703a739c7.npz",
+      "destination": "HELLO\\existing_HELLO_1b522ffbe63f4bc18b48973703a739c7.npz",
+      "sha256": "e7b10c6139b474e3ec675124d15425763a1bf6b9a9acc5504f57d93ecb5a2f5f",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_31ca96e066b1498096bbfd7fa2f431d7.npz",
+      "destination": "HELLO\\existing_HELLO_31ca96e066b1498096bbfd7fa2f431d7.npz",
+      "sha256": "b78808cd4b74018bc937be7a32b8a26c08c0c7ccf64c20f598ff0dee488ec100",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_3433c651d44a49d1a9fe62efd1a2a7b9.npz",
+      "destination": "HELLO\\existing_HELLO_3433c651d44a49d1a9fe62efd1a2a7b9.npz",
+      "sha256": "1428cbc3f39412d223bc18b6d635e8d3ea7401ff7af3ac6123f2258ea43fc358",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_470ec1f142d24efb82576eff4e682308.npz",
+      "destination": "HELLO\\existing_HELLO_470ec1f142d24efb82576eff4e682308.npz",
+      "sha256": "50821df2fb9c76160440a3402a32b49946c3496acdd8edde27e9df9b59bef936",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_521dd8dcfef247d2bd07877297b300ce.npz",
+      "destination": "HELLO\\existing_HELLO_521dd8dcfef247d2bd07877297b300ce.npz",
+      "sha256": "81c7c95bc35d224c0cff326b5676ac7a2126e041b01366eb47f24060d7ab8379",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_528095beb5474b1d91c389a9796a32b3.npz",
+      "destination": "HELLO\\existing_HELLO_528095beb5474b1d91c389a9796a32b3.npz",
+      "sha256": "21a95ef48cf43a1870072a11029c911892891cafe3c0cc050796deff26916de2",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_5a76ecb584fd42e98c9ebbb0727c1a4e.npz",
+      "destination": "HELLO\\existing_HELLO_5a76ecb584fd42e98c9ebbb0727c1a4e.npz",
+      "sha256": "f29e44c23602479f5c13b53a6dbb9fb7d3c994cf5fa52d74352cd4ebb992afd0",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_701ed271929340c49110ca41515d9139.npz",
+      "destination": "HELLO\\existing_HELLO_701ed271929340c49110ca41515d9139.npz",
+      "sha256": "f0b09ca076c1d35fbf5e9e387275ae9297589e0c69a1f0f1b83533727cd6cd43",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_9050b63e132e4f8a9e8219272aed3b9f.npz",
+      "destination": "HELLO\\existing_HELLO_9050b63e132e4f8a9e8219272aed3b9f.npz",
+      "sha256": "e2843e26791a7576e328195d5bfd0e15ea96b8a5a594a157ff9a6f78cdf05c88",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_aa7b58123b6d4f60a9f2c36e2876d64f.npz",
+      "destination": "HELLO\\existing_HELLO_aa7b58123b6d4f60a9f2c36e2876d64f.npz",
+      "sha256": "12afedab9b0aaf3ba7fb93dbf2e07453d1cfa7f79f221e30537c6a28d5fd9a26",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_b3e403d94c97424590bc26b51ea4af8c.npz",
+      "destination": "HELLO\\existing_HELLO_b3e403d94c97424590bc26b51ea4af8c.npz",
+      "sha256": "206b624ef5600df72c02d08bc0883abce3438c5cafbe9691ab297efbeb2d4fd0",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_ced746e06ab0467a9f435e6c00826347.npz",
+      "destination": "HELLO\\existing_HELLO_ced746e06ab0467a9f435e6c00826347.npz",
+      "sha256": "3cfe6caaddfc9410ecf95ef00e38f4494b2c035c80dcb7236d3380a64a535eca",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_d15e848a368b4ac8a5c2741f60200c54.npz",
+      "destination": "HELLO\\existing_HELLO_d15e848a368b4ac8a5c2741f60200c54.npz",
+      "sha256": "d15fae2ecae9292085698b206f1f96d042841eb03d2a9b12aed684df9a0a6378",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_d3f3b90ed3934e848c3ab5f82e2bb653.npz",
+      "destination": "HELLO\\existing_HELLO_d3f3b90ed3934e848c3ab5f82e2bb653.npz",
+      "sha256": "0d72a4b7ba131461278a5e5c2e039e9a8d0aea63ffd32a9195f240a188bc29ba",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_db09d735bab548fe9fc72747df733639.npz",
+      "destination": "HELLO\\existing_HELLO_db09d735bab548fe9fc72747df733639.npz",
+      "sha256": "9ee6d6428ed50ccef4f50cad8366181f4055fcaec494ffc875fcbb40452d7a13",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_e594b55494af42c582e960c1b29aad9c.npz",
+      "destination": "HELLO\\existing_HELLO_e594b55494af42c582e960c1b29aad9c.npz",
+      "sha256": "3346b2f193038de0882fa4c5e654aa43ae7a9f3f1a4b639805e53847e733ccac",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_e739eed55d7f4ad2bbffd19068e90b48.npz",
+      "destination": "HELLO\\existing_HELLO_e739eed55d7f4ad2bbffd19068e90b48.npz",
+      "sha256": "4f236df384f549f0fa689f45579929a1c55b71d11a41962b1f26d23193b01a9c",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_eec4b8a6169a473abda2d161e574d4d2.npz",
+      "destination": "HELLO\\existing_HELLO_eec4b8a6169a473abda2d161e574d4d2.npz",
+      "sha256": "302c48e903bedd78abf4f1aa1f7ba05fb67c988f3ed005f4301cf14d233db3cc",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_ef64aba2d2174a2989495e5b9fcd090b.npz",
+      "destination": "HELLO\\existing_HELLO_ef64aba2d2174a2989495e5b9fcd090b.npz",
+      "sha256": "d7782231e861ffd3f5c2ab4651aa88d9ae370b4ffeb3c4ff2a666f32a42a8f72",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_f54f639071de4dffaab7fef7490637dc.npz",
+      "destination": "HELLO\\existing_HELLO_f54f639071de4dffaab7fef7490637dc.npz",
+      "sha256": "96b1b218c7e697e3477073fb86a228563dfef42ab4d99dd6f90a7d7e2dc9d54f",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\LIVE_take_003210.npz",
+      "destination": "HELLO\\existing_LIVE_take_003210.npz",
+      "sha256": "e87534979f4054bf66d9f2e42cd88f4cad264e20f74adefed60927421878c60d",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\LIVE_take_003328.npz",
+      "destination": "HELLO\\existing_LIVE_take_003328.npz",
+      "sha256": "5eca7860327aebf829c53eee296f6f4292f2523034e061714e1df001876aa136",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\LIVE_take_003443.npz",
+      "destination": "HELLO\\existing_LIVE_take_003443.npz",
+      "sha256": "a55285e444889104669702b29a2aacffc679db4e656a0df1c9ee5ea5c52cf887",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\LIVE_take_003559.npz",
+      "destination": "HELLO\\existing_LIVE_take_003559.npz",
+      "sha256": "1e5c7e4a02894d729425ae4d9dcf4833c117d5afd8f52b348b0063b5a4b183aa",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\LIVE_take_003667.npz",
+      "destination": "HELLO\\existing_LIVE_take_003667.npz",
+      "sha256": "7e6d6ff55cac12be3c285ebecf608fee1d6564e01e42f1e27410b74b8684937f",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\LIVE_take_003754.npz",
+      "destination": "HELLO\\existing_LIVE_take_003754.npz",
+      "sha256": "98a67ecdcdce5577419c09af81f0a80f540790df636cdaecf20bdb5259ba1727",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\LIVE_take_003838.npz",
+      "destination": "HELLO\\existing_LIVE_take_003838.npz",
+      "sha256": "f47849c699d5d8e278b2c70de70b2b4016b28cc52a8e044f574890238723b8c1",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\LIVE_take_003935.npz",
+      "destination": "HELLO\\existing_LIVE_take_003935.npz",
+      "sha256": "e36d078feed45c3351c0acf3ac35422b8c8f3a4703aa60cf0ff772c1bf8a7f18",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\LIVE_take_004040.npz",
+      "destination": "HELLO\\existing_LIVE_take_004040.npz",
+      "sha256": "a6642a74219b9e9ca2f48bbf460576f1dda471846f96696932aff32bf3c66b65",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\LIVE_take_004131.npz",
+      "destination": "HELLO\\existing_LIVE_take_004131.npz",
+      "sha256": "590af51b11d00b85d428dffd004f64d133b0d90e2558823e34e923df0a759ef3",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\LIVE_take_004222.npz",
+      "destination": "HELLO\\existing_LIVE_take_004222.npz",
+      "sha256": "0046f7bad91eb58fa6013c2ce244a416eb3cbeae3d5965ef64eb92b88ba87b5e",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\LIVE_take_004308.npz",
+      "destination": "HELLO\\existing_LIVE_take_004308.npz",
+      "sha256": "06bb2601fc01ce4bc074ea68a37c7a5aff2753480606224e40e1422408abbab0",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\LIVE_take_004483.npz",
+      "destination": "HELLO\\existing_LIVE_take_004483.npz",
+      "sha256": "cbae476bc38560b47dfe3f344e2dd6540564f1e32fd6c20a4b1b362eb3579d8a",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\J\\J_0854170a8fe6436fb23fa103ecc2033a.npz",
+      "destination": "J\\existing_J_0854170a8fe6436fb23fa103ecc2033a.npz",
+      "sha256": "96787d474c786a472fea4fdbb50e8af769e0b7629720d783e555ddb61d3e52e8",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\J\\J_0bfbaa9e535c450a8d2c28cfe159605b.npz",
+      "destination": "J\\existing_J_0bfbaa9e535c450a8d2c28cfe159605b.npz",
+      "sha256": "c1d9c461d0fd1e30b63d3c8134bfc33dbc8b169938d1024aae561e60799e63ba",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\J\\J_1f83e03bf5bc43edb1a1647f848f88b6.npz",
+      "destination": "J\\existing_J_1f83e03bf5bc43edb1a1647f848f88b6.npz",
+      "sha256": "b9cfc02937622330753f937b0c40c2893d33ea1e153e5e9c0a6be521eb953e1b",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\J\\J_581f6da521b849afbf1143691e7632ba.npz",
+      "destination": "J\\existing_J_581f6da521b849afbf1143691e7632ba.npz",
+      "sha256": "1e4389a81219fa8a518c25c815f2cc827fd2ee86e7ef0a19feaf116f80ab2121",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\J\\J_66fceb7f0077489e85935e810b582312.npz",
+      "destination": "J\\existing_J_66fceb7f0077489e85935e810b582312.npz",
+      "sha256": "1d03f702d8be194724a3f78fba1af518d430588ea73df04ea11ffdec9ccda905",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\J\\J_70be26dd59d74914b2df2d2c94bbd4ee.npz",
+      "destination": "J\\existing_J_70be26dd59d74914b2df2d2c94bbd4ee.npz",
+      "sha256": "5e11a56665fb13661c13e5dfdc164cb2ffd5096b07292161e537fcd7147bcf45",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\J\\J_d4fe68be2b3a48c184da22fad72bcc5f.npz",
+      "destination": "J\\existing_J_d4fe68be2b3a48c184da22fad72bcc5f.npz",
+      "sha256": "a8ec99fba5630b96a973b819b5be1665478328f5718c4b995fa2cbfd46f3e9e6",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\Z\\Z_06c0ae65fc454f499ac58f9fd4840a3e.npz",
+      "destination": "Z\\existing_Z_06c0ae65fc454f499ac58f9fd4840a3e.npz",
+      "sha256": "0a38af11a9cda31471a1f3e2ed1ad478e2d43c9fca4164eee2a9108ca9583a8d",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\Z\\Z_701586dbb02f4af49d3783ac365ca48e.npz",
+      "destination": "Z\\existing_Z_701586dbb02f4af49d3783ac365ca48e.npz",
+      "sha256": "e6eeeb84e8d9cdb05366af2d5f9736b07ff6f1e9b2539b60d1f1715b6bf885ae",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\Z\\Z_80c12e592ea649fe859d7c2a635a2087.npz",
+      "destination": "Z\\existing_Z_80c12e592ea649fe859d7c2a635a2087.npz",
+      "sha256": "545fc66078d8964975871f73a86c8ce3d093208e900030086dcd8b0724cab58e",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\Z\\Z_c8d51f5c4566473caebaeb04fd0cafa2.npz",
+      "destination": "Z\\existing_Z_c8d51f5c4566473caebaeb04fd0cafa2.npz",
+      "sha256": "31d11d32ca9c714135a3a9dc0ceb5d85793033340b64e4eff0dfcd4ccd6a5591",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\Z\\Z_f0f9823bc7fc4b858150bd1ad70d6c90.npz",
+      "destination": "Z\\existing_Z_f0f9823bc7fc4b858150bd1ad70d6c90.npz",
+      "sha256": "684d8ba2c18e2539cceb248843cda085bd08255825c144708d960592e3c129ba",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\Z\\Z_f4f7d10d9d0e476e9485cecc185178d7.npz",
+      "destination": "Z\\existing_Z_f4f7d10d9d0e476e9485cecc185178d7.npz",
+      "sha256": "da18104d1b53e14478eda63617a2922a1b916d9fcbfabf0a6c6b5a4dca3a5db6",
+      "split": "train"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_3d8fadbb670d4d5e81dce156de42404e.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_3d8fadbb670d4d5e81dce156de42404e.npz",
+      "sha256": "dd4e78a0542c5d35c91adbcbdfef30f9f8eff0dd4af4a3a624fdc9fb9eccafd7",
+      "split": "validation"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_9c81b96274884bea8bc52c25e027cc38.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_9c81b96274884bea8bc52c25e027cc38.npz",
+      "sha256": "49906cefd324e9397b3851170fe799d38a96a7a60fdc2300c81ded002d83e9c1",
+      "split": "validation"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_d07021a55eeb4b2893fc7ad1d41efae0.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_d07021a55eeb4b2893fc7ad1d41efae0.npz",
+      "sha256": "a206e922cd0cd0609283dbf02bc6270cb41a1f7254270f3b06e5e77bd4d99123",
+      "split": "validation"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_e39a73b96253431ea2922c3b405e60cb.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_e39a73b96253431ea2922c3b405e60cb.npz",
+      "sha256": "7dcd9da1473deb9acb5bfc41da2501618d0114969b2c3d04b7deca21ca111acf",
+      "split": "validation"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_4cc5155189ee435898b59991e282bf10.npz",
+      "destination": "HELLO\\existing_HELLO_4cc5155189ee435898b59991e282bf10.npz",
+      "sha256": "cf5119f4ce50893751970d268e75b8d48d8cf35ab99c283cc0b82556da3920e3",
+      "split": "validation"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_60d34b48dcf34bf3bc9e2944b104913a.npz",
+      "destination": "HELLO\\existing_HELLO_60d34b48dcf34bf3bc9e2944b104913a.npz",
+      "sha256": "86c74930ebd0e17c6a83db8fc031193c1d2bb2181c25866306972a4a2764be27",
+      "split": "validation"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_8082d94135994195a2155aba4fd4c879.npz",
+      "destination": "HELLO\\existing_HELLO_8082d94135994195a2155aba4fd4c879.npz",
+      "sha256": "05643de4d8e81fe45f47cfab8338ada196964d0357aede7edcea18476d68f054",
+      "split": "validation"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_ecd66f7a820b4243aa18f2421d48b740.npz",
+      "destination": "HELLO\\existing_HELLO_ecd66f7a820b4243aa18f2421d48b740.npz",
+      "sha256": "749c33bc9863964ecf43dff3efb3070e4011eb05ca8d8120d653fc6feb3cf948",
+      "split": "validation"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\J\\J_7545ce4112a246578b8f82d12e70f9a1.npz",
+      "destination": "J\\existing_J_7545ce4112a246578b8f82d12e70f9a1.npz",
+      "sha256": "475add326c6e3f2d1d22b316815632271f4e2f94ae9642303199aaadb861dfde",
+      "split": "validation"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\Z\\Z_051ffe1c454845d7a935e976e1d305bc.npz",
+      "destination": "Z\\existing_Z_051ffe1c454845d7a935e976e1d305bc.npz",
+      "sha256": "ff4a30e9907370653a134892900727653e8f711814419bd8562dafff19e20016",
+      "split": "validation"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\Z\\Z_cf185e82dd854afbac9c96993d93173a.npz",
+      "destination": "Z\\existing_Z_cf185e82dd854afbac9c96993d93173a.npz",
+      "sha256": "2bc047bde7f2ba405f8c32554aac82265a1a18cb8fc4d5eeb2be29a96de8229c",
+      "split": "validation"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_00481cd743c84745b3a0a2aafe0fe363.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_00481cd743c84745b3a0a2aafe0fe363.npz",
+      "sha256": "a4b2baf15add50af41e95168cb5421637ad42a4b0a82e20ef48ce529ace3c6e5",
+      "split": "test"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_76b272f51b654423ba74a0e076c8b3ef.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_76b272f51b654423ba74a0e076c8b3ef.npz",
+      "sha256": "9f234991bab653de8a2376762832d7988d46c102ce11ee26bce33b072fe0f36e",
+      "split": "test"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_a2e81286e2814a9da8164994d61b66ef.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_a2e81286e2814a9da8164994d61b66ef.npz",
+      "sha256": "f2087033ff2b3a1c22faa8e3b3ecd822f142064959f8992485aaffe34c6576d1",
+      "split": "test"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\BACKGROUND\\BACKGROUND_b3fba589f0cd4f85bbc8881f60798b04.npz",
+      "destination": "BACKGROUND\\existing_BACKGROUND_b3fba589f0cd4f85bbc8881f60798b04.npz",
+      "sha256": "6bf5f40487f53498d53e9177fb0073017af97a06e06dbafd9a4fb47a8df0f38f",
+      "split": "test"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_14fbd2d9990c4aae9b5b085dbbbc9588.npz",
+      "destination": "HELLO\\existing_HELLO_14fbd2d9990c4aae9b5b085dbbbc9588.npz",
+      "sha256": "d12052cf08a04f84ebf7433505cafa45a2931ccc9dc61df234d91ab210d48dc4",
+      "split": "test"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_33dbda0e9f1e472db15e8e5e06516c02.npz",
+      "destination": "HELLO\\existing_HELLO_33dbda0e9f1e472db15e8e5e06516c02.npz",
+      "sha256": "909a1851974bb2ea661b0fcc3fbe31171be7b00340b1ecc9669af2d7b6da1ad7",
+      "split": "test"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_85fce07303d046e99110c629744002c2.npz",
+      "destination": "HELLO\\existing_HELLO_85fce07303d046e99110c629744002c2.npz",
+      "sha256": "1547e562e99dd1703d438aa14af37badcee0f6fb664c796cf7d10c9127714e39",
+      "split": "test"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\HELLO\\HELLO_dd61994876894540b4c20f89508b141e.npz",
+      "destination": "HELLO\\existing_HELLO_dd61994876894540b4c20f89508b141e.npz",
+      "sha256": "84d9fc0d74211af06d22613f302457bb2179abadb42697799ec9705d846e0f06",
+      "split": "test"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\J\\J_c60da094e17748e196d19f9aeb5db725.npz",
+      "destination": "J\\existing_J_c60da094e17748e196d19f9aeb5db725.npz",
+      "sha256": "ea7fda2fc2ff42e58fa8dbe222d8a8a44b830d16be2a692f7c83c9d4ca703251",
+      "split": "test"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\Z\\Z_0af2afc6032242568be63487cc5423d0.npz",
+      "destination": "Z\\existing_Z_0af2afc6032242568be63487cc5423d0.npz",
+      "sha256": "78c2b031a7f7d17382ebbd1842f58d232d3906e133b692479d5f016eb69d4088",
+      "split": "test"
+    },
+    {
+      "source": "output\\pilot-training\\20261027T014944Z-reviewed-live-hello-3b654c\\sequences\\Z\\Z_7f3844216b0e43068d0de5d2d44eaf87.npz",
+      "destination": "Z\\existing_Z_7f3844216b0e43068d0de5d2d44eaf87.npz",
+      "sha256": "56b9e56ba345172fdc03eba906a61587c45b3c5fb4120dd9739851c2a5ef2731",
+      "split": "test"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\HELP\\HELP_b834f59cfd2c44e291ed6f0d5e429064.npz",
+      "destination": "HELP\\words_HELP_b834f59cfd2c44e291ed6f0d5e429064.npz",
+      "sha256": "d46f33285ddee8ce9792bfea399bc1762652ca362f00251afb2b1683fc935fb2",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\HELP\\HELP_ba6f06b64ba340c9b6ad5098a392659b.npz",
+      "destination": "HELP\\words_HELP_ba6f06b64ba340c9b6ad5098a392659b.npz",
+      "sha256": "2950c1c0f06f57294c9543932dce4b48edd48a2975a2925d3a3f849985ff176e",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\HELP\\HELP_bbb476e8c2b34b74a420c57167c19ea8.npz",
+      "destination": "HELP\\words_HELP_bbb476e8c2b34b74a420c57167c19ea8.npz",
+      "sha256": "6539a3e3b60f59e0699fefe0e2614eea9f78e92dfc50db1e5fd2dfa8df8968b5",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\HELP\\HELP_bf47c84b50504400a3dd48678f82f298.npz",
+      "destination": "HELP\\words_HELP_bf47c84b50504400a3dd48678f82f298.npz",
+      "sha256": "e1b77652566ff64fc9f5d97ec78e1aa5ac7a863b7544171e8b328223fa9052e4",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\HELP\\HELP_f8ccca2874844998b3edc02bfdd5b5f8.npz",
+      "destination": "HELP\\words_HELP_f8ccca2874844998b3edc02bfdd5b5f8.npz",
+      "sha256": "e1d2eda478664819006009855a16753c3d5be3eeed2ed6a5e99c5851c10f3e2e",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\HELP\\HELP_f8ef1df163c64ce19d12acebca715d94.npz",
+      "destination": "HELP\\words_HELP_f8ef1df163c64ce19d12acebca715d94.npz",
+      "sha256": "a1afa7f6f5ab90d74d51a76f33d2a71cb412e69483fa88feadee428b1ebf16f6",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\PLEASE\\PLEASE_3244644cfc3540608bfd3a460fb4e54e.npz",
+      "destination": "PLEASE\\words_PLEASE_3244644cfc3540608bfd3a460fb4e54e.npz",
+      "sha256": "e44e34ac3350b52e2fdf1281c9fb6a0adee39dbc73839dd78ae931dac44255cd",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\PLEASE\\PLEASE_4673f88b218e41f6811de6c2fec283da.npz",
+      "destination": "PLEASE\\words_PLEASE_4673f88b218e41f6811de6c2fec283da.npz",
+      "sha256": "9a2e22b45c4f2728d5a88d48f9e0d49880d11ec15ca3bee00e2849aa7ed72769",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\PLEASE\\PLEASE_56b84932216e48d1bd86b95518c23843.npz",
+      "destination": "PLEASE\\words_PLEASE_56b84932216e48d1bd86b95518c23843.npz",
+      "sha256": "f261af2c30d9e793e97e051be80960b69b48bfdf39e8638cbdc0e6da9fb6f2a0",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\PLEASE\\PLEASE_63583f5fc57e4543a4ecd320c68fe442.npz",
+      "destination": "PLEASE\\words_PLEASE_63583f5fc57e4543a4ecd320c68fe442.npz",
+      "sha256": "5a7edaa2f0a3db35c6438366aca5524cb7463b34d721a4a98658bd0f46b7032f",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\PLEASE\\PLEASE_b2db2663c26e4c62a4599cf18dc1db5b.npz",
+      "destination": "PLEASE\\words_PLEASE_b2db2663c26e4c62a4599cf18dc1db5b.npz",
+      "sha256": "47883644f3f8d9580006df7e7ec043edb2ee6de2adb84eda94c6fa927af07465",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\PLEASE\\PLEASE_b62eacf8a88c4ba59bb0cb418da9b1d2.npz",
+      "destination": "PLEASE\\words_PLEASE_b62eacf8a88c4ba59bb0cb418da9b1d2.npz",
+      "sha256": "ec5c801e4509c4a22621e25ff7efed75bd5855dd062750e8f0a56ce0fe7a9409",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\THANK_YOU\\THANK_YOU_300fd3ac2fa249768b7032a2511aa131.npz",
+      "destination": "THANK_YOU\\words_THANK_YOU_300fd3ac2fa249768b7032a2511aa131.npz",
+      "sha256": "1acb3abbc0bcee0e380005577ac299a38ec4337a02a5ad885d3ac2825181602c",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\THANK_YOU\\THANK_YOU_34a1660850dc477d900371a530768add.npz",
+      "destination": "THANK_YOU\\words_THANK_YOU_34a1660850dc477d900371a530768add.npz",
+      "sha256": "032953f1ca01ed4906b19735895b5771af876f1ab6d6043fed2463c5508333de",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\THANK_YOU\\THANK_YOU_3cd3fbb98fd84093ab4cb676bbc8dc9d.npz",
+      "destination": "THANK_YOU\\words_THANK_YOU_3cd3fbb98fd84093ab4cb676bbc8dc9d.npz",
+      "sha256": "4326281a94bb3e23a3740223982a4f3492105ed3c3dd3af3f787fa1c2ae4eaf0",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\THANK_YOU\\THANK_YOU_b99c25c1e693403eb61c9d8d219116a5.npz",
+      "destination": "THANK_YOU\\words_THANK_YOU_b99c25c1e693403eb61c9d8d219116a5.npz",
+      "sha256": "9e7d8cb552c6e26b62c9a929be690484e625bef27b5995186181714808a58144",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\THANK_YOU\\THANK_YOU_cfd7755e096d4e809921fbe23b30cb1e.npz",
+      "destination": "THANK_YOU\\words_THANK_YOU_cfd7755e096d4e809921fbe23b30cb1e.npz",
+      "sha256": "d4039590661e2ed6f388c00974021d353a5647df9e254e8fb50a437a6e742098",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\THANK_YOU\\THANK_YOU_d331fe138a134175a68ad9579b810df1.npz",
+      "destination": "THANK_YOU\\words_THANK_YOU_d331fe138a134175a68ad9579b810df1.npz",
+      "sha256": "3aefc6623e9dbc662bf341e51c9792d85bb8634742935a115f32b00dce6992e7",
+      "split": "train"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\HELP\\HELP_d6ec84ffbe5941db9805c76fccd236d5.npz",
+      "destination": "HELP\\words_HELP_d6ec84ffbe5941db9805c76fccd236d5.npz",
+      "sha256": "fc4d011c5f584e5e8e0ae5df9e6ef806a3c53c9bc34be4f3417fa51b11215406",
+      "split": "validation"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\HELP\\HELP_dc60045f05ca4e6584b48346bb16116a.npz",
+      "destination": "HELP\\words_HELP_dc60045f05ca4e6584b48346bb16116a.npz",
+      "sha256": "45334e7db3d1d830ecf929950805aa458f3ccb4ddb906146ee5b271f93d0f6e0",
+      "split": "validation"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\PLEASE\\PLEASE_5a13600103a34a1cbe9d183fd7bccad3.npz",
+      "destination": "PLEASE\\words_PLEASE_5a13600103a34a1cbe9d183fd7bccad3.npz",
+      "sha256": "f01c61274f2c66b40dc774b65ae12c19e7d11cf1a3116194ede64d1532ec5b07",
+      "split": "validation"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\PLEASE\\PLEASE_b5e7007847934cd59e850292e2dbc3e1.npz",
+      "destination": "PLEASE\\words_PLEASE_b5e7007847934cd59e850292e2dbc3e1.npz",
+      "sha256": "d131b668e27962ccdb30b6dd4ff937f58ba6a3ebba4d5162b848fc9311a66933",
+      "split": "validation"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\THANK_YOU\\THANK_YOU_23baf01899b04854b3b5e8942f53426d.npz",
+      "destination": "THANK_YOU\\words_THANK_YOU_23baf01899b04854b3b5e8942f53426d.npz",
+      "sha256": "c7626ca102581373439311064664ff6ae0d85c6828c2000278fbab3d5b675306",
+      "split": "validation"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\THANK_YOU\\THANK_YOU_ee3bb890ec6d4b7eb4bd0cf6b362a087.npz",
+      "destination": "THANK_YOU\\words_THANK_YOU_ee3bb890ec6d4b7eb4bd0cf6b362a087.npz",
+      "sha256": "1677fa943821617b28a3a13c3f8e3c793f37cba7bf37e6cca7f55feab9131917",
+      "split": "validation"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\HELP\\HELP_901e9446d5e34be89307601d402aa626.npz",
+      "destination": "HELP\\words_HELP_901e9446d5e34be89307601d402aa626.npz",
+      "sha256": "bd6a92d30b51e2d112dd1de2a39dfc2fa5538bd49fd0ecd6b9bcbd5348db7d4d",
+      "split": "test"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\HELP\\HELP_e51dd554f1f1417db6172d45c2b14edd.npz",
+      "destination": "HELP\\words_HELP_e51dd554f1f1417db6172d45c2b14edd.npz",
+      "sha256": "996d40cce88b7ad3f9a58f62c19891c0463737f88f7bfd1e9818835da4786ce8",
+      "split": "test"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\PLEASE\\PLEASE_498f962aa0724db78485d6283bc51a79.npz",
+      "destination": "PLEASE\\words_PLEASE_498f962aa0724db78485d6283bc51a79.npz",
+      "sha256": "129192292791e1c62cf9001651024643384154662b5cae893846dde6fc207d64",
+      "split": "test"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\PLEASE\\PLEASE_76129b4e72e6496098e0b065d64aafa1.npz",
+      "destination": "PLEASE\\words_PLEASE_76129b4e72e6496098e0b065d64aafa1.npz",
+      "sha256": "7b41ff692dc0a4bdfd4cd0d764277a3c291261e1ede1a1114d1413057081cef5",
+      "split": "test"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\THANK_YOU\\THANK_YOU_4c4f3ea85fd646409db48a0a1b05996e.npz",
+      "destination": "THANK_YOU\\words_THANK_YOU_4c4f3ea85fd646409db48a0a1b05996e.npz",
+      "sha256": "0384c3541eb7131f40e44b3090ec05f607556c41aec63ddf5590b2ff6de03d49",
+      "split": "test"
+    },
+    {
+      "source": "ml\\data\\sequences_words\\THANK_YOU\\THANK_YOU_e24e39ec134d400eb934ca11e3b90bcc.npz",
+      "destination": "THANK_YOU\\words_THANK_YOU_e24e39ec134d400eb934ca11e3b90bcc.npz",
+      "sha256": "b0557e38aa320e449a801a838ef23876623449bd8e5626e5e59366c04c438bed",
+      "split": "test"
+    }
+  ],
+  "config": {
+    "batch_size": 16,
+    "learning_rate": 0.0015,
+    "weight_decay": 0.0001,
+    "label_smoothing": 0.05,
+    "epochs": 50,
+    "hidden_size": 128,
+    "num_layers": 2,
+    "dropout": 0.2,
+    "bidirectional": false,
+    "pooling": "mean",
+    "backbone": "tcn_attention",
+    "augment": true,
+    "use_kinematics": true,
+    "cosine_head": true,
+    "validation_fraction": 0.15,
+    "test_fraction": 0.15,
+    "seed": 42,
+    "device": "cpu",
+    "selection_metric": "macro_f1",
+    "class_weighting": "inverse",
+    "group_plan": null,
+    "evaluate_test": false,
+    "strict_splits": true,
+    "early_stopping_patience": 10,
+    "use_motion_deltas": true
+  },
+  "note": "Old and word-candidate partitions preserved. Reused development data; not signer-independent. Test partition not evaluated."
+}
