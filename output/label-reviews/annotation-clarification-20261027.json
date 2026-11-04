@@ -1,0 +1,14 @@
+{
+  "issue": "Earlier instructions treated partial HELLO as a negative category without adequately distinguishing valid short greetings.",
+  "current_rule": "Accept recognizable short or long HELLO salutes and greeting waves. Shortening alone does not establish BACKGROUND. Mark ambiguous motions UNSURE.",
+  "potentially_affected_collections": [
+    "dist/data/vocabulary_v1/negative_pilot/BACKGROUND",
+    "dist/data/vocabulary_v1/training_v2/BACKGROUND",
+    "dist/data/vocabulary_v1/evaluation/BACKGROUND"
+  ],
+  "affected_files": "Unknown: negative subcategories were not stored separately.",
+  "automatic_relabeling": false,
+  "retraining_performed": false,
+  "prior_review_decisions_preserved": true,
+  "status": "Content review required for potentially ambiguous negatives before treating their labels and scores as reliable."
+}

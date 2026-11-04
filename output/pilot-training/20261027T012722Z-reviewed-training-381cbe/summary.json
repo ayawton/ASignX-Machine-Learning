@@ -1,0 +1,594 @@
+{
+  "checkpoint": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261027T012722Z-reviewed-training-381cbe\\sequence_reviewed_training.pth",
+  "counts": {
+    "BACKGROUND": 27,
+    "HELLO": 30,
+    "J": 9,
+    "Z": 10
+  },
+  "best_epoch": 10,
+  "epochs_completed": 20,
+  "internal_validation": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "per_class": {
+      "BACKGROUND": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4
+      },
+      "HELLO": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4
+      },
+      "J": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "Z": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2
+      }
+    },
+    "labels": [
+      "BACKGROUND",
+      "HELLO",
+      "J",
+      "Z"
+    ],
+    "confusion_matrix": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        4,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "loss": 0.018932324918833645
+  },
+  "internal_acceptance": [
+    {
+      "label": "HELLO",
+      "raw": "HELLO",
+      "accepted": "HELLO",
+      "confidence": 0.9764944911003113
+    },
+    {
+      "label": "J",
+      "raw": "J",
+      "accepted": "J",
+      "confidence": 0.9967079162597656
+    },
+    {
+      "label": "Z",
+      "raw": "Z",
+      "accepted": "Z",
+      "confidence": 0.9991759657859802
+    },
+    {
+      "label": "Z",
+      "raw": "Z",
+      "accepted": "Z",
+      "confidence": 0.9995908141136169
+    },
+    {
+      "label": "BACKGROUND",
+      "raw": "BACKGROUND",
+      "accepted": null,
+      "confidence": 0.95456862449646
+    },
+    {
+      "label": "BACKGROUND",
+      "raw": "BACKGROUND",
+      "accepted": null,
+      "confidence": 0.9851691722869873
+    },
+    {
+      "label": "BACKGROUND",
+      "raw": "BACKGROUND",
+      "accepted": null,
+      "confidence": 0.9872845411300659
+    },
+    {
+      "label": "BACKGROUND",
+      "raw": "BACKGROUND",
+      "accepted": null,
+      "confidence": 0.9856711030006409
+    },
+    {
+      "label": "HELLO",
+      "raw": "HELLO",
+      "accepted": "HELLO",
+      "confidence": 0.9597344398498535
+    },
+    {
+      "label": "HELLO",
+      "raw": "HELLO",
+      "accepted": "HELLO",
+      "confidence": 0.9825358390808105
+    },
+    {
+      "label": "HELLO",
+      "raw": "HELLO",
+      "accepted": "HELLO",
+      "confidence": 0.9679701924324036
+    }
+  ],
+  "same_development_evaluation": {
+    "current_training_v2": {
+      "HELLO": {
+        "takes": 9,
+        "accepted_outputs": {
+          "HELLO": 8
+        },
+        "rejected": 1,
+        "correct_under_recorded_review": 8
+      },
+      "BACKGROUND": {
+        "takes": 11,
+        "accepted_outputs": {
+          "HELLO": 1
+        },
+        "rejected": 10,
+        "correct_under_recorded_review": 10
+      }
+    },
+    "reviewed_training": {
+      "HELLO": {
+        "takes": 9,
+        "accepted_outputs": {
+          "HELLO": 8,
+          "Z": 1
+        },
+        "rejected": 0,
+        "correct_under_recorded_review": 8
+      },
+      "BACKGROUND": {
+        "takes": 11,
+        "accepted_outputs": {
+          "HELLO": 1
+        },
+        "rejected": 10,
+        "correct_under_recorded_review": 10
+      }
+    }
+  },
+  "predictions": [
+    {
+      "model": "current_training_v2",
+      "file": "BACKGROUND_02a8257020a24b2baaf68c7463f3083a.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9587276577949524,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "BACKGROUND_2ab0244e4f9c47c8aff3d3251b9f98bf.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9924554824829102,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "BACKGROUND_346a49c52a9e43f09f8162defc2468f8.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9827102422714233,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "BACKGROUND_3985013baa1548e38a54d54ea506b5c5.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9949028491973877,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "BACKGROUND_3d311718565c4162a53fb15040bd6443.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9953906536102295,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "BACKGROUND_474dff82b1b040e8ae0f4bee0259a49f.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9779548048973083,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "BACKGROUND_4ef370f689234b71aa35f2f37496588f.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9731271266937256,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "BACKGROUND_575eca42eab5482bbd8b99bc64b59939.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "Z",
+      "confidence": 0.7124360799789429,
+      "accepted_label": null,
+      "correct_under_recorded_review": false
+    },
+    {
+      "model": "current_training_v2",
+      "file": "BACKGROUND_81811ab95e2845e5a6d940ee3fe1a427.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9928901195526123,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "BACKGROUND_82457510bc1a485e8b0ca4247f7ee6a0.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9730614423751831,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "BACKGROUND_85d938d4b1cf49c3a4205fca8eb7b521.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9949336647987366,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "BACKGROUND_9d755bf98bac4924b28d997cef0fbef0.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9910485744476318,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "BACKGROUND_acc0f1560b254e0babf0af5293898217.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9950605034828186,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "BACKGROUND_bdaf7dc01e844a0693e6b579edaba183.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9596938490867615,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": false
+    },
+    {
+      "model": "current_training_v2",
+      "file": "BACKGROUND_e725953ca0b34193b14c4dc76a0c07d7.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9946796298027039,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "HELLO_1876963861834decbff911f5f73af3f8.npz",
+      "original_label": "HELLO",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9750598073005676,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "HELLO_3622f2f8b841444780e0fd5e5defbb20.npz",
+      "original_label": "HELLO",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9621669054031372,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "HELLO_3a76284ce6924637956f6533f42a25b2.npz",
+      "original_label": "HELLO",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.8584415912628174,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "HELLO_629b42fc331347839fdf9ebc0820c389.npz",
+      "original_label": "HELLO",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9673595428466797,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "current_training_v2",
+      "file": "HELLO_dbe990a1d9c14320bce2abc5f8d0d5df.npz",
+      "original_label": "HELLO",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9634899497032166,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "BACKGROUND_02a8257020a24b2baaf68c7463f3083a.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9028391242027283,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "BACKGROUND_2ab0244e4f9c47c8aff3d3251b9f98bf.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9765204191207886,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "BACKGROUND_346a49c52a9e43f09f8162defc2468f8.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9471031427383423,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "BACKGROUND_3985013baa1548e38a54d54ea506b5c5.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9819729328155518,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "BACKGROUND_3d311718565c4162a53fb15040bd6443.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9863560199737549,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "BACKGROUND_474dff82b1b040e8ae0f4bee0259a49f.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9719233512878418,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "BACKGROUND_4ef370f689234b71aa35f2f37496588f.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.948841392993927,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "BACKGROUND_575eca42eab5482bbd8b99bc64b59939.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "Z",
+      "confidence": 0.9008973240852356,
+      "accepted_label": "Z",
+      "correct_under_recorded_review": false
+    },
+    {
+      "model": "reviewed_training",
+      "file": "BACKGROUND_81811ab95e2845e5a6d940ee3fe1a427.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9632511138916016,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "BACKGROUND_82457510bc1a485e8b0ca4247f7ee6a0.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9507579803466797,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "BACKGROUND_85d938d4b1cf49c3a4205fca8eb7b521.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9846142530441284,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "BACKGROUND_9d755bf98bac4924b28d997cef0fbef0.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9697285890579224,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "BACKGROUND_acc0f1560b254e0babf0af5293898217.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9831373691558838,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "BACKGROUND_bdaf7dc01e844a0693e6b579edaba183.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.8979501128196716,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": false
+    },
+    {
+      "model": "reviewed_training",
+      "file": "BACKGROUND_e725953ca0b34193b14c4dc76a0c07d7.npz",
+      "original_label": "BACKGROUND",
+      "reviewed_label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9813635349273682,
+      "accepted_label": null,
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "HELLO_1876963861834decbff911f5f73af3f8.npz",
+      "original_label": "HELLO",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9793927669525146,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "HELLO_3622f2f8b841444780e0fd5e5defbb20.npz",
+      "original_label": "HELLO",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9563112258911133,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "HELLO_3a76284ce6924637956f6533f42a25b2.npz",
+      "original_label": "HELLO",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.8870187997817993,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "HELLO_629b42fc331347839fdf9ebc0820c389.npz",
+      "original_label": "HELLO",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9694223999977112,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": true
+    },
+    {
+      "model": "reviewed_training",
+      "file": "HELLO_dbe990a1d9c14320bce2abc5f8d0d5df.npz",
+      "original_label": "HELLO",
+      "reviewed_label": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.953052282333374,
+      "accepted_label": "HELLO",
+      "correct_under_recorded_review": true
+    }
+  ],
+  "test": null,
+  "sources_reviews_and_current_checkpoint_unchanged": true,
+  "limitations": [
+    "Only one uncertain training take excluded; no other review labels changed",
+    "Previously reviewed evaluation judgments remain as recorded and may need reconsideration under the clarified short-HELLO rule",
+    "One reported signer and development-known examples, not a final independent test",
+    "Prepared-file comparison, no fresh live trial or threshold tuning"
+  ]
+}

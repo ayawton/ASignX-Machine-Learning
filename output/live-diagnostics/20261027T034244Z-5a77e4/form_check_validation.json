@@ -1,0 +1,260 @@
+{
+  "policy": "j_z_salute_form_v1",
+  "training_only_form_audit": [
+    {
+      "file": "HELLO_0d04ab71c06342db9602d55a2a58987e.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_12e77ca90919498f8146c3cf24b349a4.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_1b522ffbe63f4bc18b48973703a739c7.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_31ca96e066b1498096bbfd7fa2f431d7.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_3433c651d44a49d1a9fe62efd1a2a7b9.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_470ec1f142d24efb82576eff4e682308.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_521dd8dcfef247d2bd07877297b300ce.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_528095beb5474b1d91c389a9796a32b3.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_5a76ecb584fd42e98c9ebbb0727c1a4e.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_701ed271929340c49110ca41515d9139.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_9050b63e132e4f8a9e8219272aed3b9f.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_aa7b58123b6d4f60a9f2c36e2876d64f.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_b3e403d94c97424590bc26b51ea4af8c.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_ced746e06ab0467a9f435e6c00826347.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_d15e848a368b4ac8a5c2741f60200c54.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_d3f3b90ed3934e848c3ab5f82e2bb653.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_db09d735bab548fe9fc72747df733639.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_e594b55494af42c582e960c1b29aad9c.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_e739eed55d7f4ad2bbffd19068e90b48.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_eec4b8a6169a473abda2d161e574d4d2.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_ef64aba2d2174a2989495e5b9fcd090b.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "HELLO_f54f639071de4dffaab7fef7490637dc.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "LIVE_take_003210.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "LIVE_take_003328.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "LIVE_take_003443.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "LIVE_take_003559.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "LIVE_take_003667.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "LIVE_take_003754.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "LIVE_take_003838.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "LIVE_take_003935.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "LIVE_take_004040.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "LIVE_take_004131.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "LIVE_take_004222.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "LIVE_take_004308.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "LIVE_take_004483.npz",
+      "label": "HELLO",
+      "rejection": null
+    },
+    {
+      "file": "J_0854170a8fe6436fb23fa103ecc2033a.npz",
+      "label": "J",
+      "rejection": null
+    },
+    {
+      "file": "J_0bfbaa9e535c450a8d2c28cfe159605b.npz",
+      "label": "J",
+      "rejection": null
+    },
+    {
+      "file": "J_1f83e03bf5bc43edb1a1647f848f88b6.npz",
+      "label": "J",
+      "rejection": null
+    },
+    {
+      "file": "J_581f6da521b849afbf1143691e7632ba.npz",
+      "label": "J",
+      "rejection": null
+    },
+    {
+      "file": "J_66fceb7f0077489e85935e810b582312.npz",
+      "label": "J",
+      "rejection": null
+    },
+    {
+      "file": "J_70be26dd59d74914b2df2d2c94bbd4ee.npz",
+      "label": "J",
+      "rejection": null
+    },
+    {
+      "file": "J_d4fe68be2b3a48c184da22fad72bcc5f.npz",
+      "label": "J",
+      "rejection": null
+    },
+    {
+      "file": "Z_06c0ae65fc454f499ac58f9fd4840a3e.npz",
+      "label": "Z",
+      "rejection": null
+    },
+    {
+      "file": "Z_701586dbb02f4af49d3783ac365ca48e.npz",
+      "label": "Z",
+      "rejection": null
+    },
+    {
+      "file": "Z_80c12e592ea649fe859d7c2a635a2087.npz",
+      "label": "Z",
+      "rejection": null
+    },
+    {
+      "file": "Z_c8d51f5c4566473caebaeb04fd0cafa2.npz",
+      "label": "Z",
+      "rejection": null
+    },
+    {
+      "file": "Z_f0f9823bc7fc4b858150bd1ad70d6c90.npz",
+      "label": "Z",
+      "rejection": null
+    },
+    {
+      "file": "Z_f4f7d10d9d0e476e9485cecc185178d7.npz",
+      "label": "Z",
+      "rejection": null
+    }
+  ],
+  "five_salute_form_passes": [
+    "gesture_inputs/take_000170.npz",
+    "gesture_inputs/take_000217.npz",
+    "gesture_inputs/take_000253.npz",
+    "gesture_inputs/take_000290.npz",
+    "gesture_inputs/take_000332.npz"
+  ],
+  "comparison": "output\\live-diagnostics\\20261027T034244Z-5a77e4\\form_check_comparison.json",
+  "tests": "71 passed",
+  "limitations": [
+    "No intended labels were marked in the latest combined run.",
+    "Feature-only comparison cannot reproduce the new moving-hand restriction exactly.",
+    "No classification or form-based accuracy metric is established.",
+    "Full J/Z paths, physical forehead contact, and new live performance remain unverified."
+  ]
+}

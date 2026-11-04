@@ -1,0 +1,443 @@
+{
+  "input_counts": {
+    "BACKGROUND": 28,
+    "HELLO": 30,
+    "J": 9,
+    "Z": 10
+  },
+  "new_tracking_audit": [
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_05d16feaa2e548a38c0c77f6adaa5b83.npz",
+      "session_id": "05d16feaa2e548a38c0c77f6adaa5b83",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "7e6b8dda25f9b62882b64976787def6ce9f5a8b9c7d82eed31b1fa0e7548f8ea"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_0b1c4a266c5c4286bd2e05b4cedd133c.npz",
+      "session_id": "0b1c4a266c5c4286bd2e05b4cedd133c",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "47b4689e3a2c97bb63f0912dbdf17a858f688d87e8a5ffd52f5b9b1618058e45"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_28137e33fff944ca9f1dcd70e51de195.npz",
+      "session_id": "28137e33fff944ca9f1dcd70e51de195",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "90402785021602599f66bea4c1fc04d445048d8547932925bb9775f77145b808"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_542d0daf62ea4638b9cfba62913b6eeb.npz",
+      "session_id": "542d0daf62ea4638b9cfba62913b6eeb",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "d3261eae9c0fee8e04450ede3a645a792d8c8ffe9beae5a696d64dcfc8216b86"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_5a6c7cf689764104aab0218030ec1189.npz",
+      "session_id": "5a6c7cf689764104aab0218030ec1189",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "19a23a215102f2c6e671c348e7ea6d8ef2cea6c41f922fa907d145d6a09642b9"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_6e6b1e9510f84ca6aa104e3b0e7c7147.npz",
+      "session_id": "6e6b1e9510f84ca6aa104e3b0e7c7147",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "87a0b3eda759e0b8dcaaa0b664390e6bf9c9701a32d42b0208882c793f49e3df"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_6f4adc327bd64a8eaa0c39d670b3e6fa.npz",
+      "session_id": "6f4adc327bd64a8eaa0c39d670b3e6fa",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "4d7e1d30e23ef6c9baf2822e8e30b97dfd23c6eee72e2074d5351f4e74878844"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_76b272f51b654423ba74a0e076c8b3ef.npz",
+      "session_id": "76b272f51b654423ba74a0e076c8b3ef",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "c7b7236b8846f8e8287c6ee7d46ec278551f9640f190ac256d16d87556c6e55f"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_9bfd18caae6d4a4eb7bc193d970fcb46.npz",
+      "session_id": "9bfd18caae6d4a4eb7bc193d970fcb46",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "18c9485d83e9444bbc76fd575656853307e2108b64d1d0882f5e09d5e0f3d479"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_9c81b96274884bea8bc52c25e027cc38.npz",
+      "session_id": "9c81b96274884bea8bc52c25e027cc38",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "5962147031a9c29b80c0ad467a9c61f4149565ac61db823ed87083852c225e63"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_a2e81286e2814a9da8164994d61b66ef.npz",
+      "session_id": "a2e81286e2814a9da8164994d61b66ef",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "0f2b084baf3680e91912fa2db03579885999da71a5bc4713571bf4fa66c1124b"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_a6742a634aff4078803dd0e4c695d59d.npz",
+      "session_id": "a6742a634aff4078803dd0e4c695d59d",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "f71d6466a6c9a8e212e97a4a6971b9bd093a345b5c874c590aa9a68be451f3f1"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_b3fba589f0cd4f85bbc8881f60798b04.npz",
+      "session_id": "b3fba589f0cd4f85bbc8881f60798b04",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "3b597ba07319f7a81ea241587f1dde4da13ce675804ea739bddf450142237404"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_b8ae10282c254de7bfb651ba214305a2.npz",
+      "session_id": "b8ae10282c254de7bfb651ba214305a2",
+      "label": "BACKGROUND",
+      "status": "Body/hand tracking gap is too long",
+      "sha256": "ab0d0a8fe7ec7e00c949aae650b4a20a4a9b7455734cd310573431dfc904dd8d"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_c6fcd6efc5d64eb2a6adec02069520cf.npz",
+      "session_id": "c6fcd6efc5d64eb2a6adec02069520cf",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "3651414224f58b5cb75337a1dc904a9b47bf7c785570898e722d4b72c1fb98e3"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_d07021a55eeb4b2893fc7ad1d41efae0.npz",
+      "session_id": "d07021a55eeb4b2893fc7ad1d41efae0",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "7edaf6d2ff675d850930719cf7462af7aa3f3d5436979f0aa0bb9253fae0f8d7"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_d9a101fc009e4f2aa92513adcbbdda41.npz",
+      "session_id": "d9a101fc009e4f2aa92513adcbbdda41",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "e1997b10ced91537703c2ef040c8830c9f087cdaa7feaa6636a284a24abd03dc"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_e1b9e31b2ac84a8e97fb4676cbd2a30a.npz",
+      "session_id": "e1b9e31b2ac84a8e97fb4676cbd2a30a",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "30b02ee4a53520ec7153ca292063d7c7909041af29040ce147b07ac4a1d5545b"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_e39a73b96253431ea2922c3b405e60cb.npz",
+      "session_id": "e39a73b96253431ea2922c3b405e60cb",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "3e3bf5b8516d5808acc4b0b856b48c68c1031c96a866f294419590b0a5d712c9"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_f876b36be8c04af78cf93480b567d431.npz",
+      "session_id": "f876b36be8c04af78cf93480b567d431",
+      "label": "BACKGROUND",
+      "status": "accepted",
+      "sha256": "556b16db3170069ef77b6027d139562a5cef6b0ca97ad2012d8a19ddb9e943fb"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_12e77ca90919498f8146c3cf24b349a4.npz",
+      "session_id": "12e77ca90919498f8146c3cf24b349a4",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "fb6ad05eacd70fdf9ea7f7f6381ff41dd21eb9a18236a88ae95a2c4434a96d12"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_14fbd2d9990c4aae9b5b085dbbbc9588.npz",
+      "session_id": "14fbd2d9990c4aae9b5b085dbbbc9588",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "0ea493368b5415a7056293440c7411da619df6ad323b4edfa20efa4389e957e1"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_1b522ffbe63f4bc18b48973703a739c7.npz",
+      "session_id": "1b522ffbe63f4bc18b48973703a739c7",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "45a0b2b85d6f8cef709d38d36c9e2ea6863368b309ab89d023ebe4185c75ef62"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_31ca96e066b1498096bbfd7fa2f431d7.npz",
+      "session_id": "31ca96e066b1498096bbfd7fa2f431d7",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "2c9f9304c91846987a07ebb7774c1ec84ecc492d6e8cd8146881229c9d07b971"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_33dbda0e9f1e472db15e8e5e06516c02.npz",
+      "session_id": "33dbda0e9f1e472db15e8e5e06516c02",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "1ec0218cf866afc4757b4ad3ce95547b050f165d01ad9cab66eb9dd532cdc12a"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_3433c651d44a49d1a9fe62efd1a2a7b9.npz",
+      "session_id": "3433c651d44a49d1a9fe62efd1a2a7b9",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "21050d2a13f1064ab9a5cb95d470b186a3fe8f13bb146fe456e50dce8ac94c68"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_4cc5155189ee435898b59991e282bf10.npz",
+      "session_id": "4cc5155189ee435898b59991e282bf10",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "b7e951ea3392050fe1848ce9ff2b1be63a85fd5fe025c33831c0f84718e43dc1"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_521dd8dcfef247d2bd07877297b300ce.npz",
+      "session_id": "521dd8dcfef247d2bd07877297b300ce",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "9c68736c0015f35c19a03633f5ccff0f60eb23e2c61a70814f11d59b013aa70d"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_528095beb5474b1d91c389a9796a32b3.npz",
+      "session_id": "528095beb5474b1d91c389a9796a32b3",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "ef35fec6ff9142fea0c9deb9256a9cc023f619abefe2c36e0dcc455e859f1236"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_60d34b48dcf34bf3bc9e2944b104913a.npz",
+      "session_id": "60d34b48dcf34bf3bc9e2944b104913a",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "2866cccfaf55c2c4958c75d4c8e025fe0d40214138f41419fbf686935a2aa5e8"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_701ed271929340c49110ca41515d9139.npz",
+      "session_id": "701ed271929340c49110ca41515d9139",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "417cdb7afc9b140475b263378b603cec7cd3b2da35c577d682fed049567408c6"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_9050b63e132e4f8a9e8219272aed3b9f.npz",
+      "session_id": "9050b63e132e4f8a9e8219272aed3b9f",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "fa591c3519fdff82db415ed59aa5cf80879c3edec46e8f4d7203a90979778c4d"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_aa7b58123b6d4f60a9f2c36e2876d64f.npz",
+      "session_id": "aa7b58123b6d4f60a9f2c36e2876d64f",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "7ecd182be86f1ab54077b3c2a0a0e54609b6692e14bd3bc28f45bd755d1f46ca"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_b3e403d94c97424590bc26b51ea4af8c.npz",
+      "session_id": "b3e403d94c97424590bc26b51ea4af8c",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "eb2893662cd41efc73ef508c7220bb8628a584f373a43243d7a70f128f5d96b2"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_ced746e06ab0467a9f435e6c00826347.npz",
+      "session_id": "ced746e06ab0467a9f435e6c00826347",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "bc99335e05760b35cacf6ba1ef4b4188cdccba9e49281d090d272c4510563177"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_d15e848a368b4ac8a5c2741f60200c54.npz",
+      "session_id": "d15e848a368b4ac8a5c2741f60200c54",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "c83fdf47982dc154958e4a640ca7bdd90ae3cb5e50abc4210d4976e305f96470"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_d3f3b90ed3934e848c3ab5f82e2bb653.npz",
+      "session_id": "d3f3b90ed3934e848c3ab5f82e2bb653",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "e004e7a1c3a30486b04bc029996ab7bb81b001475fd86fe1d15f913375869391"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_db09d735bab548fe9fc72747df733639.npz",
+      "session_id": "db09d735bab548fe9fc72747df733639",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "f5755e9ae6538e5c1d87a824d5a4b649041564a97cf74ff7ac045c4aa318842c"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_dd61994876894540b4c20f89508b141e.npz",
+      "session_id": "dd61994876894540b4c20f89508b141e",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "b91cf0eb56a1c1b65aac669d133ce80c86caf0da4b3eb9982e372e0dd31fde15"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_e594b55494af42c582e960c1b29aad9c.npz",
+      "session_id": "e594b55494af42c582e960c1b29aad9c",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "8cb2bb6b6e98fd5663166d89a7c0fae90a30bbc8cd94bf1b092e0997e6e16545"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_e739eed55d7f4ad2bbffd19068e90b48.npz",
+      "session_id": "e739eed55d7f4ad2bbffd19068e90b48",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "34e094ab1fb6e1540c707053aebe4149f15c86287ab4e1281e0e3075a18b47b8"
+    },
+    {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_ecd66f7a820b4243aa18f2421d48b740.npz",
+      "session_id": "ecd66f7a820b4243aa18f2421d48b740",
+      "label": "HELLO",
+      "status": "accepted",
+      "sha256": "3b8ff01948f9c0c822aff7c52e1e020678296a6e09175e80dc0236b02121f965"
+    }
+  ],
+  "protected_input_sha256": {
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_05d16feaa2e548a38c0c77f6adaa5b83.npz": "7e6b8dda25f9b62882b64976787def6ce9f5a8b9c7d82eed31b1fa0e7548f8ea",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_0b1c4a266c5c4286bd2e05b4cedd133c.npz": "47b4689e3a2c97bb63f0912dbdf17a858f688d87e8a5ffd52f5b9b1618058e45",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_28137e33fff944ca9f1dcd70e51de195.npz": "90402785021602599f66bea4c1fc04d445048d8547932925bb9775f77145b808",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_542d0daf62ea4638b9cfba62913b6eeb.npz": "d3261eae9c0fee8e04450ede3a645a792d8c8ffe9beae5a696d64dcfc8216b86",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_5a6c7cf689764104aab0218030ec1189.npz": "19a23a215102f2c6e671c348e7ea6d8ef2cea6c41f922fa907d145d6a09642b9",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_6e6b1e9510f84ca6aa104e3b0e7c7147.npz": "87a0b3eda759e0b8dcaaa0b664390e6bf9c9701a32d42b0208882c793f49e3df",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_6f4adc327bd64a8eaa0c39d670b3e6fa.npz": "4d7e1d30e23ef6c9baf2822e8e30b97dfd23c6eee72e2074d5351f4e74878844",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_76b272f51b654423ba74a0e076c8b3ef.npz": "c7b7236b8846f8e8287c6ee7d46ec278551f9640f190ac256d16d87556c6e55f",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_9bfd18caae6d4a4eb7bc193d970fcb46.npz": "18c9485d83e9444bbc76fd575656853307e2108b64d1d0882f5e09d5e0f3d479",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_9c81b96274884bea8bc52c25e027cc38.npz": "5962147031a9c29b80c0ad467a9c61f4149565ac61db823ed87083852c225e63",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_a2e81286e2814a9da8164994d61b66ef.npz": "0f2b084baf3680e91912fa2db03579885999da71a5bc4713571bf4fa66c1124b",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_a6742a634aff4078803dd0e4c695d59d.npz": "f71d6466a6c9a8e212e97a4a6971b9bd093a345b5c874c590aa9a68be451f3f1",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_b3fba589f0cd4f85bbc8881f60798b04.npz": "3b597ba07319f7a81ea241587f1dde4da13ce675804ea739bddf450142237404",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_b8ae10282c254de7bfb651ba214305a2.npz": "ab0d0a8fe7ec7e00c949aae650b4a20a4a9b7455734cd310573431dfc904dd8d",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_c6fcd6efc5d64eb2a6adec02069520cf.npz": "3651414224f58b5cb75337a1dc904a9b47bf7c785570898e722d4b72c1fb98e3",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_d07021a55eeb4b2893fc7ad1d41efae0.npz": "7edaf6d2ff675d850930719cf7462af7aa3f3d5436979f0aa0bb9253fae0f8d7",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_d9a101fc009e4f2aa92513adcbbdda41.npz": "e1997b10ced91537703c2ef040c8830c9f087cdaa7feaa6636a284a24abd03dc",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_e1b9e31b2ac84a8e97fb4676cbd2a30a.npz": "30b02ee4a53520ec7153ca292063d7c7909041af29040ce147b07ac4a1d5545b",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_e39a73b96253431ea2922c3b405e60cb.npz": "3e3bf5b8516d5808acc4b0b856b48c68c1031c96a866f294419590b0a5d712c9",
+    "dist\\data\\vocabulary_v1\\training_v2\\BACKGROUND\\BACKGROUND_f876b36be8c04af78cf93480b567d431.npz": "556b16db3170069ef77b6027d139562a5cef6b0ca97ad2012d8a19ddb9e943fb",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_12e77ca90919498f8146c3cf24b349a4.npz": "fb6ad05eacd70fdf9ea7f7f6381ff41dd21eb9a18236a88ae95a2c4434a96d12",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_14fbd2d9990c4aae9b5b085dbbbc9588.npz": "0ea493368b5415a7056293440c7411da619df6ad323b4edfa20efa4389e957e1",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_1b522ffbe63f4bc18b48973703a739c7.npz": "45a0b2b85d6f8cef709d38d36c9e2ea6863368b309ab89d023ebe4185c75ef62",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_31ca96e066b1498096bbfd7fa2f431d7.npz": "2c9f9304c91846987a07ebb7774c1ec84ecc492d6e8cd8146881229c9d07b971",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_33dbda0e9f1e472db15e8e5e06516c02.npz": "1ec0218cf866afc4757b4ad3ce95547b050f165d01ad9cab66eb9dd532cdc12a",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_3433c651d44a49d1a9fe62efd1a2a7b9.npz": "21050d2a13f1064ab9a5cb95d470b186a3fe8f13bb146fe456e50dce8ac94c68",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_4cc5155189ee435898b59991e282bf10.npz": "b7e951ea3392050fe1848ce9ff2b1be63a85fd5fe025c33831c0f84718e43dc1",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_521dd8dcfef247d2bd07877297b300ce.npz": "9c68736c0015f35c19a03633f5ccff0f60eb23e2c61a70814f11d59b013aa70d",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_528095beb5474b1d91c389a9796a32b3.npz": "ef35fec6ff9142fea0c9deb9256a9cc023f619abefe2c36e0dcc455e859f1236",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_60d34b48dcf34bf3bc9e2944b104913a.npz": "2866cccfaf55c2c4958c75d4c8e025fe0d40214138f41419fbf686935a2aa5e8",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_701ed271929340c49110ca41515d9139.npz": "417cdb7afc9b140475b263378b603cec7cd3b2da35c577d682fed049567408c6",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_9050b63e132e4f8a9e8219272aed3b9f.npz": "fa591c3519fdff82db415ed59aa5cf80879c3edec46e8f4d7203a90979778c4d",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_aa7b58123b6d4f60a9f2c36e2876d64f.npz": "7ecd182be86f1ab54077b3c2a0a0e54609b6692e14bd3bc28f45bd755d1f46ca",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_b3e403d94c97424590bc26b51ea4af8c.npz": "eb2893662cd41efc73ef508c7220bb8628a584f373a43243d7a70f128f5d96b2",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_ced746e06ab0467a9f435e6c00826347.npz": "bc99335e05760b35cacf6ba1ef4b4188cdccba9e49281d090d272c4510563177",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_d15e848a368b4ac8a5c2741f60200c54.npz": "c83fdf47982dc154958e4a640ca7bdd90ae3cb5e50abc4210d4976e305f96470",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_d3f3b90ed3934e848c3ab5f82e2bb653.npz": "e004e7a1c3a30486b04bc029996ab7bb81b001475fd86fe1d15f913375869391",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_db09d735bab548fe9fc72747df733639.npz": "f5755e9ae6538e5c1d87a824d5a4b649041564a97cf74ff7ac045c4aa318842c",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_dd61994876894540b4c20f89508b141e.npz": "b91cf0eb56a1c1b65aac669d133ce80c86caf0da4b3eb9982e372e0dd31fde15",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_e594b55494af42c582e960c1b29aad9c.npz": "8cb2bb6b6e98fd5663166d89a7c0fae90a30bbc8cd94bf1b092e0997e6e16545",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_e739eed55d7f4ad2bbffd19068e90b48.npz": "34e094ab1fb6e1540c707053aebe4149f15c86287ab4e1281e0e3075a18b47b8",
+    "dist\\data\\vocabulary_v1\\training_v2\\HELLO\\HELLO_ecd66f7a820b4243aa18f2421d48b740.npz": "3b8ff01948f9c0c822aff7c52e1e020678296a6e09175e80dc0236b02121f965",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_02a8257020a24b2baaf68c7463f3083a.npz": "559e81fcec194f1f8bbe1692d9071e839a4ac01381a4034c5b694bf3f38c9035",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_2ab0244e4f9c47c8aff3d3251b9f98bf.npz": "97613dd7b68a6f384599c455af4bae3c26dd7af2c516b437c9b5e7b28096395e",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_346a49c52a9e43f09f8162defc2468f8.npz": "1288980bc46662ecc6edc97da8836bf7ef7e6de1c088d4c40b0a15379c3a1c7c",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_3985013baa1548e38a54d54ea506b5c5.npz": "f17c154271b7baefa54aa6f41f7b123acbc311fbfa85a2aa64f5824c8c48aed6",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_3d311718565c4162a53fb15040bd6443.npz": "53ef961903adad9070c5f253076c52d6ed116a2db44d1bb6b46cbd3d565d926a",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_474dff82b1b040e8ae0f4bee0259a49f.npz": "6c6bf68c9d7bde80f232be6386b41ecfd8d23f2c2d404bb4644f85f93acd0aa2",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_4ef370f689234b71aa35f2f37496588f.npz": "95610db0c7a8996d2aabf3d54f42aedf72ba810eff92e5e4982de290012af40f",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_575eca42eab5482bbd8b99bc64b59939.npz": "9ba3d2b1eaba369d7384e853c6e2465eaab28ee8644dfe9e47d63169bc06b564",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_81811ab95e2845e5a6d940ee3fe1a427.npz": "bb38695662fcc7bfedf127ed395a8a7616f419e036c9b3955c333873b151e8bb",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_82457510bc1a485e8b0ca4247f7ee6a0.npz": "f9fbba7cf4660fe55475b441e78939c37c1bb698cc3e060e1624241c381d89ab",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_85d938d4b1cf49c3a4205fca8eb7b521.npz": "60ba438632734eb039a0dfc8e623f9439c14cf0967511996b44ecd17b46da8f8",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_9d755bf98bac4924b28d997cef0fbef0.npz": "177ed932806013b085670b8b6e75772799e0bdc9d8706350012e9922c999bc32",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_acc0f1560b254e0babf0af5293898217.npz": "3f9f35dcd5f5e6cfbc925822742836e580c514efa943924265f78b32b33846f7",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_bdaf7dc01e844a0693e6b579edaba183.npz": "19493b6684ec0916d1f7f16394617908fe5ddf254ae2e2bfd1e32eefacac69ac",
+    "dist\\data\\vocabulary_v1\\evaluation\\BACKGROUND\\BACKGROUND_e725953ca0b34193b14c4dc76a0c07d7.npz": "27afb2de9735d47a1cd684c717d821e2042fb0257d57e8f97be267fdae82ce25",
+    "dist\\data\\vocabulary_v1\\evaluation\\HELLO\\HELLO_1876963861834decbff911f5f73af3f8.npz": "ec0bdeb797358e0b0e836792871ebb9c022018d88a1bfdd3acbd0a700c129bc6",
+    "dist\\data\\vocabulary_v1\\evaluation\\HELLO\\HELLO_3622f2f8b841444780e0fd5e5defbb20.npz": "1b3acd4834b3167c1b6a09cd112dedf3e22813d511b338f2c8a35678c9b9fcb1",
+    "dist\\data\\vocabulary_v1\\evaluation\\HELLO\\HELLO_3a76284ce6924637956f6533f42a25b2.npz": "262896f401fc859d4889daf990362b099939fc49786f87af01a25ff65dfa3509",
+    "dist\\data\\vocabulary_v1\\evaluation\\HELLO\\HELLO_629b42fc331347839fdf9ebc0820c389.npz": "be75569f2f41c967d3566afcd48b0f3d89df73bfdbff08deb86ed6127b49137a",
+    "dist\\data\\vocabulary_v1\\evaluation\\HELLO\\HELLO_dbe990a1d9c14320bce2abc5f8d0d5df.npz": "aec72c5024ec46492908d482388db6178ceb17ee2851c93fc127cb8dc989853d",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\BACKGROUND\\BACKGROUND_00481cd743c84745b3a0a2aafe0fe363.npz": "6dbf9dce358cc9006ed451052b941258a68b9f938bef7fb7b143e7402897e83b",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\BACKGROUND\\BACKGROUND_01ead69f2ff34a84afa134188940c244.npz": "c199db928738253e8df7ab0ad6296ecc17485e94efd5dae7b4eb916f57fe9c65",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\BACKGROUND\\BACKGROUND_25f1ec813f5a404e81466c57f4979fdd.npz": "8c7c1fe9f09e028616ba7fc7846f10d44d89c0276bae7056496cce32709497f6",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\BACKGROUND\\BACKGROUND_3d8fadbb670d4d5e81dce156de42404e.npz": "449dcadacdf9f6928b6423610f4cad002c2c3b741b369df53118c8058f57f3fc",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\BACKGROUND\\BACKGROUND_3fa39dab8bcd40568b375b0563b576bb.npz": "ccc723da5cb0ecb787c5468e33c5937e87eeb24e6aa3be06fc5b524c76f8479b",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\BACKGROUND\\BACKGROUND_475ce8e9b7554d81b907aebeef2c167c.npz": "f037a8ffef3417441cfb33db12fc104a184a57c48b46268b24d93cb287860c25",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\BACKGROUND\\BACKGROUND_869e0675da4341b8b1d9bc598c7a0778.npz": "422441adaa76181126f8df0fc57be02746f603ab8fd96804ec23821c8f39d11b",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\BACKGROUND\\BACKGROUND_b790d667e2da4391887e4bc1d4b2a63c.npz": "9f1748cd41f376ae33b422e921d0cb6da9f6672f8e55d510c7aa5b3aae2bfcea",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\BACKGROUND\\BACKGROUND_d55619de923849c39918264b6437d0d4.npz": "eccb1498844255f113dcf814101c2e196e06cbd8e6acded89725aa2b86431dde",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\HELLO\\HELLO_0d04ab71c06342db9602d55a2a58987e.npz": "2ba5fbf9bff6ab5f5261d4e6e1d2fb9b6ac5393b1eaf0a96164d063cbcc9eb61",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\HELLO\\HELLO_470ec1f142d24efb82576eff4e682308.npz": "df28a5a3c21920c4b0641ce2f88317ff7bc346581759a402a3d0bb7a955ce92f",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\HELLO\\HELLO_5a76ecb584fd42e98c9ebbb0727c1a4e.npz": "1ce45a9c51de9d8dc175d3436ed9c5a98e3181a3cfdb8adc11d678c117a37cd0",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\HELLO\\HELLO_8082d94135994195a2155aba4fd4c879.npz": "ca3fc83f0b5f0905bb6fd186762aeba115dcd38bf59feca787fa27a40b749d3b",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\HELLO\\HELLO_85fce07303d046e99110c629744002c2.npz": "6d07428721bf6029d4d6024ff8c60ed862a80e1b3f6525ff119d6c7edc26a3ae",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\HELLO\\HELLO_eec4b8a6169a473abda2d161e574d4d2.npz": "eb147d4df0aafba3bd64714d71adbef5e9a06a7bb82de4472c31f1f3826598fb",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\HELLO\\HELLO_ef64aba2d2174a2989495e5b9fcd090b.npz": "d67f2147d5c679f3690915e0654ceff43dbf9ea9fe933ab8245d6281d72f2d88",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\HELLO\\HELLO_f54f639071de4dffaab7fef7490637dc.npz": "25e12984070c9c52eff0c2a13a0adb7df9604218665c05688d1a283ea6d9f06b",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\J\\J_0854170a8fe6436fb23fa103ecc2033a.npz": "9f80740257f0e7a06e4e42dc7211a3e43b0a6a46d54b457e6f0eefe3dd06ab29",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\J\\J_0bfbaa9e535c450a8d2c28cfe159605b.npz": "ab023168e8433b3b4cd69d78496a56b7d029f1bac2141c5b2c7fe417cbce2e75",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\J\\J_1f83e03bf5bc43edb1a1647f848f88b6.npz": "833688f7421ca61d771c668834ebe745d45aaa3aeba6e7eb5df904f88a8b4852",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\J\\J_581f6da521b849afbf1143691e7632ba.npz": "cdb165538833b6047cccfad3152a97e6639372cf836a2affc82c5ed652aa9aae",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\J\\J_66fceb7f0077489e85935e810b582312.npz": "b732cface1ad04a7d11c078d186d0a36047329076a7db9ec3edc86cf8bbf2514",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\J\\J_70be26dd59d74914b2df2d2c94bbd4ee.npz": "eb0779acd4267cb243c21a937e481fd51e6c6b35f22784dd4871c6f9e837c36e",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\J\\J_7545ce4112a246578b8f82d12e70f9a1.npz": "56768ebd1bb557bdf19402ace6d003b45042da2e990d7bb856f3c2a2e6ab2908",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\J\\J_c60da094e17748e196d19f9aeb5db725.npz": "9d5eb7c9df4d5cb3175deedbe655544a5112bfb0b2a6f86151747c370f4516da",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\J\\J_d4fe68be2b3a48c184da22fad72bcc5f.npz": "282307b926040703b9d1bd5bf8821a665e507ceaa94f0e9ed3ee8f2374c0a512",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\Z\\Z_051ffe1c454845d7a935e976e1d305bc.npz": "8e71794396ec3802f11a62b589562bc71f2e0f5b53b1c690a6b83324678d5876",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\Z\\Z_06c0ae65fc454f499ac58f9fd4840a3e.npz": "1d78e1e2378486a52462df5bbabbb182bc82d556a1b980414953c521cfb485f8",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\Z\\Z_0af2afc6032242568be63487cc5423d0.npz": "545bff490a4eeaa4ce2808b4bb5390ddadc0e7b67ffe7a6cb561401a4010661e",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\Z\\Z_701586dbb02f4af49d3783ac365ca48e.npz": "0484a2687640b6cffd39550c1d9ccc2e007a597ef6d0883c5cfec8b08efdeb08",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\Z\\Z_7f3844216b0e43068d0de5d2d44eaf87.npz": "d2bf9390e13eab24c5b3aeed9791164edd5788179ddd179e8b9faeda2bb43cdb",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\Z\\Z_80c12e592ea649fe859d7c2a635a2087.npz": "0b44591b0ad0d61db9ddf7f5524869299bdbf25f828b1ce7d499bcbeb096db1b",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\Z\\Z_c8d51f5c4566473caebaeb04fd0cafa2.npz": "c0419eb7cbf5b54a10de55bd731d2e7704f4b3690caa2f124338575c9a2d31e4",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\Z\\Z_cf185e82dd854afbac9c96993d93173a.npz": "e46adbc1cf911854b1f17cdd753e246911dbf78fc8e3af9a9244dffb1e9dd758",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\Z\\Z_f0f9823bc7fc4b858150bd1ad70d6c90.npz": "c349538c012dbff3497cc8b6a6e3ad9112ac27e1ef2894d94668c5e9ee80f346",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequences\\Z\\Z_f4f7d10d9d0e476e9485cecc185178d7.npz": "dc34a88e133d299f384bdcceaeb9f000fb2d5a28fff5858976e7de91e176a6bc",
+    "output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequence_motion_pilot.pth": "6f1c1b81a3785719dcecaa449d91b78cbeb916f15f27f993684aec36c23d6d4b",
+    "ml\\models\\sequence_body_v1.pth": "d8b949258eaaa83002901b8e9ee27492b57079f6f3ae8953c596ca96c8776ad5",
+    "ml\\models\\sequence_body_v2.pth": "8cb2cc59d2cef59bb3b2f488a70d6abf594e4b1922894f2ef621e5c16cd73fa4",
+    "ml\\models\\sequence_body_v3.pth": "e5e249eaba621b0aa566e92682004613dd5072352dbe3ded8201b38449347400",
+    "ml\\models\\sequence_both_hands_v1.pth": "e64b55ef4efe0698dcd09d2c1196a9fab332a7102bd4c54566aaf5185bc55ba0",
+    "ml\\models\\sequence_classifier.pth": "1e2228a5970d18b19a25f62cb76fc560aa4c5e33962a8bc2a362a87309db2ec9",
+    "ml\\models\\sign_classifier_canonical.pth": "98559a10c553c23d2c6aad227f52416b59ad92483bf4f079cfca5eb512bf5b66"
+  },
+  "evaluation_data_dir": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\dist\\data\\vocabulary_v1\\evaluation",
+  "evaluation_excluded_from_training": true,
+  "old_partitions_preserved": true,
+  "new_partition_policy": "Seeded take-level split for new examples only; one reported signer across partitions",
+  "baseline_model": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequence_motion_pilot.pth",
+  "training_config": {
+    "batch_size": 16,
+    "learning_rate": 0.0015,
+    "weight_decay": 0.0001,
+    "label_smoothing": 0.05,
+    "epochs": 50,
+    "hidden_size": 128,
+    "num_layers": 2,
+    "dropout": 0.2,
+    "bidirectional": false,
+    "pooling": "mean",
+    "backbone": "tcn_attention",
+    "augment": true,
+    "use_kinematics": true,
+    "cosine_head": true,
+    "validation_fraction": 0.15,
+    "test_fraction": 0.15,
+    "seed": 42,
+    "device": "cpu",
+    "selection_metric": "macro_f1",
+    "class_weighting": "inverse",
+    "group_plan": null,
+    "evaluate_test": false,
+    "strict_splits": false,
+    "early_stopping_patience": 10,
+    "use_motion_deltas": true
+  }
+}

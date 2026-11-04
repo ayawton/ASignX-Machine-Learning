@@ -1,0 +1,16 @@
+{
+  "model_type": "dynamic_sequence",
+  "use_motion_deltas": false,
+  "backbone": "tcn_attention",
+  "labels": [
+    "HELLO",
+    "THANK_YOU"
+  ],
+  "sequence_length": 16,
+  "input_dim": 126,
+  "hidden_size": 32,
+  "num_layers": 2,
+  "use_kinematic_features": true,
+  "use_cosine_head": true,
+  "preprocessing": "sequence_anchor_trajectory_v2"
+}

@@ -123,3 +123,45 @@ def resample_context(features, target_length):
         valid_hand = np.any(features[lo, slot*63:(slot+1)*63], axis=1) & np.any(features[hi, slot*63:(slot+1)*63], axis=1)
         out[:, slot*63:(slot+1)*63] *= valid_hand[:, None]
     return out
+
+
+def resample_context_timestamps(features, timestamps, target_fps, max_interval):
+    """Sample a completed take on a uniform clock without inventing absences.
+
+    Interpolate coordinates only between visible observations. Missing detections
+    remain missing; a camera gap beyond the permitted interval rejects the take.
+    """
+    features=np.asarray(features,dtype=np.float32)
+    timestamps=np.asarray(timestamps,dtype=np.float64)
+    if (features.ndim!=2 or features.shape[1] not in BODY_FEATURE_WIDTHS
+            or timestamps.ndim!=1 or len(features)!=len(timestamps) or not len(features)
+            or not np.isfinite(features).all() or not np.isfinite(timestamps).all()):
+        raise ValueError('Invalid body-context observations or timestamps')
+    if not np.isfinite(target_fps) or target_fps<=0 or not np.isfinite(max_interval) or max_interval<=0:
+        raise ValueError('Sampling rate and permitted camera interval must be positive')
+    intervals=np.diff(timestamps)
+    if np.any(intervals<=0):
+        raise ValueError('Live sequence timestamps must increase and be finite')
+    if np.any(intervals>max_interval+1e-8):
+        raise ValueError('Camera gap is too long for a complete gesture')
+    # Work relative to the first capture to avoid large-clock rounding errors.
+    stamps=timestamps-timestamps[0]
+    grid=np.arange(int(np.floor(stamps[-1]*target_fps+1e-8))+1,dtype=np.float64)/target_fps
+    hi=np.searchsorted(stamps,grid,side='left').clip(0,len(stamps)-1)
+    previous=np.maximum(hi-1,0)
+    hi=np.where(np.isclose(stamps[previous],grid,rtol=0,atol=1e-8),previous,hi)
+    lo=np.maximum(hi-1,0)
+    exact=np.isclose(stamps[hi],grid,rtol=0,atol=1e-8)
+    lo=np.where(exact,hi,lo)
+    span=stamps[hi]-stamps[lo]
+    alpha=np.divide(grid-stamps[lo],span,out=np.zeros_like(grid),where=span>0)[:,None]
+    out=(features[lo]*(1-alpha)+features[hi]*alpha).astype(np.float32)
+    src=features[:,126:].reshape(len(features),-1,3)
+    dst=out[:,126:].reshape(len(out),-1,3)
+    valid=(src[lo,:,2]==1)&(src[hi,:,2]==1)
+    dst[:,:,2]=valid
+    dst[:,:,:2]*=valid[:,:,None]
+    for slot in range(2):
+        present=np.any(features[lo,slot*63:(slot+1)*63]!=0,axis=1)&np.any(features[hi,slot*63:(slot+1)*63]!=0,axis=1)
+        out[:,slot*63:(slot+1)*63]*=present[:,None]
+    return out

@@ -117,7 +117,24 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         default=0.045,
         help="Normalized velocity threshold separating static and dynamic signs (default: 0.045)",
     )
-    return parser.parse_args(argv)
+    parser.add_argument('--gesture-min-excursion', type=float, default=.35,
+                        help='Minimum completed-take movement in palm widths; requires validation tuning')
+    parser.add_argument('--gesture-min-motion-seconds', type=float, default=.12,
+                        help='Minimum sustained movement time before a dynamic sign may be accepted')
+    parser.add_argument('--gesture-form-checks',action='store_true',
+                        help='Pilot J/Z handshape checks and forehead-salute-only HELLO proximity check')
+    parser.add_argument('--hold-static-after-gesture',action='store_true',
+                        help='Prevent a completed dynamic signs ending pose from immediately emitting a static letter')
+    parser.add_argument('--diagnostics-dir', type=Path,
+                        help='Opt-in timing/tracking logs; keys 7=J, 8=Z, 9=HELLO, 0=rest')
+    parser.add_argument('--diagnostic-person-id',
+                        help='Optional signer identifier recorded in diagnostic metadata')
+    parser.add_argument('--capture-gesture-inputs', action='store_true',
+                        help='Also save completed landmark takes for exact diagnostic replay; requires --diagnostics-dir')
+    args = parser.parse_args(argv)
+    if args.capture_gesture_inputs and not args.diagnostics_dir:
+        parser.error('--capture-gesture-inputs requires --diagnostics-dir')
+    return args
 
 
 def run_pipeline(args: argparse.Namespace) -> None:
@@ -132,6 +149,8 @@ def run_pipeline(args: argparse.Namespace) -> None:
     if sequence_model_path:
         from ml.predict import SignPredictor, UnifiedSignRecognizer
         from ml.predict_sequence import SequencePredictor
+        from ml.gesture_acceptance import MotionAcceptance
+        from ml.gesture_forms import GestureFormAcceptance
 
         static_pred = SignPredictor(args.sign_model, args.sign_confidence,
                                     calibration_path=getattr(args, "sign_calibration", None)) if args.sign_model else None
@@ -145,6 +164,11 @@ def run_pipeline(args: argparse.Namespace) -> None:
             velocity_threshold=getattr(args, "motion_threshold", 0.025),
             stable_frames=args.sign_stable_frames,
             release_frames=args.sign_release_frames,
+            motion_acceptance=MotionAcceptance(
+                min_excursion=getattr(args, 'gesture_min_excursion', .35),
+                min_motion_seconds=getattr(args, 'gesture_min_motion_seconds', .12)),
+            form_acceptance=GestureFormAcceptance() if args.gesture_form_checks else None,
+            hold_static_after_gesture=args.hold_static_after_gesture,
         )
     elif args.sign_model:
         from ml.predict import SignPredictor, SignRecognizer
@@ -211,18 +235,49 @@ def run_pipeline(args: argparse.Namespace) -> None:
     fps_smooth = 0.0
     alpha = 0.15  # Smoothing factor for FPS
     draw_landmarks = True
+    diagnostics = None
 
     try:
+        if getattr(args, 'diagnostics_dir', None):
+            from asignx.live_diagnostics import LiveDiagnostics
+            import hashlib
+            diagnostics = LiveDiagnostics(args.diagnostics_dir, {
+                'person_id': args.diagnostic_person_id,
+                'sequence_model': sequence_model_path, 'static_model': args.sign_model,
+                'static_model_sha256': (hashlib.sha256(Path(args.sign_model).read_bytes()).hexdigest()
+                                        if args.sign_model else None),
+                'static_confidence': args.sign_confidence,
+                'static_stable_frames': args.sign_stable_frames,
+                'static_release_frames': args.sign_release_frames,
+                'sequence_model_sha256': (hashlib.sha256(Path(sequence_model_path).read_bytes()).hexdigest()
+                                          if sequence_model_path else None),
+                'sequence_confidence': args.sequence_confidence,
+                'completed_take_sampling': 'timestamp_interpolation_v1',
+                'sampling_fps': (unified_recognizer.sequence_predictor.target_fps if unified_recognizer else None),
+                'motion_threshold': args.motion_threshold,
+                'min_excursion': args.gesture_min_excursion,
+                'min_motion_seconds': args.gesture_min_motion_seconds,
+                'gesture_form_policy': ('j_z_salute_form_v1' if args.gesture_form_checks else None),
+                'hold_static_after_gesture': args.hold_static_after_gesture,
+            })
+            print(f'[DIAGNOSTICS] Saving to {diagnostics.root.resolve()}')
+            print('[DIAGNOSTICS] In camera window: 7=J, 8=Z, 9=HELLO, 0=REST; Q saves and exits.')
+            if getattr(args, 'capture_gesture_inputs', False) and unified_recognizer is not None:
+                unified_recognizer.trace_completed_takes = True
+                print('[DIAGNOSTICS] Completed landmark inputs will also be saved locally for replay; no camera video.')
         for frame in camera.stream():
             capture_timestamp = getattr(camera, "frame_timestamp", None)
             if capture_timestamp is None:
                 capture_timestamp = time.monotonic()
             # Process frame through MediaPipe Hands pipeline
+            detector_started = time.perf_counter()
             result, annotated_frame = detector.process(
                 frame,
                 draw=draw_landmarks,
                 timestamp_ms=int(capture_timestamp * 1000),
             )
+            detector_ms = (time.perf_counter()-detector_started)*1000
+            recognition_started = time.perf_counter()
 
             live_recognitions = None
             live_dynamic_info = None
@@ -234,11 +289,18 @@ def run_pipeline(args: argparse.Namespace) -> None:
                         print(f"[STATIC SIGN] {recognition.hand}: {recognition.emitted_label}")
                 if live_dynamic_info.get("dynamic_emitted"):
                     print(f"[DYNAMIC SIGN] {live_dynamic_info['dynamic_emitted']}")
+                if live_dynamic_info.get("dynamic_rejected"):
+                    print(f"[DYNAMIC REJECTED] {live_dynamic_info['dynamic_rejected']}")
             elif sign_recognizer is not None:
                 live_recognitions = sign_recognizer.update(result.all_hands, timestamp=capture_timestamp)
                 for recognition in live_recognitions:
                     if recognition.emitted_label:
                         print(f"[SIGN] {recognition.hand}: {recognition.emitted_label}")
+
+            if diagnostics:
+                diagnostics.record(result, live_dynamic_info, capture_time=capture_timestamp,
+                    processed_time=time.monotonic(), detector_ms=detector_ms,
+                    recognition_ms=(time.perf_counter()-recognition_started)*1000)
 
             # Compute smoothed FPS
             now = time.time()
@@ -258,6 +320,10 @@ def run_pipeline(args: argparse.Namespace) -> None:
                 recognitions=live_recognitions,
                 dynamic_info=live_dynamic_info,
             )
+            if diagnostics:
+                cv2.putText(display_frame, f'TEST: {diagnostics.target} | 7=J 8=Z 9=HELLO 0=REST',
+                            (16, max(20, display_frame.shape[0]-90)), cv2.FONT_HERSHEY_SIMPLEX,
+                            .45, (255,255,0), 1, cv2.LINE_AA)
 
             # If continuous printing is enabled
             if args.print_stream and result.hand_detected and result.all_hands:
@@ -272,6 +338,8 @@ def run_pipeline(args: argparse.Namespace) -> None:
             if key in (ord("q"), ord("Q"), 27):  # 'q' or Esc
                 print("\n[INFO] Exiting...")
                 break
+            elif diagnostics and diagnostics.mark(key):
+                print(f'[DIAGNOSTICS] Test block: {diagnostics.target}')
             elif key in (ord("d"), ord("D")):
                 draw_landmarks = not draw_landmarks
                 print(f"[INFO] Landmark drawing toggled: {'ON' if draw_landmarks else 'OFF'}")
@@ -303,6 +371,9 @@ def run_pipeline(args: argparse.Namespace) -> None:
         camera.stop()
         detector.close()
         cv2.destroyAllWindows()
+        if diagnostics:
+            diagnostics.close()
+            print(f'[DIAGNOSTICS] Saved report: {(diagnostics.root/"summary.json").resolve()}')
         print("[INFO] Done.")
 
 

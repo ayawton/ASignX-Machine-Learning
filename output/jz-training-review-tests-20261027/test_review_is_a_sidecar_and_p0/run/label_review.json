@@ -1,0 +1,33 @@
+{
+  "purpose": "Human label review; original inputs unchanged; not applied to training",
+  "accepted_hello_forms": [
+    "forehead-salute",
+    "ordinary greeting wave"
+  ],
+  "decisions": {
+    "take_000000.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\jz-training-review-tests-20261027\\test_review_is_a_sidecar_and_p0\\run\\gesture_inputs\\take_000000.npz",
+      "sha256": "ae0d885c88ee95f4e45a083a3ccce27d415bd428c8574d8b896ae13f2af690a4",
+      "review_label": "HELLO",
+      "original_target": "REST",
+      "model_output": "HELLO",
+      "source_type": "diagnostic_capture"
+    },
+    "take_000001.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\jz-training-review-tests-20261027\\test_review_is_a_sidecar_and_p0\\run\\gesture_inputs\\take_000001.npz",
+      "sha256": "ae0d885c88ee95f4e45a083a3ccce27d415bd428c8574d8b896ae13f2af690a4",
+      "review_label": "BACKGROUND",
+      "original_target": "REST",
+      "model_output": "HELLO",
+      "source_type": "diagnostic_capture"
+    },
+    "take_000002.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\jz-training-review-tests-20261027\\test_review_is_a_sidecar_and_p0\\run\\gesture_inputs\\take_000002.npz",
+      "sha256": "ae0d885c88ee95f4e45a083a3ccce27d415bd428c8574d8b896ae13f2af690a4",
+      "review_label": "UNSURE",
+      "original_target": "REST",
+      "model_output": "HELLO",
+      "source_type": "diagnostic_capture"
+    }
+  }
+}

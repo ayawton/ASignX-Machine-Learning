@@ -10,6 +10,7 @@ from torch import nn
 from torch.nn import functional as F
 
 from ml.model import CosinePrototypeHead, TorchKinematicEnricher
+from ml.motion_features import MotionDeltaFeatures
 from ml.body_context import BODY_CONTEXT_VERSION, TEMPLE_CONTEXT_VERSION, sequence_contract
 from ml.preprocessing import (
     DUAL_KINEMATIC_NUM_FEATURES,
@@ -146,6 +147,7 @@ class SignLSTM(nn.Module):
         backbone: str = "lstm",
         use_kinematics: bool = True,
         cosine_head: bool = True,
+        use_motion_deltas: bool = False,
     ) -> None:
         super().__init__()
         if num_classes < 2:
@@ -163,6 +165,8 @@ class SignLSTM(nn.Module):
         self.backbone = backbone
         self.use_kinematics = bool(use_kinematics) and input_size in (NUM_FEATURES, DUAL_NUM_FEATURES)
         self.cosine_head = bool(cosine_head)
+        self.use_motion_deltas = bool(use_motion_deltas)
+        self.motion_features = MotionDeltaFeatures(input_size) if self.use_motion_deltas else None
         self.config = {
             "num_classes": num_classes,
             "input_size": input_size,
@@ -174,6 +178,7 @@ class SignLSTM(nn.Module):
             "backbone": backbone,
             "use_kinematics": self.use_kinematics,
             "cosine_head": self.cosine_head,
+            "use_motion_deltas": self.use_motion_deltas,
         }
 
         self.enricher = TorchKinematicEnricher() if self.use_kinematics else None
@@ -181,6 +186,9 @@ class SignLSTM(nn.Module):
             in_dim = KINEMATIC_NUM_FEATURES if input_size == NUM_FEATURES else DUAL_KINEMATIC_NUM_FEATURES
         else:
             in_dim = input_size
+
+        if self.use_motion_deltas:
+            in_dim += input_size
 
         if backbone == "tcn_attention":
             self.tcn_in = nn.Sequential(
@@ -249,6 +257,8 @@ class SignLSTM(nn.Module):
     def encode(self, features: torch.Tensor) -> torch.Tensor:
         """Encode temporal sequence (B, T, F) into a latent vector (B, 64)."""
         x = self.enricher(features) if self.enricher is not None else features
+        if self.motion_features is not None:
+            x = torch.cat((x, self.motion_features(features)), dim=-1)
         if self.backbone == "tcn_attention":
             assert self.tcn_in is not None and self.tcn_blocks is not None
             assert self.attn is not None and self.attn_norm is not None
@@ -270,6 +280,8 @@ class SignLSTM(nn.Module):
     def forward(self, features: torch.Tensor) -> torch.Tensor:
         if self.classifier is not None and self.embed_proj is None:
             x = self.enricher(features) if self.enricher is not None else features
+            if self.motion_features is not None:
+                x = torch.cat((x, self.motion_features(features)), dim=-1)
             assert self.lstm is not None
             encoded, _ = self.lstm(x)
             pooled = encoded.mean(dim=1) if self.pooling == "mean" else encoded[:, -1]

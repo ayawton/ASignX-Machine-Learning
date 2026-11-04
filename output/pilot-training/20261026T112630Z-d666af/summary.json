@@ -1,0 +1,84 @@
+{
+  "run": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af",
+  "checkpoint": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T112630Z-d666af\\sequence_left_pilot.pth",
+  "labels": [
+    "HELLO",
+    "J",
+    "Z"
+  ],
+  "split_counts": {
+    "train": {
+      "HELLO": 6,
+      "J": 6,
+      "Z": 6
+    },
+    "validation": {
+      "HELLO": 2,
+      "J": 2,
+      "Z": 2
+    },
+    "test": {
+      "HELLO": 2,
+      "J": 2,
+      "Z": 2
+    }
+  },
+  "best_epoch": 34,
+  "validation": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "per_class": {
+      "HELLO": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2
+      },
+      "J": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2
+      },
+      "Z": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2
+      }
+    },
+    "labels": [
+      "HELLO",
+      "J",
+      "Z"
+    ],
+    "confusion_matrix": [
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        2
+      ]
+    ],
+    "loss": 0.0063469695548216505
+  },
+  "test": null,
+  "inference_output_shape": [
+    1,
+    3
+  ],
+  "originals_and_existing_checkpoints_unchanged": true,
+  "limitation": "One signer, one left-hand collection; take-separated validation is not a new-person benchmark. Test evaluation skipped."
+}

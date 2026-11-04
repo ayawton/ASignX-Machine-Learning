@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "preprocessing": "hands_upper_body_temples_xy_v3",
+  "dataset_sha256": "82242c85eae27bbdfa4416522347461f2f8c9df4d50e607d192be7911c6c14f0",
+  "seed": 42,
+  "labels": [
+    "BACKGROUND",
+    "HELLO",
+    "J",
+    "Z"
+  ],
+  "splits": {
+    "train": [
+      9,
+      10,
+      11,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      25,
+      27,
+      29,
+      31,
+      32,
+      34,
+      35,
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "validation": [
+      12,
+      23,
+      26,
+      33,
+      3
+    ],
+    "test": [
+      13,
+      24,
+      28,
+      30,
+      0
+    ]
+  },
+  "counts": {
+    "train": {
+      "HELLO": 6,
+      "J": 7,
+      "Z": 6,
+      "BACKGROUND": 7
+    },
+    "validation": {
+      "HELLO": 1,
+      "J": 1,
+      "Z": 2,
+      "BACKGROUND": 1
+    },
+    "test": {
+      "HELLO": 1,
+      "J": 1,
+      "Z": 2,
+      "BACKGROUND": 1
+    }
+  }
+}

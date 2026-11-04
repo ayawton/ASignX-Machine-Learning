@@ -1,0 +1,201 @@
+{
+  "purpose": "Human label review; original inputs unchanged; not applied to training",
+  "accepted_hello_forms": [
+    "forehead-salute",
+    "ordinary greeting wave"
+  ],
+  "decisions": {
+    "BACKGROUND_01ead69f2ff34a84afa134188940c244.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_01ead69f2ff34a84afa134188940c244.npz",
+      "sha256": "32b39ad9cc348a717c5e176004d6c753be053d4079cef9f2172a5b509f002732",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_05d16feaa2e548a38c0c77f6adaa5b83.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_05d16feaa2e548a38c0c77f6adaa5b83.npz",
+      "sha256": "9d223c761bab22042352d1e8435757f86b8155710864e970e85f5a3ec26c30d1",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_0b1c4a266c5c4286bd2e05b4cedd133c.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_0b1c4a266c5c4286bd2e05b4cedd133c.npz",
+      "sha256": "e493fc9e549ad6b5b6b44d7d76250b74aae32f98ea804dbba8e0e6b59636f66b",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_25f1ec813f5a404e81466c57f4979fdd.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_25f1ec813f5a404e81466c57f4979fdd.npz",
+      "sha256": "fac327739a01dbabfcda5a5d852de6ae8c6d4f082b6d9024b7dc237af8e4e050",
+      "review_label": "UNSURE",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_28137e33fff944ca9f1dcd70e51de195.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_28137e33fff944ca9f1dcd70e51de195.npz",
+      "sha256": "e270af97b1ce0ff2902455fbffd7517c6f5bc0097e61cf946d9306ae0921dc9c",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_3d8fadbb670d4d5e81dce156de42404e.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_3d8fadbb670d4d5e81dce156de42404e.npz",
+      "sha256": "fab3958a86f6caccea1602029fc5d7865c478f1c93e2b8996cf28ab156fef3e4",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_3fa39dab8bcd40568b375b0563b576bb.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_3fa39dab8bcd40568b375b0563b576bb.npz",
+      "sha256": "8f51cfcca9a9d604ba294f5bbf19322f275cf6611e1ac377c111acb03d019337",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_475ce8e9b7554d81b907aebeef2c167c.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_475ce8e9b7554d81b907aebeef2c167c.npz",
+      "sha256": "d04ef2a4d7838fb9b93c325699d2867233e934ee7ef533d82928ae73d2efda33",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_542d0daf62ea4638b9cfba62913b6eeb.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_542d0daf62ea4638b9cfba62913b6eeb.npz",
+      "sha256": "bcfde46ebb18bb9598f85785e2cfa249147526031b51eb1204bab64add93367a",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_5a6c7cf689764104aab0218030ec1189.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_5a6c7cf689764104aab0218030ec1189.npz",
+      "sha256": "6811f51977e939d840d29dad743ec048684c3b8d7c4d7bad9663bf38280262a2",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_6e6b1e9510f84ca6aa104e3b0e7c7147.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_6e6b1e9510f84ca6aa104e3b0e7c7147.npz",
+      "sha256": "920c8c0dc10bbcc7fa240fd6203e519224b63f2735614f2ed61c7371faf4bae3",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_6f4adc327bd64a8eaa0c39d670b3e6fa.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_6f4adc327bd64a8eaa0c39d670b3e6fa.npz",
+      "sha256": "21b94154c62ec4b83c74ee93da6125c82b041f590be59dd85103fa05a73e131f",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_869e0675da4341b8b1d9bc598c7a0778.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_869e0675da4341b8b1d9bc598c7a0778.npz",
+      "sha256": "c1ad784f8f07f10dc5e272d79d4e8ed4f055aac25c7dd0e0b3863bf0aa70e5f4",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_9bfd18caae6d4a4eb7bc193d970fcb46.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_9bfd18caae6d4a4eb7bc193d970fcb46.npz",
+      "sha256": "73c479abfbc18dd7097eb6833367f66d87083b7e0aba04a617bbfb7d61557847",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_9c81b96274884bea8bc52c25e027cc38.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_9c81b96274884bea8bc52c25e027cc38.npz",
+      "sha256": "4f770a7a66573ebf96d4f709567a91435bd478338234ffb20408900360303c56",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_a6742a634aff4078803dd0e4c695d59d.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_a6742a634aff4078803dd0e4c695d59d.npz",
+      "sha256": "40531769790f33867a3575456cc06f405c5391402857b21dac5b76c298588414",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_b790d667e2da4391887e4bc1d4b2a63c.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_b790d667e2da4391887e4bc1d4b2a63c.npz",
+      "sha256": "40fbe13469efa9ac5ce31f90832e976c43a5f96aed8b5981cb61589f09139df9",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_c6fcd6efc5d64eb2a6adec02069520cf.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_c6fcd6efc5d64eb2a6adec02069520cf.npz",
+      "sha256": "07b9b6e47848b8a06e3c385e394e03ba35d6d3762cf2bc7238ef44fd9c50a534",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_d07021a55eeb4b2893fc7ad1d41efae0.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_d07021a55eeb4b2893fc7ad1d41efae0.npz",
+      "sha256": "747f9cc5c6085face7b348409a7b833d5da30bc1be4f6cfb6c244978babfc1bf",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_d55619de923849c39918264b6437d0d4.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_d55619de923849c39918264b6437d0d4.npz",
+      "sha256": "2e274a0b34137459177984ea6c47af14458ace1f1139f069f307342330ce66c8",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_d9a101fc009e4f2aa92513adcbbdda41.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_d9a101fc009e4f2aa92513adcbbdda41.npz",
+      "sha256": "61bdcd639d9ff1ea99074f8899ac1fadce5e7fd23257fb7e889ebd30be35be0c",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_e1b9e31b2ac84a8e97fb4676cbd2a30a.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_e1b9e31b2ac84a8e97fb4676cbd2a30a.npz",
+      "sha256": "de0d270d385879ee041468c165346a68d8ca874d1895de6c099803312bf872da",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_e39a73b96253431ea2922c3b405e60cb.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_e39a73b96253431ea2922c3b405e60cb.npz",
+      "sha256": "666905035801953ed8ce6ddebad7bc4ea44559085c0f1bfaa559f724bf8db8d6",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    },
+    "BACKGROUND_f876b36be8c04af78cf93480b567d431.npz": {
+      "source": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\label-reviews\\training-background-v2-dev-20261027\\sequences\\BACKGROUND\\BACKGROUND_f876b36be8c04af78cf93480b567d431.npz",
+      "sha256": "91840742d65cabb46c2417219ec55d69838c74dbfd075e97a218f03637cf4efa",
+      "review_label": "BACKGROUND",
+      "original_target": "BACKGROUND",
+      "model_output": null,
+      "source_type": "saved_dataset"
+    }
+  }
+}

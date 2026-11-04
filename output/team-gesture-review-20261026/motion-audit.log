@@ -1,0 +1,185 @@
+{
+  "model": "output\\pilot-training\\20261026T114120Z-hello-retake-9007e3\\sequence_left_pilot.pth",
+  "data_dir": "output\\pilot-training\\20261026T114120Z-hello-retake-9007e3\\sequences",
+  "split": "validation",
+  "threshold": 0.8,
+  "dataset_matches_checkpoint": true,
+  "selected_recordings": 4,
+  "feature_width": 180,
+  "labels": [
+    "HELLO",
+    "J",
+    "Z"
+  ],
+  "summary": [
+    {
+      "label": "HELLO",
+      "variant": "original",
+      "recordings": 1,
+      "accepted_as_original_label": 1,
+      "originally_accepted": 1,
+      "still_accepted_after_change": 1,
+      "mean_true_label_confidence": 0.9970376491546631
+    },
+    {
+      "label": "HELLO",
+      "variant": "frozen_first",
+      "recordings": 1,
+      "accepted_as_original_label": 1,
+      "originally_accepted": 1,
+      "still_accepted_after_change": 1,
+      "mean_true_label_confidence": 0.9961854815483093
+    },
+    {
+      "label": "HELLO",
+      "variant": "frozen_middle",
+      "recordings": 1,
+      "accepted_as_original_label": 1,
+      "originally_accepted": 1,
+      "still_accepted_after_change": 1,
+      "mean_true_label_confidence": 0.9975013136863708
+    },
+    {
+      "label": "HELLO",
+      "variant": "reversed",
+      "recordings": 1,
+      "accepted_as_original_label": 1,
+      "originally_accepted": 1,
+      "still_accepted_after_change": 1,
+      "mean_true_label_confidence": 0.9970163106918335
+    },
+    {
+      "label": "HELLO",
+      "variant": "first_half_stretched",
+      "recordings": 1,
+      "accepted_as_original_label": 1,
+      "originally_accepted": 1,
+      "still_accepted_after_change": 1,
+      "mean_true_label_confidence": 0.9963778853416443
+    },
+    {
+      "label": "HELLO",
+      "variant": "shuffled",
+      "recordings": 1,
+      "accepted_as_original_label": 1,
+      "originally_accepted": 1,
+      "still_accepted_after_change": 1,
+      "mean_true_label_confidence": 0.9970543384552002
+    },
+    {
+      "label": "J",
+      "variant": "original",
+      "recordings": 1,
+      "accepted_as_original_label": 1,
+      "originally_accepted": 1,
+      "still_accepted_after_change": 1,
+      "mean_true_label_confidence": 0.9858662486076355
+    },
+    {
+      "label": "J",
+      "variant": "frozen_first",
+      "recordings": 1,
+      "accepted_as_original_label": 1,
+      "originally_accepted": 1,
+      "still_accepted_after_change": 1,
+      "mean_true_label_confidence": 0.8943080902099609
+    },
+    {
+      "label": "J",
+      "variant": "frozen_middle",
+      "recordings": 1,
+      "accepted_as_original_label": 0,
+      "originally_accepted": 1,
+      "still_accepted_after_change": 0,
+      "mean_true_label_confidence": 0.08910908550024033
+    },
+    {
+      "label": "J",
+      "variant": "reversed",
+      "recordings": 1,
+      "accepted_as_original_label": 1,
+      "originally_accepted": 1,
+      "still_accepted_after_change": 1,
+      "mean_true_label_confidence": 0.9854655265808105
+    },
+    {
+      "label": "J",
+      "variant": "first_half_stretched",
+      "recordings": 1,
+      "accepted_as_original_label": 1,
+      "originally_accepted": 1,
+      "still_accepted_after_change": 1,
+      "mean_true_label_confidence": 0.9586066603660583
+    },
+    {
+      "label": "J",
+      "variant": "shuffled",
+      "recordings": 1,
+      "accepted_as_original_label": 1,
+      "originally_accepted": 1,
+      "still_accepted_after_change": 1,
+      "mean_true_label_confidence": 0.9893675446510315
+    },
+    {
+      "label": "Z",
+      "variant": "original",
+      "recordings": 2,
+      "accepted_as_original_label": 2,
+      "originally_accepted": 2,
+      "still_accepted_after_change": 2,
+      "mean_true_label_confidence": 0.9998185336589813
+    },
+    {
+      "label": "Z",
+      "variant": "frozen_first",
+      "recordings": 2,
+      "accepted_as_original_label": 1,
+      "originally_accepted": 2,
+      "still_accepted_after_change": 1,
+      "mean_true_label_confidence": 0.6829723566770554
+    },
+    {
+      "label": "Z",
+      "variant": "frozen_middle",
+      "recordings": 2,
+      "accepted_as_original_label": 1,
+      "originally_accepted": 2,
+      "still_accepted_after_change": 1,
+      "mean_true_label_confidence": 0.7934605777263641
+    },
+    {
+      "label": "Z",
+      "variant": "reversed",
+      "recordings": 2,
+      "accepted_as_original_label": 2,
+      "originally_accepted": 2,
+      "still_accepted_after_change": 2,
+      "mean_true_label_confidence": 0.999780535697937
+    },
+    {
+      "label": "Z",
+      "variant": "first_half_stretched",
+      "recordings": 2,
+      "accepted_as_original_label": 2,
+      "originally_accepted": 2,
+      "still_accepted_after_change": 2,
+      "mean_true_label_confidence": 0.999671459197998
+    },
+    {
+      "label": "Z",
+      "variant": "shuffled",
+      "recordings": 2,
+      "accepted_as_original_label": 2,
+      "originally_accepted": 2,
+      "still_accepted_after_change": 2,
+      "mean_true_label_confidence": 0.9997256398200989
+    }
+  ],
+  "limitations": [
+    "Raw classifier outputs: bypasses live motion gating and visibility rejection.",
+    "Held-out recordings follow saved session splits; they are not necessarily unseen signers.",
+    "Reversed or truncated examples are not automatically invalid ASL gestures.",
+    "Confidence is a model score, not a calibrated probability of ASL correctness.",
+    "For hand-only trajectory-anchored formats, reversal does not recompute the original raw anchor."
+  ]
+}

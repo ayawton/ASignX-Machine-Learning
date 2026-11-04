@@ -1,0 +1,25 @@
+{
+  "model": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\gesture-form-final-checks-20261027\\test_form_rejection_replay_inc0\\model.pth",
+  "model_sha256": "2dadd7def03c63d00b11ea6845e1363a223f54ea20968182766e94d8a13797bf",
+  "takes": [
+    {
+      "file": "take_000000.npz",
+      "target": "UNMARKED",
+      "input_observations": 30,
+      "duration_seconds": 1.9333333333333333,
+      "raw_prediction": "Z",
+      "confidence": 0.5081464648246765,
+      "accepted_label": null,
+      "tracking_or_background_reason": "Z requires sustained extended index finger with the other fingers folded",
+      "recorded_raw_prediction": null,
+      "reproduces_recorded_prediction": null,
+      "reproduces_recorded_emission": true,
+      "recorded_rejection": "form rejected"
+    }
+  ],
+  "limitations": [
+    "Replays model preparation/classification, not the motion guard.",
+    "Target labels describe user intent, not verified ASL correctness.",
+    "Diagnostic inputs are not automatically training examples."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "preprocessing": "hands_upper_body_xy_v2",
+  "dataset_sha256": "c18e6570825cdafd39ec32836289c01131c30490ac5c170ee036f04302cb8132",
+  "seed": 42,
+  "labels": [
+    "HELLO",
+    "HELP"
+  ],
+  "splits": {
+    "train": [
+      0,
+      4
+    ],
+    "validation": [
+      2,
+      3
+    ],
+    "test": [
+      1,
+      5
+    ]
+  },
+  "counts": {
+    "train": {
+      "HELLO": 1,
+      "HELP": 1
+    },
+    "validation": {
+      "HELLO": 1,
+      "HELP": 1
+    },
+    "test": {
+      "HELLO": 1,
+      "HELP": 1
+    }
+  }
+}

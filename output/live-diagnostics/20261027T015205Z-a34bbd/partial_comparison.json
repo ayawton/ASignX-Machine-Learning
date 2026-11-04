@@ -1,0 +1,88 @@
+{
+  "partial_session": true,
+  "hello_segments": [
+    {
+      "file": "take_002907.npz",
+      "duration": 0.783223700011149,
+      "live_accepted": null,
+      "candidate_raw": "BACKGROUND",
+      "candidate_confidence": 0.9851662516593933,
+      "live_rejection": "Background / no gesture",
+      "baseline": {
+        "raw": "BACKGROUND",
+        "accepted": null,
+        "confidence": 0.9930319786071777
+      }
+    },
+    {
+      "file": "take_002931.npz",
+      "duration": 0.7846801000414416,
+      "live_accepted": "HELLO",
+      "candidate_raw": "HELLO",
+      "candidate_confidence": 0.9729693531990051,
+      "live_rejection": null,
+      "baseline": {
+        "raw": "HELLO",
+        "accepted": "HELLO",
+        "confidence": 0.9305980205535889
+      }
+    },
+    {
+      "file": "take_002992.npz",
+      "duration": 0.7352520999847911,
+      "live_accepted": null,
+      "candidate_raw": "BACKGROUND",
+      "candidate_confidence": 0.9854503870010376,
+      "live_rejection": "Background / no gesture",
+      "baseline": {
+        "raw": "BACKGROUND",
+        "accepted": null,
+        "confidence": 0.9955734014511108
+      }
+    },
+    {
+      "file": "take_003029.npz",
+      "duration": 0.7999691999866627,
+      "live_accepted": "HELLO",
+      "candidate_raw": "HELLO",
+      "candidate_confidence": 0.9732236862182617,
+      "live_rejection": null,
+      "baseline": {
+        "raw": "HELLO",
+        "accepted": "HELLO",
+        "confidence": 0.955711305141449
+      }
+    },
+    {
+      "file": "take_003124.npz",
+      "duration": 0.7530879999976605,
+      "live_accepted": "HELLO",
+      "candidate_raw": "HELLO",
+      "candidate_confidence": 0.9191588759422302,
+      "live_rejection": null,
+      "baseline": {
+        "raw": "BACKGROUND",
+        "accepted": null,
+        "confidence": 0.9534690380096436
+      }
+    },
+    {
+      "file": "take_003147.npz",
+      "duration": 0.6094779999693856,
+      "live_accepted": null,
+      "candidate_raw": null,
+      "candidate_confidence": null,
+      "live_rejection": "Insufficient visible hands and shoulders (hand 40%, shoulders 100%, face references 100%)",
+      "baseline": {
+        "error": "Insufficient visible hands and shoulders (hand 40%, shoulders 100%, face references 100%)",
+        "accepted": null
+      }
+    }
+  ],
+  "limitations": [
+    "User reports the HELLO block was not completed.",
+    "Captured segments are not verified sign attempts; no recall or accuracy denominator.",
+    "Recorded outputs count actual emissions; classification replay does not rerun the motion guard.",
+    "No new captures from this run are used for training."
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "checkpoint": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T150200Z-motion-deltas-d6b24e\\sequence_motion_pilot.pth",
+  "best_epoch": 9,
+  "epochs_completed": 19,
+  "validation": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "per_class": {
+      "BACKGROUND": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "HELLO": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "J": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "Z": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2
+      }
+    },
+    "labels": [
+      "BACKGROUND",
+      "HELLO",
+      "J",
+      "Z"
+    ],
+    "confusion_matrix": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "loss": 0.14725666046142577
+  },
+  "paired_validation": [
+    {
+      "session_id": "8082d94135994195a2155aba4fd4c879",
+      "label": "HELLO",
+      "baseline_raw": "HELLO",
+      "baseline_accepted": null,
+      "baseline_confidence": 0.6699281930923462,
+      "candidate_raw": "HELLO",
+      "candidate_accepted": null,
+      "candidate_confidence": 0.6680375933647156,
+      "probes": {
+        "original": {
+          "label": "HELLO",
+          "confidence": 0.6680375933647156
+        },
+        "frozen_first": {
+          "label": "BACKGROUND",
+          "confidence": 0.5564755797386169
+        },
+        "frozen_middle": {
+          "label": "BACKGROUND",
+          "confidence": 0.634432315826416
+        },
+        "reversed": {
+          "label": "BACKGROUND",
+          "confidence": 0.9014971852302551
+        },
+        "first_half_stretched": {
+          "label": "HELLO",
+          "confidence": 0.6600934267044067
+        },
+        "shuffled": {
+          "label": "Z",
+          "confidence": 0.5657434463500977
+        }
+      }
+    },
+    {
+      "session_id": "7545ce4112a246578b8f82d12e70f9a1",
+      "label": "J",
+      "baseline_raw": "J",
+      "baseline_accepted": "J",
+      "baseline_confidence": 0.9650391936302185,
+      "candidate_raw": "J",
+      "candidate_accepted": "J",
+      "candidate_confidence": 0.9980438947677612,
+      "probes": {
+        "original": {
+          "label": "J",
+          "confidence": 0.9980438947677612
+        },
+        "frozen_first": {
+          "label": "BACKGROUND",
+          "confidence": 0.8025645017623901
+        },
+        "frozen_middle": {
+          "label": "Z",
+          "confidence": 0.5058686137199402
+        },
+        "reversed": {
+          "label": "J",
+          "confidence": 0.9364559054374695
+        },
+        "first_half_stretched": {
+          "label": "J",
+          "confidence": 0.809955358505249
+        },
+        "shuffled": {
+          "label": "J",
+          "confidence": 0.9936304688453674
+        }
+      }
+    },
+    {
+      "session_id": "051ffe1c454845d7a935e976e1d305bc",
+      "label": "Z",
+      "baseline_raw": "Z",
+      "baseline_accepted": "Z",
+      "baseline_confidence": 0.987173318862915,
+      "candidate_raw": "Z",
+      "candidate_accepted": "Z",
+      "candidate_confidence": 0.9971407651901245,
+      "probes": {
+        "original": {
+          "label": "Z",
+          "confidence": 0.9971407651901245
+        },
+        "frozen_first": {
+          "label": "Z",
+          "confidence": 0.9732630848884583
+        },
+        "frozen_middle": {
+          "label": "J",
+          "confidence": 0.5077511668205261
+        },
+        "reversed": {
+          "label": "Z",
+          "confidence": 0.9794207811355591
+        },
+        "first_half_stretched": {
+          "label": "Z",
+          "confidence": 0.9950921535491943
+        },
+        "shuffled": {
+          "label": "Z",
+          "confidence": 0.9908543825149536
+        }
+      }
+    },
+    {
+      "session_id": "cf185e82dd854afbac9c96993d93173a",
+      "label": "Z",
+      "baseline_raw": "Z",
+      "baseline_accepted": "Z",
+      "baseline_confidence": 0.9839146137237549,
+      "candidate_raw": "Z",
+      "candidate_accepted": "Z",
+      "candidate_confidence": 0.9977071285247803,
+      "probes": {
+        "original": {
+          "label": "Z",
+          "confidence": 0.9977071285247803
+        },
+        "frozen_first": {
+          "label": "BACKGROUND",
+          "confidence": 0.9052127003669739
+        },
+        "frozen_middle": {
+          "label": "Z",
+          "confidence": 0.9913308620452881
+        },
+        "reversed": {
+          "label": "Z",
+          "confidence": 0.9797619581222534
+        },
+        "first_half_stretched": {
+          "label": "Z",
+          "confidence": 0.9938219785690308
+        },
+        "shuffled": {
+          "label": "Z",
+          "confidence": 0.9448358416557312
+        }
+      }
+    },
+    {
+      "session_id": "3d8fadbb670d4d5e81dce156de42404e",
+      "label": "BACKGROUND",
+      "baseline_raw": "HELLO",
+      "baseline_accepted": null,
+      "baseline_confidence": 0.6996430158615112,
+      "candidate_raw": "BACKGROUND",
+      "candidate_accepted": null,
+      "candidate_confidence": 0.7219813466072083,
+      "probes": {
+        "original": {
+          "label": "BACKGROUND",
+          "confidence": 0.7219815850257874
+        },
+        "frozen_first": {
+          "label": "BACKGROUND",
+          "confidence": 0.7131386399269104
+        },
+        "frozen_middle": {
+          "label": "BACKGROUND",
+          "confidence": 0.7208966612815857
+        },
+        "reversed": {
+          "label": "BACKGROUND",
+          "confidence": 0.7197968363761902
+        },
+        "first_half_stretched": {
+          "label": "BACKGROUND",
+          "confidence": 0.7138806581497192
+        },
+        "shuffled": {
+          "label": "BACKGROUND",
+          "confidence": 0.7346604466438293
+        }
+      }
+    }
+  ],
+  "test": null,
+  "protected_files_unchanged": true,
+  "limitations": [
+    "One predeclared architecture experiment on development-known validation",
+    "One signer; only one HELLO and one BACKGROUND validation take",
+    "Altered clips are diagnostics, not reviewed human negative examples",
+    "No live camera result or final test evaluation"
+  ]
+}

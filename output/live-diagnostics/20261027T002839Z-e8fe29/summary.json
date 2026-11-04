@@ -1,0 +1,57 @@
+{
+  "metadata": {
+    "sequence_model": "output/pilot-training/20261026T235757Z-training-v2-f5ac65/sequence_training_v2.pth",
+    "static_model": null,
+    "sequence_model_sha256": "a488a526d9b9ec79dfb3f917b43ea7df62fe7ced4799b88cde17e0e2756606ee",
+    "sequence_confidence": 0.8,
+    "sampling_fps": 15.0,
+    "motion_threshold": 0.025,
+    "min_excursion": 0.35,
+    "min_motion_seconds": 0.12
+  },
+  "overall": {
+    "frames": 181,
+    "processed_fps": 14.76349036077579,
+    "detector_ms_median": 58.670800004620105,
+    "detector_ms_p95": 71.34790002601221,
+    "recognition_ms_p95": 0.5312999710440636,
+    "frame_age_ms_p95": 95.6049999804236,
+    "capture_interval_ms_p95": 95.88327497476712,
+    "capture_intervals_over_200ms": 0,
+    "hand_visibility": 0.03314917127071823,
+    "left_visibility": 0.0,
+    "right_visibility": 0.03314917127071823,
+    "shoulder_visibility": 1.0,
+    "face_reference_visibility": 1.0,
+    "emissions": {},
+    "static_emissions": {},
+    "rejections": {}
+  },
+  "by_target": {
+    "UNMARKED": {
+      "frames": 181,
+      "processed_fps": 14.76349036077579,
+      "detector_ms_median": 58.670800004620105,
+      "detector_ms_p95": 71.34790002601221,
+      "recognition_ms_p95": 0.5312999710440636,
+      "frame_age_ms_p95": 95.6049999804236,
+      "capture_interval_ms_p95": 95.88327497476712,
+      "capture_intervals_over_200ms": 0,
+      "hand_visibility": 0.03314917127071823,
+      "left_visibility": 0.0,
+      "right_visibility": 0.03314917127071823,
+      "shoulder_visibility": 1.0,
+      "face_reference_visibility": 1.0,
+      "emissions": {},
+      "static_emissions": {},
+      "rejections": {}
+    }
+  },
+  "events": [],
+  "limitations": [
+    "Key labels describe the intended test block, not verified ASL annotations.",
+    "Frame visibility includes rest between gestures; gesture-specific rejection checks use sampled takes.",
+    "Processed FPS describes observed pipeline throughput, not the camera advertised FPS.",
+    "Timing cannot by itself establish motion blur or ASL correctness."
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "take": "485f56776e6f4526b7e5ae05e180f81a",
+    "result": "HELLO"
+  },
+  {
+    "take": "54937bba0d5b4065a974ff8a81f82b50",
+    "result": "HELLO"
+  },
+  {
+    "take": "705092d4441f45b9a26ad8da45fe0e7e",
+    "result": "Rejected: Body/hand tracking gap is too long"
+  },
+  {
+    "take": "9d68abd65276437d956f2d3046aa4af0",
+    "result": "HELLO"
+  },
+  {
+    "take": "f0e6413a4b9b4382b7aff13f520fdff1",
+    "result": "Rejected: Sequence has insufficient valid hand evidence"
+  },
+  {
+    "take": "f467d4e74eed484cbcb2ad555f6dbec3",
+    "result": "HELLO"
+  },
+  {
+    "take": "a2df9b3bcd5a46fb8b0cb130e67d252c",
+    "result": "Rejected: Body/hand tracking gap is too long"
+  },
+  {
+    "take": "b5c1c1936fe14262bc7e64cfd5bc117e",
+    "result": "HELLO"
+  }
+]

@@ -1,0 +1,56 @@
+Training output: output\pilot-training\20261026T112630Z-d666af\sequence_left_pilot.pth
+Class counts by split: {'train': {'HELLO': 6, 'J': 6, 'Z': 6}, 'validation': {'HELLO': 2, 'J': 2, 'Z': 2}, 'test': {'HELLO': 2, 'J': 2, 'Z': 2}}
+Epoch 1/50 train_loss=2.0578 validation_loss=1.9465 validation_accuracy=0.667
+Epoch 2/50 train_loss=1.9182 validation_loss=0.9663 validation_accuracy=0.667
+Epoch 3/50 train_loss=1.2407 validation_loss=1.1729 validation_accuracy=0.333
+Epoch 4/50 train_loss=1.1934 validation_loss=0.7001 validation_accuracy=0.667
+Epoch 5/50 train_loss=0.8786 validation_loss=1.5838 validation_accuracy=0.333
+Epoch 6/50 train_loss=1.5156 validation_loss=0.9269 validation_accuracy=0.333
+Epoch 7/50 train_loss=1.1310 validation_loss=0.7185 validation_accuracy=0.500
+Epoch 8/50 train_loss=0.7261 validation_loss=1.0950 validation_accuracy=0.667
+Epoch 9/50 train_loss=1.2632 validation_loss=1.1872 validation_accuracy=0.667
+Epoch 10/50 train_loss=1.3953 validation_loss=0.3764 validation_accuracy=0.833
+Epoch 11/50 train_loss=0.6940 validation_loss=0.3716 validation_accuracy=0.833
+Epoch 12/50 train_loss=0.5907 validation_loss=0.5473 validation_accuracy=0.667
+Epoch 13/50 train_loss=0.7249 validation_loss=0.3033 validation_accuracy=0.833
+Epoch 14/50 train_loss=0.4943 validation_loss=0.2470 validation_accuracy=1.000
+Epoch 15/50 train_loss=0.4074 validation_loss=0.2815 validation_accuracy=0.833
+Epoch 16/50 train_loss=0.4188 validation_loss=0.1624 validation_accuracy=1.000
+Epoch 17/50 train_loss=0.2799 validation_loss=0.1658 validation_accuracy=0.833
+Epoch 18/50 train_loss=0.2609 validation_loss=0.2418 validation_accuracy=0.833
+Epoch 19/50 train_loss=0.2307 validation_loss=0.2842 validation_accuracy=0.833
+Epoch 20/50 train_loss=0.3261 validation_loss=0.1965 validation_accuracy=0.833
+Epoch 21/50 train_loss=0.3164 validation_loss=0.0845 validation_accuracy=1.000
+Epoch 22/50 train_loss=0.2367 validation_loss=0.0209 validation_accuracy=1.000
+Epoch 23/50 train_loss=0.2089 validation_loss=0.0087 validation_accuracy=1.000
+Epoch 24/50 train_loss=0.2097 validation_loss=0.0095 validation_accuracy=1.000
+Epoch 25/50 train_loss=0.2197 validation_loss=0.0181 validation_accuracy=1.000
+Epoch 26/50 train_loss=0.2931 validation_loss=0.0120 validation_accuracy=1.000
+Epoch 27/50 train_loss=0.2124 validation_loss=0.0082 validation_accuracy=1.000
+Epoch 28/50 train_loss=0.2111 validation_loss=0.0080 validation_accuracy=1.000
+Epoch 29/50 train_loss=0.2401 validation_loss=0.0077 validation_accuracy=1.000
+Epoch 30/50 train_loss=0.2112 validation_loss=0.0076 validation_accuracy=1.000
+Epoch 31/50 train_loss=0.2160 validation_loss=0.0070 validation_accuracy=1.000
+Epoch 32/50 train_loss=0.2171 validation_loss=0.0066 validation_accuracy=1.000
+Epoch 33/50 train_loss=0.2022 validation_loss=0.0064 validation_accuracy=1.000
+Epoch 34/50 train_loss=0.2103 validation_loss=0.0063 validation_accuracy=1.000
+Epoch 35/50 train_loss=0.2037 validation_loss=0.0064 validation_accuracy=1.000
+Epoch 36/50 train_loss=0.2113 validation_loss=0.0066 validation_accuracy=1.000
+Epoch 37/50 train_loss=0.2172 validation_loss=0.0066 validation_accuracy=1.000
+Epoch 38/50 train_loss=0.2108 validation_loss=0.0068 validation_accuracy=1.000
+Epoch 39/50 train_loss=0.2110 validation_loss=0.0070 validation_accuracy=1.000
+Epoch 40/50 train_loss=0.2064 validation_loss=0.0073 validation_accuracy=1.000
+Epoch 41/50 train_loss=0.1962 validation_loss=0.0076 validation_accuracy=1.000
+Epoch 42/50 train_loss=0.2361 validation_loss=0.0077 validation_accuracy=1.000
+Epoch 43/50 train_loss=0.2029 validation_loss=0.0079 validation_accuracy=1.000
+Epoch 44/50 train_loss=0.2043 validation_loss=0.0080 validation_accuracy=1.000
+Epoch 45/50 train_loss=0.2293 validation_loss=0.0080 validation_accuracy=1.000
+Epoch 46/50 train_loss=0.2032 validation_loss=0.0080 validation_accuracy=1.000
+Epoch 47/50 train_loss=0.2007 validation_loss=0.0080 validation_accuracy=1.000
+Epoch 48/50 train_loss=0.2057 validation_loss=0.0080 validation_accuracy=1.000
+Epoch 49/50 train_loss=0.1974 validation_loss=0.0080 validation_accuracy=1.000
+Epoch 50/50 train_loss=0.2036 validation_loss=0.0081 validation_accuracy=1.000
+{
+  "test": null
+}
+Model ready: output\pilot-training\20261026T112630Z-d666af\sequence_left_pilot.pth; restart recognition to load the updated model

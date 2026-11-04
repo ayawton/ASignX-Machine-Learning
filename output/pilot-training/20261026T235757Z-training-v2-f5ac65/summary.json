@@ -1,0 +1,629 @@
+{
+  "checkpoint": "C:\\Users\\Xyan\\Desktop\\Applications\\ASignX ML\\output\\pilot-training\\20261026T235757Z-training-v2-f5ac65\\sequence_training_v2.pth",
+  "training_counts": {
+    "BACKGROUND": 28,
+    "HELLO": 30,
+    "J": 9,
+    "Z": 10
+  },
+  "split_counts": {
+    "train": {
+      "HELLO": 22,
+      "J": 7,
+      "Z": 6,
+      "BACKGROUND": 20
+    },
+    "validation": {
+      "HELLO": 4,
+      "J": 1,
+      "Z": 2,
+      "BACKGROUND": 4
+    },
+    "test": {
+      "HELLO": 4,
+      "J": 1,
+      "Z": 2,
+      "BACKGROUND": 4
+    }
+  },
+  "best_epoch": 12,
+  "epochs_completed": 22,
+  "raw_internal_validation": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "per_class": {
+      "BACKGROUND": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4
+      },
+      "HELLO": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4
+      },
+      "J": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "Z": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2
+      }
+    },
+    "labels": [
+      "BACKGROUND",
+      "HELLO",
+      "J",
+      "Z"
+    ],
+    "confusion_matrix": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        4,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "loss": 0.012006122957576405
+  },
+  "internal_validation_acceptance": [
+    {
+      "label": "HELLO",
+      "raw_prediction": "HELLO",
+      "accepted_label": "HELLO",
+      "confidence": 0.9795827865600586
+    },
+    {
+      "label": "J",
+      "raw_prediction": "J",
+      "accepted_label": "J",
+      "confidence": 0.9964260458946228
+    },
+    {
+      "label": "Z",
+      "raw_prediction": "Z",
+      "accepted_label": "Z",
+      "confidence": 0.9960976839065552
+    },
+    {
+      "label": "Z",
+      "raw_prediction": "Z",
+      "accepted_label": "Z",
+      "confidence": 0.9991707801818848
+    },
+    {
+      "label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "accepted_label": null,
+      "confidence": 0.9925426244735718
+    },
+    {
+      "label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "accepted_label": null,
+      "confidence": 0.995084822177887
+    },
+    {
+      "label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "accepted_label": null,
+      "confidence": 0.9955888986587524
+    },
+    {
+      "label": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "accepted_label": null,
+      "confidence": 0.9950805902481079
+    },
+    {
+      "label": "HELLO",
+      "raw_prediction": "HELLO",
+      "accepted_label": "HELLO",
+      "confidence": 0.9726164937019348
+    },
+    {
+      "label": "HELLO",
+      "raw_prediction": "HELLO",
+      "accepted_label": "HELLO",
+      "confidence": 0.9774607419967651
+    },
+    {
+      "label": "HELLO",
+      "raw_prediction": "HELLO",
+      "accepted_label": "HELLO",
+      "confidence": 0.9696779251098633
+    }
+  ],
+  "external_development_evaluation": {
+    "previous_motion_features": {
+      "HELLO": {
+        "takes": 5,
+        "raw_predictions": {
+          "HELLO": 2,
+          "BACKGROUND": 3
+        },
+        "accepted_outputs": {},
+        "rejected": 5,
+        "tracking_rejected": 0
+      },
+      "BACKGROUND": {
+        "takes": 15,
+        "raw_predictions": {
+          "Z": 5,
+          "BACKGROUND": 9,
+          "HELLO": 1
+        },
+        "accepted_outputs": {
+          "Z": 5
+        },
+        "rejected": 10,
+        "tracking_rejected": 0
+      }
+    },
+    "expanded_training_v2": {
+      "HELLO": {
+        "takes": 5,
+        "raw_predictions": {
+          "HELLO": 5
+        },
+        "accepted_outputs": {
+          "HELLO": 5
+        },
+        "rejected": 0,
+        "tracking_rejected": 0
+      },
+      "BACKGROUND": {
+        "takes": 15,
+        "raw_predictions": {
+          "BACKGROUND": 10,
+          "HELLO": 4,
+          "Z": 1
+        },
+        "accepted_outputs": {
+          "HELLO": 4
+        },
+        "rejected": 11,
+        "tracking_rejected": 0
+      }
+    }
+  },
+  "external_evaluation_predictions": [
+    {
+      "model": "previous_motion_features",
+      "session_id": "02a8257020a24b2baaf68c7463f3083a",
+      "file": "BACKGROUND_02a8257020a24b2baaf68c7463f3083a.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.9908328652381897,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "2ab0244e4f9c47c8aff3d3251b9f98bf",
+      "file": "BACKGROUND_2ab0244e4f9c47c8aff3d3251b9f98bf.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.9146480560302734,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "346a49c52a9e43f09f8162defc2468f8",
+      "file": "BACKGROUND_346a49c52a9e43f09f8162defc2468f8.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.9820696115493774,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "3985013baa1548e38a54d54ea506b5c5",
+      "file": "BACKGROUND_3985013baa1548e38a54d54ea506b5c5.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.8977982997894287,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "3d311718565c4162a53fb15040bd6443",
+      "file": "BACKGROUND_3d311718565c4162a53fb15040bd6443.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.8632601499557495,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "474dff82b1b040e8ae0f4bee0259a49f",
+      "file": "BACKGROUND_474dff82b1b040e8ae0f4bee0259a49f.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.7009604573249817,
+      "accepted_label": null,
+      "decision": "below threshold"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "4ef370f689234b71aa35f2f37496588f",
+      "file": "BACKGROUND_4ef370f689234b71aa35f2f37496588f.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.7100688219070435,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "575eca42eab5482bbd8b99bc64b59939",
+      "file": "BACKGROUND_575eca42eab5482bbd8b99bc64b59939.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.982071578502655,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "81811ab95e2845e5a6d940ee3fe1a427",
+      "file": "BACKGROUND_81811ab95e2845e5a6d940ee3fe1a427.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.6123383641242981,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "82457510bc1a485e8b0ca4247f7ee6a0",
+      "file": "BACKGROUND_82457510bc1a485e8b0ca4247f7ee6a0.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.5021070837974548,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "85d938d4b1cf49c3a4205fca8eb7b521",
+      "file": "BACKGROUND_85d938d4b1cf49c3a4205fca8eb7b521.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.7877997756004333,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "9d755bf98bac4924b28d997cef0fbef0",
+      "file": "BACKGROUND_9d755bf98bac4924b28d997cef0fbef0.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.9736635684967041,
+      "accepted_label": "Z",
+      "decision": "accepted"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "acc0f1560b254e0babf0af5293898217",
+      "file": "BACKGROUND_acc0f1560b254e0babf0af5293898217.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9418054223060608,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "bdaf7dc01e844a0693e6b579edaba183",
+      "file": "BACKGROUND_bdaf7dc01e844a0693e6b579edaba183.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.48598524928092957,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "e725953ca0b34193b14c4dc76a0c07d7",
+      "file": "BACKGROUND_e725953ca0b34193b14c4dc76a0c07d7.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.8856863975524902,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "1876963861834decbff911f5f73af3f8",
+      "file": "HELLO_1876963861834decbff911f5f73af3f8.npz",
+      "actual": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.7606673836708069,
+      "accepted_label": null,
+      "decision": "below threshold"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "3622f2f8b841444780e0fd5e5defbb20",
+      "file": "HELLO_3622f2f8b841444780e0fd5e5defbb20.npz",
+      "actual": "HELLO",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.5472494959831238,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "3a76284ce6924637956f6533f42a25b2",
+      "file": "HELLO_3a76284ce6924637956f6533f42a25b2.npz",
+      "actual": "HELLO",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.8514533042907715,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "629b42fc331347839fdf9ebc0820c389",
+      "file": "HELLO_629b42fc331347839fdf9ebc0820c389.npz",
+      "actual": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.6054176688194275,
+      "accepted_label": null,
+      "decision": "below threshold"
+    },
+    {
+      "model": "previous_motion_features",
+      "session_id": "dbe990a1d9c14320bce2abc5f8d0d5df",
+      "file": "HELLO_dbe990a1d9c14320bce2abc5f8d0d5df.npz",
+      "actual": "HELLO",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.6291080117225647,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "02a8257020a24b2baaf68c7463f3083a",
+      "file": "BACKGROUND_02a8257020a24b2baaf68c7463f3083a.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9587276577949524,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "2ab0244e4f9c47c8aff3d3251b9f98bf",
+      "file": "BACKGROUND_2ab0244e4f9c47c8aff3d3251b9f98bf.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9924554824829102,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "346a49c52a9e43f09f8162defc2468f8",
+      "file": "BACKGROUND_346a49c52a9e43f09f8162defc2468f8.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9827102422714233,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "3985013baa1548e38a54d54ea506b5c5",
+      "file": "BACKGROUND_3985013baa1548e38a54d54ea506b5c5.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9949028491973877,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "3d311718565c4162a53fb15040bd6443",
+      "file": "BACKGROUND_3d311718565c4162a53fb15040bd6443.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9953906536102295,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "474dff82b1b040e8ae0f4bee0259a49f",
+      "file": "BACKGROUND_474dff82b1b040e8ae0f4bee0259a49f.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9779548048973083,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "4ef370f689234b71aa35f2f37496588f",
+      "file": "BACKGROUND_4ef370f689234b71aa35f2f37496588f.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9731271266937256,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "575eca42eab5482bbd8b99bc64b59939",
+      "file": "BACKGROUND_575eca42eab5482bbd8b99bc64b59939.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "Z",
+      "confidence": 0.7124360799789429,
+      "accepted_label": null,
+      "decision": "below threshold"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "81811ab95e2845e5a6d940ee3fe1a427",
+      "file": "BACKGROUND_81811ab95e2845e5a6d940ee3fe1a427.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9928901195526123,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "82457510bc1a485e8b0ca4247f7ee6a0",
+      "file": "BACKGROUND_82457510bc1a485e8b0ca4247f7ee6a0.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9730614423751831,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "85d938d4b1cf49c3a4205fca8eb7b521",
+      "file": "BACKGROUND_85d938d4b1cf49c3a4205fca8eb7b521.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9949336647987366,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "9d755bf98bac4924b28d997cef0fbef0",
+      "file": "BACKGROUND_9d755bf98bac4924b28d997cef0fbef0.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9910485744476318,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "acc0f1560b254e0babf0af5293898217",
+      "file": "BACKGROUND_acc0f1560b254e0babf0af5293898217.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9950605034828186,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "bdaf7dc01e844a0693e6b579edaba183",
+      "file": "BACKGROUND_bdaf7dc01e844a0693e6b579edaba183.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9596938490867615,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "e725953ca0b34193b14c4dc76a0c07d7",
+      "file": "BACKGROUND_e725953ca0b34193b14c4dc76a0c07d7.npz",
+      "actual": "BACKGROUND",
+      "raw_prediction": "BACKGROUND",
+      "confidence": 0.9946796298027039,
+      "accepted_label": null,
+      "decision": "background class"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "1876963861834decbff911f5f73af3f8",
+      "file": "HELLO_1876963861834decbff911f5f73af3f8.npz",
+      "actual": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9750598073005676,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "3622f2f8b841444780e0fd5e5defbb20",
+      "file": "HELLO_3622f2f8b841444780e0fd5e5defbb20.npz",
+      "actual": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9621669054031372,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "3a76284ce6924637956f6533f42a25b2",
+      "file": "HELLO_3a76284ce6924637956f6533f42a25b2.npz",
+      "actual": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.8584415912628174,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "629b42fc331347839fdf9ebc0820c389",
+      "file": "HELLO_629b42fc331347839fdf9ebc0820c389.npz",
+      "actual": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9673595428466797,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    },
+    {
+      "model": "expanded_training_v2",
+      "session_id": "dbe990a1d9c14320bce2abc5f8d0d5df",
+      "file": "HELLO_dbe990a1d9c14320bce2abc5f8d0d5df.npz",
+      "actual": "HELLO",
+      "raw_prediction": "HELLO",
+      "confidence": 0.9634899497032166,
+      "accepted_label": "HELLO",
+      "decision": "accepted"
+    }
+  ],
+  "test": null,
+  "protected_files_unchanged": true,
+  "limitations": [
+    "One reported signer, left hand only",
+    "Previously inspected evaluation collection is development-known, not an untouched final test",
+    "Prepared clip inference does not include live camera capture or motion gate",
+    "No saved test inference, live camera verification, threshold search or extra training runs performed",
+    "Raw feature validity does not verify ASL sign correctness"
+  ]
+}

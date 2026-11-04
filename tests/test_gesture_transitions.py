@@ -48,6 +48,22 @@ def test_completed_gesture_blocks_static_and_preserves_full_take():
     assert outputs[-1]['static'][0].stable_label == 'I'
     assert seq.buffer.maxlen == 30
 
+
+def test_take_trace_is_opt_in_and_survives_buffer_reset():
+    for enabled in [False,True]:
+        router=UnifiedSignRecognizer(sequence_predictor=Sequence(),velocity_threshold=.004)
+        router.trace_completed_takes=enabled
+        takes=[]
+        for i in range(100):
+            t=i/30
+            result=router.update([hand(min(max(t-.3,0),1.5)*.3)],timestamp=t)
+            if result['completed_take'] is not None:takes.append(result['completed_take'])
+        if enabled:
+            assert len(takes)==1 and len(takes[0])>30
+            assert takes[0][0][1].shape==(21,3)
+            assert not router._gesture
+        else:assert takes==[]
+
 def test_finger_motion_is_not_diluted():
     gate = MotionGate(velocity_threshold=.02)
     pts = hand(0).to_numpy()
